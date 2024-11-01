@@ -16,7 +16,7 @@ const config = {
   url: 'https://invoice-collector.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/website/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -76,19 +76,31 @@ const config = {
       navbar: {
         title: 'Invoice Collector',
         logo: {
-          alt: 'Invoice Collector Logo',
+          alt: 'Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
+            sidebarId: 'documentationSidebar',
+            position: 'left',
+            label: 'Doc',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'apiSidebar',
+            position: 'left',
+            label: 'API',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Tutorials',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/InvoiceCollector/InvoiceCollector',
             label: 'GitHub',
             position: 'right',
           },
@@ -98,11 +110,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Invoice-Collector',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Docs',
+                to: '/docs/docs',
+              },
+              {
+                label: 'API',
+                to: '/docs/api',
               },
             ],
           },
@@ -111,15 +127,15 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/invoice-collector',
               },
               {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'GitHub',
+                href: 'https://github.com/InvoiceCollector/InvoiceCollector',
               },
             ],
           },
@@ -130,14 +146,10 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Invoice-Collector`,
       },
       prism: {
         theme: prismThemes.github,
