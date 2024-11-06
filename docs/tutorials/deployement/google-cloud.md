@@ -2,9 +2,9 @@
 sidebar_position: 3
 ---
 
-# Azure Landing Zone
+# Google Cloud 
 
 :::warning[Warning]
 
-This tutorial is not available yet! You can check [this link](https://learn.microsoft.com/en-gb/azure/ai-services/containers/docker-compose-recipe) instead.
+This tutorial is not available yet!
 :::

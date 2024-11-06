@@ -4,4 +4,4 @@ sidebar_position: 1
 
 # Tutorials
 
-Learn how to deploy en use Invoice-Collector with tutorials.
+Learn how to integrate Invoice-Collector with workflow builder tools.
