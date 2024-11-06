@@ -61,7 +61,7 @@ docker-compose down
 
 Collectors are always changing and the invoice-collector image as well to keep them up-to-date. We strongly recommend to automatically update the container on new releases. Check your host documentation on how to do it.
 
-You can still update the container manually:
+You can still update the container manually by running:
 ```bash
 docker-compose down
 docker-compose pull
@@ -71,5 +71,5 @@ docker-compose up -d
 ### Deployments
 
 - **Azure**: [See Azure documentation](https://learn.microsoft.com/en-gb/azure/ai-services/containers/docker-compose-recipe)
-- **AWS**: _Soon_
+- **AWS ECS**: [See docker tutorial](https://www.docker.com/blog/docker-compose-from-local-to-amazon-ecs/)
 - **Google Cloud**: _Soon_
