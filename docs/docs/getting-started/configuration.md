@@ -8,7 +8,7 @@ Once the container is up and running, we need to verify that the remote Invoice-
 
 ### Networking
 
-Make sure the container can reach the remote server at url `https://n8n.bergeron.fr/`. Verify your firewall and proxy settings.
+Make sure the container can reach the remote server at url `https://api.invoice-collector.com`. Verify your firewall and proxy settings.
 
 ### Ping!
 
@@ -28,4 +28,4 @@ Hit the `Ping!` button to try to reach the server.
 **Message**
 | Success Free | Success Premium | Warning | Error |
 |--------------|-----------------|---------|-------|
-|Great job! You can reach the server and you are ready to collect invoices. You did not specify any token, we won't be able to maintain your collectors and prioritize them over other users.|Great job! You can reach the server and you are ready to collect invoices. Your token is valid, it ensures we will maintain your collectors and prioritize them over other users.|BBBrrr! You can reach the server and you are ready to collect invoices but your token is invalid. We won't be able to maintain your collectors and prioritize them over other users. Contact the support at `support@invoice-collector.com` to verify your token.|Outch! Something is wrong with your network. The container cannot reach the server at url: `https://n8n.bergeron.fr/`. Check your firewall and proxy settings.|
+|Great job! You can reach the server and you are ready to collect invoices. You did not specify any token, we won't be able to maintain your collectors and prioritize them over other users.|Great job! You can reach the server and you are ready to collect invoices. Your token is valid, it ensures we will maintain your collectors and prioritize them over other users.|BBBrrr! You can reach the server and you are ready to collect invoices but your token is invalid. We won't be able to maintain your collectors and prioritize them over other users. Contact the support at `support@invoice-collector.com` to verify your token.|Outch! Something is wrong with your network. The container cannot reach the server at url: `https://api.invoice-collector.com`. Check your firewall and proxy settings.|
