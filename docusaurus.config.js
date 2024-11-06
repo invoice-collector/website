@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Invoice Collector',
   tagline: 'Free automatic invoice collector 🧾 Collect your invoices in seconds',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo/logo_round_square.ico',
 
   // Set the production url of your site here
   url: 'https://invoice-collector.com',
@@ -77,7 +77,7 @@ const config = {
         title: 'Invoice Collector',
         logo: {
           alt: 'Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo/logo_round_square.svg',
         },
         items: [
           {
