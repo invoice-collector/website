@@ -145,7 +145,7 @@ const config = {
               },
             ],
           },
-          {
+          /*{
             title: 'More',
             items: [
               {
@@ -153,7 +153,7 @@ const config = {
                 to: '/blog',
               },
             ],
-          },
+          },*/
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Invoice-Collector`,
       },
