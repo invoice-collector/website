@@ -126,6 +126,10 @@ const config = {
                 label: 'API',
                 to: '/docs/api',
               },
+              {
+                label: 'Tutorials',
+                to: '/docs/tutorials',
+              },
             ],
           },
           {
