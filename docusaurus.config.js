@@ -98,6 +98,12 @@ const config = {
             position: 'left',
             label: 'Tutorials',
           },
+          /*{
+            type: 'docSidebar',
+            sidebarId: 'tutorialTemplateSidebar',
+            position: 'left',
+            label: 'Tutorials Templates',
+          },*/
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
             href: 'https://github.com/InvoiceCollector/InvoiceCollector',
