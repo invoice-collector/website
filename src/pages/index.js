@@ -32,8 +32,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="Free automatic invoice collector 🧾 Collect your invoices in seconds">
+      title="Free automatic invoice collector"
+      description="Free automatic invoice collector 🧾 Collect your invoices in seconds ⏰ Docker container 🐳">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
