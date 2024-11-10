@@ -83,19 +83,13 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'documentationSidebar',
-            position: 'left',
+            position: 'right',
             label: 'Doc',
           },
           {
             type: 'docSidebar',
-            sidebarId: 'apiSidebar',
-            position: 'left',
-            label: 'API',
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'left',
+            position: 'right',
             label: 'Tutorials',
           },
           /*{
@@ -119,12 +113,8 @@ const config = {
             title: 'Invoice-Collector',
             items: [
               {
-                label: 'Docs',
+                label: 'Doc',
                 to: '/docs/docs',
-              },
-              {
-                label: 'API',
-                to: '/docs/api',
               },
               {
                 label: 'Tutorials',
