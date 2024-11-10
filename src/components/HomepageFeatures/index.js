@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Individuals and small companies can use Invoice-Collector for free. You help use improve our product and maintain the collectors.</>
+        Individuals and small companies can use Invoice-Collector for free. You help us improve our product and maintain the collectors.</>
     ),
   },
   {
