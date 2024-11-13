@@ -1,0 +1,88 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Usage
+
+List all the available collectors and collect your first invoice.
+
+:::info[INFO]
+In this section, we assume that the _Invoice-Collector Container_ is reachable at `https://localhost:8080`. If your container is not running yet, [see the installation section](./installation.md).
+:::
+
+### List collectors
+
+Open a terminal and run the following command to list all the available collectors.
+
+```bash
+curl -X GET https://localhost:8080/api/v1/collectors
+```
+
+### Collect invoices
+
+In this example we will collect invoices from the `free` collector:
+
+
+
+<Tabs>
+  <TabItem value="curl" label="Curl" default>
+```bash
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -d "{\"webhook\":\"https://my.custom/webhook/url\",\"collector\":\"free\",\"params\":{\"username\":\"my.email@example.com\",\"password\":\"mypassword\"}}" \
+    localhost:8080/api/v1/collect
+```
+  </TabItem>
+  <TabItem value="python" label="Python">
+```python
+import requests
+import json
+
+url = "http://localhost:8080/api/v1/collect"
+headers = {
+    "Content-Type": "application/json"
+}
+data = {
+    "webhook": "https://my.custom/webhook/url",
+    "collector": "free",
+    "params": {
+        "username": "my.email@example.com",
+        "password": "mypassword"
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+```
+  </TabItem>
+  <TabItem value="nodejs" label="NodeJS">
+```javascript
+const axios = require('axios');
+
+const url = 'http://localhost:8080/api/v1/collect';
+const headers = {
+    'Content-Type': 'application/json'
+};
+const data = {
+    webhook: 'https://my.custom/webhook/url',
+    collector: 'free',
+    params: {
+        username: 'my.email@example.com',
+        password: 'mypassword'
+    }
+};
+
+axios.post(url, data, { headers })
+    .then(response => {
+        // Do something
+    })
+    .catch(error => {
+        // Do something
+    });
+```
+  </TabItem>
+</Tabs>
+
+Great job, you just collected your first invoice. See the [API Reference](../api-reference/collect.md) for more details.
