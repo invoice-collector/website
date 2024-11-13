@@ -70,6 +70,8 @@ docker-compose up -d
 
 ### Deployments
 
-- **Azure**: [See Azure documentation](https://learn.microsoft.com/en-gb/azure/ai-services/containers/docker-compose-recipe)
-- **AWS ECS**: [See docker tutorial](https://www.docker.com/blog/docker-compose-from-local-to-amazon-ecs/)
-- **Google Cloud**: _Soon_
+Follow our tutorials to deploy the container on your cloud provider:
+
+- [**Azure Landing Zone**](../../tutorials/deployement/azure-landing-zone.md)
+- [**AWS ECS**](../../tutorials//deployement/amazon-web-service.md)
+- [**Google Cloud**](../../tutorials//deployement/amazon-web-service.md)
