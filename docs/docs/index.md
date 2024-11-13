@@ -27,6 +27,6 @@ Here is how Invoice-Collector fits in your infrastructure:
 - **Handler**: Receives the invoices, or an error if something went wrong.
 - **Invoice-Collector Server**: Receives the logs from the running containers. This server is only used to maintain collectors and fix bugs.
 
-:::info[IMPORTANT]
-Credentials and tokens are never sent to the **Invoice-Collector Server**. Sensitive datas never leave your infrastructure.
+:::info[INFO]
+Credentials and tokens are never sent to the _Invoice-Collector Server_. Sensitive datas never leave your infrastructure.
 :::

@@ -4,7 +4,15 @@ sidebar_position: 2
 
 # Configuration
 
-Once the container is up and running, we need to verify that the remote Invoice-Collector server is reachable. As described in this section, the server is used to collect logs and ensures that the collectors are up to date.
+Once the _Invoice-Collector Container_ is up and running, we need to verify that the remote _Invoice-Collector Server_ is reachable.
+
+:::info[INFO]
+Credentials and tokens are never sent to the _Invoice-Collector Server_. Sensitive datas never leave your infrastructure.
+:::
+
+:::info[INFO]
+In this section, we assume that the _Invoice-Collector Container_ is reachable at `https://localhost:8080`. If your container is not running yet, [see the installation section](./installation.md).
+:::
 
 ### Networking
 

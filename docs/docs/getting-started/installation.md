@@ -52,6 +52,11 @@ Start the container:
 docker-compose up -d
 ```
 
+:::info[INFO]
+From this point on, we will assume that the _Invoice-Collector Container_ is reachable at `https://localhost:8080`.
+:::
+
+
 Stop the container:
 ```bash
 docker-compose down
