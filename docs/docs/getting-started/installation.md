@@ -79,4 +79,4 @@ Follow our tutorials to deploy the container on your cloud provider:
 
 - [**Azure Landing Zone**](../../tutorials/deployement/azure-landing-zone.md)
 - [**AWS ECS**](../../tutorials//deployement/amazon-web-service.md)
-- [**Google Cloud**](../../tutorials//deployement/amazon-web-service.md)
+- [**Google Cloud**](../../tutorials//deployement/google-cloud.md)
