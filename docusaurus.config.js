@@ -36,13 +36,9 @@ const config = {
 
   presets: [
     [
-      "docusaurus-preset-openapi",
-      /** @type {import('docusaurus-preset-openapi').Options} */
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        api: {
-          path: "docs/openapi/swagger.yaml",
-          routeBasePath: "docs/openapi",
-        },
         docs: {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -89,11 +85,6 @@ const config = {
             sidebarId: 'documentationSidebar',
             position: 'right',
             label: 'Doc',
-          },
-          {
-            to: 'docs/openapi',
-            position: 'right',
-            label: 'API',
           },
           {
             type: 'docSidebar',
