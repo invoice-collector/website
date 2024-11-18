@@ -19,7 +19,7 @@ Invoice Collector is an open-source, Docker-based tool designed to streamline th
 
 Here is how Invoice-Collector fits in your infrastructure:
 
-![](./sequence_diagram/infra.svg)
+![Diagram is not loading properly](./sequence_diagram/infra.svg)
 
 - **User**: Represents the machine requesting collects and retrieving the results. It is composed of a _Requestor_ and a _Handler_.
 - **Requestor**: Requests a collect to the _Invoice-Collector_ container. The action is queued and is not immediatly performed.
