@@ -1,9 +1,0 @@
----
-title: API Reference
-sidebar_position: 3
-hide_table_of_contents: true
----
-
-import SwaggerUIComponent from '@site/src/components/swagger/SwaggerUIComponent';
-
-<SwaggerUIComponent />
