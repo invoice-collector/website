@@ -24,7 +24,7 @@ Open a browser and navigate to [`https://localhost:8080/ping`](https://localhost
 
 <!-- image of ping -->
 
-If you are a premium customer, copy your token and paste it in the input field.
+If you are a premium customer, copy your activation key and paste it in the input field.
 
 Hit the `Ping!` button to try to reach the server.
 
