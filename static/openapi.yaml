@@ -7,9 +7,7 @@ servers:
 paths:
   "/ping":
     post:
-      tags:
-      - API Reference
-      summary: POST ping
+      summary: Ping
       description: Ping the _Invoice-Collector Container_ and the _Invoice-Collector Server_.
       responses:
         '200':
@@ -20,9 +18,7 @@ paths:
                 "$ref": "#/components/schemas/pong"
   "/collectors":
     get:
-      tags:
-      - API Reference
-      summary: GET collectors
+      summary: Collectors
       description: List all the available collectors.
       responses:
         '200':
@@ -35,9 +31,7 @@ paths:
                   "$ref": "#/components/schemas/collector"
   "/collect":
     post:
-      tags:
-      - API Reference
-      summary: POST collect
+      summary: Collect invoices
       description: Collect invoices for the given collector.
       requestBody:
         required: true
@@ -140,9 +134,7 @@ paths:
                   description: Success
   "/new_collector":
     post:
-      tags:
-      - API Reference
-      summary: POST new-collector
+      summary: New collector
       description: Request a new collector.
       requestBody:
         required: true
