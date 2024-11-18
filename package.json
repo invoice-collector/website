@@ -1,5 +1,5 @@
 {
-  "name": "Invoice-Collector",
+  "name": "invoice-collector",
   "version": "0.0.0",
   "private": true,
   "scripts": {
