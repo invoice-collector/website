@@ -31,7 +31,7 @@ Hit the `Ping!` button to try to reach the server.
 **Subscription**
 | Free | Premium |
 |------|---------|
-|Your token is valid, it ensures we will maintain your collectors and prioritize them over other users.|You did not specify any token or the current token is invalid. We won't be able to maintain your collectors and prioritize them over other users.|
+|You did not specify any token or the current token is invalid. We won't be able to maintain your collectors and prioritize them over other users.|Your token is valid, it ensures we will maintain your collectors and prioritize them over other users.|
 
 **Message**
 | Success Free | Success Premium | Warning | Error |
