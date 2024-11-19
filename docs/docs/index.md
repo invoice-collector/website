@@ -21,11 +21,10 @@ Here is how Invoice-Collector fits in your infrastructure:
 
 ![Diagram is not loading properly](./sequence_diagram/infra.svg)
 
-- **User**: Represents the machine requesting collects and retrieving the results. It is composed of a _Requestor_ and a _Handler_.
-- **Requestor**: Requests a collect to the _Invoice-Collector_ container. The action is queued and is not immediatly performed.
-- **Invoice-Collector Container**: Our docker container performs the collection requested by the _Requestor_ and sends the invoices to the _Handler_ once done. Successes and errors are loged to the _Invoice-Collector Server_
+- **Requestor**: Machine requesting a collect to the _Invoice-Collector_ container. The action is queued and is not immediatly performed.
+- **Invoice-Collector Container**: Our docker container performs the collection requested by the _Requestor_ and sends the invoices to a callback endpoint once done, the _Handler_. Successes and errors are logged to the _Invoice-Collector Server_
 - **Handler**: Receives the invoices, or an error if something went wrong.
-- **Invoice-Collector Server**: Receives the logs from the running containers. This server is only used to maintain collectors and fix bugs.
+- **Invoice-Collector Server**: Receives the logs from the running containers. This server is only used to perform analytics, maintain collectors and fix bugs.
 
 :::info[INFO]
 Credentials and tokens are never sent to the _Invoice-Collector Server_. Sensitive datas never leave your infrastructure.
