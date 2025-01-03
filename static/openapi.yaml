@@ -5,17 +5,6 @@ info:
 servers:
   - url: https://localhost:8080/api/v1
 paths:
-  "/ping":
-    post:
-      summary: Ping
-      description: Ping the _Invoice-Collector Container_ and the _Invoice-Collector Server_.
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/pong"
   "/collectors":
     get:
       summary: Collectors
@@ -29,71 +18,61 @@ paths:
                 type: array
                 items:
                   "$ref": "#/components/schemas/collector"
-  "/collect":
+        '400':
+          description: Error
+  "/authorize":
     post:
-      summary: Collect invoices
-      description: Collect invoices for the given collector.
+      summary: Authorize
+      description: Generate a token for a specific user. This token must be used by the client to authenticate itself. The user is created if it does not exist.
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                collector:
-                  type: string
-                  description: Key of the collector to use.
-                  example: free
-                callback:
-                  type: string
-                  description: Callback URL to send the collected invoices to.
-                  format: uri
-                  example: https://localhost:1234/my/callback
-                params:
-                  type: object
-                  description: Parameters required by the collector.
-                  example:
-                    username: fbx123456789
-                    passsword: Y%2j7Fc$#$y
-                metadata:
-                  type: object
-                  description: Metadata to send to the callback.
-                  example:
-                    key: this value will be passed to the callback uri
-              required:
-              - callback
-              - collector
-              - params
+              "$ref": "#/components/schemas/remote_id"
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                type: object
-                description: Request in process.
-                properties:
-                  id:
-                    type: string
-                    description: Request id
-                    example: 514
-                  collector:
-                    type: string
-                    description: Key of the collector
-                    example: free
-                required:
-                - id
-                - collector
+                "$ref": "#/components/schemas/token"
         '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                type: object
-                description: Error response
+          description: Error
+        '401':
+          description: Invalid bearer token
+  "/collect":
+    post:
+      summary: Collect invoices
+      description: Request a collect of invoices for the given credential.
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error
+        '401':
+          description: Invalid bearer token
       callbacks:
         onInvoiceCollected:
-          Callback:
+          invoice:
             post:
               requestBody:
                 required: true
@@ -102,40 +81,115 @@ paths:
                     schema:
                       type: object
                       properties:
-                        id:
+                        type:
                           type: string
-                          description: Request id.
-                          example: 514
-                        collector:
+                          description: Type of the payload.
+                          enum:
+                            - invoice
+                            - error
+                          example: invoice
+                        key:
                           type: string
                           description: Key of the collector.
                           example: free
-                        type:
+                        remote_id:
                           type: string
-                          description: If the collect request returned invoices or an error.
-                          enum:
-                            - invoices
-                            - error
-                          example: invoices
-                        invoices:
-                          "$ref": "#/components/schemas/invoices"
-                        error:
-                          "$ref": "#/components/schemas/error"
-                        metadata:
-                          type: object
-                          description: Metadata passed in the collect request.
-                          example:
-                            key: this value will be passed to the callback uri
+                          description: Remote id of the user.
+                          example: 121439
+                        invoice:
+                          "$ref": "#/components/schemas/invoice"
                       required:
                         - type
-                        - metadata
+                        - key
+                        - invoice
               responses:
                 '200':
                   description: Success
-  "/new_collector":
+          error:
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the payload.
+                          enum:
+                            - invoice
+                            - error
+                          example: invoice
+                        key:
+                          type: string
+                          description: Key of the collector.
+                          example: free
+                        remote_id:
+                          type: string
+                          description: Remote id of the user.
+                          example: 121439
+                        error:
+                          "$ref": "#/components/schemas/error"
+                      required:
+                        - type
+                        - key
+                        - error
+              responses:
+                '200':
+                  description: Success
+  "/user":
+    get:
+      summary: Manage credentials
+      description: UI used by the user to manage its credentials.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: Error
+        '401':
+          description: Invalid oauth token
+  "/credentials":
+    get:
+      summary: List credentials
+      description: List all the credentials for the user.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+      responses:
+        '200':
+          description: Success.
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/credentials"
+        '400':
+          description: Error
+        '401':
+          description: Invalid oauth token
+  "/credential":
     post:
-      summary: New collector
-      description: Request a new collector.
+      summary: Add credential
+      description: Add a new credential for the given user.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
       requestBody:
         required: true
         content:
@@ -143,27 +197,103 @@ paths:
             schema:
               type: object
               properties:
-                name: 
+                key:
                   type: string
-                  description: Name of the new collector.
+                  description: Key of the collector to use.
                   example: free
-                link:
-                  type: string
-                  description: Link to the website of the new collector.
-                  format: uri
-                  example: https://www.free.fr
+                params:
+                  type: object
+                  description: Parameters required by the collector.
+                  example:
+                    username: fbx123456789
+                    passsword: Y%2j7Fc$#$y
+                    note: The company Free account
               required:
-                - name
-                - link
+              - key
+              - params
       responses:
         '200':
           description: Success
+        '400':
+          description: Error
+        '401':
+          description: Invalid oauth token
+  "/credential/{id}":
+    delete:
+      summary: Delete credential
+      description: Delete the credential for the given user.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error
+        '401':
+          description: Invalid oauth token
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
   schemas:
+    bearer:
+      type: string
+      description: Bearer token to authenticate the customer.
+      example: Bearer <token>
+    remote_id:
+      type: object
+      properties:
+        remote_id:
+          type: string
+          description: Remote id of the user.
+          example: 121439
+      required:
+      - remote_id
+    token:
+      type: string
+      description: Token to be used by the client.
+      example: 69b67c9f...be77ffeb
+    credential_id:
+      type: object
+      properties:
+        credential_id:
+          type: string
+          description: Id of the credentials to use to collect invoices.
+          example: 6776b5258821de266afbc3f6
+      required:
+      - credential_id
+    credentials:
+      type: array
+      description: List of credentials.
+      items:
+        type: object
+        properties:
+          credential_id:
+            type: string
+            description: Id of the credential.
+            example: 6776b5258821de266afbc3f6
+          note:
+            type: string
+            description: Custom note for this credential.
+            example: Regular account
+          state:
+            type: string
+            description: State of the credential.
+            enum: [PENDING, VALID, ERROR]
+            example: VALID
+          error:
+            type: string
+            description: Error message if the state is ERROR.
+            example: ""
+          collector:
+            "$ref": "#/components/schemas/collector"            
+        required:
+        - credential_id
+        - note
+        - state
+        - error
+        - collector
     pong:
       type: object
       properties:
@@ -190,7 +320,7 @@ components:
     collector:
       type: object
       properties:
-        collector:
+        key:
           type: string
           description: Key of the collector. This key is used to identify the collector in the collect request.
           example: free
@@ -220,24 +350,42 @@ components:
           type: array
           description: List of parameters that the collector requires.
           items:
-            type: object
-            properties:
-              name:
-                type: string
-                description: Name of the parameter.
-                example: username
-              description:
-                type: string
-                description: Description of the parameter.
-                example: Email address of the account
-              mandatory:
-                type: boolean
-                description: Whether the parameter is mandatory or not.
-                example: true
-            required:
-            - name
-            - description
-            - mandatory
+            - type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the parameter.
+                  example: username
+                description:
+                  type: string
+                  description: Description of the parameter.
+                  example: Email address of the account
+                mandatory:
+                  type: boolean
+                  description: Whether the parameter is mandatory or not.
+                  example: true
+              required:
+              - name
+              - description
+              - mandatory
+            - type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the parameter.
+                  example: password
+                description:
+                  type: string
+                  description: Description of the parameter.
+                  example: Password of the account
+                mandatory:
+                  type: boolean
+                  description: Whether the parameter is mandatory or not.
+                  example: true
+              required:
+              - name
+              - description
+              - mandatory
       required:
       - collector
       - name
@@ -246,38 +394,35 @@ components:
       - website
       - logo
       - params
-    invoices:
-      type: array
-      description: List of invoices collected.
-      items:
-        type: object
-        properties:
-          id:
-            type: string
-            description: Unique identifier for the invoice. It changes from collector to collector.
-            example: 45FDD1544
-          type:
-            type: string
-            description: Type of the invoice.
-            example: base64
-          mime:
-            type: string
-            description: MIME type of the invoice.
-            example: application/pdf
-          timestamp:
-            type: integer
-            description: Timestamp when the invoice was created.
-            example: 1731603196
-          data:
-            type: string
-            description: Base64 encoded data of the invoice.
-            example: iVBORw0KGgoAAAAN...RU5ErkJggg==
-        required:
-          - id
-          - type
-          - mime
-          - timestamp
-          - data
+    invoice:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the invoice for this collector.
+          example: 45FDD1544
+        type:
+          type: string
+          description: Type of the invoice.
+          example: base64
+        mime:
+          type: string
+          description: MIME type of the invoice.
+          example: application/pdf
+        timestamp:
+          type: integer
+          description: Timestamp when the invoice was created.
+          example: 1731603196
+        data:
+          type: string
+          description: Base64 encoded data of the invoice.
+          example: iVBORw0KGgoAAAAN...RU5ErkJggg==
+      required:
+        - id
+        - type
+        - mime
+        - timestamp
+        - data
     error:
       type: object
       properties:
@@ -302,5 +447,3 @@ components:
         - version
         - name
         - message
-security:
-- BearerAuth: []
