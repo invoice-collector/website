@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'InvoiceCollector', // Usually your GitHub org/user name.
+  organizationName: 'invoice-collector', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -94,7 +94,7 @@ const config = {
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
-            href: 'https://github.com/InvoiceCollector/InvoiceCollector',
+            href: 'https://github.com/invoice-collector/invoice-collector',
             label: 'GitHub',
             position: 'right',
           },
@@ -129,7 +129,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/InvoiceCollector/InvoiceCollector',
+                href: 'https://github.com/invoice-collector/invoice-collector',
               },
             ],
           },
