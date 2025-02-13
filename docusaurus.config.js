@@ -86,12 +86,6 @@ const config = {
             position: 'right',
             label: 'Doc',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'right',
-            label: 'Tutorials',
-          },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
             href: 'https://github.com/invoice-collector/invoice-collector',
@@ -108,12 +102,8 @@ const config = {
             items: [
               {
                 label: 'Doc',
-                to: '/docs/docs',
-              },
-              {
-                label: 'Tutorials',
-                to: '/docs/tutorials',
-              },
+                to: '/docs',
+              }
             ],
           },
           {
