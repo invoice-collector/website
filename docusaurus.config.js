@@ -132,6 +132,19 @@ const config = {
               },
             ],
           },*/
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms of Use',
+                to: '/terms-of-use',
+              },
+              {
+                label: 'Privacy Policy',
+                to: '/privacy-policy',
+              },
+            ],
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Invoice-Collector`,
       },
