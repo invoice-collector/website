@@ -66,8 +66,12 @@ Si vous n’avez pas conclu un contrat directement avec nous mais que vous utili
 
 - Respecter nos obligations légales et réglementaires. Nous vous informons, lors de la collecte de vos données personnelles, si certaines données doivent être obligatoirement renseignées ou si elles sont facultatives.  
 
-//TODO TABLE
-
+| Pourquoi collectons-nous vos données personnelles ? | Quelles sont les catégories de données personnelles que nous collectons à cette fin ? | Quelle est la base juridique nous autorisant à collecter vos données personnelles pour une telle finalité ? |
+|---|---|---|
+Nous collectons vos données personnelles afin de vous identifier lors de l’utilisation de notre plateforme et afin de vous adresser des messages liés à la bonne administration de notre plateforme (ex : confirmation d’inscription, modification de la plateforme ou des conditions d’utilisation etc…) | <ul><li>Données d’identification</li><li>Données de connexion</li></ul> | Ce traitement a pour base juridique l’exécution du contrat nous liant lors de votre acceptation de nos conditions générales au moment de la création de son compte |
+Nous collectons vos données personnelles afin de vous livrer votre commande/service. | <ul><li>Données d’identification</li></ul> | Ce traitement a pour base juridique l’exécution du contrat nous liant lors de votre acceptation de nos conditions générales au moment de la création de son compte |
+| Nous collectons vos données personnelles afin d’améliorer et optimiser notre plateforme, par exemple en étudiant votre comportement lors de votre visite et d’en tirer des conséquences afin d’apporter des modifications en termes d’ergonomie et expérience utilisateur. | <ul><li>Données d’utilisation et consommation</li><li>Données de connexion</li></ul> | Ce traitement a pour base juridique notre intérêt légitime à fournir et améliorer l’expérience utilisateur de nos visiteurs et membres de notre plateforme.  |
+| Si vous avez conclu un contrat pour utiliser nos services directement avec nous, nous collectons vos données personnelles afin de comprendre quelles sont vos préférences et vous proposer des offres commerciales correspondant à des services/produits analogues à ceux déjà commandés. | <ul><li>Données d’utilisation et consommation</li><li>Données d’identification</li></ul> | Ce traitement a pour base juridique notre intérêt légitime à fournir et améliorer l’expérience utilisateur de nos visiteurs et membres de notre plateforme. |
 
 Nous vous informons, lors de la collecte de vos données personnelles, si certaines données doivent être obligatoirement renseignées ou si elles sont facultatives. 
 
