@@ -2,13 +2,13 @@
 
 https://invoice-collector.com, https://api.invoice-collector.com et https://demo.invoice-collector.com (ci-après, la « Plateforme »)
 
-La présente politique de confidentialité a pour vocation de vous aider à comprendre comment sont collectées, traitées et conservées vos données personnelles par l’entreprise individuelle de Monsieur Lucas BERGERON (ci-après, « EI BERGERON ») via la plateforme. 
+La présente politique de confidentialité a pour vocation de vous aider à comprendre comment sont collectées, traitées et conservées vos données personnelles par l’entreprise individuelle de Monsieur Lucas BERGERON (ci-après, « Nous ») via la plateforme. 
 
-EI BERGERON comprend que la protection des données et de la vie privée soit un enjeu pour l’ensemble des utilisateurs visitant la plateforme.  
+Nous comprenons que la protection des données et de la vie privée soit un enjeu pour l’ensemble des utilisateurs visitant la plateforme.  
 
-EI BERGERON s’engage, conformément à la règlementation RGPD, tel que définie ci-après, à respecter votre vie privée et à protéger vos données à caractère personnel, c’est à dire susceptible de vous identifier directement ou indirectement en tant que personne. 
+Nous nous engageons, conformément à la règlementation RGPD, tel que définie ci-après, à respecter votre vie privée et à protéger vos données à caractère personnel, c’est à dire susceptible de vous identifier directement ou indirectement en tant que personne. 
 
-L’objectif de la présente politique de confidentialité est de vous présenter les engagements de EI BERGERON en la matière. 
+L’objectif de la présente politique de confidentialité est de vous présenter nos engagements en la matière. 
 
 ## 1. Définition 
 
