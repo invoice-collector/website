@@ -103,6 +103,10 @@ const config = {
               {
                 label: 'Doc',
                 to: '/docs',
+              },
+              {
+                label: 'Demo',
+                to: '/demo',
               }
             ],
           },
