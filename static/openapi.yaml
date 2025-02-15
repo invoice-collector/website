@@ -27,8 +27,16 @@ paths:
                   "$ref": "#/components/schemas/collector"
         '400':
           description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/customer":
     get:
       summary: Customer
@@ -48,11 +56,19 @@ paths:
                 "$ref": "#/components/schemas/customer"
         '401':
           description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
       callbacks:
         onInvoiceCollected:
-          invoice:
+          Invoice:
             post:
               requestBody:
                 required: true
@@ -86,7 +102,7 @@ paths:
                 '200':
                   description: Success
                 '400':
-                  description: Success
+                  description: Error
   "/authorize":
     post:
       summary: Authorize
@@ -112,10 +128,22 @@ paths:
                 "$ref": "#/components/schemas/authorization_response"
         '400':
           description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/user":
     delete:
       summary: User
@@ -142,10 +170,22 @@ paths:
           description: Success
         '400':
           description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     get:
       summary: User
       description: UI used by the user to manage its credentials.
@@ -164,8 +204,16 @@ paths:
                 type: string
         '401':
           description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/credentials":
     get:
       summary: Credentials
@@ -185,8 +233,16 @@ paths:
                 "$ref": "#/components/schemas/credentials"
         '401':
           description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/credential":
     post:
       summary: Credential
@@ -223,10 +279,22 @@ paths:
           description: Success
         '400':
           description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/credential/{id}":
     delete:
       summary: Credential
@@ -242,12 +310,28 @@ paths:
           description: Success
         '400':
           description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '403':
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
 components:
   schemas:
     locale:
@@ -472,3 +556,18 @@ components:
         - timestamp
         - link
         - data
+    error:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of the error.
+          default: error
+          exemple: error
+          enum: [error]
+        message:
+          type: string
+          description: Error message.
+      required:
+        - type
+        - message
