@@ -419,11 +419,16 @@ components:
     customer:
       type: object
       properties:
+        name:
+          type: string
+          description: Name of the customer.
+          example: Awesome Company Name
         callback:
           type: string
           description: Callback url at which the new invoices are sent.
           example: https://path.to/callback
       required:
+      - name
       - callback
     collector:
       type: object
