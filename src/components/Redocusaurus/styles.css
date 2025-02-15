@@ -34,6 +34,11 @@
 
 /* ------- Right Panel Overrides ------- */
 
+:root {
+  /* Fix weird overlay on curly braces on light theme */
+  --ifm-code-background: none;
+}
+
 .redocusaurus code {
   color: var(--ifm-color-emphasis-100);
   padding: 0px;
