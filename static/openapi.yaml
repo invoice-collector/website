@@ -116,33 +116,6 @@ paths:
           description: Unauthorized - Invalid bearer token
         '500':
           description: Internal server error
-  "/collect":
-    post:
-      summary: Collect invoices
-      description: Request a collect of invoices for the given credential.
-      parameters:
-        - in: header
-          name: Authorization
-          required: true
-          schema:
-            "$ref": "#/components/schemas/bearer"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              "$ref": "#/components/schemas/credential_id"
-      responses:
-        '200':
-          description: Success
-        '400':
-          description: Bed Request
-        '401':
-          description: Unauthorized - Invalid bearer token
-        '403':
-          description: Forbidden
-        '500':
-          description: Internal server error
   "/user":
     delete:
       summary: User
