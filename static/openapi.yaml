@@ -3,12 +3,19 @@ info:
   title: Invoice Collector Container
   version: '0.1'
 servers:
+  - url: https://api.invoice-collector.com/api/v1
   - url: https://localhost:8080/api/v1
 paths:
   "/collectors":
     get:
       summary: Collectors
       description: List all the available collectors.
+      parameters:
+        - in: query
+          name: locale
+          required: false
+          schema:
+            "$ref": "#/components/schemas/locale"
       responses:
         '200':
           description: List of available collectors
@@ -19,7 +26,67 @@ paths:
                 items:
                   "$ref": "#/components/schemas/collector"
         '400':
-          description: Error
+          description: Bed Request
+        '500':
+          description: Internal server error
+  "/customer":
+    get:
+      summary: Customer
+      description: Get information about the you, the customer.
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/customer"
+        '401':
+          description: Unauthorized - Invalid bearer token
+        '500':
+          description: Internal server error
+      callbacks:
+        onInvoiceCollected:
+          invoice:
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the payload.
+                          enum:
+                            - invoice
+                          example: invoice
+                        id:
+                          type: string
+                          description: Id of the collector.
+                          example: free
+                        remote_id:
+                          type: string
+                          description: Remote id of the user.
+                          example: 121439
+                        invoice:
+                          "$ref": "#/components/schemas/invoice"
+                      required:
+                        - type
+                        - id
+                        - remote_id
+                        - invoice
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Success
   "/authorize":
     post:
       summary: Authorize
@@ -35,18 +102,20 @@ paths:
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/remote_id"
+              "$ref": "#/components/schemas/authorization_body"
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/token"
+                "$ref": "#/components/schemas/authorization_response"
         '400':
-          description: Error
+          description: Bed Request
         '401':
-          description: Invalid bearer token
+          description: Unauthorized - Invalid bearer token
+        '500':
+          description: Internal server error
   "/collect":
     post:
       summary: Collect invoices
@@ -67,80 +136,45 @@ paths:
         '200':
           description: Success
         '400':
-          description: Error
+          description: Bed Request
         '401':
-          description: Invalid bearer token
-      callbacks:
-        onInvoiceCollected:
-          invoice:
-            post:
-              requestBody:
-                required: true
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          description: Type of the payload.
-                          enum:
-                            - invoice
-                            - error
-                          example: invoice
-                        key:
-                          type: string
-                          description: Key of the collector.
-                          example: free
-                        remote_id:
-                          type: string
-                          description: Remote id of the user.
-                          example: 121439
-                        invoice:
-                          "$ref": "#/components/schemas/invoice"
-                      required:
-                        - type
-                        - key
-                        - invoice
-              responses:
-                '200':
-                  description: Success
-          error:
-            post:
-              requestBody:
-                required: true
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          description: Type of the payload.
-                          enum:
-                            - invoice
-                            - error
-                          example: invoice
-                        key:
-                          type: string
-                          description: Key of the collector.
-                          example: free
-                        remote_id:
-                          type: string
-                          description: Remote id of the user.
-                          example: 121439
-                        error:
-                          "$ref": "#/components/schemas/error"
-                      required:
-                        - type
-                        - key
-                        - error
-              responses:
-                '200':
-                  description: Success
+          description: Unauthorized - Invalid bearer token
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal server error
   "/user":
+    delete:
+      summary: User
+      description: Delete the user and all its credentials.
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                remote_id:
+                  "$ref": "#/components/schemas/remote_id"
+              required:
+              - remote_id
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bed Request
+        '401':
+          description: Unauthorized - Invalid oauth token
+        '500':
+          description: Internal server error
     get:
-      summary: Manage credentials
+      summary: User
       description: UI used by the user to manage its credentials.
       parameters:
         - in: query
@@ -155,13 +189,13 @@ paths:
             text/html:
               schema:
                 type: string
-        '400':
-          description: Error
         '401':
-          description: Invalid oauth token
+          description: Unauthorized - Invalid oauth token
+        '500':
+          description: Internal server error
   "/credentials":
     get:
-      summary: List credentials
+      summary: Credentials
       description: List all the credentials for the user.
       parameters:
         - in: query
@@ -176,13 +210,13 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/credentials"
-        '400':
-          description: Error
         '401':
-          description: Invalid oauth token
+          description: Unauthorized - Invalid oauth token
+        '500':
+          description: Internal server error
   "/credential":
     post:
-      summary: Add credential
+      summary: Credential
       description: Add a new credential for the given user.
       parameters:
         - in: query
@@ -197,30 +231,32 @@ paths:
             schema:
               type: object
               properties:
-                key:
+                id:
                   type: string
-                  description: Key of the collector to use.
+                  description: Id of the collector to use.
                   example: free
                 params:
                   type: object
                   description: Parameters required by the collector.
                   example:
-                    username: fbx123456789
-                    passsword: Y%2j7Fc$#$y
-                    note: The company Free account
+                    id: "fbx123456789"
+                    password: "Y%2j7Fc$#$y"
+                    note: "The company Free account"
               required:
-              - key
+              - id
               - params
       responses:
         '200':
           description: Success
         '400':
-          description: Error
+          description: Bed Request
         '401':
-          description: Invalid oauth token
+          description: Unauthorized - Invalid oauth token
+        '500':
+          description: Internal server error
   "/credential/{id}":
     delete:
-      summary: Delete credential
+      summary: Credential
       description: Delete the credential for the given user.
       parameters:
         - in: query
@@ -232,44 +268,73 @@ paths:
         '200':
           description: Success
         '400':
-          description: Error
+          description: Bed Request
         '401':
-          description: Invalid oauth token
+          description: Unauthorized - Invalid oauth token
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal server error
 components:
   schemas:
+    locale:
+      type: string
+      description: Language of the user.
+      enum: [en, fr]
+      default: en
+      example: fr
     bearer:
       type: string
       description: Bearer token to authenticate the customer.
       example: Bearer <token>
     remote_id:
+      type: string
+      description: Remote id of the user.
+      example: 121439
+    authorization_body:
       type: object
       properties:
         remote_id:
+          "$ref": "#/components/schemas/remote_id"
+        locale:
+          "$ref": "#/components/schemas/locale"
+        email:
           type: string
-          description: Remote id of the user.
-          example: 121439
+          description: Email of the user. This email is used to send the [Trems of Use](/terms-of-use).
+          example: user@example.com
       required:
       - remote_id
+      - locale
+      - email
+    authorization_response:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Token to be used by the client.
+          example: 69b67c9f...be77ffeb
+      required:
+      - token
     token:
       type: string
-      description: Token to be used by the client.
-      example: 69b67c9f...be77ffeb
+      description: Token to be used by the client. You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint.
+      example: <token>
     credential_id:
       type: object
       properties:
-        credential_id:
+        id:
           type: string
           description: Id of the credentials to use to collect invoices.
           example: 6776b5258821de266afbc3f6
       required:
-      - credential_id
+      - id
     credentials:
       type: array
       description: List of credentials.
       items:
         type: object
         properties:
-          credential_id:
+          id:
             type: string
             description: Id of the credential.
             example: 6776b5258821de266afbc3f6
@@ -280,49 +345,35 @@ components:
           state:
             type: string
             description: State of the credential.
-            enum: [PENDING, VALID, ERROR]
-            example: VALID
+            enum: [PENDING, SUCCESS, ERROR]
+            example: SUCCESS
           error:
             type: string
-            description: Error message if the state is ERROR.
+            description: Bed Request message if the state is `ERROR`. Empty otherwise.
             example: ""
           collector:
-            "$ref": "#/components/schemas/collector"            
+            "$ref": "#/components/schemas/collector"
         required:
-        - credential_id
+        - id
         - note
         - state
         - error
         - collector
-    pong:
+    customer:
       type: object
       properties:
-        client:
+        callback:
           type: string
-          description: Client that sent the request, `null` if the client could not be found.
-          example: My-Company-Name
-        type:
-          type: string
-          description: Type of the response.
-          enum:
-          - success
-          - warning
-          - error
-          example: success
-        message:
-          type: string
-          description: Message from the server.
-          example: Great job! You can reach the server and you are ready to collect invoices...
+          description: Callback url at which the new invoices are sent.
+          example: https://path.to/callback
       required:
-      - client
-      - type
-      - message
+      - callback
     collector:
       type: object
       properties:
-        key:
+        id:
           type: string
-          description: Key of the collector. This key is used to identify the collector in the collect request.
+          description: Id of the collector.
           example: free
         name:
           type: string
@@ -336,6 +387,11 @@ components:
           type: string
           description: Version of the collector.
           example: 1
+        type:
+          type: string
+          description: Type of collector.
+          enum: [web, api]
+          example: web
         website:
           type: string
           description: Link to the website of the collector.
@@ -346,6 +402,10 @@ components:
           description: Link to the logo of the collector.
           format: uri
           example: https://fr.wikipedia.org/wiki/Free_(entreprise)#/media/Fichier:Free_logo.svg
+        useProxy:
+          type: boolean
+          description: Whether the collector uses a proxy or not.
+          example: true
         params:
           type: array
           description: List of parameters that the collector requires.
@@ -355,7 +415,7 @@ components:
                 name:
                   type: string
                   description: Name of the parameter.
-                  example: username
+                  example: email
                 description:
                   type: string
                   description: Description of the parameter.
@@ -386,26 +446,37 @@ components:
               - name
               - description
               - mandatory
+        entryUrl:
+          type: string
+          description: URL to the entry point of the collector. For collectors of type `web` only.
+          example: https://www.mycollector.com/login
+        baseUrl:
+          type: string
+          description: Base URL of the collector. For collectors of type `api` only.
+          example: https://api.mycollector.com
       required:
-      - collector
+      - id
       - name
       - description
       - version
+      - type
       - website
       - logo
+      - useProxy
       - params
     invoice:
       type: object
       properties:
         id:
           type: string
-          description: Unique identifier for the invoice for this collector.
+          description: Id of the invoice for this collector.
           example: 45FDD1544
         type:
           type: string
           description: Type of the invoice.
+          enum: [base64]
           example: base64
-        mime:
+        mimetype:
           type: string
           description: MIME type of the invoice.
           example: application/pdf
@@ -413,37 +484,18 @@ components:
           type: integer
           description: Timestamp when the invoice was created.
           example: 1731603196
+        link:
+          type: string
+          description: Link from which the invoice was downloaded.
+          example: https://mycollector/direct/link/to/my/invoice
         data:
           type: string
-          description: Base64 encoded data of the invoice.
+          description: Base64 encoded invoice.
           example: iVBORw0KGgoAAAAN...RU5ErkJggg==
       required:
         - id
         - type
-        - mime
+        - mimetype
         - timestamp
+        - link
         - data
-    error:
-      type: object
-      properties:
-        collector:
-          type: string
-          description: Key of the collector where the error occurred.
-          example: free
-        version:
-          type: string
-          description: Version of the collector.
-          example: 1
-        name:
-          type: string
-          description: Name of the error.
-          example: AuthenticationError
-        message:
-          type: string
-          description: Error message.
-          example: Login or password is incorrect
-      required:
-        - collector
-        - version
-        - name
-        - message
