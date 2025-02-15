@@ -11,7 +11,3 @@ sidebar_position: 1
 ### Web collector
 
 ### API collector
-
-### Email collector
-
-### Blockchain collector
