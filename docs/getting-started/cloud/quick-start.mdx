@@ -68,7 +68,7 @@ Json body response:
 }
 ```
 
-This is the `callback` at which invoices will be sent. Please email us at contact@invoice-collector.com to update your `callback`. An automatic process will be setup soon.
+This is the `callback` at which invoices will be sent. Please email us at contact@invoice-collector.com to update your `callback`. A POST request to the `/customer` endpoint will be setup soon to update your informations by your own.
 
 ## Generate a user token
 
@@ -106,6 +106,8 @@ Once you have the user token, you must redirect the user to the following endpoi
 1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
 2. The user can add new collectors and remove existing ones.
 3. Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
+
+And that is it 🎉 Now, you just have to wait!
 
 :::note
 
