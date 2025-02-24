@@ -37,9 +37,7 @@ You can request a new bearer token anytime by providing the email used to contac
 <br/>
 
 :::warning
-
 Be aware that we do not have access to your bearer token and it must be keeped safe. **This token has an unlimited expiry duration.**
-
 :::
 
 #### User token
@@ -53,7 +51,7 @@ curl https://api.invoice-collector.com/api/v1/example?token=<token>
 
 ## First request
 
-We will start with a simple request to the endpoint `/customer` to retreive your informations:
+We will start with a simple request to the endpoint `/customer` to retrieve your informations:
 
 ```bash
 curl -H "Authorization: Bearer <bearer_token>" https://api.invoice-collector.com/api/v1/customer
@@ -107,7 +105,7 @@ Once you have the user token, you must redirect the user to the following endpoi
 2. The user can add new collectors and remove existing ones.
 3. Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
 
-And that is it 🎉 Now, you just have to wait!
+And that is it 🎉 Now, you just have to wait! New invoices will be sent to your callback.
 
 :::note
 
@@ -136,7 +134,5 @@ curl -X DELETE https://api.invoice-collector.com/api/v1/user \
 All the credentials, collectors and user informations will be removed from the database.
 
 :::note
-
 Please refer to the [API Reference](../../api.mdx) for more advanced requests.
-
 :::
