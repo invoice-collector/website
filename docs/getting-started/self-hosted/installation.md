@@ -7,8 +7,8 @@ sidebar_position: 1
 ### Requirements
 
 Hardware:
-- 8 Gb of memory
-- 4 CPUs
+- 4 Gb of memory
+- 2 CPUs
 
 Software:
 - [Install docker engine](https://docs.docker.com/engine/)
@@ -20,32 +20,44 @@ In a new folder, create a `docker-compose.yml` file with the following content:
 ```yaml md title="docker-compose.md"
 services:
   invoice-collector:
-    image: invoice-collector/invoice-collector:latest
+    image: ghcr.io/invoice-collector/invoice-collector:latest
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 8080:8080
     depends_on:
-      - redis
+      - mongodb
     environment:
       - PORT=8080
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - LOG_SERVER_ENDPOINT=https://api.invoice-collector.com
+      - REGISTRY_SERVER_ENDPOINT=https://registry.invoice-collector.com
+      - DATABASE_URI=mongodb://mongodb:27017
+      - DATABASE_MONGODB_NAME=prod
+      - SECRET_MANAGER_TYPE=bitwarden
+      - SECRET_MANAGER_BITWARDEN_API_URI=https://vault.bitwarden.eu/api
+      - SECRET_MANAGER_BITWARDEN_IDENTITY_URI=https://vault.bitwarden.eu/identity
+      - SECRET_MANAGER_BITWARDEN_ACCESS_TOKEN=
+      - SECRET_MANAGER_BITWARDEN_ORGANIZATION_ID=
+      - SECRET_MANAGER_BITWARDEN_PROJECT_ID=
+      - PROXY_TYPE=none
+      - ENV=prod
     command: npm run start
 
-  redis:
-    image: redis:latest
+  mongodb:
+    image : mongo:8.0.3
+    container_name: mongodb
+    volumes:
+      - ./mongodb/data:/data/db
+      - ./mongodb/config:/etc/mongo/
     ports:
-      - 6379:6379
+      - 27017:27017
+    command: --logpath /dev/null
+
 ```
 
-:::warning[Warning]
+Checkout the [environment variables page](../../developers/environment-variables.md) to see what to set.
 
-The docker image `invoice-collector/invoice-collector` is not available on docker-hub yet. You won't be able to pull it.
-
-:::
+### Start & Stop
 
 Start the container:
 ```bash
@@ -53,7 +65,7 @@ docker-compose up -d
 ```
 
 :::info[INFO]
-From this point on, we will assume that the _Invoice-Collector Container_ is reachable at `https://localhost:8080`.
+From this point on, we will assume that the _Invoice-Collector Container_ is reachable at `http://localhost:8080`.
 :::
 
 

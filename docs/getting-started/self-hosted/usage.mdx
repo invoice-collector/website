@@ -2,87 +2,138 @@
 sidebar_position: 2
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Button from '@site/src/components/Button';
 
 # Usage
 
-List all the available collectors and collect your first invoice.
+The Invoice-Collector API is organized around REST. Our API has predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
 
-:::info[INFO]
-In this section, we assume that the _Invoice-Collector Container_ is reachable at `https://localhost:8080`. If your container is not running yet, [see the installation section](./installation.md).
+The server base url is:
+
+```
+http://localhost:8080/api/v1
+```
+
+In this documentation, the following terms are used:
+
+- **Customer**: Refers to you, as a self-hosted customer with free licence.
+- **User**: Refers to the individual users using your self-hosted instance.
+
+:::tip
+It can be usefull to have one user per company and per private individual.
 :::
 
-### List collectors
+## Authentication
 
-Open a terminal and run the following command to list all the available collectors.
+#### Bearer Token Authentication
+
+This authentication method is reserved for customer endpoints only. It involves sending the token in the Authorization header of the HTTP request.
 
 ```bash
-curl -X GET https://localhost:8080/api/v1/collectors
+curl -H "Authorization: Bearer <bearer_token>" http://localhost:8080/api/v1/example
 ```
 
-### Collect invoices
+Yon can retrieve your bearer token from the container logs:
 
-In this example we will collect invoices from the `free` collector:
-
-
-
-<Tabs>
-  <TabItem value="curl" label="Curl" default>
 ```bash
-curl -X POST \
+//TODO
+```
+
+:::warning
+Be aware that we do not have access to your bearer token and it must be keeped safe. **This token has an unlimited expiry duration.**
+:::
+
+#### User token
+
+This authentication method is reserved for user endpoints only. It involves appending the token as a query parameter in the URL.
+We will see below that user tokens have a short expiry duration.
+
+```bash
+curl http://localhost:8080/api/v1/example?token=<token>
+```
+
+## First request
+
+We will start with a simple request to the endpoint `/customer` to retrieve your informations:
+
+```bash
+curl -H "Authorization: Bearer <bearer_token>" http://localhost:8080/api/v1/customer
+```
+
+Json body response:
+
+```json
+{
+  "name": "default",
+  "callback": "https://path.to/callback"
+}
+```
+
+This is the `callback` at which invoices will be sent. A POST request to the `/customer` endpoint will be setup soon to update your informations by your own.
+
+## Generate a user token
+
+When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server. You can make a POST request to the `/authorize` endpoint to generate the token.
+
+```bash
+curl -X POST http://localhost:8080/api/v1/authorize \
+    -H "Authorization: Bearer <bearer_token>" \
     -H "Content-Type: application/json" \
-    -d "{\"webhook\":\"https://my.custom/webhook/url\",\"collector\":\"free\",\"params\":{\"username\":\"my.email@example.com\",\"password\":\"mypassword\"}}" \
-    localhost:8080/api/v1/collect
+    -d '{
+        "email": "user@example.com",
+        "locale": "fr",
+        "remote_id": "A1B2C3D4"
+    }'
 ```
-  </TabItem>
-  <TabItem value="python" label="Python">
-```python
-import requests
-import json
 
-url = "http://localhost:8080/api/v1/collect"
-headers = {
-    "Content-Type": "application/json"
+- `email` is required to send the [Terms of Use](https://invoice-collector.com/terms-of-use), allong with a verification code to the new user, it is never stored in the database. The email is immediatly sent.
+- `locale` is the language of the user. Only `fr` and `en` are currently available.
+- `remote_id` is used to identify the user on your system. All invoices sent to your `callback` will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
+
+Json body response:
+
+```json
+{
+  "token": "fca8a33006220b69dfc922596e77ffe1c2fe5d9f89664fe78f305ac836927fe52a788208d2f881fb829141eac12d2c384468d5e6a89c92dbe40f64a1366d2f22"
 }
-data = {
-    "webhook": "https://my.custom/webhook/url",
-    "collector": "free",
-    "params": {
-        "username": "my.email@example.com",
-        "password": "mypassword"
-    }
-}
-
-response = requests.post(url, headers=headers, data=json.dumps(data))
 ```
-  </TabItem>
-  <TabItem value="nodejs" label="NodeJS">
-```javascript
-const axios = require('axios');
 
-const url = 'http://localhost:8080/api/v1/collect';
-const headers = {
-    'Content-Type': 'application/json'
-};
-const data = {
-    webhook: 'https://my.custom/webhook/url',
-    collector: 'free',
-    params: {
-        username: 'my.email@example.com',
-        password: 'mypassword'
-    }
-};
+This user `token` has an expiry duration of 10 minutes and can be used to add and remove collectors.
 
-axios.post(url, data, { headers })
-    .then(response => {
-        // Do something
-    })
-    .catch(error => {
-        // Do something
-    });
+## Add and remove collectors
+
+Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`http://localhost:8080/api/v1/user?token=<token>`](http://localhost:8080/api/v1/user?token=<token>)
+
+1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
+2. The user can add new collectors and remove existing ones.
+3. Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
+
+And that is it 🎉 Now, you just have to wait! New invoices will be sent to your callback.
+
+:::note
+Users who have already accepted the [Terms of Use](https://invoice-collector.com/terms-of-use) will not be asked to accept them again and they will not receive any email.
+:::
+
+<div style={{ textAlign: 'center' }}>
+Wondering what the UX looks like?
+  <Button label="Try the DEMO" link="/demo" />
+</div>
+
+## Remove a user
+
+If a user does no longer needs automatic invoice collection, it can be removed:
+
+```bash
+curl -X DELETE http://localhost:8080/api/v1/user \
+    -H "Authorization: Bearer <bearer_token>" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "remote_id": "A1B2C3D4"
+    }'
 ```
-  </TabItem>
-</Tabs>
 
-Great job, you just collected your first invoice. See the [API Reference](../../api.mdx) for more details.
+All the credentials, collectors and user informations will be removed from the database.
+
+:::note
+Please refer to the [API Reference](../../api.mdx) for more advanced requests.
+:::

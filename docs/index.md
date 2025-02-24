@@ -21,10 +21,13 @@ Here is how Invoice-Collector fits in your infrastructure:
 
 ![Diagram is not loading properly](./sequence_diagram/infra.svg)
 
-- **Requestor**: Machine requesting a collect to the _Invoice-Collector_ container. The action is queued and is not immediatly performed.
-- **Invoice-Collector Container**: Our docker container performs the collection requested by the _Requestor_ and sends the invoices to a callback endpoint once done, the _Handler_. Successes and errors are logged to the _Invoice-Collector Server_
-- **Handler**: Receives the invoices, or an error if something went wrong.
-- **Invoice-Collector Server**: Receives the logs from the running containers. This server is only used to perform analytics, maintain collectors and fix bugs.
+1. User connects to the app and request to modify its collectors.
+2. App requests a token to Invoice-Collector matching the user and returns it to the user.
+3. The user accepts the [Terms of Use](/terms-of-use), add and delete collectors.
+4. Credentials are stored in the secret manager.
+5. Invoice-Collector periodically retrieve the credentials from secret manager and collect invoices
+6. New invoices are sent to the app
+7. Success and error are sent to the log server in order to maintain collectors and perform analytics.
 
 :::info[INFO]
 Credentials and tokens are never sent to the _Invoice-Collector Server_. Sensitive datas never leave your infrastructure.
