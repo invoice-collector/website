@@ -2,11 +2,11 @@
 sidebar_position: 2
 ---
 
+# Configuration
+
 :::info[INFO]
 In this section, we assume that the _Invoice-Collector Container_ is reachable at `http://localhost:8080`. If your container is not running yet, [see the installation section](./installation.md).
 :::
-
-# Configuration
 
 ### Networking
 
