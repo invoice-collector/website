@@ -81,6 +81,13 @@ const config = {
         },
         items: [
           {
+            to: 'demo',
+            label: 'Try the Demo',
+            position: 'right',
+            className: 'button button--primary',
+            style: { color: 'white' }
+          },
+          {
             type: 'docSidebar',
             sidebarId: 'documentationSidebar',
             position: 'right',
