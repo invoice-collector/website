@@ -13,9 +13,11 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Tired of manually collecting invoices?
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          Invoice-Collector does it for you in seconds ⏰
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <Layout
       title="Free automatic invoice collector"
-      description="Free automatic invoice collector 🧾 Collect your invoices in seconds ⏰ Docker container 🐳">
+      description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
