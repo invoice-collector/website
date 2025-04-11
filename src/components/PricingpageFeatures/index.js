@@ -10,9 +10,10 @@ const FeatureList = [
     price: '0€',
     unit: 'forever',
     features: [
-      'Unlimited collectors',
-      'Privacy & security',
-      'Core and community collectors'
+      {text: 'Unlimited collectors', checked: true},
+      {text: 'Privacy & security', checked: true},
+      {text: 'Core and community collectors', checked: true},
+      {text: 'Premium collectors', checked: false},
     ]
   },
   {
@@ -21,12 +22,13 @@ const FeatureList = [
     price: '100€',
     unit: '/ collector / month',
     features: [
-      'Unlimited collectors',
-      'Privacy & security',
-      'Core, community and premium collectors',
-      'Automatic updates',
-      'Support and maintenance',
-      'Custom collectors'
+      {text: 'Unlimited collectors', checked: true},
+      {text: 'Privacy & security', checked: true},
+      {text: 'Core and community collectors', checked: true},
+      {text: 'Premium collectors', checked: true},
+      {text: 'Automatic updates', checked: true},
+      {text: 'Support and maintenance', checked: true},
+      {text: 'Custom collectors', checked: true},
     ]
   },
   {
@@ -35,14 +37,15 @@ const FeatureList = [
     price: '0.01€',
     unit: '/ collector / user / month',
     features: [
-      'Unlimited collectors',
-      'Data privacy',
-      'Enhanced credentials security',
-      'Core, community and premium collectors',
-      'Automatic updates',
-      'Support and maintenance',
-      'Custom collectors',
-      'On demand features'
+      {text: 'Unlimited collectors', checked: true},
+      {text: 'Data privacy', checked: true},
+      {text: 'Enhanced Data credentials security', checked: true},
+      {text: 'Core and community collectors', checked: true},
+      {text: 'Premium collectors', checked: true},
+      {text: 'Automatic updates', checked: true},
+      {text: 'Support and maintenance', checked: true},
+      {text: 'Custom collectors', checked: true},
+      {text: 'On demand features', checked: true},
     ]
   },
 ];
@@ -62,7 +65,13 @@ function Feature({title, offer, price, unit, features}) {
         )}
         <ul>
           {features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
+            <li key={idx}>
+              <img 
+                src={feature.checked ? "img/icon-check-green.svg" : "img/icon-cross-red.svg"} 
+                alt={feature.checked ? "check icon" : "cross icon"}
+              />
+              {feature.text}
+            </li>
           ))}
         </ul>
       </div>

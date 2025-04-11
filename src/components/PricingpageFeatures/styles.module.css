@@ -30,10 +30,11 @@
 
 .feature ul {
   text-align: left;
-  padding-left: 20%;
+  padding-left: 15%;
   list-style: none;
 }
 
-.feature li:before {
-  content: '✓ ';
+.feature img {
+  margin-right: 10px;
+  vertical-align: middle;
 }
