@@ -119,6 +119,10 @@ const config = {
               {
                 label: 'Demo',
                 to: '/demo',
+              },
+              {
+                label: 'Contact',
+                to: 'mailto:Invoice-Collector<contact@invoice-collector.com>',
               }
             ],
           },
