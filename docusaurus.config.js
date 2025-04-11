@@ -81,6 +81,11 @@ const config = {
         },
         items: [
           {
+            to: 'pricing',
+            label: 'Pricing',
+            position: 'left',
+          },
+          {
             to: 'demo',
             label: 'Try the Demo',
             position: 'right',
