@@ -18,7 +18,9 @@ hide_table_of_contents: true
 | `SECRET_MANAGER_BITWARDEN_ACCESS_TOKEN` | ✔️ | Access token for Bitwarden. _See [this tutorial](../tutorials/secret_managers/bitwarden.md) how to create it._ | `*` | Empty | If `SECRET_MANAGER_TYPE` is `bitwarden` |
 | `SECRET_MANAGER_BITWARDEN_ORGANIZATION_ID` | ✔️ | Organization ID for Bitwarden. _See [this tutorial](../tutorials/secret_managers/bitwarden.md) where to get it._ | `*` | Empty | If `SECRET_MANAGER_TYPE` is `bitwarden` |
 | `SECRET_MANAGER_BITWARDEN_PROJECT_ID` | ✔️ | Project ID for Bitwarden.  _See [this tutorial](../tutorials/secret_managers/bitwarden.md) where to get it._ | `*` | Empty | If `SECRET_MANAGER_TYPE` is `bitwarden` |
-| `PROXY_TYPE` | ✔️ | Type of proxy to use. | `none` or `oxylab` | `none` | None |
+| `PROXY_TYPE` | ❌ | Type of proxy to use. | `no_proxy` or `oxylab` | `no_proxy` | None |
 | `PROXY_OXYLAB_USERNAME` | ✔️ | Username of your oxylab account. | `*` | Empty | If `PROXY_TYPE` is `oxylab`. |
 | `PROXY_OXYLAB_PASSWORD` | ✔️ | Password of your oxylab account. | `*` | Empty | If `PROXY_TYPE` is `oxylab`. |
-| `ENV` | ❌ | Environment in which the application is running. | `prod` | `prod` or `debug` | None |
+| `REMOTE_CHROME_IP` | ❌ | IP of the remote [chrome server](https://github.com/invoice-collector/chrome-server). | `*` | Empty | None |
+| `REMOTE_CHROME_PORT` | ❌ | Port of the remote [chrome server](https://github.com/invoice-collector/chrome-server). | `*` | Empty | None |
+| `ENV` | ❌ | Environment in which the application is running. | `prod` or `debug` | `prod` | None |

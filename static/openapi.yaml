@@ -66,43 +66,6 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-      callbacks:
-        onInvoiceCollected:
-          Invoice:
-            post:
-              requestBody:
-                required: true
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          description: Type of the payload.
-                          enum:
-                            - invoice
-                          example: invoice
-                        id:
-                          type: string
-                          description: Id of the collector.
-                          example: free
-                        remote_id:
-                          type: string
-                          description: Remote id of the user.
-                          example: 121439
-                        invoice:
-                          "$ref": "#/components/schemas/invoice"
-                      required:
-                        - type
-                        - id
-                        - remote_id
-                        - invoice
-              responses:
-                '200':
-                  description: Success
-                '400':
-                  description: Error
   "/authorize":
     post:
       summary: Authorize
@@ -332,6 +295,62 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/test_callback":
+    get:
+      summary: Test Callback
+      description: Request the server to send a callback request with a fake invoice.
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+      callbacks:
+        onInvoiceCollected:
+          Invoice:
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the payload.
+                          enum:
+                            - invoice
+                          example: invoice
+                        id:
+                          type: string
+                          description: Id of the collector.
+                          example: free
+                        remote_id:
+                          type: string
+                          description: Remote id of the user.
+                          example: 121439
+                        invoice:
+                          "$ref": "#/components/schemas/invoice"
+                      required:
+                        - type
+                        - id
+                        - remote_id
+                        - invoice
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Error
 components:
   schemas:
     locale:
@@ -537,19 +556,14 @@ components:
           type: string
           description: Id of the invoice for this collector.
           example: 45FDD1544
-        type:
-          type: string
-          description: Type of the invoice.
-          enum: [base64]
-          example: base64
-        mimetype:
-          type: string
-          description: MIME type of the invoice.
-          example: application/pdf
         timestamp:
           type: integer
-          description: Timestamp when the invoice was created.
+          description: Timestamp when the invoice was created in ms.
           example: 1731603196
+        amount:
+          type: string
+          description: Amount of the invoice.
+          example: 45.78€
         link:
           type: string
           description: Link from which the invoice was downloaded.
@@ -558,6 +572,10 @@ components:
           type: string
           description: Base64 encoded invoice.
           example: iVBORw0KGgoAAAAN...RU5ErkJggg==
+        mimetype:
+          type: string
+          description: MIME type of the invoice.
+          example: application/pdf
       required:
         - id
         - type

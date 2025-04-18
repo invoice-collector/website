@@ -2,29 +2,21 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import PricingpageFeatures from '@site/src/components/PricingpageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function PricingpageHeader() {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Tired of manually collecting invoices?
+          Pricing
         </Heading>
         <p className="hero__subtitle">
-          Invoice-Collector does it for you in seconds ⏰
+          Invoice-Collector is for Free for small companies in self-hosted.
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs">
-            Getting Started
-          </Link>
-        </div>
       </div>
     </header>
   );
@@ -34,11 +26,11 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="Free automatic invoice collector"
+      title="Pricing"
       description={siteConfig.tagline}>
-      <HomepageHeader />
+      <PricingpageHeader />
       <main>
-        <HomepageFeatures />
+        <PricingpageFeatures />
       </main>
     </Layout>
   );

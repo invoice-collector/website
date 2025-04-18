@@ -81,6 +81,11 @@ const config = {
         },
         items: [
           {
+            to: 'pricing',
+            label: 'Pricing',
+            position: 'left',
+          },
+          {
             to: 'demo',
             label: 'Try the Demo',
             position: 'right',
@@ -114,6 +119,10 @@ const config = {
               {
                 label: 'Demo',
                 to: '/demo',
+              },
+              {
+                label: 'Contact',
+                to: 'mailto:Invoice-Collector<contact@invoice-collector.com>',
               }
             ],
           },
