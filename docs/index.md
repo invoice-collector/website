@@ -17,11 +17,11 @@ Invoice Collector is an open-source, Docker-based tool designed to streamline th
 
 ## How it works
 
-Here is how Invoice-Collector fits in your infrastructure depending on your offer.
+Here is how Invoice-Collector fits in your infrastructure depending on your choice of deployment:
 
 | Cloud-SaaS | Self-Hosted |
 |---|---|
-| ![infra_cloud](./sequence_diagram/infra_cloud.svg) | ![infra_onpremise](./sequence_diagram/infra_self_hosted.svg) |
+| ![infra_cloud](./sequence_diagram/infra_cloud.svg) | ![infra_self_hosted](./sequence_diagram/infra_self_hosted.svg) |
 
 1. User connects to the app and request to modify its collectors.
 2. App requests a token to Invoice-Collector matching the user and returns it to the user.
