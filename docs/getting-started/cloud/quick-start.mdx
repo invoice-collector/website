@@ -66,7 +66,7 @@ Json body response:
 }
 ```
 
-This is the `callback` at which invoices will be sent. Please email us at contact@invoice-collector.com to update your `callback`. A POST request to the `/customer` endpoint will be setup soon to update your informations by your own.
+This is the `callback` at which invoices will be sent. Please email us at contact@invoice-collector.com to update your `callback`. An UPDATE request to the `/customer` endpoint will be setup soon to update your informations by your own.
 
 ## Generate a user token
 
@@ -99,7 +99,7 @@ This user `token` has an expiry duration of 10 minutes and can be used to add an
 
 ## Add and remove collectors
 
-Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`https://api.invoice-collector.com/api/v1/user?token=<token>`](https://api.invoice-collector.com/api/v1/user?token=<token>)
+Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`https://api.invoice-collector.com/api/v1/ui?token=<token>`](https://api.invoice-collector.com/api/v1/ui?token=REPLACE_ME)
 
 1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
 2. The user can add new collectors and remove existing ones.

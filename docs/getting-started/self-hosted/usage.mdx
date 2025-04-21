@@ -106,7 +106,7 @@ This user `token` has an expiry duration of 10 minutes and can be used to add an
 
 ## Add and remove collectors
 
-Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`http://localhost:8080/api/v1/user?token=<token>`](http://localhost:8080/api/v1/user?token=<token>)
+Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`http://localhost:8080/api/v1/ui?token=<token>`](http://localhost:8080/api/v1/ui?token=REPLACE_ME)
 
 1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
 2. The user can add new collectors and remove existing ones.

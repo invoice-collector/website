@@ -6,70 +6,10 @@ servers:
   - url: https://api.invoice-collector.com/api/v1
   - url: https://localhost:8080/api/v1
 paths:
-  "/collectors":
-    get:
-      summary: Collectors
-      description: List all the available collectors.
-      parameters:
-        - in: query
-          name: locale
-          required: false
-          schema:
-            "$ref": "#/components/schemas/locale"
-      responses:
-        '200':
-          description: List of available collectors
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  "$ref": "#/components/schemas/collector"
-        '400':
-          description: Bed Request
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-  "/customer":
-    get:
-      summary: Customer
-      description: Get information about the you, the customer.
-      parameters:
-        - in: header
-          name: Authorization
-          required: true
-          schema:
-            "$ref": "#/components/schemas/bearer"
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/customer"
-        '401':
-          description: Unauthorized - Invalid bearer token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
   "/authorize":
     post:
       summary: Authorize
-      description: Generate a token for a specific user. This token must be used by the client to authenticate itself. The user is created if it does not exist.
+      description: Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
       parameters:
         - in: header
           name: Authorization
@@ -107,10 +47,72 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/ui":
+    get:
+      summary: UI
+      description: UI used by the user to manage its credentials.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/customer":
+    get:
+      summary: Customer
+      description: Get information about the you, the customer.
+      tags:
+        - Customer
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/customer"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/user":
     delete:
       summary: User
-      description: Delete the user and all its credentials.
+      description: Delete the user and all its credentials. _By deleting the user, you are also deleting the terms of use acceptance. The user will be asked to accept the terms of use again when it will try to authorize again._
+      tags:
+        - User
       parameters:
         - in: header
           name: Authorization
@@ -149,38 +151,12 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-    get:
-      summary: User
-      description: UI used by the user to manage its credentials.
-      parameters:
-        - in: query
-          name: token
-          required: true
-          schema:
-            "$ref": "#/components/schemas/token"
-      responses:
-        '200':
-          description: Success
-          content:
-            text/html:
-              schema:
-                type: string
-        '401':
-          description: Unauthorized - Invalid oauth token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
   "/credentials":
     get:
       summary: Credentials
       description: List all the credentials for the user.
+      tags:
+        - Credential
       parameters:
         - in: query
           name: token
@@ -210,6 +186,8 @@ paths:
     post:
       summary: Credential
       description: Add a new credential for the given user.
+      tags:
+        - Credential
       parameters:
         - in: query
           name: token
@@ -266,6 +244,8 @@ paths:
     get:
       summary: Credential
       description: Get information about a specific credential.
+      tags:
+        - Credential
       parameters:
         - in: query
           name: token
@@ -307,6 +287,8 @@ paths:
     delete:
       summary: Credential
       description: Delete the credential for the given user.
+      tags:
+        - Credential
       parameters:
         - in: query
           name: token
@@ -335,6 +317,39 @@ paths:
                 "$ref": "#/components/schemas/error"
         '403':
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/collectors":
+    get:
+      summary: Collectors
+      description: List all the available collectors.
+      tags:
+        - Collector
+      parameters:
+        - in: query
+          name: locale
+          required: false
+          schema:
+            "$ref": "#/components/schemas/locale"
+      responses:
+        '200':
+          description: List of available collectors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/collector"
+        '400':
+          description: Bed Request
           content:
             application/json:
               schema:
@@ -426,7 +441,7 @@ components:
           "$ref": "#/components/schemas/locale"
         email:
           type: string
-          description: Email of the user. This email is used to send the [Trems of Use](/terms-of-use).
+          description: Email of the user. _This email is used to send the [Trems of Use](/terms-of-use)._
           example: user@example.com
       required:
       - remote_id
@@ -443,7 +458,7 @@ components:
       - token
     token:
       type: string
-      description: Token to be used by the client. You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint.
+      description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint._
       example: <token>
     credential_id_object:
       type: object
@@ -515,11 +530,11 @@ components:
       properties:
         index:
           type: number
-          description: Index of the state. A negative index means that the state is in error. An index equal to max means that the process is finished.
+          description: Index of the state. _A negative index means that the state is in error. An index equal to max means that the process is finished._
           example: 2
         max:
           type: number
-          description: Maximum index of the state. This is used to know the progress.
+          description: Maximum index of the state. _This is used to know the progress._
           example: 6
         title:
           type: string
