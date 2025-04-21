@@ -240,6 +240,10 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/credential_id_object"
         '400':
           description: Bed Request
           content:
@@ -259,6 +263,47 @@ paths:
               schema:
                 "$ref": "#/components/schemas/error"
   "/credential/{id}":
+    get:
+      summary: Credential
+      description: Get information about a specific credential.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bed Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     delete:
       summary: Credential
       description: Delete the credential for the given user.
@@ -268,6 +313,11 @@ paths:
           required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
       responses:
         '200':
           description: Success
@@ -395,46 +445,57 @@ components:
       type: string
       description: Token to be used by the client. You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint.
       example: <token>
-    credential_id:
+    credential_id_object:
       type: object
       properties:
         id:
-          type: string
-          description: Id of the credentials to use to collect invoices.
-          example: 6776b5258821de266afbc3f6
+          "$ref": "#/components/schemas/credential_id"
       required:
       - id
+    credential_id:
+        type: string
+        description: Id of the credential.
+        example: 6776b5258821de266afbc3f6
     credentials:
       type: array
       description: List of credentials.
       items:
-        type: object
-        properties:
-          id:
-            type: string
-            description: Id of the credential.
-            example: 6776b5258821de266afbc3f6
-          note:
-            type: string
-            description: Custom note for this credential.
-            example: Regular account
-          state:
-            type: string
-            description: State of the credential.
-            enum: [PENDING, SUCCESS, ERROR]
-            example: SUCCESS
-          error:
-            type: string
-            description: Bed Request message if the state is `ERROR`. Empty otherwise.
-            example: ""
-          collector:
-            "$ref": "#/components/schemas/collector"
-        required:
-        - id
-        - note
-        - state
-        - error
-        - collector
+        "$ref": "#/components/schemas/credential"
+    credential:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the credential.
+          example: 6776b5258821de266afbc3f6
+        note:
+          type: string
+          description: Custom note for this credential.
+          example: Regular account
+        create_timestamp:
+          type: number
+          description: Creation timestamp.
+          example: 1745229262287
+        last_collect_timestamp:
+          type: number
+          description: Last collect timestamp.
+          example: 1745229265118
+        next_collect_timestamp:
+          type: number
+          description: Next collect timestamp.
+          example: 1746000402000
+        state:
+          "$ref": "#/components/schemas/state"
+        collector:
+          "$ref": "#/components/schemas/collector"
+      required:
+      - id
+      - note
+      - create_timestamp
+      - last_collect_timestamp
+      - next_collect_timestamp
+      - state
+      - collector
     customer:
       type: object
       properties:
@@ -449,6 +510,30 @@ components:
       required:
       - name
       - callback
+    state:
+      type: object
+      properties:
+        index:
+          type: number
+          description: Index of the state. A negative index means that the state is in error. An index equal to max means that the process is finished.
+          example: 2
+        max:
+          type: number
+          description: Maximum index of the state. This is used to know the progress.
+          example: 6
+        title:
+          type: string
+          description: Title of the state.
+          example: 2FA
+        message:
+          type: string
+          description: Message to be displayed to the user.
+          example: Please enter the code received by SMS.
+      required:
+      - index
+      - max
+      - title
+      - message
     collector:
       type: object
       properties:
@@ -497,39 +582,51 @@ components:
           items:
             - type: object
               properties:
+                type:
+                  type: string
+                  description: Type of the parameter.
+                  enum: [string, number, boolean, enum]
+                  example: string
                 name:
                   type: string
                   description: Name of the parameter.
                   example: email
-                description:
+                placeholder:
                   type: string
-                  description: Description of the parameter.
+                  description: Placeholder of the parameter.
                   example: Email address of the account
                 mandatory:
                   type: boolean
                   description: Whether the parameter is mandatory or not.
                   example: true
               required:
+              - type
               - name
-              - description
+              - placeholder
               - mandatory
             - type: object
               properties:
+                type:
+                  type: string
+                  description: Type of the parameter.
+                  enum: [string, number, boolean, enum]
+                  example: string
                 name:
                   type: string
                   description: Name of the parameter.
                   example: password
-                description:
+                placeholder:
                   type: string
-                  description: Description of the parameter.
+                  description: Placeholder of the parameter.
                   example: Password of the account
                 mandatory:
                   type: boolean
                   description: Whether the parameter is mandatory or not.
                   example: true
               required:
+              - type
               - name
-              - description
+              - placeholder
               - mandatory
         entryUrl:
           type: string
@@ -554,7 +651,7 @@ components:
       properties:
         id:
           type: string
-          description: Id of the invoice for this collector.
+          description: Id of the invoice.
           example: 45FDD1544
         timestamp:
           type: integer
