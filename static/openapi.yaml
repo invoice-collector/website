@@ -30,7 +30,7 @@ paths:
               schema:
                 "$ref": "#/components/schemas/authorization_response"
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -134,7 +134,7 @@ paths:
         '200':
           description: Success
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -223,7 +223,7 @@ paths:
               schema:
                 "$ref": "#/components/schemas/credential_id_object"
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -261,19 +261,13 @@ paths:
         '200':
           description: Success
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid oauth token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '403':
-          description: Forbidden
           content:
             application/json:
               schema:
@@ -304,7 +298,7 @@ paths:
         '200':
           description: Success
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -317,6 +311,57 @@ paths:
                 "$ref": "#/components/schemas/error"
         '403':
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/credential/{id}/2fa":
+    post:
+      summary: 2FA
+      description: Set the 2FA code for the given credential.
+      tags:
+        - Credential
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: 2FA code to use.
+                  example: 359731
+              required:
+              - code
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid oauth token
           content:
             application/json:
               schema:
@@ -349,7 +394,7 @@ paths:
                 items:
                   "$ref": "#/components/schemas/collector"
         '400':
-          description: Bed Request
+          description: Bad Request
           content:
             application/json:
               schema:
