@@ -117,7 +117,7 @@ And that is it 🎉 New invoices will be sent to your callback!
 If like us, you have no time to waste, you can [test the callback in the next section](#test-callback).
 
 :::note
-Users who have already accepted the [Terms of Use](https://invoice-collector.com/terms-of-use) will not be asked to accept them again and they will not receive any email.
+Users who have already accepted the [Terms of Use](https://invoice-collector.com/terms-of-use) will not be asked to accept them again and they will not receive any email except if the user is deleted.
 :::
 
 <div style={{ textAlign: 'center' }}>
@@ -151,6 +151,7 @@ curl -X DELETE http://localhost:8080/api/v1/user \
 ```
 
 All the credentials, collectors and user informations will be removed from the database.
+The user will be asked to accept terms and conditions again in case of a new [`/authorize`](#generate-a-user-token) request.
 
 :::note
 - Using the builtin UI is not mandatory. Developers can create there own one to better fit your needs and design rules.
