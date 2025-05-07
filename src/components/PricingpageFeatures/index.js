@@ -16,7 +16,7 @@ const FeatureList = [
       {text: 'Premium collectors', checked: false},
     ]
   },
-  {
+  /*{
     title: 'Self-Hosted',
     offer: 'Premium',
     price: '100€',
@@ -30,12 +30,12 @@ const FeatureList = [
       {text: 'Support and maintenance', checked: true},
       {text: 'Custom collectors', checked: true},
     ]
-  },
+  },*/
   {
     title: 'Cloud-SaaS',
     offer: 'Premium',
-    price: '0.01€',
-    unit: '/ collector / user / month',
+    price: 'Pay-as-you-go',
+    unit: '/ month',
     features: [
       {text: 'Unlimited collectors', checked: true},
       {text: 'Data privacy', checked: true},
@@ -83,7 +83,7 @@ export default function PricingpageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row" style={{justifyContent: 'center'}}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
