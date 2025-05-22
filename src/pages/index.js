@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Tired of manually collecting invoices?
+          No more invoice hunting!
         </Heading>
         <p className="hero__subtitle">
           Invoice-Collector does it for you in seconds ⏰
