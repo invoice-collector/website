@@ -23,4 +23,5 @@ hide_table_of_contents: true
 | `PROXY_OXYLAB_PASSWORD` | ✔️ | Password of your oxylab account. | `*` | Empty | If `PROXY_TYPE` is `oxylab`. |
 | `REMOTE_CHROME_IP` | ❌ | IP of the remote [chrome server](https://github.com/invoice-collector/chrome-server). | `*` | Empty | None |
 | `REMOTE_CHROME_PORT` | ❌ | Port of the remote [chrome server](https://github.com/invoice-collector/chrome-server). | `*` | Empty | None |
+| `DISABLE_VERIFICATION_CODE` | ❌ | Whether the verification code must be disable or not. | `True` or `False` | `False` | None |
 | `ENV` | ❌ | Environment in which the application is running. | `prod` or `debug` | `prod` | None |
