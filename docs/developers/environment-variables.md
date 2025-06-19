@@ -9,6 +9,7 @@ hide_table_of_contents: true
 | Variable | Mandatory | Description | Possible values | Default | Condition |
 |----------|-----------|-------------|-----------------|---------|-----------|
 | `PORT` | ✔️ | Port on which the API is listening. _Do not forget to open ports on docker container if you change this value._ | `*` | `8080` | None |
+| `COLLECT_MAX_DELAY_MS` | ❌ | Maximum delay between each collect in ms. | `*` | `2592000000` (30 days) | None |
 | `REGISTRY_SERVER_ENDPOINT` | ✔️ | This is the endpoint at which logs are sent and collector updates are downloaded from. | `https://registry.invoice-collector.com` | `https://registry.invoice-collector.com` | None |
 | `DATABASE_URI` | ✔️ | Uri of the MongoDB used to store the data. The credentials are not stored in this database. | `*` | `mongodb://mongodb:27017` | None |
 | `DATABASE_MONGODB_NAME` | ✔️ | Name of the database to use. | `*` | `prod` | If `DATABASE_URI` starts with `mongodb` |

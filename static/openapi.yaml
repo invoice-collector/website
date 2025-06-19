@@ -57,6 +57,11 @@ paths:
           required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: query
+          name: verificationCode
+          required: false
+          schema:
+            "$ref": "#/components/schemas/verificationCode"
       responses:
         '200':
           description: Success
@@ -509,6 +514,10 @@ components:
       type: string
       description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint._
       example: <token>
+    verificationCode:
+      type: string
+      description: Verification code received by email. _Leave it empty if the user did not receive any._
+      example: 654972
     credential_id_object:
       type: object
       properties:
