@@ -44,7 +44,11 @@ export default function LandingPage() {
       @keyframes blink-caret {
           from, to { border-color: transparent; }
           50% { border-color: #667eea; }
-      }`;
+      }
+      svg {
+        display: inline-block;
+      }
+    `;
     document.head.appendChild(style);
 
     return () => {
@@ -61,27 +65,6 @@ export default function LandingPage() {
       title="The API that automates invoice collection"
       description={siteConfig.tagline}>
       <div id="landingpage">
-        <header class="bg-white shadow-sm sticky top-0 z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <h1 class="text-2xl font-bold text-gray-900">Invoice<span class="text-blue-600">Collector</span></h1>
-                        </div>
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#solution" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Solution</a>
-                            <a href="#integration" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Intégration</a>
-                            <a href="#testimonials" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Témoignages</a>
-                            <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
-                                Demander une démo
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
         <section class="gradient-bg text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -826,138 +809,6 @@ export default function LandingPage() {
                 </p>
             </div>
         </section>
-
-        <footer class="bg-gray-900 text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">InvoiceCollector</h3>
-                        <p class="text-gray-400 mb-4">
-                            L'API universelle pour l'automatisation de la collecte de factures
-                        </p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Produit</h4>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white">API Documentation</a></li>
-                            <li><a href="#" class="hover:text-white">Connecteurs</a></li>
-                            <li><a href="#" class="hover:text-white">Sécurité</a></li>
-                            <li><a href="#" class="hover:text-white">Pricing</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Partenaires</h4>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white">Programme partenaire</a></li>
-                            <li><a href="#" class="hover:text-white">ERP & Accounting</a></li>
-                            <li><a href="#" class="hover:text-white">Fintech</a></li>
-                            <li><a href="#" class="hover:text-white">Procurement</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Support</h4>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white">Contact</a></li>
-                            <li><a href="#" class="hover:text-white">Help Center</a></li>
-                            <li><a href="#" class="hover:text-white">Status</a></li>
-                            <li><a href="#" class="hover:text-white">RGPD</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2024 Invoice Collector. Tous droits réservés.</p>
-                </div>
-            </div>
-        </footer>
-
-        <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-            <div class="flex items-center justify-center min-h-screen p-4">
-                <div class="bg-white rounded-2xl max-w-md w-full p-8">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                            Commencez votre intégration
-                        </h3>
-                        <p class="text-gray-600">
-                            Accès gratuit à l'API + support technique inclus
-                        </p>
-                    </div>
-                    
-                    <form id="leadForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
-                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email professionnel</label>
-                            <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom de votre ERP/logiciel</label>
-                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre de clients</label>
-                            <select required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="">Sélectionnez</option>
-                                <option value="1-50">1-50 clients</option>
-                                <option value="51-200">51-200 clients</option>
-                                <option value="201-1000">201-1000 clients</option>
-                                <option value="1000+">1000+ clients</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Que préférez-vous ?</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="demo" class="mr-2"></input>
-                                    <span class="text-sm">Démo personnalisée (30 min)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="sandbox" class="mr-2"></input>
-                                    <span class="text-sm">Accès direct au sandbox</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="call" class="mr-2"></input>
-                                    <span class="text-sm">Call technique avec nos ingénieurs</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Démarrer l'intégration
-                        </button>
-                    </form>
-                    
-                    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    
-                    <p class="mt-4 text-xs text-gray-500 text-center">
-                        En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe technique.
-                    </p>
-                </div>
-            </div>
-        </div>
       </div>
     </Layout>
   );
