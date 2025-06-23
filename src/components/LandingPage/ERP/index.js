@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -48,7 +50,11 @@ export default function LandingPage() {
       }`;
     head.appendChild(style);
   });
+  const {siteConfig} = useDocusaurusContext();
   return (
+    <Layout
+      title="The API that automates invoice collection"
+      description={siteConfig.tagline}>
       <div id="body">
         <header class="bg-white shadow-sm sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -948,5 +954,6 @@ export default function LandingPage() {
             </div>
         </div>
       </div>
+    </Layout>
   );
 }
