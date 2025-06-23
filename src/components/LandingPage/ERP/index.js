@@ -4,26 +4,23 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function LandingPage() {
   useEffect(() => {
-    // Inject external stylesheets and fonts only once
-    const head = document.head;
-
     // Tailwind CSS
     const tailwindLink = document.createElement('link');
     tailwindLink.rel = 'stylesheet';
     tailwindLink.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
-    head.appendChild(tailwindLink);
+    document.head.appendChild(tailwindLink);
 
     // FontAwesome
     const faLink = document.createElement('link');
     faLink.rel = 'stylesheet';
     faLink.href = 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css';
-    head.appendChild(faLink);
+    document.head.appendChild(faLink);
 
     // Google Fonts Inter
     const interLink = document.createElement('link');
     interLink.rel = 'stylesheet';
     interLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    head.appendChild(interLink);
+    document.head.appendChild(interLink);
 
     // Custom styles
     const style = document.createElement('style');
@@ -48,7 +45,15 @@ export default function LandingPage() {
           from, to { border-color: transparent; }
           50% { border-color: #667eea; }
       }`;
-    head.appendChild(style);
+    document.head.appendChild(style);
+
+    return () => {
+        // Cleanup: remove stylesheets and styles when component unmounts
+        document.head.removeChild(tailwindLink);
+        document.head.removeChild(faLink);
+        document.head.removeChild(interLink);
+        document.head.removeChild(style);
+        }
   });
   const {siteConfig} = useDocusaurusContext();
   return (
