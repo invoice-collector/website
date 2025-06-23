@@ -28,7 +28,7 @@ export default function LandingPage() {
     // Custom styles
     const style = document.createElement('style');
     style.innerHTML = `
-      body { font-family: 'Inter', sans-serif; }
+      #landingpage { font-family: 'Inter', sans-serif; }
       .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
       .pulse-border { animation: pulse 2s infinite; }
       @keyframes pulse {
@@ -55,7 +55,7 @@ export default function LandingPage() {
     <Layout
       title="The API that automates invoice collection"
       description={siteConfig.tagline}>
-      <div id="body">
+      <div id="landingpage">
         <header class="bg-white shadow-sm sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
