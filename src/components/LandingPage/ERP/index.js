@@ -83,10 +83,10 @@ export default function LandingPage() {
                             <span class="text-sm font-medium">Nouvelle API • Conforme e-invoicing 2025</span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients ERP
+                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Différenciez votre logiciel comptable avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
+                            Différenciez votre logiciel avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <button onclick="openModal()" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
@@ -120,7 +120,7 @@ export default function LandingPage() {
                                     <span class="text-sm font-medium text-gray-200">Factures collectées aujourd'hui</span>
                                     <span class="text-green-400 text-sm"><i class="fas fa-arrow-up mr-1"></i>+156%</span>
                                 </div>
-                                <div class="text-3xl font-bold">2,847</div>
+                                <div class="text-3xl font-bold">2 847</div>
                             </div>
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
@@ -128,7 +128,7 @@ export default function LandingPage() {
                                         <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
                                             <i class="fas fa-bolt text-white text-xs"></i>
                                         </div>
-                                        <span class="text-sm">Orange Business</span>
+                                        <span class="text-sm">Amazon Business</span>
                                     </div>
                                     <span class="text-green-400 text-sm">✓ Collectée</span>
                                 </div>
@@ -137,7 +137,7 @@ export default function LandingPage() {
                                         <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                                             <i class="fas fa-building text-white text-xs"></i>
                                         </div>
-                                        <span class="text-sm">Chorus Pro</span>
+                                        <span class="text-sm">Shopify</span>
                                     </div>
                                     <span class="text-green-400 text-sm">✓ Collectée</span>
                                 </div>
@@ -146,7 +146,7 @@ export default function LandingPage() {
                                         <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
                                             <i class="fas fa-envelope text-white text-xs"></i>
                                         </div>
-                                        <span class="text-sm">Email invoices@</span>
+                                        <span class="text-sm">Email</span>
                                     </div>
                                     <span class="text-yellow-400 text-sm">⟳ En cours</span>
                                 </div>
@@ -161,7 +161,7 @@ export default function LandingPage() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Vos clients ERP perdent <span class="text-red-600">3h/jour</span> à chasser leurs factures
+                        Vos clients logiciel perdent <span class="text-red-600">3h/jour</span> à chasser leurs factures
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                         Portails fournisseurs, boîtes email, documents papier... La collecte manuelle coûte cher et freine la productivité.
@@ -184,7 +184,7 @@ export default function LandingPage() {
                             <i class="fas fa-dollar-sign text-red-600 text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Coût élevé</h3>
-                        <p class="text-gray-600 mb-4">10-40€ par facture traitée manuellement</p>
+                        <p class="text-gray-600 mb-4">10-40€ par fournisseur traitée manuellement</p>
                         <div class="text-3xl font-bold text-red-600">x6</div>
                         <p class="text-sm text-gray-500">plus cher qu'une solution automatisée</p>
                     </div>
@@ -196,7 +196,7 @@ export default function LandingPage() {
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Erreurs & pertes</h3>
                         <p class="text-gray-600 mb-4">Documents perdus, retards de paiement</p>
                         <div class="text-3xl font-bold text-red-600">40%</div>
-                        <p class="text-sm text-gray-500">des équipes AP citent ce problème</p>
+                        <p class="text-sm text-gray-500">des équipes citent ce problème</p>
                     </div>
                 </div>
 
@@ -205,7 +205,7 @@ export default function LandingPage() {
                         Et si vos clients pouvaient automatiser 100% de leur collecte de factures ?
                     </h3>
                     <p class="text-lg text-gray-600 mb-6">
-                        Avec Invoice Collector, transformez cette douleur en avantage concurrentiel pour votre ERP.
+                        Avec Invoice Collector, transformez cette douleur en avantage concurrentiel pour votre logiciel.
                     </p>
                     <button onclick="scrollToSolution()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Découvrir la solution <i class="fas fa-arrow-down ml-2"></i>
@@ -254,7 +254,7 @@ export default function LandingPage() {
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">API REST simple</h3>
-                                    <p class="text-gray-600">Intégration plug-and-play dans votre ERP. Endpoints intuitifs, webhooks temps réel, SDKs disponibles</p>
+                                    <p class="text-gray-600">Intégration plug-and-play dans votre logiciel. Endpoints intuitifs, webhooks temps réel</p>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +268,7 @@ export default function LandingPage() {
                             </div>
                         </div>
                         <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
-                            <div class="text-green-400 mb-2">POST /api/v1/invoices/fetch</div>
+                            <div class="text-green-400 mb-2">POST /api/v1/credential</div>
                             <div class="text-gray-300 mb-2">{"{"}</div>
                             <div class="text-gray-300 ml-4 mb-1">"source": "email",</div>
                             <div class="text-gray-300 ml-4 mb-1">"credentials": "***",</div>
@@ -295,7 +295,7 @@ export default function LandingPage() {
 
                 <div class="bg-white rounded-2xl shadow-xl p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
-                        Ce que vous apportez à vos clients ERP
+                        Ce que vous apportez à vos clients
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="text-center">
@@ -335,7 +335,7 @@ export default function LandingPage() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Nos partenaires ERP témoignent
+                        Nos partenaires témoignent
                     </h2>
                     <p class="text-xl text-gray-600">
                         Ils ont intégré Invoice Collector et transformé l'expérience de leurs clients
@@ -430,7 +430,7 @@ export default function LandingPage() {
 
                 <div class="mt-12 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                        Rejoignez 50+ éditeurs ERP qui font confiance à Invoice Collector
+                        Rejoignez 50+ éditeurs logiciel qui font confiance à Invoice Collector
                     </h3>
                     <p class="text-lg text-gray-600 mb-6">
                         Ils ont tous augmenté leur valeur client et leur différenciation concurrentielle
@@ -449,7 +449,7 @@ export default function LandingPage() {
                         Intégration <span class="text-green-600">simple</span> en 3 étapes
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Ajoutez la collecte automatique de factures à votre ERP en moins de 24h
+                        Ajoutez la collecte automatique de factures à votre logiciel en moins de 24h
                     </p>
                 </div>
 
@@ -465,7 +465,6 @@ export default function LandingPage() {
                         <ul class="text-sm text-gray-500 space-y-1">
                             <li>✓ Clés API instantanées</li>
                             <li>✓ Documentation complète</li>
-                            <li>✓ SDK JavaScript/Python</li>
                         </ul>
                     </div>
 
@@ -475,7 +474,7 @@ export default function LandingPage() {
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Intégrez les endpoints</h3>
                         <p class="text-gray-600 mb-4">
-                            Quelques lignes de code pour connecter votre ERP à notre API
+                            Quelques lignes de code pour connecter votre logiciel à notre API
                         </p>
                         <ul class="text-sm text-gray-500 space-y-1">
                             <li>✓ REST API simple</li>
@@ -505,10 +504,10 @@ export default function LandingPage() {
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Code d'exemple d'intégration</h3>
                             <div class="bg-gray-900 rounded-lg p-6 font-mono text-sm overflow-x-auto">
-                                <div class="text-green-400 mb-2">// Récupération des factures</div>
+                                <div class="text-green-400 mb-2">// Ajout d'un crédential client</div>
                                 <div class="text-blue-400 mb-1">const</div>
-                                <div class="text-white mb-1"> invoices = await fetch(</div>
-                                <div class="text-yellow-300 mb-1">  'https://api.invoicecollector.com/v1/invoices',</div>
+                                <div class="text-white mb-1">invoices = await fetch(</div>
+                                <div class="text-yellow-300 mb-1">  'https://api.invoice-collector.com/api/v1/credential',</div>
                                 <div class="text-white mb-1">  {"{"}</div>
                                 <div class="text-gray-300 mb-1">    headers: {"{"}</div>
                                 <div class="text-yellow-300 mb-1">      'Authorization': 'Bearer YOUR_API_KEY'</div>
@@ -522,8 +521,8 @@ export default function LandingPage() {
                                 <div class="text-yellow-300 mb-1">'/webhook/invoices'</div>
                                 <div class="text-white mb-1">{", (req, res) => {"}</div>
                                 <div class="text-gray-300 mb-1">  const invoice = req.body;</div>
-                                <div class="text-gray-300 mb-1">  // Ajouter à votre ERP</div>
-                                <div class="text-blue-400 mb-1">  addToERP</div>
+                                <div class="text-gray-300 mb-1">  // Ajouter à votre logiciel</div>
+                                <div class="text-blue-400 mb-1">  addToLogiciel</div>
                                 <div class="text-white mb-1">(invoice);</div>
                                 <div class="text-white">{"});"}</div>
                             </div>
@@ -535,10 +534,6 @@ export default function LandingPage() {
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
                                     <span>Documentation API complète avec exemples</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>SDKs JavaScript, Python, PHP disponibles</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
@@ -672,7 +667,7 @@ export default function LandingPage() {
                         Un modèle de partenariat <span class="text-blue-600">gagnant-gagnant</span>
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Ajoutez de la valeur à votre ERP tout en générant des revenus additionnels
+                        Ajoutez de la valeur à votre logiciel tout en générant des revenus additionnels
                     </p>
                 </div>
 
@@ -691,7 +686,7 @@ export default function LandingPage() {
                                     <h4 class="text-xl font-semibold text-gray-900">Pay-as-you-go</h4>
                                 </div>
                                 <p class="text-gray-600 mb-3">
-                                    <span class="text-2xl font-bold text-blue-600">0,10€</span> 
+                                    <span class="text-2xl font-bold text-blue-600">10€</span> 
                                     par connecteur actif par mois
                                 </p>
                                 <ul class="text-sm text-gray-600 space-y-1">
@@ -730,7 +725,7 @@ export default function LandingPage() {
                                 <i class="fas fa-code text-blue-600 mr-3 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-900">Support technique complet</h4>
-                                    <p class="text-sm text-gray-600">Intégration assistée, documentation, SDK</p>
+                                    <p class="text-sm text-gray-600">Intégration assistée, documentation, REST API</p>
                                 </div>
                             </div>
                             
@@ -780,10 +775,10 @@ export default function LandingPage() {
         <section class="py-20 gradient-bg text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-bold mb-6">
-                    Prêt à transformer votre ERP avec la collecte automatique ?
+                    Prêt à transformer votre logiciel avec la collecte automatique ?
                 </h2>
                 <p class="text-xl mb-8 text-gray-100">
-                    Rejoignez les éditeurs ERP qui ont déjà intégré Invoice Collector et différencient leur solution sur le marché.
+                    Rejoignez les éditeurs logiciel qui ont déjà intégré Invoice Collector et différencient leur solution sur le marché.
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
