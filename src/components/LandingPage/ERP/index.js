@@ -51,6 +51,15 @@ export default function LandingPage() {
     `;
     document.head.appendChild(style);
 
+    // Custom navbar link active
+    const style_navbar = document.createElement('style');
+    style_navbar.innerHTML = `
+      .navbar__link--active {
+        color: var(--ifm-navbar-link-color)
+      }
+    `;
+    document.head.appendChild(style_navbar);
+
     return () => {
         // Cleanup: remove stylesheets and styles when component unmounts
         document.head.removeChild(tailwindLink);
