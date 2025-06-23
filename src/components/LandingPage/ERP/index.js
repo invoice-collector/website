@@ -507,23 +507,23 @@ export default function LandingPage() {
                                 <div class="text-green-400 mb-2">// Ajout d'un crédential client</div>
                                 <div class="text-blue-400 mb-1">const</div>
                                 <div class="text-white mb-1">invoices = await fetch(</div>
-                                <div class="text-yellow-300 mb-1">  'https://api.invoice-collector.com/api/v1/credential',</div>
-                                <div class="text-white mb-1">  {"{"}</div>
-                                <div class="text-gray-300 mb-1">    headers: {"{"}</div>
-                                <div class="text-yellow-300 mb-1">      'Authorization': 'Bearer YOUR_API_KEY'</div>
-                                <div class="text-gray-300 mb-1">    {"}"}</div>
-                                <div class="text-white mb-1">  {"}"}</div>
+                                <div class="text-yellow-300 ml-2 mb-1">'https://api.invoice-collector.com/api/v1/credential',</div>
+                                <div class="text-white ml-2 mb-1">{"{"}</div>
+                                <div class="text-gray-300 ml-4 mb-1">headers: {"{"}</div>
+                                <div class="text-yellow-300 ml-6 mb-1">'Authorization': 'Bearer YOUR_API_KEY'</div>
+                                <div class="text-gray-300 ml-4 mb-1">{"}"}</div>
+                                <div class="text-white ml-2 mb-1">{"}"}</div>
                                 <div class="text-white mb-4">);</div>
                                 
-                                <div class="text-green-400 mb-2">// Webhook pour nouvelles factures</div>
+                                <div class="text-green-400 mb-2">// Callback pour nouvelles factures</div>
                                 <div class="text-blue-400 mb-1">app.post</div>
                                 <div class="text-white mb-1">(</div>
-                                <div class="text-yellow-300 mb-1">'/webhook/invoices'</div>
-                                <div class="text-white mb-1">{", (req, res) => {"}</div>
-                                <div class="text-gray-300 mb-1">  const invoice = req.body;</div>
-                                <div class="text-gray-300 mb-1">  // Ajouter à votre logiciel</div>
-                                <div class="text-blue-400 mb-1">  addToLogiciel</div>
-                                <div class="text-white mb-1">(invoice);</div>
+                                <div class="text-yellow-300 ml-2 mb-1">'/callback/invoices'</div>
+                                <div class="text-white ml-2 mb-1">{", (req, res) => {"}</div>
+                                <div class="text-gray-300 ml-4 mb-1">const invoice = req.body;</div>
+                                <div class="text-gray-300 ml-4 mb-1">// Ajouter à votre logiciel</div>
+                                <div class="text-blue-400 ml-4 mb-1">addToLogiciel</div>
+                                <div class="text-white ml-2 mb-1">(invoice);</div>
                                 <div class="text-white">{"});"}</div>
                             </div>
                         </div>
