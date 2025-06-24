@@ -89,7 +89,7 @@ export default function LandingPage() {
                             Différenciez votre logiciel avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="openModal()" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
+                            <button onclick="" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
                                 <i class="fas fa-code mr-2"></i>
                                 Intégrer l'API gratuitement
                             </button>
@@ -117,7 +117,7 @@ export default function LandingPage() {
                         <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20">
                             <div class="mb-4">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="text-sm font-medium text-gray-200">Factures collectées aujourd'hui</span>
+                                    <span class="text-sm font-medium text-gray-200">Factures collectées ce mois</span>
                                     <span class="text-green-400 text-sm"><i class="fas fa-arrow-up mr-1"></i>+156%</span>
                                 </div>
                                 <div class="text-3xl font-bold">2 847</div>
@@ -161,7 +161,7 @@ export default function LandingPage() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Vos clients logiciel perdent <span class="text-red-600">3h/jour</span> à chasser leurs factures
+                        Vos clients perdent <span class="text-red-600">5h/semaine</span> à chasser leurs factures
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                         Portails fournisseurs, boîtes email, documents papier... La collecte manuelle coûte cher et freine la productivité.
