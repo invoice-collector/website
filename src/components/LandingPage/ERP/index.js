@@ -60,6 +60,20 @@ export default function LandingPage() {
     `;
     document.head.appendChild(style_navbar);
 
+    // Modal submission
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Merci ! Notre équipe vous contactera sous 24h pour démarrer votre intégration.');
+        closeModal();
+    });
+        
+    // Close modal when clicking outside
+    document.getElementById('leadModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
     return () => {
         // Cleanup: remove stylesheets and styles when component unmounts
         document.head.removeChild(tailwindLink);
@@ -69,6 +83,23 @@ export default function LandingPage() {
         }
   });
   const {siteConfig} = useDocusaurusContext();
+
+    function openModal() {
+        document.getElementById('leadModal').classList.remove('hidden');
+    }
+        
+    function closeModal() {
+        document.getElementById('leadModal').classList.add('hidden');
+    }
+        
+    function scrollToDemo() {
+        document.getElementById('integration').scrollIntoView({ behavior: 'smooth' });
+    }
+        
+    function scrollToSolution() {
+        document.getElementById('solution').scrollIntoView({ behavior: 'smooth' });
+    }
+
   return (
     <Layout
       title="The API that automates invoice collection"
@@ -89,11 +120,11 @@ export default function LandingPage() {
                             Différenciez votre logiciel avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
+                            <button onClick={openModal} class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
                                 <i class="fas fa-code mr-2"></i>
                                 Intégrer l'API gratuitement
                             </button>
-                            <button onclick="scrollToDemo()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                            <button onClick={scrollToDemo} class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
                                 <i class="fas fa-play mr-2"></i>
                                 Voir la démo
                             </button>
@@ -207,7 +238,7 @@ export default function LandingPage() {
                     <p class="text-lg text-gray-600 mb-6">
                         Avec Invoice Collector, transformez cette douleur en avantage concurrentiel pour votre logiciel.
                     </p>
-                    <button onclick="scrollToSolution()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    <button onClick={scrollToSolution} class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Découvrir la solution <i class="fas fa-arrow-down ml-2"></i>
                     </button>
                 </div>
@@ -435,7 +466,7 @@ export default function LandingPage() {
                     <p class="text-lg text-gray-600 mb-6">
                         Ils ont tous augmenté leur valeur client et leur différenciation concurrentielle
                     </p>
-                    <button onclick="openModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    <button onClick={openModal} class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Rejoindre le programme partenaire
                     </button>
                 </div>
@@ -557,7 +588,7 @@ export default function LandingPage() {
                                 <p class="text-blue-700 text-sm mb-3">
                                     Nos ingénieurs peuvent faire l'intégration avec vous ou pour vous.
                                 </p>
-                                <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition-colors">
+                                <button onClick={openModal} class="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition-colors">
                                     Planifier un call technique
                                 </button>
                             </div>
@@ -793,11 +824,11 @@ export default function LandingPage() {
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openModal()" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
+                    <button onClick={openModal} class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
                         <i class="fas fa-rocket mr-2"></i>
                         Commencer l'intégration gratuitement
                     </button>
-                    <button onclick="openModal()" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                    <button onClick={openModal} class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
                         <i class="fas fa-calendar mr-2"></i>
                         Planifier une démo
                     </button>
@@ -809,7 +840,80 @@ export default function LandingPage() {
                 </p>
             </div>
         </section>
-      </div>
+        </div>
+        <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-2xl max-w-md w-full p-8">
+                    <button onClick={closeModal} class="top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                            Commencez votre intégration
+                        </h3>
+                        <p class="text-gray-600">
+                            Accès gratuit à l'API + support technique inclus
+                        </p>
+                    </div>
+                    
+                    <form id="leadForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email professionnel</label>
+                            <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom de votre ERP/logiciel</label>
+                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre de clients</label>
+                            <select required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Sélectionnez</option>
+                                <option value="1-50">1-50 clients</option>
+                                <option value="51-200">51-200 clients</option>
+                                <option value="201-1000">201-1000 clients</option>
+                                <option value="1000+">1000+ clients</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Que préférez-vous ?</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="preference" value="demo" class="mr-2"></input>
+                                    <span class="text-sm">Démo personnalisée (30 min)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="preference" value="sandbox" class="mr-2"></input>
+                                    <span class="text-sm">Accès direct au sandbox</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="preference" value="call" class="mr-2"></input>
+                                    <span class="text-sm">Call technique avec nos ingénieurs</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Démarrer l'intégration
+                        </button>
+                    </form>
+                    
+                    <p class="mt-4 text-xs text-gray-500 text-center">
+                        En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe technique.
+                    </p>
+                </div>
+            </div>
+        </div>
     </Layout>
   );
 }
