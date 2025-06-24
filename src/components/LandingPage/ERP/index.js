@@ -69,7 +69,7 @@ export default function LandingPage() {
         
     // Close modal when clicking outside
     document.getElementById('leadModal').addEventListener('click', function(e) {
-        if (e.target === this) {
+        if (e.target.id === "leadModalBack") {
             closeModal();
         }
     });
@@ -842,12 +842,8 @@ export default function LandingPage() {
         </section>
         </div>
         <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-            <div class="flex items-center justify-center min-h-screen p-4">
+            <div id="leadModalBack" class="flex items-center justify-center min-h-screen p-4">
                 <div class="bg-white rounded-2xl max-w-md w-full p-8">
-                    <button onClick={closeModal} class="top-4 right-4 text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times"></i>
-                    </button>
-
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">
                             Commencez votre intégration
