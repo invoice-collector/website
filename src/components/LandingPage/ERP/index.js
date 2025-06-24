@@ -111,7 +111,7 @@ export default function LandingPage() {
                     <div>
                         <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-4 py-2 mb-6">
                             <i class="fas fa-rocket text-yellow-300 mr-2"></i>
-                            <span class="text-sm font-medium">Nouvelle API • Conforme e-invoicing 2025</span>
+                            <span class="text-sm font-medium">Nouvelle API • Conforme e-invoicing 2026</span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
                             L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients
@@ -640,13 +640,13 @@ export default function LandingPage() {
                             <i class="fas fa-certificate text-yellow-600 text-2xl"></i>
                         </div>
                         <h3 class="font-semibold text-gray-900 mb-2">Certifications</h3>
-                        <p class="text-sm text-gray-600">ISO 27001, SOC2, conformité e-invoicing 2025</p>
+                        <p class="text-sm text-gray-600">ISO 27001, SOC2, conformité e-invoicing 2026</p>
                     </div>
                 </div>
 
                 <div class="bg-gray-50 rounded-2xl p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-                        Conformité réglementaire e-invoicing 2025
+                        Conformité réglementaire e-invoicing 2026
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
@@ -836,7 +836,7 @@ export default function LandingPage() {
                 
                 <p class="mt-6 text-sm text-gray-200">
                     <i class="fas fa-shield-alt mr-2"></i>
-                    Sans engagement • Support technique inclus • Conformité RGPD garantie
+                    Sans engagement • Support technique inclus • Conformité RGPD
                 </p>
             </div>
         </section>
