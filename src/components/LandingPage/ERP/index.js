@@ -269,26 +269,26 @@ export default function LandingPage() {
                         </div>
                         <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
                             <div class="text-green-400 mb-2">POST /api/v1/credential</div>
-                            <div class="text-gray-300 mb-2">{"{"}</div>
-                            <div class="text-gray-300 ml-4 mb-1">"source": "email",</div>
-                            <div class="text-gray-300 ml-4 mb-1">"credentials": "***",</div>
-                            <div class="text-gray-300 ml-4 mb-1">"filters": {"{"}</div>
-                            <div class="text-gray-300 ml-8 mb-1">"from": "2024-01-01"</div>
-                            <div class="text-gray-300 ml-4 mb-1">{"}"}</div>
-                            <div class="text-gray-300 mb-4">{"}"}</div>
+                            <div class="text-white mb-2">{"{"}</div>
+                            <div class="text-white ml-4 mb-1">"source": "email",</div>
+                            <div class="text-white ml-4 mb-1">"credentials": "***",</div>
+                            <div class="text-white ml-4 mb-1">"filters": {"{"}</div>
+                            <div class="text-white ml-8 mb-1">"from": "2024-01-01"</div>
+                            <div class="text-white ml-4 mb-1">{"}"}</div>
+                            <div class="text-white mb-4">{"}"}</div>
                             
                             <div class="text-blue-400 mb-2">Response: 200 OK</div>
-                            <div class="text-gray-300 mb-2">{"{"}</div>
-                            <div class="text-gray-300 ml-4 mb-1">"invoices": [</div>
-                            <div class="text-gray-300 ml-8 mb-1">{"{"}</div>
-                            <div class="text-gray-300 ml-12 mb-1">"id": "inv_1234",</div>
-                            <div class="text-gray-300 ml-12 mb-1">"supplier": "Orange Business",</div>
-                            <div class="text-gray-300 ml-12 mb-1">"amount": 245.80,</div>
-                            <div class="text-gray-300 ml-12 mb-1">"date": "2024-01-15",</div>
-                            <div class="text-gray-300 ml-12 mb-1">"status": "extracted"</div>
-                            <div class="text-gray-300 ml-8 mb-1">{"}"}</div>
-                            <div class="text-gray-300 ml-4 mb-1">]</div>
-                            <div class="text-gray-300">{"}"}</div>
+                            <div class="text-white mb-2">{"{"}</div>
+                            <div class="text-white ml-4 mb-1">"invoices": [</div>
+                            <div class="text-white ml-8 mb-1">{"{"}</div>
+                            <div class="text-white ml-12 mb-1">"id": "inv_1234",</div>
+                            <div class="text-white ml-12 mb-1">"supplier": "Orange Business",</div>
+                            <div class="text-white ml-12 mb-1">"amount": 245.80,</div>
+                            <div class="text-white ml-12 mb-1">"date": "2024-01-15",</div>
+                            <div class="text-white ml-12 mb-1">"status": "extracted"</div>
+                            <div class="text-white ml-8 mb-1">{"}"}</div>
+                            <div class="text-white ml-4 mb-1">]</div>
+                            <div class="text-white">{"}"}</div>
                         </div>
                     </div>
                 </div>
@@ -505,26 +505,22 @@ export default function LandingPage() {
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Code d'exemple d'intégration</h3>
                             <div class="bg-gray-900 rounded-lg p-6 font-mono text-sm overflow-x-auto">
                                 <div class="text-green-400 mb-2">// Ajout d'un crédential client</div>
-                                <div class="text-blue-400 mb-1">const</div>
-                                <div class="text-white mb-1">invoices = await fetch(</div>
-                                <div class="text-yellow-300 ml-2 mb-1">'https://api.invoice-collector.com/api/v1/credential',</div>
-                                <div class="text-white ml-2 mb-1">{"{"}</div>
-                                <div class="text-gray-300 ml-4 mb-1">headers: {"{"}</div>
-                                <div class="text-yellow-300 ml-6 mb-1">'Authorization': 'Bearer YOUR_API_KEY'</div>
-                                <div class="text-gray-300 ml-4 mb-1">{"}"}</div>
-                                <div class="text-white ml-2 mb-1">{"}"}</div>
+                                <div class="text-white mb-1"><span class="text-blue-400">const</span> invoices = await fetch(<span class="text-yellow-300">'https://api.invoice-collector.com/api/v1/credential'</span>,</div>
+                                <div class="text-white ml-4 mb-1">{"{"}</div>
+                                <div class="text-white ml-8 mb-1">headers: {"{ Authorization': 'Bearer YOUR_API_KEY' }"},</div>
+                                <div class="text-white ml-8 mb-1">body: {"{"}</div>
+                                <div class="text-white ml-12 mb-1">collector: 'amazon',</div>
+                                <div class="text-white ml-12 mb-1">email: 'ana.becker@company.com',</div>
+                                <div class="text-white ml-12 mb-1">password: '*********'</div>
+                                <div class="text-white ml-8 mb-1">{"}"}</div>
+                                <div class="text-white ml-4 mb-1">{"}"}</div>
                                 <div class="text-white mb-4">);</div>
                                 
                                 <div class="text-green-400 mb-2">// Callback pour nouvelles factures</div>
-                                <div class="text-blue-400 mb-1">app.post</div>
-                                <div class="text-white mb-1">(</div>
-                                <div class="text-yellow-300 ml-2 mb-1">'/callback/invoices'</div>
-                                <div class="text-white ml-2 mb-1">{", (req, res) => {"}</div>
-                                <div class="text-gray-300 ml-4 mb-1">const invoice = req.body;</div>
+                                <div class="text-white mb-1"><span class="text-blue-400">app.post</span>(<span class="text-yellow-300">'/callback/invoices'</span>{", (req, res) => {"}</div>
                                 <div class="text-gray-300 ml-4 mb-1">// Ajouter à votre logiciel</div>
-                                <div class="text-blue-400 ml-4 mb-1">addToLogiciel</div>
-                                <div class="text-white ml-2 mb-1">(invoice);</div>
-                                <div class="text-white">{"});"}</div>
+                                <div class="text-white ml-4 mb-1"><span class="text-blue-400">addToLogiciel</span>(req.body);</div>
+                                <div class="text-white mb-1">{"});"}</div>
                             </div>
                         </div>
                         
