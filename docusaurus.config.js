@@ -91,8 +91,8 @@ const config = {
             position: 'left',
           },
           {
-            to: '/#testimonies',
-            label: 'Testimonies',
+            to: '/#testimonials',
+            label: 'Testimonials',
             position: 'left',
           },
           {
