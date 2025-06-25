@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -111,11 +112,7 @@ export default function LandingPage() {
     function closeModal() {
         document.getElementById('leadModal').classList.add('hidden');
     }
-        
-    function scrollToDemo() {
-        document.getElementById('integration').scrollIntoView({ behavior: 'smooth' });
-    }
-        
+
     function scrollToSolution() {
         document.getElementById('solution').scrollIntoView({ behavior: 'smooth' });
     }
@@ -144,10 +141,12 @@ export default function LandingPage() {
                                 <i class="fas fa-code mr-2"></i>
                                 Intégrer l'API gratuitement
                             </button>
-                            <button onClick={scrollToDemo} class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                                <i class="fas fa-play mr-2"></i>
-                                Voir la démo
-                            </button>
+                            <Link to="/demo">
+                                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-play mr-2"></i>
+                                    Voir la démo
+                                </button>
+                            </Link>
                         </div>
                         <div class="mt-8 flex items-center space-x-6 text-sm">
                             <div class="flex items-center">
@@ -848,10 +847,12 @@ export default function LandingPage() {
                         <i class="fas fa-rocket mr-2"></i>
                         Commencer l'intégration gratuitement
                     </button>
-                    <button onClick={openModal} class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                        <i class="fas fa-calendar mr-2"></i>
-                        Planifier une démo
-                    </button>
+                    <Link to="/demo">
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                            <i class="fas fa-play mr-2"></i>
+                            Voir la démo
+                        </button>
+                    </Link>
                 </div>
                 
                 <p class="mt-6 text-sm text-gray-200">
