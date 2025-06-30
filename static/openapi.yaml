@@ -650,57 +650,27 @@ components:
           description: Whether the collector uses a proxy or not.
           example: true
         params:
-          type: array
+          type: object
           description: List of parameters that the collector requires.
-          items:
-            - type: object
-              properties:
-                type:
-                  type: string
-                  description: Type of the parameter.
-                  enum: [string, number, boolean, enum]
-                  example: string
-                name:
-                  type: string
-                  description: Name of the parameter.
-                  example: email
-                placeholder:
-                  type: string
-                  description: Placeholder of the parameter.
-                  example: Email address of the account
-                mandatory:
-                  type: boolean
-                  description: Whether the parameter is mandatory or not.
-                  example: true
-              required:
-              - type
-              - name
-              - placeholder
-              - mandatory
-            - type: object
-              properties:
-                type:
-                  type: string
-                  description: Type of the parameter.
-                  enum: [string, number, boolean, enum]
-                  example: string
-                name:
-                  type: string
-                  description: Name of the parameter.
-                  example: password
-                placeholder:
-                  type: string
-                  description: Placeholder of the parameter.
-                  example: Password of the account
-                mandatory:
-                  type: boolean
-                  description: Whether the parameter is mandatory or not.
-                  example: true
-              required:
-              - type
-              - name
-              - placeholder
-              - mandatory
+          additionalProperties:
+            type: object
+            properties:
+             name:
+              type: string
+              description: Name of the parameter.
+              example: Email
+             placeholder:
+              type: string
+              description: Placeholder of the parameter.
+              example: Email of the account
+             mandatory:
+              type: boolean
+              description: Whether the parameter is mandatory or not.
+              example: true
+            required:
+             - name
+             - placeholder
+             - mandatory
         entryUrl:
           type: string
           description: URL to the entry point of the collector. For collectors of type `web` only.
