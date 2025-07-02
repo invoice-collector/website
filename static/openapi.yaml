@@ -553,6 +553,33 @@ paths:
                   description: Success
                 '400':
                   description: Error
+  "/feedback":
+    post:
+      summary: Feedback
+      description: Send a feedback to the Invoice-Collector team.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                feedback:
+                  type: string
+                  description: Feedback message.
+                  example: Missing feature...
+                email:
+                  type: string
+                  description: Email of the user. _This email is used to contact the user if needed._
+                  example: user@example.com
+              required:
+              - feedback
 components:
   schemas:
     locale:
