@@ -375,6 +375,56 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/credential/{id}/collect":
+    post:
+      summary: Collect
+      description:  Request a collect for the given credential.
+      tags:
+        - Credential
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '500':
           description: Internal server error
           content:
