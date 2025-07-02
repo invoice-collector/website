@@ -112,6 +112,39 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/users":
+    get:
+      summary: Users
+      description: List all the users of the customer.
+      tags:
+        - User
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/user"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/user":
     delete:
       summary: User
@@ -633,6 +666,21 @@ components:
       required:
       - name
       - callback
+    user:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the user.
+          example: 6776b5258821de266afbc3f6
+        remote_id:
+          "$ref": "#/components/schemas/remote_id"
+        locale:
+          "$ref": "#/components/schemas/locale"
+      required:
+      - id
+      - remote_id
+      - locale
     state:
       type: object
       properties:
