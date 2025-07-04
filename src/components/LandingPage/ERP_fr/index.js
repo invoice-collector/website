@@ -70,9 +70,9 @@ export default function LandingPageFr() {
         const name = formData.get('name');
         const email = formData.get('email');
         const company = formData.get('company');
-        const clients = formData.get('clients');
+        const customers = formData.get('customers');
         const preference = formData.get('preference');
-        const feedback = `Formulaire de la landing page\n> - Nom: ${name}\n> - Entreprise: ${company}\n> - Clients: ${clients}\n> - Préférence de contact: ${preference}`;
+        const message = `- Name: ${name}\n- Company: ${company}\n- Customers: ${customers}\n- Contact preference: ${preference}`;
 
         fetch('https://registry.invoice-collector.com/v1/feedback', {
           method: 'POST',
@@ -80,7 +80,9 @@ export default function LandingPageFr() {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            feedback: feedback,
+            from: "website",
+            type: "landing_page",
+            message: message,
             email: email
           })
         });
@@ -893,11 +895,11 @@ export default function LandingPageFr() {
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Nombre de clients</label>
-                            <select required name="clients" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="1-50">1-50 clients</option>
-                                <option value="51-200">51-200 clients</option>
-                                <option value="201-1000">201-1000 clients</option>
-                                <option value="1000+">1000+ clients</option>
+                            <select required name="customers" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="1-50">1-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-1000">201-1000</option>
+                                <option value="1000+">1000+</option>
                             </select>
                         </div>
                         
