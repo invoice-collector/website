@@ -570,6 +570,10 @@ paths:
             schema:
               type: object
               properties:
+                from:
+                  type: string
+                  description: From where the feedback is sent.
+                  example: app
                 type:
                   type: string
                   description: Feedback type.
@@ -583,6 +587,7 @@ paths:
                   description: Email of the user. _The email is optional and is used to contact the user if needed._
                   example: user@example.com
               required:
+              - from
               - type
               - message
 components:
