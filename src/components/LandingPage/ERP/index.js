@@ -131,7 +131,7 @@ export default function LandingPage() {
                             <span class="text-sm font-medium">New API • E-invoicing compliant</span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            The API that <span class="text-yellow-300">automate</span> the invoice collection for your customers
+                            The API that <span class="text-yellow-300">automates</span> invoice collection for your customers
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
                             Differentiate your software with our universal API. Your customers automatically retrieve their invoices from +1000 sources. Zero effort, maximum value.
