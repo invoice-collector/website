@@ -332,7 +332,7 @@ export default function LandingPage() {
                             <div class="text-white ml-4 mb-1">"invoices": [</div>
                             <div class="text-white ml-8 mb-1">{"{"}</div>
                             <div class="text-white ml-12 mb-1">"id": "inv_1234",</div>
-                            <div class="text-white ml-12 mb-1">"supplier": "Orange Business",</div>
+                            <div class="text-white ml-12 mb-1">"supplier": "Amazon Business",</div>
                             <div class="text-white ml-12 mb-1">"amount": 245.80,</div>
                             <div class="text-white ml-12 mb-1">"date": "2024-01-15",</div>
                             <div class="text-white ml-12 mb-1">"status": "extracted"</div>
