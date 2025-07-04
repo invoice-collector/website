@@ -570,7 +570,11 @@ paths:
             schema:
               type: object
               properties:
-                feedback:
+                type:
+                  type: string
+                  description: Feedback type.
+                  example: custom
+                message:
                   type: string
                   description: Feedback message.
                   example: Missing feature...
