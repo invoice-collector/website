@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 
-export default function LandingPage() {
+export default function LandingPageEn() {
   useEffect(() => {
     // Tailwind CSS
     const tailwindLink = document.createElement('link');

@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 
-export default function LandingPage() {
+export default function LandingPageFr() {
   useEffect(() => {
     // Tailwind CSS
     const tailwindLink = document.createElement('link');
