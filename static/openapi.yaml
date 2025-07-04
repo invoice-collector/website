@@ -580,10 +580,11 @@ paths:
                   example: Missing feature...
                 email:
                   type: string
-                  description: Email of the user. _This email is used to contact the user if needed._
+                  description: Email of the user. _The email is optional and is used to contact the user if needed._
                   example: user@example.com
               required:
-              - feedback
+              - type
+              - message
 components:
   schemas:
     locale:
