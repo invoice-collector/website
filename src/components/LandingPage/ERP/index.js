@@ -83,7 +83,7 @@ export default function LandingPageEn() {
             email: email
           })
         });
-        alert('Thank! Our team will contact you under 24h to start your integration.');
+        alert('Thank! Our team will contact you soon to start your integration.');
         document.getElementById('leadForm').reset();
         closeModal();
     });

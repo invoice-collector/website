@@ -84,7 +84,7 @@ export default function LandingPageFr() {
             email: email
           })
         });
-        alert('Merci ! Notre équipe vous contactera sous 24h pour démarrer votre intégration.');
+        alert('Merci ! Notre équipe vous contactera bientôt pour démarrer votre intégration.');
         document.getElementById('leadForm').reset();
         closeModal();
     });
