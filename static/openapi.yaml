@@ -715,6 +715,10 @@ components:
     customer:
       type: object
       properties:
+        id:
+          type: string
+          description: Id of the customer.
+          example: 6795130f170ba4496dc30642
         name:
           type: string
           description: Name of the customer.
@@ -723,9 +727,27 @@ components:
           type: string
           description: Callback url at which the new invoices are sent.
           example: https://path.to/callback
-      required:
-      - name
-      - callback
+        theme:
+          type: string
+          description: Theme of the customer.
+          example: dark
+        subscribedCollectors:
+          type: array
+          description: List of collector ids the customer is subscribed to.
+          items:
+          type: string
+          example: ["amazon", "shopify", "free"]
+        isSubscribedToAll:
+          type: boolean
+          description: Whether the customer is subscribed to all collectors. _If true, the `subscribedCollectors` field is ignored._
+          example: false
+        required:
+        - id
+        - name
+        - callback
+        - theme
+        - subscribedCollectors
+        - isSubscribedToAll
     user:
       type: object
       properties:
@@ -733,12 +755,17 @@ components:
           type: string
           description: Id of the user.
           example: 6776b5258821de266afbc3f6
+        customer_id:
+          type: string
+          description: Id of the customer.
+          example: 6795130f170ba4496dc30642
         remote_id:
           "$ref": "#/components/schemas/remote_id"
         locale:
           "$ref": "#/components/schemas/locale"
       required:
       - id
+      - customer_id
       - remote_id
       - locale
     state:
