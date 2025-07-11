@@ -735,7 +735,6 @@ components:
           type: array
           description: List of collector ids the customer is subscribed to.
           items:
-          type: string
           example: ["amazon", "shopify", "free"]
         isSubscribedToAll:
           type: boolean
