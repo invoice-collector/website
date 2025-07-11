@@ -541,9 +541,15 @@ paths:
           required: false
           schema:
             "$ref": "#/components/schemas/locale"
+        - in: query
+          name: token
+          required: false
+          schema:
+            $ref: "#/components/schemas/token"
+          description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint. If provided, only the collectors the customer is subscribed to will be returned._
       responses:
         '200':
-          description: List of available collectors
+          description: List of available collectors.
           content:
             application/json:
               schema:
@@ -552,6 +558,12 @@ paths:
                   "$ref": "#/components/schemas/collector"
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid oauth token
           content:
             application/json:
               schema:
