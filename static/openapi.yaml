@@ -84,7 +84,7 @@ paths:
   "/customer":
     get:
       summary: Customer
-      description: Get information about the you, the customer.
+      description: Get your informations.
       tags:
         - Customer
       parameters:
@@ -100,6 +100,71 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/customer"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+    post:
+      summary: Customer
+      description: Update your informations.
+      tags:
+        - Customer
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the customer.
+                  example: Awesome Company Name
+                callback:
+                  type: string
+                  description: Callback url at which the new invoices are sent.
+                  example: https://path.to/callback
+                theme:
+                  type: string
+                  description: Theme of the customer.
+                  example: dark
+                subscribedCollectors:
+                  type: array
+                  description: List of collector ids the customer is subscribed to.
+                  items:
+                    type: string
+                  example: ["amazon", "shopify", "free"]
+                isSubscribedToAll:
+                  type: boolean
+                  description: Whether the customer is subscribed to all collectors.
+                  example: false
+                displaySketchCollectors:
+                  type: boolean
+                  description: Whether to display sketch collectors.
+                  example: false
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid bearer token
           content:
