@@ -826,7 +826,7 @@ components:
           type: number
           description: Maximum delay between two collects in ms.
           example: 2592000000
-        required:
+      required:
         - id
         - name
         - callback
