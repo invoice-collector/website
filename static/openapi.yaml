@@ -818,6 +818,14 @@ components:
           type: boolean
           description: Whether the customer is subscribed to all collectors. _If true, the `subscribedCollectors` field is ignored._
           example: false
+        displaySketchCollectors:
+          type: boolean
+          description: Whether to display sketch collectors.
+          example: false
+        maxDelayBetweenCollect:
+          type: number
+          description: Maximum delay between two collects in ms.
+          example: 2592000000
         required:
         - id
         - name
@@ -825,6 +833,8 @@ components:
         - theme
         - subscribedCollectors
         - isSubscribedToAll
+        - displaySketchCollectors
+        - maxDelayBetweenCollect
     user:
       type: object
       properties:
