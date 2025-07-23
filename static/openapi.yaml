@@ -93,6 +93,51 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/reset":
+    post:
+      summary: Reset
+      description: Reset the password of the customer.
+      tags:
+        - Authentication
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/reset_token"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: New password of the customer.
+                  example: newsecurepassword123
+              required:
+              - password
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid reset token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/authorize":
     post:
       summary: Authorize (DEPRECATED)
@@ -807,6 +852,10 @@ components:
       type: string
       description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint._
       example: <token>
+    reset_token:
+      type: string
+      description: Token to be used for password reset. _You can get it using the [`/signup`](#tag/Authentication/paths/~1signup/post) endpoint._
+      example: <reset_token>
     verificationCode:
       type: string
       description: Verification code received by email. _Leave it empty if the user did not receive any._
