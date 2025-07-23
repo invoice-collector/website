@@ -379,6 +379,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/user/{id}":
     delete:
       summary: User
       description: Delete the user and all its credentials. _By deleting the user, you are also deleting the terms of use acceptance. The user will be asked to accept the terms of use again when it will try to authorize again._
@@ -390,17 +391,11 @@ paths:
           required: true
           schema:
             "$ref": "#/components/schemas/bearer"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                remote_id:
-                  "$ref": "#/components/schemas/remote_id"
-              required:
-              - remote_id
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/user_id"
       responses:
         '200':
           description: Success
@@ -411,7 +406,7 @@ paths:
               schema:
                 "$ref": "#/components/schemas/error"
         '401':
-          description: Unauthorized - Invalid oauth token
+          description: Unauthorized - Invalid bearer token
           content:
             application/json:
               schema:
@@ -909,6 +904,10 @@ components:
         type: string
         description: Id of the credential.
         example: 6776b5258821de266afbc3f6
+    user_id:
+        type: string
+        description: Id of the user.
+        example: 687f40dab93991306da5ccf3
     credentials:
       type: array
       description: List of credentials.
