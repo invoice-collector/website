@@ -9,7 +9,7 @@ paths:
   "/authorize":
     post:
       summary: Authorize (DEPRECATED)
-      description: DEPRECATED Use `POST /user` instead. Just replace `/authorize` with `/user` and it will work the same way.
+      description: DEPRECATED! Use [`/user`](#tag/User/paths/~1user/post) instead. Just replace `/authorize` with `/user` and it will work the same way.
   "/ui":
     get:
       summary: UI
