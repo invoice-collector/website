@@ -272,6 +272,37 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/customer/bearer":
+    post:
+      summary: Bearer
+      description: Create a new bearer token for the customer and replace the previous one. _This token must be used by the client to authenticate itself while using the API._
+      tags:
+        - Customer
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/bearer_response"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/users":
     get:
       summary: Users
@@ -820,7 +851,9 @@ components:
       type: object
       properties:
         bearer:
-          $ref: "#/components/schemas/bearer"
+          type: string
+          description: Bearer token to be used in the Authorization header.
+          example: qHcFyrYj.....yQ77/q0=
       required:
         - bearer
     remote_id:
