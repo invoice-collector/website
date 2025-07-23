@@ -37,6 +37,62 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/bearer_response"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid credentials
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/signup":
+    post:
+      summary: Signup
+      description: Signup a new customer. _If the email is already used, a password reset link will be sent by email. `name` is not mandatory in case of password reset._
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Email of the customer.
+                  example: awesome-company@example.com
+                name:
+                  type: string
+                  description: Name of the company.
+                  example: Awesome Company
+              required:
+              - email
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/authorize":
     post:
       summary: Authorize (DEPRECATED)
