@@ -420,15 +420,18 @@ paths:
   "/credentials":
     get:
       summary: Credentials
-      description: List all the credentials for the user.
+      description: List all the credentials for the user. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
       responses:
         '200':
           description: Success.
@@ -451,15 +454,18 @@ paths:
   "/credential":
     post:
       summary: Credential
-      description: Add a new credential for the given user.
+      description: Add a new credential for the given user. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
       requestBody:
         required: true
         content:
@@ -509,15 +515,18 @@ paths:
   "/credential/{id}":
     get:
       summary: Credential
-      description: Get information about a specific credential.
+      description: Get information about a specific credential. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
         - in: path
           name: id
           required: true
@@ -550,15 +559,18 @@ paths:
                 "$ref": "#/components/schemas/error"
     delete:
       summary: Credential
-      description: Delete the credential for the given user.
+      description: Delete the credential for the given user. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
         - in: path
           name: id
           required: true
@@ -594,15 +606,18 @@ paths:
   "/credential/{id}/2fa":
     post:
       summary: 2FA
-      description: Set the 2FA code for the given credential.
+      description: Set the 2FA code for the given credential. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
         - in: path
           name: id
           required: true
@@ -651,15 +666,18 @@ paths:
   "/credential/{id}/collect":
     post:
       summary: Collect
-      description:  Request a collect for the given credential.
+      description:  Request a collect for the given credential. _You need to authenticate using token or bearer._
       tags:
         - Credential
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
         - in: path
           name: id
           required: true
@@ -695,7 +713,7 @@ paths:
   "/collectors":
     get:
       summary: Collectors
-      description: List all the available collectors.
+      description: List all the available collectors. _You can authenticate using token or bearer. If any authentication is provided, only the collectors the customer is subscribed to will be returned._
       tags:
         - Collector
       parameters:
@@ -706,10 +724,12 @@ paths:
             "$ref": "#/components/schemas/locale"
         - in: query
           name: token
-          required: false
           schema:
-            $ref: "#/components/schemas/token"
-          description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint. If provided, only the collectors the customer is subscribed to will be returned._
+            "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
       responses:
         '200':
           description: List of available collectors.
@@ -883,7 +903,7 @@ components:
       - token
     token:
       type: string
-      description: Token to be used by the client. _You can get it using the [`/authorize`](#/paths/~1authorize/post) endpoint._
+      description: Token to be used by the client. _You can get it using the [`/user`](#tag/User/paths/~1user/post) endpoint._
       example: <token>
     reset_token:
       type: string
