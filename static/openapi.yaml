@@ -6,47 +6,41 @@ servers:
   - url: https://api.invoice-collector.com/api/v1
   - url: https://localhost:8080/api/v1
 paths:
-  "/authorize":
+  "/login":
     post:
-      summary: Authorize (DEPRECATED)
-      description: DEPRECATED Use `POST /user` instead. Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
-      parameters:
-        - in: header
-          name: Authorization
-          required: true
-          schema:
-            "$ref": "#/components/schemas/bearer"
+      summary: Login
+      description: Login to the Invoice Collector API. _This endpoint is used to get a bearer token for the customer._
+      tags:
+        - Authentication
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/authorization_body"
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Email of the customer.
+                  example: customer@example.com
+                password:
+                  type: string
+                  description: Password of the customer.
+                  example: securepassword123
+              required:
+              - email
+              - password
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/authorization_response"
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '401':
-          description: Unauthorized - Invalid bearer token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
+                "$ref": "#/components/schemas/bearer_response"
+  "/authorize":
+    post:
+      summary: Authorize (DEPRECATED)
+      description: DEPRECATED Use `POST /user` instead. Just replace `/authorize` with `/user` and it will work the same way.
   "/ui":
     get:
       summary: UI
@@ -716,6 +710,13 @@ components:
       type: string
       description: Bearer token to authenticate the customer.
       example: Bearer <token>
+    bearer_response:
+      type: object
+      properties:
+        bearer:
+          $ref: "#/components/schemas/bearer"
+      required:
+        - bearer
     remote_id:
       type: string
       description: Remote id of the user.
