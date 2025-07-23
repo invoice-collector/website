@@ -8,8 +8,8 @@ servers:
 paths:
   "/authorize":
     post:
-      summary: Authorize
-      description: Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
+      summary: Authorize (DEPRECATED)
+      description: DEPRECATED Use `POST /user` instead. Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
       parameters:
         - in: header
           name: Authorization
@@ -211,6 +211,48 @@ paths:
               schema:
                 "$ref": "#/components/schemas/error"
   "/user":
+    post:
+      summary: User
+      description: Create a new user or update an existing one. Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
+      tags:
+        - User
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/authorization_body"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/authorization_response"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     delete:
       summary: User
       description: Delete the user and all its credentials. _By deleting the user, you are also deleting the terms of use acceptance. The user will be asked to accept the terms of use again when it will try to authorize again._
@@ -694,12 +736,14 @@ components:
       - locale
       - email
     authorization_response:
-      type: object
-      properties:
-        token:
-          type: string
-          description: Token to be used by the client.
-          example: 69b67c9f...be77ffeb
+      allOf:
+        - "$ref": "#/components/schemas/user"
+        - type: object
+          properties:
+            token:
+              type: string
+              description: Token to be used by the client.
+              example: 69b67c9f...be77ffeb
       required:
       - token
     token:
