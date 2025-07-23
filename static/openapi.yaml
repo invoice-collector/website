@@ -6,6 +6,100 @@ servers:
   - url: https://api.invoice-collector.com/api/v1
   - url: https://localhost:8080/api/v1
 paths:
+  "/authorize":
+    post:
+      summary: Authorize (DEPRECATED)
+      description: DEPRECATED Use `POST /user` instead. Just replace `/authorize` with `/user` and it will work the same way.
+  "/ui":
+    get:
+      summary: UI
+      description: UI used by the user to manage its credentials.
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            "$ref": "#/components/schemas/token"
+        - in: query
+          name: verificationCode
+          required: false
+          schema:
+            "$ref": "#/components/schemas/verificationCode"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/html:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized - Invalid oauth token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/test_callback":
+    get:
+      summary: Test Callback
+      description: Request the server to send a callback request with a fake invoice.
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+      callbacks:
+        onInvoiceCollected:
+          Invoice:
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the payload.
+                          enum:
+                            - invoice
+                          example: invoice
+                        id:
+                          type: string
+                          description: Id of the collector.
+                          example: free
+                        remote_id:
+                          type: string
+                          description: Remote id of the user.
+                          example: 121439
+                        invoice:
+                          "$ref": "#/components/schemas/invoice"
+                      required:
+                        - type
+                        - id
+                        - remote_id
+                        - invoice
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Error
   "/login":
     post:
       summary: Login
@@ -128,44 +222,6 @@ paths:
                 "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid reset token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-  "/authorize":
-    post:
-      summary: Authorize (DEPRECATED)
-      description: DEPRECATED Use `POST /user` instead. Just replace `/authorize` with `/user` and it will work the same way.
-  "/ui":
-    get:
-      summary: UI
-      description: UI used by the user to manage its credentials.
-      parameters:
-        - in: query
-          name: token
-          required: true
-          schema:
-            "$ref": "#/components/schemas/token"
-        - in: query
-          name: verificationCode
-          required: false
-          schema:
-            "$ref": "#/components/schemas/verificationCode"
-      responses:
-        '200':
-          description: Success
-          content:
-            text/html:
-              schema:
-                type: string
-        '401':
-          description: Unauthorized - Invalid oauth token
           content:
             application/json:
               schema:
@@ -757,62 +813,6 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/test_callback":
-    get:
-      summary: Test Callback
-      description: Request the server to send a callback request with a fake invoice.
-      responses:
-        '200':
-          description: Success
-        '401':
-          description: Unauthorized - Invalid bearer token
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error"
-      callbacks:
-        onInvoiceCollected:
-          Invoice:
-            post:
-              requestBody:
-                required: true
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          description: Type of the payload.
-                          enum:
-                            - invoice
-                          example: invoice
-                        id:
-                          type: string
-                          description: Id of the collector.
-                          example: free
-                        remote_id:
-                          type: string
-                          description: Remote id of the user.
-                          example: 121439
-                        invoice:
-                          "$ref": "#/components/schemas/invoice"
-                      required:
-                        - type
-                        - id
-                        - remote_id
-                        - invoice
-              responses:
-                '200':
-                  description: Success
-                '400':
-                  description: Error
   "/feedback":
     post:
       summary: Feedback
