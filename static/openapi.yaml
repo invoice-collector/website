@@ -770,13 +770,18 @@ paths:
   "/feedback":
     post:
       summary: Feedback
-      description: Send a feedback to the Invoice-Collector team.
+      description: Send a feedback to the Invoice-Collector team. _You need to authenticate using token or bearer._
+      tags:
+        - Feedback
       parameters:
         - in: query
           name: token
-          required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: header
+          name: Authorization
+          schema:
+            "$ref": "#/components/schemas/bearer"
       requestBody:
         required: true
         content:
