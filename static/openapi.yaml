@@ -130,7 +130,9 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/bearer_response"
+                allOf:
+                  - "$ref": "#/components/schemas/customer"
+                  - "$ref": "#/components/schemas/bearer_response"
         '400':
           description: Bad Request
           content:
@@ -165,7 +167,7 @@ paths:
                 email:
                   type: string
                   description: Email of the customer.
-                  example: awesome-company@example.com
+                  example: customer@example.com
                 name:
                   type: string
                   description: Name of the company.
@@ -1003,6 +1005,10 @@ components:
           type: string
           description: Id of the customer.
           example: 6795130f170ba4496dc30642
+        email:
+          type: string
+          description: Email of the customer.
+          example: customer@company.com
         name:
           type: string
           description: Name of the customer.
@@ -1035,6 +1041,7 @@ components:
           example: 2592000000
       required:
         - id
+        - email
         - name
         - callback
         - theme
