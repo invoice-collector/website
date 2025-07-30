@@ -44,13 +44,28 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/test_callback":
+  "/test_callback/{type}":
     get:
       summary: Test Callback
       description: Request the server to send a callback request with a fake invoice.
+      parameters:
+        - in: query
+          name: type
+          required: true
+          schema:
+            type: string
+            description: Type of event to send to the callback.
+            enum: [invoice, notification_disconnected]
+            example: invoice
       responses:
         '200':
           description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid bearer token
           content:
