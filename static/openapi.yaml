@@ -100,6 +100,47 @@ paths:
                   description: Success
                 '400':
                   description: Error
+        onCollectorDisconnected:
+          Notification Disconnected:
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the payload.
+                          example: notification_disconnected
+                        id:
+                          type: string
+                          description: Id of the collector.
+                          example: free
+                        credential_id:
+                          type: string
+                          description: Id of the credential.
+                          example: 6776b5258821de266afbc3f6
+                        user_id:
+                          type: string
+                          description: Id of the user.
+                          example: 687108e5dce5050bc8ca53c1
+                        remote_id:
+                          type: string
+                          description: Remote id of the user.
+                          example: R121439
+                      required:
+                        - type
+                        - id
+                        - credential_id
+                        - user_id
+                        - remote_id
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Error
   "/login":
     post:
       summary: Login
