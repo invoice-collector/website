@@ -361,6 +361,10 @@ paths:
                   type: string
                   description: Callback url at which the new invoices are sent.
                   example: https://path.to/callback
+                remoteId:
+                  type: string
+                  description: Remote id of your company in your system. Invoice-Collectors's invoices will be sent along with this id to the callback URL.
+                  example: R121439
                 theme:
                   type: string
                   description: Theme of the customer.
