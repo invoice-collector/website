@@ -44,7 +44,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/test_callback/{type}":
+  "/test/callback/{type}":
     get:
       summary: Test Callback
       description: Request the server to send a callback request with a fake invoice.
