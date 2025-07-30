@@ -57,6 +57,11 @@ paths:
             description: Type of event to send to the callback.
             enum: [invoice, notification_disconnected]
             example: invoice
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
       responses:
         '200':
           description: Success
