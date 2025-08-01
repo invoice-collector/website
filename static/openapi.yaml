@@ -47,7 +47,7 @@ paths:
   "/test/callback/{type}":
     get:
       summary: Test Callback
-      description: Request the server to send a callback request with a fake invoice.
+      description: Request the server to send a callback request with a fake event.
       parameters:
         - in: query
           name: type
