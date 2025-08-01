@@ -829,7 +829,7 @@ paths:
           name: user_id
           required: true
           schema:
-            "$ref": "#/components/schemas/credential_id"
+            "$ref": "#/components/schemas/user_id"
       responses:
         '200':
           description: Success.
@@ -865,7 +865,7 @@ paths:
           name: user_id
           required: true
           schema:
-            "$ref": "#/components/schemas/credential_id"
+            "$ref": "#/components/schemas/user_id"
       requestBody:
         required: true
         content:
@@ -1080,7 +1080,7 @@ paths:
           name: user_id
           required: true
           schema:
-            "$ref": "#/components/schemas/credential_id"
+            "$ref": "#/components/schemas/user_id"
         - in: path
           name: credential_id
           required: true
