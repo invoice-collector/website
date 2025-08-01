@@ -10,7 +10,7 @@ hide_table_of_contents: true
 |----------|-------------|-----------------|-----------|---------|-----------|
 | `PORT` | Port on which the API is listening. _Do not forget to open ports on docker container if you change this value._ | `*` | ✔️ | `8080` | None |
 | `OAUTH_TOKEN_VALIDITY_DURATION_MS` | Duration in milliseconds for which the OAuth token is valid. | `*` | ❌ | `600000` | None |
-| `RESET_PASSWORD_TOKEN_VALIDITY_DURATION_MS` | Duration in milliseconds for which the reset password token is valid. | `*` | ❌ | `600000` | None |
+| `RESET_PASSWORD_TOKEN_VALIDITY_DURATION_MS` | Duration in milliseconds for which the reset password token is valid. | `*` | ❌ | `3600000` | None |
 | `UI_BEARER_VALIDITY_DURATION_MS` | Duration in milliseconds for which the UI bearer token is valid. | `*` | ❌ | `3600000` | None |
 | `REGISTRY_SERVER_ENDPOINT` | This is the endpoint at which logs are sent and collector updates are downloaded from. | `*` | ✔️ | `https://registry.invoice-collector.com` | None |
 | `REGISTRY_SERVER_HEADERS` | Headers to be sent to the registry server. | `*` | ❌ | `{}` | None |
