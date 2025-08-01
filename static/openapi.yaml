@@ -500,7 +500,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/user/{id}":
+  "/user/{user_id}":
     delete:
       summary: User
       description: Delete the user and all its credentials. _By deleting the user, you are also deleting the terms of use acceptance. The user will be asked to accept the terms of use again when it will try to authorize again._
@@ -513,7 +513,7 @@ paths:
           schema:
             "$ref": "#/components/schemas/bearer"
         - in: path
-          name: id
+          name: user_id
           required: true
           schema:
             "$ref": "#/components/schemas/user_id"
@@ -541,18 +541,15 @@ paths:
   "/credentials":
     get:
       summary: Credentials
-      description: List all the credentials for the user. _You need to authenticate using token or bearer._
+      description: List all the credentials for the user. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
       responses:
         '200':
           description: Success.
@@ -575,18 +572,15 @@ paths:
   "/credential":
     post:
       summary: Credential
-      description: Add a new credential for the given user. _You need to authenticate using token or bearer._
+      description: Add a new credential for the given user. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
       requestBody:
         required: true
         content:
@@ -633,23 +627,20 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/credential/{id}":
+  "/credential/{credential_id}":
     get:
       summary: Credential
-      description: Get information about a specific credential. _You need to authenticate using token or bearer._
+      description: Get information about a specific credential. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
         - in: path
-          name: id
+          name: credential_id
           required: true
           schema:
             "$ref": "#/components/schemas/credential_id"
@@ -680,18 +671,15 @@ paths:
                 "$ref": "#/components/schemas/error"
     delete:
       summary: Credential
-      description: Delete the credential for the given user. _You need to authenticate using token or bearer._
+      description: Delete the credential for the given user. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
         - in: path
           name: id
           required: true
@@ -724,23 +712,20 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/credential/{id}/2fa":
+  "/credential/{credential_id}/2fa":
     post:
       summary: 2FA
-      description: Set the 2FA code for the given credential. _You need to authenticate using token or bearer._
+      description: Set the 2FA code for the given credential. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
         - in: path
-          name: id
+          name: credential_id
           required: true
           schema:
             "$ref": "#/components/schemas/credential_id"
@@ -784,23 +769,20 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-  "/credential/{id}/collect":
+  "/credential/{credential_id}/collect":
     post:
       summary: Collect
-      description:  Request a collect for the given credential. _You need to authenticate using token or bearer._
+      description:  Request a collect for the given credential. _You need to authenticate using token._
       tags:
-        - Credential
+        - Credential (token)
       parameters:
         - in: query
           name: token
+          required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: header
-          name: Authorization
-          schema:
-            "$ref": "#/components/schemas/bearer"
         - in: path
-          name: id
+          name: credential_id
           required: true
           schema:
             "$ref": "#/components/schemas/credential_id"
@@ -831,10 +813,310 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
+  "/user/{user_id}/credentials":
+    get:
+      summary: Credentials
+      description: List all the credentials for the user. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success.
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/credentials"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/user/{user_id}/credential":
+    post:
+      summary: Credential
+      description: Add a new credential for the given user. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: Id of the collector to use.
+                  example: free
+                params:
+                  type: object
+                  description: Parameters required by the collector.
+                  example:
+                    id: "fbx123456789"
+                    password: "Y%2j7Fc$#$y"
+                    note: "The company Free account"
+              required:
+              - id
+              - params
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/credential_id_object"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/user/{user_id}/credential/{credential_id}":
+    get:
+      summary: Credential
+      description: Get information about a specific credential. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/user_id"
+        - in: path
+          name: credential_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/credential"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+    delete:
+      summary: Credential
+      description: Delete the credential for the given user. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/user/{user_id}/credential/{credential_id}/2fa":
+    post:
+      summary: 2FA
+      description: Set the 2FA code for the given credential. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/user_id"
+        - in: path
+          name: credential_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: 2FA code to use.
+                  example: 359731
+              required:
+              - code
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/user/{user_id}/credential/{credential_id}/collect":
+    post:
+      summary: Collect
+      description:  Request a collect for the given credential. _You need to authenticate using bearer._
+      tags:
+        - Credential (bearer)
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+        - in: path
+          name: credential_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/credential_id"
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
   "/collectors":
     get:
       summary: Collectors
-      description: List all the available collectors. _You can authenticate using token or bearer. If any authentication is provided, only the collectors the customer is subscribed to will be returned._
+      description: List all the available collectors. _You can authenticate using token or bearer. If an authentication is provided, only the collectors the customer is subscribed to will be returned._
       tags:
         - Collector
       parameters:
