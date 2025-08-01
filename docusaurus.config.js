@@ -101,8 +101,8 @@ const config = {
             position: 'left',
           },
           {
-            to: 'demo',
-            label: 'Try the Demo',
+            to: 'https://app.invoice-collector.com/signup',
+            label: 'Start for Free',
             position: 'right',
             className: 'button button--primary',
             style: { color: 'white' }

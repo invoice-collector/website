@@ -139,14 +139,16 @@ export default function LandingPageEn() {
                             Differentiate your software with our universal API. Your customers automatically retrieve their invoices from +1000 sources. Zero effort, maximum value.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onClick={openModal} class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
-                                <i class="fas fa-code mr-2"></i>
-                                Free API integration
-                            </button>
-                            <Link to="/demo">
+                            <Link to="https://app.invoice-collector.com/signup" target="_blank">
+                                <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
+                                    <i class="fas fa-rocket mr-2"></i>
+                                    Start for Free
+                                </button>
+                            </Link>
+                            <Link to="/docs">
                                 <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                                    <i class="fas fa-play mr-2"></i>
-                                    See the demo
+                                    <i class="fas fa-code mr-2"></i>
+                                    Documentation
                                 </button>
                             </Link>
                         </div>
@@ -897,14 +899,16 @@ export default function LandingPageEn() {
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onClick={openModal} class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
-                        <i class="fas fa-rocket mr-2"></i>
-                        Start integration for free
-                    </button>
-                    <Link to="/demo">
+                    <Link to="https://app.invoice-collector.com/signup" target="_blank">
+                        <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Start for free
+                        </button>
+                    </Link>
+                    <Link to="/docs">
                         <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
-                            <i class="fas fa-play mr-2"></i>
-                            See the demo
+                            <i class="fas fa-code mr-2"></i>
+                            Documentation
                         </button>
                     </Link>
                 </div>
