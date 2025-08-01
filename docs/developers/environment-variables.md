@@ -30,3 +30,4 @@ hide_table_of_contents: true
 | `DISABLE_VERIFICATION_CODE` | Whether the verification code must be disable or not. | `True` or `False` | ❌ | `False` | None |
 | `FRONTEND` | URL of the frontend application. | `*` | ✔️ | `http://localhost:8080` | None |
 | `ENV` | Environment in which the application is running. | `prod` or `debug` | ❌ | `prod` | None |
+| `IS_SELF_HOSTED` | Whether the application is self-hosted or not. | `True` or `False` | ❌ | `True` | None |
