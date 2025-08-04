@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 
-export default function LandingPageEn() {
+export default function LandingPageFr() {
   useEffect(() => {
     // Tailwind CSS
     const tailwindLink = document.createElement('link');
@@ -85,7 +86,7 @@ export default function LandingPageEn() {
             email: email
           })
         });
-        alert('Thank! Our team will contact you soon to start your integration.');
+        alert('Merci ! Notre équipe vous contactera bientôt pour démarrer votre intégration.');
         document.getElementById('leadForm').reset();
         closeModal();
     });
@@ -130,19 +131,19 @@ export default function LandingPageEn() {
                     <div>
                         <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-4 py-2 mb-6">
                             <i class="fas fa-rocket text-yellow-300 mr-2"></i>
-                            <span class="text-sm font-medium">New API • E-invoicing compliant</span>
+                            <span class="text-sm font-medium"><Translate>Nouvelle API • Conforme e-invoicing 2026</Translate></span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            The API that <span class="text-yellow-300">automates</span> invoice collection for your customers
+                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Differentiate your software with our universal API. Your customers automatically retrieve their invoices from +1000 sources. Zero effort, maximum value.
+                            Différenciez votre logiciel avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <Link to="https://app.invoice-collector.com/signup" target="_blank">
                                 <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
                                     <i class="fas fa-rocket mr-2"></i>
-                                    Start for Free
+                                    Commencer gratuitement
                                 </button>
                             </Link>
                             <Link to="/docs">
@@ -155,15 +156,15 @@ export default function LandingPageEn() {
                         <div class="mt-8 flex items-center space-x-6 text-sm">
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-green-400 mr-2"></i>
-                                <span>Integration in 24h</span>
+                                <span>Intégration en 24h</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-shield-alt text-green-400 mr-2"></i>
-                                <span>RGPD compliant</span>
+                                <span>Conforme RGPD</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-bolt text-green-400 mr-2"></i>
-                                <span>A simple REST API</span>
+                                <span>API REST simple</span>
                             </div>
                         </div>
                     </div>
@@ -171,7 +172,7 @@ export default function LandingPageEn() {
                         <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20">
                             <div class="mb-4">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="text-sm font-medium text-gray-200">Collected invoices this month</span>
+                                    <span class="text-sm font-medium text-gray-200">Factures collectées ce mois</span>
                                     <span class="text-green-400 text-sm"><i class="fas fa-arrow-up mr-1"></i>+156%</span>
                                 </div>
                                 <div class="text-3xl font-bold">2 847</div>
@@ -184,7 +185,7 @@ export default function LandingPageEn() {
                                         </div>
                                         <span class="text-sm">Amazon Business</span>
                                     </div>
-                                    <span class="text-green-400 text-sm">✓ Collected</span>
+                                    <span class="text-green-400 text-sm">✓ Collectée</span>
                                 </div>
                                 <div class="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
                                     <div class="flex items-center">
@@ -193,7 +194,7 @@ export default function LandingPageEn() {
                                         </div>
                                         <span class="text-sm">Shopify</span>
                                     </div>
-                                    <span class="text-green-400 text-sm">✓ Collected</span>
+                                    <span class="text-green-400 text-sm">✓ Collectée</span>
                                 </div>
                                 <div class="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
                                     <div class="flex items-center">
@@ -202,7 +203,7 @@ export default function LandingPageEn() {
                                         </div>
                                         <span class="text-sm">Email</span>
                                     </div>
-                                    <span class="text-yellow-400 text-sm">⟳ In progress</span>
+                                    <span class="text-yellow-400 text-sm">⟳ En cours</span>
                                 </div>
                             </div>
                         </div>
@@ -215,10 +216,10 @@ export default function LandingPageEn() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Your customers loose <span class="text-red-600">5h/week</span> hunting invoices
+                        Vos clients perdent <span class="text-red-600">5h/semaine</span> à chasser leurs factures
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Web portals, email boxes, paper documents... Manual collection is costly and hinders productivity.
+                        Portails fournisseurs, boîtes email, documents papier... La collecte manuelle coûte cher et freine la productivité.
                     </p>
                 </div>
                 
@@ -227,42 +228,42 @@ export default function LandingPageEn() {
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-clock text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Lost time</h3>
-                        <p class="text-gray-600 mb-4">5-10 minutes per invoice when collecting manually</p>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Temps perdu</h3>
+                        <p class="text-gray-600 mb-4">5-10 minutes par facture en collecte manuelle</p>
                         <div class="text-3xl font-bold text-red-600">74%</div>
-                        <p class="text-sm text-gray-500">of SMEs only partially automated</p>
+                        <p class="text-sm text-gray-500">des PME seulement partiellement automatisées</p>
                     </div>
                     
                     <div class="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-dollar-sign text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">High cost</h3>
-                        <p class="text-gray-600 mb-4">10-40€ per supplier processed manually</p>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Coût élevé</h3>
+                        <p class="text-gray-600 mb-4">10-40€ par fournisseur traitée manuellement</p>
                         <div class="text-3xl font-bold text-red-600">x6</div>
-                        <p class="text-sm text-gray-500">more expensive than an automated solution</p>
+                        <p class="text-sm text-gray-500">plus cher qu'une solution automatisée</p>
                     </div>
                     
                     <div class="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Errors & losses</h3>
-                        <p class="text-gray-600 mb-4">Lost documents, payment delays</p>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Erreurs & pertes</h3>
+                        <p class="text-gray-600 mb-4">Documents perdus, retards de paiement</p>
                         <div class="text-3xl font-bold text-red-600">40%</div>
-                        <p class="text-sm text-gray-500">of teams cite this problem</p>
+                        <p class="text-sm text-gray-500">des équipes citent ce problème</p>
                     </div>
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                        What if your customers could automate 100% of their invoice collection?
+                        Et si vos clients pouvaient automatiser 100% de leur collecte de factures ?
                     </h3>
                     <p class="text-lg text-gray-600 mb-6">
-                        With Invoice Collector, turn this pain into a competitive advantage for your software.
+                        Avec Invoice Collector, transformez cette douleur en avantage concurrentiel pour votre logiciel.
                     </p>
                     <button onClick={scrollToSolution} class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        Discover the solution <i class="fas fa-arrow-down ml-2"></i>
+                        Découvrir la solution <i class="fas fa-arrow-down ml-2"></i>
                     </button>
                 </div>
             </div>
@@ -272,10 +273,10 @@ export default function LandingPageEn() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        A universal API to <span class="text-blue-600">automate</span> collection
+                        Une API universelle pour <span class="text-blue-600">automatiser</span> la collecte
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Invoice Collector connects to 1000+ sources to automatically retrieve all your customers' invoices.
+                        Invoice Collector se connecte à +1000 sources pour récupérer automatiquement toutes les factures de vos clients.
                     </p>
                 </div>
 
@@ -287,8 +288,8 @@ export default function LandingPageEn() {
                                     <i class="fas fa-plug text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Universal connectors</h3>
-                                    <p class="text-gray-600">Email (Gmail, Outlook), supplier portals (Orange, EDF, SFR...), e-invoicing platforms (Chorus Pro, Peppol)</p>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Connecteurs universels</h3>
+                                    <p class="text-gray-600">Email (Gmail, Outlook), portails fournisseurs (Orange, EDF, SFR...), plateformes e-invoicing (Chorus Pro, Peppol)</p>
                                 </div>
                             </div>
                             
@@ -297,8 +298,8 @@ export default function LandingPageEn() {
                                     <i class="fas fa-brain text-green-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Extraction AI</h3>
-                                    <p class="text-gray-600">Advanced OCR + NLP to automatically extract key data (amount, date, VAT, supplier) with 95%+ accuracy</p>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">IA d'extraction</h3>
+                                    <p class="text-gray-600">OCR avancé + NLP pour extraire automatiquement les données clés (montant, date, TVA, fournisseur) avec 95%+ de précision</p>
                                 </div>
                             </div>
                             
@@ -307,8 +308,8 @@ export default function LandingPageEn() {
                                     <i class="fas fa-code text-purple-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Simple REST API</h3>
-                                    <p class="text-gray-600">Plug-and-play integration in your software. Intuitive endpoints, real-time webhooks</p>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">API REST simple</h3>
+                                    <p class="text-gray-600">Intégration plug-and-play dans votre logiciel. Endpoints intuitifs, webhooks temps réel</p>
                                 </div>
                             </div>
                         </div>
@@ -349,36 +350,36 @@ export default function LandingPageEn() {
 
                 <div class="bg-white rounded-2xl shadow-xl p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">
-                        What you bring to your customers
+                        Ce que vous apportez à vos clients
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="text-center">
                             <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-check-circle text-green-600 text-2xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Zero loss</h4>
-                            <p class="text-sm text-gray-600">100% of invoices automatically retrieved</p>
+                            <h4 class="font-semibold text-gray-900 mb-2">Zéro perte</h4>
+                            <p class="text-sm text-gray-600">100% des factures automatiquement récupérées</p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-tachometer-alt text-blue-600 text-2xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Fast closing</h4>
-                            <p class="text-sm text-gray-600">Accelerated monthly closing</p>
+                            <h4 class="font-semibold text-gray-900 mb-2">Clôture rapide</h4>
+                            <p class="text-sm text-gray-600">Accélération du closing mensuel</p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-users text-purple-600 text-2xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Freed teams</h4>
-                            <p class="text-sm text-gray-600">More time for financial analysis</p>
+                            <h4 class="font-semibold text-gray-900 mb-2">Équipes libérées</h4>
+                            <p class="text-sm text-gray-600">Plus de temps pour l'analyse financière</p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-star text-yellow-600 text-2xl"></i>
                             </div>
-                            <h4 class="font-semibold text-gray-900 mb-2">Differentiation</h4>
-                            <p class="text-sm text-gray-600">Competitive advantage on the market</p>
+                            <h4 class="font-semibold text-gray-900 mb-2">Différenciation</h4>
+                            <p class="text-sm text-gray-600">Avantage concurrentiel sur le marché</p>
                         </div>
                     </div>
                 </div>
@@ -389,10 +390,10 @@ export default function LandingPageEn() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Our partners testify
+                        Nos partenaires témoignent
                     </h2>
                     <p class="text-xl text-gray-600">
-                        They integrated Invoice Collector and transformed their customers' experience
+                        Ils ont intégré Invoice Collector et transformé l'expérience de leurs clients
                     </p>
                 </div>
 
@@ -416,12 +417,12 @@ export default function LandingPageEn() {
                                 <i class="fas fa-star"></i>
                             </div>
                             <p class="text-gray-700 italic">
-                                "The integration was done in 2 weeks. Our customers save 5h/week and now ask us for more automations. Immediate ROI!"
+                                "L'intégration s'est faite en 2 semaines. Nos clients économisent 5h/semaine et nous demandent maintenant d'autres automatisations. ROI immédiat !"
                             </p>
                         </div>
                         <div class="text-sm text-gray-500">
                             <i class="fas fa-building mr-2"></i>
-                            500+ SME customers
+                            500+ clients PME
                         </div>
                     </div>
 
@@ -444,12 +445,12 @@ export default function LandingPageEn() {
                                 <i class="fas fa-star"></i>
                             </div>
                             <p class="text-gray-700 italic">
-                                "Our customers tell us it's the most useful feature we've added in 5 years. Our retention rate has increased by 23% !"
+                                "Nos clients nous disent que c'est la fonctionnalité la plus utile qu'on ait ajoutée en 5 ans. Notre taux de rétention a augmenté de 23% !"
                             </p>
                         </div>
                         <div class="text-sm text-gray-500">
                             <i class="fas fa-building mr-2"></i>
-                            200+ customer companies
+                            200+ entreprises clientes
                         </div>
                     </div>
 
@@ -469,27 +470,28 @@ export default function LandingPageEn() {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                             <p class="text-gray-700 italic">
-                                "Game changer! We close more deals thanks to this differentiation. The API is stable and the support is responsive. Exactly what we were looking for."
+                                "Game changer ! On ferme plus de deals grâce à cette différenciation. L'API est stable et le support réactif. Exactement ce qu'on cherchait."
                             </p>
                         </div>
                         <div class="text-sm text-gray-500">
                             <i class="fas fa-building mr-2"></i>
-                            Accounting Saas Startup
+                            Startup SaaS comptabilité
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-12 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                        Join 50+ software publishers who trust Invoice Collector
+                        Rejoignez 50+ éditeurs logiciel qui font confiance à Invoice Collector
                     </h3>
                     <p class="text-lg text-gray-600 mb-6">
-                        They all increased their customer value and competitive differentiation
+                        Ils ont tous augmenté leur valeur client et leur différenciation concurrentielle
                     </p>
                     <button onClick={openModal} class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        Join the partner program
+                        Rejoindre le programme partenaire
                     </button>
                 </div>
             </div>
@@ -499,10 +501,10 @@ export default function LandingPageEn() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        A <span class="text-green-600">simple</span> 3 steps integration
+                        Intégration <span class="text-green-600">simple</span> en 3 étapes
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Add automatic invoice collection to your software in less than 24h
+                        Ajoutez la collecte automatique de factures à votre logiciel en moins de 24h
                     </p>
                 </div>
 
@@ -511,13 +513,13 @@ export default function LandingPageEn() {
                         <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-white text-2xl font-bold">1</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Create you API keys</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Créez votre compte API</h3>
                         <p class="text-gray-600 mb-4">
-                            Free subscription, immediate access to the sandbox with test data
+                            Inscription gratuite, accès immédiat au sandbox avec données de test
                         </p>
                         <ul class="text-sm text-gray-500 space-y-1">
-                            <li>✓ Instant API keys</li>
-                            <li>✓ Full documentation</li>
+                            <li>✓ Clés API instantanées</li>
+                            <li>✓ Documentation complète</li>
                         </ul>
                     </div>
 
@@ -525,14 +527,14 @@ export default function LandingPageEn() {
                         <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-white text-2xl font-bold">2</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Integrate the endpoints</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Intégrez les endpoints</h3>
                         <p class="text-gray-600 mb-4">
-                            Few lines of code to connect your software to our API
+                            Quelques lignes de code pour connecter votre logiciel à notre API
                         </p>
                         <ul class="text-sm text-gray-500 space-y-1">
-                            <li>✓ A simple REST API</li>
-                            <li>✓ Real time webhooks</li>
-                            <li>✓ Dedicated technical support</li>
+                            <li>✓ REST API simple</li>
+                            <li>✓ Webhooks temps réel</li>
+                            <li>✓ Support technique dédié</li>
                         </ul>
                     </div>
 
@@ -540,16 +542,14 @@ export default function LandingPageEn() {
                         <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-white text-2xl font-bold">3</span>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
-                            Deploy to your customers
-                        </h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Déployez chez vos clients</h3>
                         <p class="text-gray-600 mb-4">
-                            Your customers connect their sources, invoices arrive automatically
+                            Vos clients connectent leurs sources, les factures arrivent automatiquement
                         </p>
                         <ul class="text-sm text-gray-500 space-y-1">
-                            <li>✓ A simple monitoring dashboard</li>
-                            <li>✓ Dedicated technical support</li>
-                            <li>✓ Real time monitoring</li>
+                            <li>✓ Interface client simple</li>
+                            <li>✓ Support technique dédié</li>
+                            <li>✓ Monitoring en temps réel</li>
                         </ul>
                     </div>
                 </div>
@@ -557,9 +557,9 @@ export default function LandingPageEn() {
                 <div class="bg-white rounded-2xl shadow-xl p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Example of integration code</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Code d'exemple d'intégration</h3>
                             <div class="bg-gray-900 rounded-lg p-6 font-mono text-sm overflow-x-auto">
-                                <div class="text-green-400 mb-2">// Add customer credential</div>
+                                <div class="text-green-400 mb-2">// Ajout d'un identifiant client</div>
                                 <div class="text-white mb-1"><span class="text-blue-400">const</span> invoices = await fetch(<span class="text-yellow-300">'https://api.invoice-collector.com/api/v1/credential'</span>,</div>
                                 <div class="text-white ml-4 mb-1">{"{"}</div>
                                 <div class="text-white ml-8 mb-1">headers: {"{ Authorization': 'Bearer YOUR_API_KEY' }"},</div>
@@ -571,61 +571,49 @@ export default function LandingPageEn() {
                                 <div class="text-white ml-4 mb-1">{"}"}</div>
                                 <div class="text-white mb-4">);</div>
                                 
-                                <div class="text-green-400 mb-2">// New invoices callback</div>
+                                <div class="text-green-400 mb-2">// Callback pour nouvelles factures</div>
                                 <div class="text-white mb-1"><span class="text-blue-400">app.post</span>(<span class="text-yellow-300">'/callback/invoices'</span>{", (req, res) => {"}</div>
-                                <div class="text-gray-300 ml-4 mb-1">// Add to your software</div>
+                                <div class="text-gray-300 ml-4 mb-1">// Ajouter à votre logiciel</div>
                                 <div class="text-white ml-4 mb-1"><span class="text-blue-400">addToSoftware</span>(req.body);</div>
                                 <div class="text-white mb-1">{"});"}</div>
                             </div>
                         </div>
                         
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                                Technical support included
-                            </h3>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Support technique inclus</h3>
                             <div class="space-y-4">
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>
-                                        API documentation with examples
-                                    </span>
+                                    <span>Documentation API complète avec exemples</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>
-                                        Technical support for integration
-                                    </span>
+                                    <span>Support technique dédié pour l'intégration</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>
-                                        Test environment with real data
-                                    </span>
+                                    <span>Environnement de test avec données réelles</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>
-                                        Real time monitoring and alerts
-                                    </span>
+                                    <span>Monitoring et alertes en temps réel</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span>
-                                        99.9% availability guaranteed
-                                    </span>
+                                    <span>SLA 99.9% de disponibilité garantie</span>
                                 </div>
                             </div>
                             
                             <div class="mt-8 p-4 bg-blue-50 rounded-lg">
                                 <h4 class="font-semibold text-blue-900 mb-2">
                                     <i class="fas fa-lightbulb mr-2"></i>
-                                    Need help with the integration?
+                                    Besoin d'aide pour l'intégration ?
                                 </h4>
                                 <p class="text-blue-700 text-sm mb-3">
-                                    Our engineers can assist you with the integration or do it for you.
+                                    Nos ingénieurs peuvent faire l'intégration avec vous ou pour vous.
                                 </p>
                                 <button onClick={openModal} class="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition-colors">
-                                    Plan a technical call
+                                    Planifier un call technique
                                 </button>
                             </div>
                         </div>
@@ -639,10 +627,10 @@ export default function LandingPageEn() {
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
                         <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
-                        Security & Compliance
+                        Sécurité & Conformité
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Your customers' datas are protected with the highest security standards
+                        Vos données client sont protégées avec les plus hauts standards de sécurité
                     </p>
                 </div>
 
@@ -651,78 +639,64 @@ export default function LandingPageEn() {
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-lock text-green-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Encryption</h3>
-                        <p class="text-sm text-gray-600">
-                            End-to-end encryption, TLS 1.3, data encrypted at rest
-                        </p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Chiffrement</h3>
+                        <p class="text-sm text-gray-600">End-to-end encryption, TLS 1.3, données chiffrées au repos</p>
                     </div>
                     
                     <div class="text-center">
                         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 mb-2">
-                            EU hosting
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Servers in France, native GDPR compliance
-                        </p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Hébergement EU</h3>
+                        <p class="text-sm text-gray-600">Serveurs en France, conformité RGPD native</p>
                     </div>
                     
                     <div class="text-center">
                         <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-eye text-purple-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 mb-2">
-                            Full audit trail
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Detailed logs, traceability, controlled access
-                        </p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Audit complet</h3>
+                        <p class="text-sm text-gray-600">Logs détaillés, traçabilité, accès contrôlés</p>
                     </div>
                     
                     <div class="text-center">
                         <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-certificate text-yellow-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 mb-2">
-                            Certifications
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            ISO 27001, SOC2, e-invoicing compliance
-                        </p>
+                        <h3 class="font-semibold text-gray-900 mb-2">Certifications</h3>
+                        <p class="text-sm text-gray-600">ISO 27001, SOC2, conformité e-invoicing 2026</p>
                     </div>
                 </div>
 
                 <div class="bg-gray-50 rounded-2xl p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-                        E-invoicing regulatory compliance
+                        Conformité réglementaire e-invoicing 2026
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="font-semibold text-gray-900 mb-4">
                                 <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                                Ready for the next regulations
+                                Prêt pour les nouvelles réglementations
                             </h4>
                             <ul class="space-y-2 text-gray-600">
-                                <li>✓ Chorus Pro integration (France)</li>
-                                <li>✓ Peppol network support (EU)</li>
-                                <li>✓ Facture-X, UBL and CII compatibility</li>
-                                <li>✓ Electronic signature</li>
-                                <li>✓ 10 year storage archiving</li>
+                                <li>✓ Intégration Chorus Pro (France)</li>
+                                <li>✓ Support réseau Peppol (EU)</li>
+                                <li>✓ Formats UBL, CII compatibles</li>
+                                <li>✓ Signature électronique</li>
+                                <li>✓ Archivage légal 10 ans</li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900 mb-4">
                                 <i class="fas fa-users text-blue-600 mr-2"></i>
-                                Your customers are protected
+                                Vos clients sont protégés
                             </h4>
                             <ul class="space-y-2 text-gray-600">
-                                <li>✓ Explicit consent required</li>
-                                <li>✓ Right to be forgotten respected</li>
-                                <li>✓ Data portability</li>
-                                <li>✓ Dedicated DPO available</li>
-                                <li>✓ Transparent privacy policy</li>
+                                <li>✓ Consentement explicite requis</li>
+                                <li>✓ Droit à l'oubli respecté</li>
+                                <li>✓ Portabilité des données</li>
+                                <li>✓ DPO dédié disponible</li>
+                                <li>✓ Politique de confidentialité transparente</li>
                             </ul>
                         </div>
                     </div>
@@ -730,9 +704,7 @@ export default function LandingPageEn() {
                     <div class="mt-8 text-center">
                         <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
                             <i class="fas fa-award text-yellow-500 mr-2"></i>
-                            <span class="font-semibold text-gray-900">
-                                Certified e-invoicing service provider
-                            </span>
+                            <span class="font-semibold text-gray-900">Certifié prestataire de service e-invoicing</span>
                         </div>
                     </div>
                 </div>
@@ -743,17 +715,17 @@ export default function LandingPageEn() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        A <span class="text-blue-600">win-win</span> partnership model
+                        Un modèle de partenariat <span class="text-blue-600">gagnant-gagnant</span>
                     </h2>
                     <p class="text-xl text-gray-600">
-                        Add value to your software while generating additional revenue
+                        Ajoutez de la valeur à votre logiciel tout en générant des revenus additionnels
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                            Two flexible pricing models
+                            Deux modèles de tarification flexibles
                         </h3>
                         
                         <div class="space-y-6">
@@ -766,12 +738,12 @@ export default function LandingPageEn() {
                                 </div>
                                 <p class="text-gray-600 mb-3">
                                     <span class="text-2xl font-bold text-blue-600">10€</span> 
-                                    per active connector per month
+                                    par connecteur actif par mois
                                 </p>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>✓ No fixed costs</li>
-                                    <li>✓ Automatic scaling</li>
-                                    <li>✓ Transparent for your customers</li>
+                                    <li>✓ Pas de frais fixes</li>
+                                    <li>✓ Scaling automatique</li>
+                                    <li>✓ Transparent pour vos clients</li>
                                 </ul>
                             </div>
                             
@@ -780,18 +752,15 @@ export default function LandingPageEn() {
                                     <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
                                         <i class="fas fa-handshake text-green-600"></i>
                                     </div>
-                                    <h4 class="text-xl font-semibold text-gray-900">
-                                        Revenue sharing
-                                    </h4>
+                                    <h4 class="text-xl font-semibold text-gray-900">Revenue sharing</h4>
                                 </div>
                                 <p class="text-gray-600 mb-3">
                                     Partagez les revenus générés par la fonctionnalité
-                                    Share the revenue generated by the feature 
                                 </p>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>✓ Recurent incomes</li>
-                                    <li>✓ Customizable models</li>
-                                    <li>✓ Incentive to growth</li>
+                                    <li>✓ Revenus récurrents</li>
+                                    <li>✓ Modèle personnalisable</li>
+                                    <li>✓ Incitation à la croissance</li>
                                 </ul>
                             </div>
                         </div>
@@ -799,19 +768,15 @@ export default function LandingPageEn() {
                     
                     <div class="bg-white rounded-2xl shadow-xl p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                            What the partnership includes
+                            Ce qu'inclut le partenariat
                         </h3>
                         
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <i class="fas fa-code text-blue-600 mr-3 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-900">
-                                        Full technical support
-                                    </h4>
-                                    <p class="text-sm text-gray-600">
-                                        Assisted integration, documentation, REST API
-                                    </p>
+                                    <h4 class="font-semibold text-gray-900">Support technique complet</h4>
+                                    <p class="text-sm text-gray-600">Intégration assistée, documentation, REST API</p>
                                 </div>
                             </div>
                             
@@ -819,33 +784,23 @@ export default function LandingPageEn() {
                                 <i class="fas fa-bullhorn text-green-600 mr-3 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-900">Co-marketing</h4>
-                                    <p class="text-sm text-gray-600">
-                                        Customers case studies, webinars, joint events
-                                    </p>
+                                    <p class="text-sm text-gray-600">Cas clients, webinaires, événements communs</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
                                 <i class="fas fa-headset text-purple-600 mr-3 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-900">
-                                        Dedicated customer support
-                                    </h4>
-                                    <p class="text-sm text-gray-600">
-                                        French-speaking team, guaranteed SLAs
-                                    </p>
+                                    <h4 class="font-semibold text-gray-900">Support client dédié</h4>
+                                    <p class="text-sm text-gray-600">Équipe francophone, SLA garantis</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
                                 <i class="fas fa-cog text-orange-600 mr-3 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-900">
-                                        Customization
-                                    </h4>
-                                    <p class="text-sm text-gray-600">
-                                        Specific connectors, branding, custom features
-                                    </p>
+                                    <h4 class="font-semibold text-gray-900">Personnalisation</h4>
+                                    <p class="text-sm text-gray-600">Connecteurs spécifiques, branding, fonctionnalités sur mesure</p>
                                 </div>
                             </div>
                         </div>
@@ -853,14 +808,14 @@ export default function LandingPageEn() {
                         <div class="mt-8 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
                             <h4 class="font-semibold text-gray-900 mb-2">
                                 <i class="fas fa-rocket mr-2 text-blue-600"></i>
-                                Early adopter program
+                                Programme early adopter
                             </h4>
                             <p class="text-sm text-gray-600 mb-3">
-                                Free integration + 3 months of use offered for the first 10 partners
+                                Intégration gratuite + 3 mois d'utilisation offerts pour les 10 premiers partenaires
                             </p>
                             <span class="inline-flex items-center bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
                                 <i class="fas fa-clock mr-1"></i>
-                                Limited offer - 3 spots left
+                                Offre limitée - 3 places restantes
                             </span>
                         </div>
                     </div>
@@ -871,30 +826,24 @@ export default function LandingPageEn() {
         <section class="py-20 gradient-bg text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-bold mb-6">
-                    Ready to transform your software with automatic collection?
+                    Prêt à transformer votre logiciel avec la collecte automatique ?
                 </h2>
                 <p class="text-xl mb-8 text-gray-100">
-                    Join the software publishers who have already integrated Invoice Collector and differentiate their solution on the market.
+                    Rejoignez les éditeurs logiciel qui ont déjà intégré Invoice Collector et différencient leur solution sur le marché.
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="text-center">
                         <div class="text-4xl font-bold mb-2">24h</div>
-                        <p class="text-gray-200">
-                            Full integration
-                        </p>
+                        <p class="text-gray-200">Intégration complète</p>
                     </div>
                     <div class="text-center">
                         <div class="text-4xl font-bold mb-2">+1000</div>
-                        <p class="text-gray-200">
-                            Connected sources
-                        </p>
+                        <p class="text-gray-200">Sources connectées</p>
                     </div>
                     <div class="text-center">
                         <div class="text-4xl font-bold mb-2">95%</div>
-                        <p class="text-gray-200">
-                            Extraction accuracy
-                        </p>
+                        <p class="text-gray-200">Précision d'extraction</p>
                     </div>
                 </div>
                 
@@ -902,7 +851,7 @@ export default function LandingPageEn() {
                     <Link to="https://app.invoice-collector.com/signup" target="_blank">
                         <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors pulse-border">
                             <i class="fas fa-rocket mr-2"></i>
-                            Start for free
+                            Commencer gratuitement
                         </button>
                     </Link>
                     <Link to="/docs">
@@ -915,7 +864,7 @@ export default function LandingPageEn() {
                 
                 <p class="mt-6 text-sm text-gray-200">
                     <i class="fas fa-shield-alt mr-2"></i>
-                    No commitment • Technical support included • GDPR compliance
+                    Sans engagement • Support technique inclus • Conformité RGPD
                 </p>
             </div>
         </section>
@@ -925,39 +874,31 @@ export default function LandingPageEn() {
                 <div class="bg-white rounded-2xl max-w-md w-full p-8">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                            Start your integration
+                            Commencez votre intégration
                         </h3>
                         <p class="text-gray-600">
-                            Free access to the API + technical support included
+                            Accès gratuit à l'API + support technique inclus
                         </p>
                     </div>
                     
                     <form id="leadForm" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Full name
-                            </label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
                             <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Professionnal email
-                            </label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email professionnel</label>
                             <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Name of the company
-                            </label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom de votre entreprise</label>
                             <input type="text" name="company" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Number of customers
-                            </label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre de clients</label>
                             <select required name="customers" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                 <option value="1-50">1-50</option>
                                 <option value="51-200">51-200</option>
@@ -971,33 +912,27 @@ export default function LandingPageEn() {
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="radio" name="preference" value="demo" class="mr-2"></input>
-                                    <span class="text-sm">
-                                        Customized demo (30 min)
-                                    </span>
+                                    <span class="text-sm">Démo personnalisée (30 min)</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="preference" value="sandbox" class="mr-2"></input>
-                                    <span class="text-sm">
-                                        Direct access to the sandbox
-                                    </span>
+                                    <span class="text-sm">Accès direct au sandbox</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="preference" value="call" class="mr-2"></input>
-                                    <span class="text-sm">
-                                        Technical call with our engineers
-                                    </span>
+                                    <span class="text-sm">Call technique avec nos ingénieurs</span>
                                 </label>
                             </div>
                         </div>
                         
                         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                             <i class="fas fa-rocket mr-2"></i>
-                            Start integration
+                            Démarrer l'intégration
                         </button>
                     </form>
                     
                     <p class="mt-4 text-xs text-gray-500 text-center">
-                        By submitting this form, you agree to be contacted by our technical team.
+                        En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe technique.
                     </p>
                 </div>
             </div>
