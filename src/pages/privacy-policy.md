@@ -24,7 +24,7 @@ Nous vous indiquons à ce sujet que nous nous conformons, dans la collecte et la
 
 ## 3. Identité du responsable de traitement 
 
-Le responsable de traitement de vos données à caractère personnel est l’entreprise individuelle de Monsieur Lucas BERGERON, située 1301 route de Paquier – 38650 Saint-Martin-de-la-Cluze et immatriculée sous le numéro 928 546 670 (dénommée ci-après : « Nous »). 
+Le responsable de traitement de vos données à caractère personnel est l’entreprise individuelle de Monsieur Lucas BERGERON, dont l'adresse physique est 1 Rue Malcousinat 31000 Toulouse, l'adresse email est contact@invoice-collector.com et immatriculée sous le numéro 928 546 670 (dénommée ci-après : « Nous »).
 
 ## 4. Finalités et fondements juridiques des traitements
 
@@ -129,7 +129,7 @@ Nous vous informons prendre toutes précautions utiles, mesures organisationnell
 
 ## 8. Hébergement 
 
-Nous vous informons que vos données sont conservées et stockées, pendant toute la durée de leur conservation sur les serveurs des sociétés OVH, Bitwarden et NocoDB, situés au sein de l’Union Européenne. 
+Nous vous informons que vos données sont conservées et stockées, en conformité avec les standards de sécurité en vigueur et pendant toute la durée de leur conservation, dans des centres de données situés en France et au sein de l’Union Européenne. 
 
 Il n’existe aucun transfert en-dehors de l’Union Européenne. 
 
@@ -167,7 +167,7 @@ Il est rappelé aux personnes dont les données sont collectées sur le fondemen
 
 Vous pouvez vous désabonner de nos emails promotionnels via le lien fourni dans les emails. Même si vous choisissez de ne plus recevoir de messages promotionnels de notre part, vous continuerez à recevoir nos messages administratifs. 
 
-Vos droits peuvent être exercés, à tout moment, en envoyant un courrier électronique à l’adresse contact@invoice-collector.com ou un courrier à l’adresse suivante : 1301 route de Paquier – 38650 Saint-Martin-de-la-Cluze. 
+Vos droits peuvent être exercés, à tout moment, en envoyant un courrier physique ou un courrier électronique à l'adresse de la société. 
 
 Si vous avez des réclamations concernant la manière dont nous traitons vos données personnelles, vous pouvez nous contacter en utilisant les coordonnées fournies ci-dessus.  
 
