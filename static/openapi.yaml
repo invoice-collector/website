@@ -1388,6 +1388,8 @@ components:
           type: number
           description: Maximum delay between two collects in ms.
           example: 2592000000
+        plan:
+          $ref: "#/components/schemas/plan"
       required:
         - id
         - email
@@ -1398,6 +1400,73 @@ components:
         - isSubscribedToAll
         - displaySketchCollectors
         - maxDelayBetweenCollect
+        - plan
+    plan:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the plan.
+          example: basic
+        name:
+          type: string
+          description: Name of the plan.
+          example: Basic
+        maxUsers:
+          type: number
+          description: Maximum number of users allowed. _If -1, no limit._
+          example: 10
+        maxCredentials:
+          type: number
+          description: Maximum number of credentials allowed. _If -1, no limit._
+          example: 50
+        maxInvoicesPerMonth:
+          type: number
+          description: Maximum number of invoices per month. _If -1, no limit._
+          example: -1
+        maxCollectors:
+          type: number
+          description: Maximum number of collectors allowed. _If -1, no limit._
+          example: -1
+        priceBase:
+          type: number
+          description: Base price of the plan in €.
+          example: 10
+        pricePerUser:
+          type: number
+          description: Price per additional user in €.
+          example: 2.99
+        pricePerCredential:
+          type: number
+          description: Price per additional credential in €.
+          example: 0
+        pricePerInvoice:
+          type: number
+          description: Price per additional invoice in €.
+          example: 1
+        pricePerCollector:
+          type: number
+          description: Price per additional collector in €.
+          example: 0
+        features:
+          type: array
+          description: List of features included in the plan.
+          items:
+            type: string
+          example: ["10 users", "50 collectors", "Unlimited invoices per month"]
+      required:
+        - id
+        - name
+        - maxUsers
+        - maxCredentials
+        - maxInvoicesPerMonth
+        - maxCollectors
+        - priceBase
+        - pricePerUser
+        - pricePerCredential
+        - pricePerInvoice
+        - pricePerCollector
+        - features
     user:
       type: object
       properties:
