@@ -3,9 +3,11 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import PricingpageFeatures from '@site/src/components/PricingpageFeatures';
+import { PricingPage } from '../../components/PricingPage';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import './index.module.css';
 
 function PricingpageHeader() {
   return (
@@ -28,9 +30,8 @@ export default function Home() {
     <Layout
       title="Pricing"
       description={siteConfig.tagline}>
-      <PricingpageHeader />
       <main>
-        <PricingpageFeatures />
+        <PricingPage />
       </main>
     </Layout>
   );
