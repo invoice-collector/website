@@ -101,7 +101,7 @@ export const PricingPage: React.FC = () => {
             <PricingCard
               key={plan.id}
               plan={plan}
-              isPopular={plan.id === 'starter'}
+              isPopular={plan.id === 'enterprise'}
             />
           ))}
         </div>
