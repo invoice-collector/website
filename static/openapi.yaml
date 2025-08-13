@@ -1321,14 +1321,14 @@ components:
                 type: integer
                 description: Timestamp when the invoice was created in ms.
                 example: 17316031963975
-              downloaded_timestamp:
+              collected_timestamp:
                 type: integer
-                description: Timestamp when the invoice was downloaded in ms. `null` if the invoice was not downloaded.
+                description: Timestamp when the invoice was collected in ms. `null` if the invoice was not collected.
                 example: 17316032013467
             required:
             - id
             - timestamp
-            - downloaded_timestamp
+            - collected_timestamp
         state:
           "$ref": "#/components/schemas/state"
         collector:
@@ -1610,9 +1610,9 @@ components:
           type: integer
           description: Timestamp when the invoice was created in ms.
           example: 17316031963975
-        downloaded_timestamp:
+        collected_timestamp:
           type: integer
-          description: Timestamp when the invoice was downloaded in ms.
+          description: Timestamp when the invoice was collected in ms.
           example: 17316032013467
         amount:
           type: string
@@ -1635,7 +1635,7 @@ components:
         - type
         - mimetype
         - timestamp
-        - downloaded_timestamp
+        - collected_timestamp
         - link
         - data
     error:
