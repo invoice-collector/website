@@ -1190,10 +1190,6 @@ paths:
                   type: string
                   description: Feedback message.
                   example: Missing feature...
-                email:
-                  type: string
-                  description: Email of the user. _The email is optional and is used to contact the user if needed._
-                  example: user@example.com
               required:
               - type
               - message
