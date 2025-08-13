@@ -1233,6 +1233,10 @@ components:
           type: string
           description: Email of the user. _This email is used to send the [Trems of Use](/terms-of-use)._
           example: user@example.com
+        ip:
+          type: string
+          description: IP address of the user. _This ip is used to geo-locate the user and connect to collectors as close as possible._
+          example: 166.62.9.45
       required:
       - remote_id
       - locale
