@@ -588,7 +588,7 @@ paths:
             schema:
               type: object
               properties:
-                id:
+                collector:
                   type: string
                   description: Id of the collector to use.
                   example: free
@@ -599,8 +599,12 @@ paths:
                     id: "fbx123456789"
                     password: "Y%2j7Fc$#$y"
                     note: "The company Free account"
+                download_from_timestamp:
+                  type: number
+                  description: Timestamp to start downloading invoices from in ms. _If empty, invoices will be downloaded starting from today._
+                  example: 1745229262287
               required:
-              - id
+              - collector
               - params
       responses:
         '200':
@@ -873,7 +877,7 @@ paths:
             schema:
               type: object
               properties:
-                id:
+                collector:
                   type: string
                   description: Id of the collector to use.
                   example: free
@@ -884,8 +888,12 @@ paths:
                     id: "fbx123456789"
                     password: "Y%2j7Fc$#$y"
                     note: "The company Free account"
+                download_from_timestamp:
+                  type: number
+                  description: Timestamp to start downloading invoices from in ms. _If empty, invoices will be downloaded starting from today._
+                  example: 1745229262287
               required:
-              - id
+              - collector
               - params
       responses:
         '200':
