@@ -134,10 +134,10 @@ export default function LandingPageFr() {
                             <span class="text-sm font-medium"><Translate>Nouvelle API • Conforme e-invoicing 2026</Translate></span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients
+                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients, propulsée par l'<span class="text-yellow-300">IA</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Différenciez votre logiciel avec notre API universelle. Vos clients récupèrent automatiquement leurs factures depuis +1000 sources. Zéro effort, maximum de valeur.
+                            Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis +1000 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <Link to="https://app.invoice-collector.com/signup" target="_blank">
@@ -165,6 +165,10 @@ export default function LandingPageFr() {
                             <div class="flex items-center">
                                 <i class="fas fa-bolt text-green-400 mr-2"></i>
                                 <span>API REST simple</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-robot text-purple-400 mr-2"></i>
+                                <span>Extraction IA avancée</span>
                             </div>
                         </div>
                     </div>
@@ -257,10 +261,10 @@ export default function LandingPageFr() {
 
                 <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                        Et si vos clients pouvaient automatiser 100% de leur collecte de factures ?
+                        Et si vos clients pouvaient automatiser 100% de leur collecte de factures grâce à l'IA ?
                     </h3>
                     <p class="text-lg text-gray-600 mb-6">
-                        Avec Invoice Collector, transformez cette douleur en avantage concurrentiel pour votre logiciel.
+                        Avec Invoice Collector et son IA, transformez cette douleur en avantage concurrentiel pour votre logiciel.
                     </p>
                     <button onClick={scrollToSolution} class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Découvrir la solution <i class="fas fa-arrow-down ml-2"></i>
@@ -273,10 +277,10 @@ export default function LandingPageFr() {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        Une API universelle pour <span class="text-blue-600">automatiser</span> la collecte
+                        Une API et une <span class="text-blue-600">IA pour automatiser</span> la collecte
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Invoice Collector se connecte à +1000 sources pour récupérer automatiquement toutes les factures de vos clients.
+                        Invoice Collector se connecte à +1000 sources et utilise l'intelligence artificielle pour récupérer automatiquement toutes les factures de vos clients.
                     </p>
                 </div>
 
@@ -826,7 +830,7 @@ export default function LandingPageFr() {
         <section class="py-20 gradient-bg text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-bold mb-6">
-                    Prêt à transformer votre logiciel avec la collecte automatique ?
+                    Prêt à transformer votre logiciel avec la collecte automatique par IA ?
                 </h2>
                 <p class="text-xl mb-8 text-gray-100">
                     Rejoignez les éditeurs logiciel qui ont déjà intégré Invoice Collector et différencient leur solution sur le marché.

@@ -65,6 +65,7 @@ export const mockPlans: Plan[] = [
     features: [
       'Unlimited users',
       'Unlimited collectors',
+      'AI agent collector',
       '100 invoices per month',
       'Technical support',
       'Custom collectors'
@@ -86,6 +87,7 @@ export const mockPlans: Plan[] = [
       'Unlimited users',
       'Unlimited collectors',
       'Unlimited invoices per month',
+      'AI agent collector',
       'Technical support',
       'Custom collectors',
       'On demand features'
