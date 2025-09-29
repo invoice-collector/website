@@ -6,35 +6,6 @@ import Translate from '@docusaurus/Translate';
 
 export default function LandingPageFr() {
   useEffect(() => {
-    // Custom styles
-    const style = document.createElement('style');
-    style.innerHTML = `
-      #landingpage { font-family: 'Inter', sans-serif; }
-      .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-      .pulse-border { animation: pulse 2s infinite; }
-      @keyframes pulse {
-          0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
-          70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
-      }
-      .typing-effect {
-          border-right: 2px solid #667eea;
-          animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-      }
-      @keyframes typing {
-          from { width: 0; }
-          to { width: 100%; }
-      }
-      @keyframes blink-caret {
-          from, to { border-color: transparent; }
-          50% { border-color: #667eea; }
-      }
-      svg {
-        display: inline-block;
-      }
-    `;
-    document.head.appendChild(style);
-
     // Modal submission
     document.getElementById('leadForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -70,14 +41,6 @@ export default function LandingPageFr() {
             closeModal();
         }
     });
-
-    return () => {
-        // Cleanup: remove stylesheets and styles when component unmounts
-        document.head.removeChild(tailwindLink);
-        document.head.removeChild(faLink);
-        document.head.removeChild(interLink);
-        document.head.removeChild(style);
-        }
   });
   const {siteConfig} = useDocusaurusContext();
 
