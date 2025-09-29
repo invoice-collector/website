@@ -81,21 +81,6 @@ const config = {
         },
         items: [
           {
-            to: '/#solution',
-            label: 'Solution',
-            position: 'left',
-          },
-          {
-            to: '/#integration',
-            label: 'Integration',
-            position: 'left',
-          },
-          {
-            to: '/#testimonials',
-            label: 'Testimonials',
-            position: 'left',
-          },
-          {
             to: 'pricing',
             label: 'Pricing',
             position: 'left',
