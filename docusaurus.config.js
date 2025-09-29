@@ -8,6 +8,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  stylesheets: [
+    'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css',
+    'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
+  ],
   title: 'Invoice Collector',
   tagline: 'Free automatic invoice collector 🧾 Collect your invoices in seconds ⏰ Docker container 🐳',
   favicon: 'img/favicon.ico',

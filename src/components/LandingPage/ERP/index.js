@@ -5,24 +5,6 @@ import Link from '@docusaurus/Link';
 
 export default function LandingPageEn() {
   useEffect(() => {
-    // Tailwind CSS
-    const tailwindLink = document.createElement('link');
-    tailwindLink.rel = 'stylesheet';
-    tailwindLink.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
-    document.head.appendChild(tailwindLink);
-
-    // FontAwesome
-    const faLink = document.createElement('link');
-    faLink.rel = 'stylesheet';
-    faLink.href = 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css';
-    document.head.appendChild(faLink);
-
-    // Google Fonts Inter
-    const interLink = document.createElement('link');
-    interLink.rel = 'stylesheet';
-    interLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-    document.head.appendChild(interLink);
-
     // Custom styles
     const style = document.createElement('style');
     style.innerHTML = `
@@ -90,9 +72,6 @@ export default function LandingPageEn() {
 
     return () => {
         // Cleanup: remove stylesheets and styles when component unmounts
-        document.head.removeChild(tailwindLink);
-        document.head.removeChild(faLink);
-        document.head.removeChild(interLink);
         document.head.removeChild(style);
         }
   });
