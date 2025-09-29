@@ -91,11 +91,18 @@ const config = {
             position: 'left',
           },
           {
-            to: 'https://app.invoice-collector.com/signup',
-            label: 'Start for Free',
+            to: 'https://app.invoice-collector.com/login',
+            label: 'Login',
             position: 'right',
-            className: 'button button--primary',
+            className: 'button button--primary mr-4',
             style: { color: 'white' }
+          },
+          {
+            to: 'https://app.invoice-collector.com/signup',
+            label: 'Sign Up for Free',
+            position: 'right',
+            className: 'button button--secondary',
+            style: { color: 'black' }
           },
           {
             type: 'docSidebar',
