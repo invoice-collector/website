@@ -70,7 +70,7 @@ export default function LandingPageFr() {
                             <span class="text-sm font-medium"><Translate>Nouvelle API • Conforme e-invoicing 2026</Translate></span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients, <span class="text-yellow-300">propulsée par l'IA</span>
+                            L'API qui <span class="text-yellow-300">automatise</span> la collecte des factures pour vos clients, <span class="text-yellow-300">propulsée par l'IA</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
                             Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis 9108 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
