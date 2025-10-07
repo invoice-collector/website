@@ -72,7 +72,7 @@ export default function LandingPageEn() {
                             The API that <span class="text-yellow-300">automates</span> invoice collection for your customers, <span class="text-yellow-300">powered by AI</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Differentiate your software with our universal API. Our AI extracts invoices automatically from +1000 sources. Zero effort, maximum value with automation and artificial intelligence.
+                            Differentiate your software with our universal API. Our AI extracts invoices automatically from 9108 sources. Zero effort, maximum value with automation and artificial intelligence.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <Link to="https://app.invoice-collector.com/signup" target="_blank">
@@ -102,7 +102,7 @@ export default function LandingPageEn() {
                                 <span>A simple REST API</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-robot text-purple-400 mr-2"></i>
+                                <i class="fas fa-robot text-green-400 mr-2"></i>
                                 <span>Advanced AI extraction</span>
                             </div>
                         </div>
@@ -215,7 +215,7 @@ export default function LandingPageEn() {
                         A universal API to <span class="text-blue-600">automate</span> collection
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Invoice Collector connects to 1000+ sources and uses artificial intelligence to automatically retrieve all your customers' invoices.
+                        Invoice Collector connects to 9108 sources and uses artificial intelligence to automatically retrieve all your customers' invoices.
                     </p>
                 </div>
 
@@ -825,7 +825,7 @@ export default function LandingPageEn() {
                         </p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold mb-2">+1000</div>
+                        <div class="text-4xl font-bold mb-2">9108</div>
                         <p class="text-gray-200">
                             Connected sources
                         </p>

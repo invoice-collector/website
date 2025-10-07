@@ -73,7 +73,7 @@ export default function LandingPageFr() {
                             L'API qui <span class="text-yellow-300">automatise</span> la collecte de factures pour vos clients, <span class="text-yellow-300">propulsée par l'IA</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis +1000 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
+                            Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis 9108 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <Link to="https://app.invoice-collector.com/signup" target="_blank">
@@ -103,7 +103,7 @@ export default function LandingPageFr() {
                                 <span>API REST simple</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-robot text-purple-400 mr-2"></i>
+                                <i class="fas fa-robot text-green-400 mr-2"></i>
                                 <span>Extraction IA avancée</span>
                             </div>
                         </div>
@@ -216,7 +216,7 @@ export default function LandingPageFr() {
                         Une API et une <span class="text-blue-600">IA pour automatiser</span> la collecte
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Invoice Collector se connecte à +1000 sources et utilise l'intelligence artificielle pour récupérer automatiquement toutes les factures de vos clients.
+                        Invoice Collector se connecte à 9108 sources et utilise l'intelligence artificielle pour récupérer automatiquement toutes les factures de vos clients.
                     </p>
                 </div>
 
@@ -778,7 +778,7 @@ export default function LandingPageFr() {
                         <p class="text-gray-200">Intégration complète</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold mb-2">+1000</div>
+                        <div class="text-4xl font-bold mb-2">9108</div>
                         <p class="text-gray-200">Sources connectées</p>
                     </div>
                     <div class="text-center">
