@@ -6,10 +6,6 @@ servers:
   - url: https://api.invoice-collector.com/api/v1
   - url: https://localhost:8080/api/v1
 paths:
-  "/authorize":
-    post:
-      summary: Authorize (DEPRECATED)
-      description: DEPRECATED! Use [`/user`](#tag/User/paths/~1user/post) instead. Just replace `/authorize` with `/user` and it will work the same way.
   "/ui":
     get:
       summary: UI
