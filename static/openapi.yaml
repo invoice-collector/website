@@ -1296,6 +1296,10 @@ components:
           type: string
           description: Custom note for this credential.
           example: Regular account
+        download_from_timestamp:
+          type: number
+          description: Download from timestamp.
+          example: 1745229203582
         create_timestamp:
           type: number
           description: Creation timestamp.
