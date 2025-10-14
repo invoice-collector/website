@@ -776,7 +776,7 @@ paths:
   "/credential/{credential_id}/collect":
     post:
       summary: Collect
-      description:  Request a collect for the given credential. _You need to authenticate using token._
+      description:  Start a collect for the given credential. _You need to authenticate using token._
       tags:
         - Credential (token)
       parameters:
@@ -1075,7 +1075,7 @@ paths:
   "/user/{user_id}/credential/{credential_id}/collect":
     post:
       summary: Collect
-      description:  Request a collect for the given credential. _You need to authenticate using bearer._
+      description:  Start a collect for the given credential. _You need to authenticate using bearer._
       tags:
         - Credential (bearer)
       parameters:
