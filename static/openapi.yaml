@@ -612,7 +612,7 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/credential_id_object"
+                "$ref": "#/components/schemas/credential"
         '400':
           description: Bad Request
           content:
@@ -901,7 +901,7 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/credential_id_object"
+                "$ref": "#/components/schemas/credential"
         '400':
           description: Bad Request
           content:
@@ -1268,13 +1268,6 @@ components:
       type: string
       description: Verification code received by email. _Leave it empty if the user did not receive any._
       example: 654972
-    credential_id_object:
-      type: object
-      properties:
-        id:
-          "$ref": "#/components/schemas/credential_id"
-      required:
-      - id
     credential_id:
         type: string
         description: Id of the credential.
