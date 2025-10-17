@@ -29,10 +29,10 @@ This authentication method is reserved for customer endpoints only. It involves 
 curl -H "Authorization: Bearer <bearer_token>" https://api.invoice-collector.com/api/v1/example
 ```
 
-You can request a new bearer token anytime by providing the email used to contact the Invoice-Collector team.
+You can create a new bearer token anytime by going to the Settings page on the online app.
 
 <div style={{ textAlign: 'center' }}>
-  <Button label="Request a new bearer token" link="https://registry.invoice-collector.com/bearer" />
+  <Button label="Create a new bearer token" link="https://app.invoice-collector.com/settings" />
 </div>
 <br/>
 
@@ -43,7 +43,7 @@ Be aware that we do not have access to your bearer token and it must be keeped s
 #### User token
 
 This authentication method is reserved for user endpoints only. It involves appending the token as a query parameter in the URL.
-We will see below that user tokens have a short expiry duration.
+We will see below how to get this token.
 
 ```bash
 curl https://api.invoice-collector.com/api/v1/example?token=<token>
@@ -66,14 +66,15 @@ Json body response:
 }
 ```
 
-This is the `callback` at which invoices will be sent. Please email us at contact@invoice-collector.com to update your `callback`. An UPDATE request to the `/customer` endpoint will be setup soon to update your informations by your own.
+This is the `callback` at which invoices will be sent. You can update the callback on the [Settings page](https://app.invoice-collector.com/settings).
 
 ## Generate a user token
 
-When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server. You can make a POST request to the `/authorize` endpoint to generate the token.
+When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server.
+You can make a POST request to the `/user` endpoint to generate the token. It will also create the user in our database.
 
 ```bash
-curl -X POST https://api.invoice-collector.com/api/v1/authorize \
+curl -X POST https://api.invoice-collector.com/api/v1/user \
     -H "Authorization: Bearer <bearer_token>" \
     -H "Content-Type: application/json" \
     -d '{
@@ -91,6 +92,7 @@ Json body response:
 
 ```json
 {
+  ...
   "token": "fca8a33006220b69dfc922596e77ffe1c2fe5d9f89664fe78f305ac836927fe52a788208d2f881fb829141eac12d2c384468d5e6a89c92dbe40f64a1366d2f22"
 }
 ```
@@ -100,28 +102,16 @@ This user `token` has an expiry duration of 10 minutes and can be used to add an
 ## Add and remove collectors
 
 Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`https://api.invoice-collector.com/api/v1/ui?token=<token>`](https://api.invoice-collector.com/api/v1/ui?token=REPLACE_ME)
-
-1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
-2. The user can add new collectors and remove existing ones.
-3. Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
+From there, the user can add new collectors and remove existing ones.
+Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
 
 And that is it 🎉 New invoices will be sent to your callback!
 
 If like us, you have no time to waste, you can [test the callback in the next section](#test-callback).
 
-:::note
-Users who have already accepted the [Terms of Use](https://invoice-collector.com/terms-of-use) will not be asked to accept them again and they will not receive any email except if the user is deleted.
-:::
-
-<div style={{ textAlign: 'center' }}>
-Wondering what the UX looks like?
-  <Button label="Try the DEMO" link="/demo" />
-</div>
-
 ## Test Callback
 
-If you do not want to wait, you can directly ask the server to send a fake invoice to your callback.
-
+If you do not want to wait, you can directly ask the server to send a fake invoice to your callback from the [Settings page](https://app.invoice-collector.com/settings) or with the following request:
 ```bash
 curl -X GET https://api.invoice-collector.com/api/v1/test_callback \
     -H "Authorization: Bearer <bearer_token>"
@@ -144,7 +134,6 @@ curl -X DELETE https://api.invoice-collector.com/api/v1/user \
 ```
 
 All the credentials, collectors and user informations will be removed from the database.
-The user will be asked to accept terms and conditions again in case of a new [`/authorize`](#generate-a-user-token) request.
 
 :::note
 - Using the builtin UI is not mandatory. Developers can create there own one to better fit your needs and design rules.
