@@ -65,7 +65,7 @@ docker-compose up -d
 ```
 
 :::info[INFO]
-From this point on, we will assume that the _Invoice-Collector Container_ is reachable at `http://localhost:8080`.
+From this point on, we will assume that the _Invoice-Collector Container_ is running on port `8080`.
 :::
 
 

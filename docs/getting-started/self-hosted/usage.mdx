@@ -7,7 +7,7 @@ import Button from '@site/src/components/Button';
 # Usage
 
 :::info[INFO]
-In this section, we assume that the _Invoice-Collector Container_ is reachable at `http://localhost:8080`. If your container is not running yet, [see the installation section](./installation.md).
+In this section, we assume that the _Invoice-Collector Container_ is running on port `8080`. If your container is not running yet, [see the installation section](./installation.md).
 :::
 
 The Invoice-Collector API is organized around REST. Our API has predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
@@ -37,10 +37,12 @@ This authentication method is reserved for customer endpoints only. It involves 
 curl -H "Authorization: Bearer <bearer_token>" http://localhost:8080/api/v1/example
 ```
 
-Yon can retrieve your bearer token from the container logs:
+Yon can retrieve the default user bearer token from the container logs, first run:
 
 ```bash
-//TODO
+...
+Default customer created. Bearer is "<bearer_token>". Keep it safe, it will not be displayed again.
+...
 ```
 
 :::warning
@@ -73,14 +75,15 @@ Json body response:
 }
 ```
 
-This is the `callback` at which invoices will be sent. A POST request to the `/customer` endpoint will be setup soon to update your informations by your own.
+This is the `callback` at which invoices will be sent. Make a POST request to the [`/customer` endpoint](../../api.mdx#/paths/~1customer/post) to update your informations by your own.
 
 ## Generate a user token
 
-When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server. You can make a POST request to the `/authorize` endpoint to generate the token.
+When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server.
+You can make a POST request to the `/user` endpoint to generate the token.
 
 ```bash
-curl -X POST http://localhost:8080/api/v1/authorize \
+curl -X POST http://localhost:8080/api/v1/user \
     -H "Authorization: Bearer <bearer_token>" \
     -H "Content-Type: application/json" \
     -d '{
@@ -98,6 +101,7 @@ Json body response:
 
 ```json
 {
+  ...
   "token": "fca8a33006220b69dfc922596e77ffe1c2fe5d9f89664fe78f305ac836927fe52a788208d2f881fb829141eac12d2c384468d5e6a89c92dbe40f64a1366d2f22"
 }
 ```
@@ -107,22 +111,16 @@ This user `token` has an expiry duration of 10 minutes and can be used to add an
 ## Add and remove collectors
 
 Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**: [`http://localhost:8080/api/v1/ui?token=<token>`](http://localhost:8080/api/v1/ui?token=REPLACE_ME)
-
-1. The user is asked to accept the [Terms of Use](https://invoice-collector.com/terms-of-use) and enter the verification code sent to the email provided in the `/authorize` request.
-2. The user can add new collectors and remove existing ones.
-3. Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
+From there, the user can add new collectors and remove existing ones.
+Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
 
 And that is it 🎉 New invoices will be sent to your callback!
 
 If like us, you have no time to waste, you can [test the callback in the next section](#test-callback).
 
-:::note
-Users who have already accepted the [Terms of Use](https://invoice-collector.com/terms-of-use) will not be asked to accept them again and they will not receive any email except if the user is deleted.
-:::
-
 <div style={{ textAlign: 'center' }}>
 Wondering what the UX looks like?
-  <Button label="Try the DEMO" link="/demo" />
+  <Button label="Try our online app" link="https://app.invoice-collector.com/login" />
 </div>
 
 ## Test Callback
@@ -151,7 +149,6 @@ curl -X DELETE http://localhost:8080/api/v1/user \
 ```
 
 All the credentials, collectors and user informations will be removed from the database.
-The user will be asked to accept terms and conditions again in case of a new [`/authorize`](#generate-a-user-token) request.
 
 :::note
 - Using the builtin UI is not mandatory. Developers can create there own one to better fit your needs and design rules.
