@@ -57,7 +57,7 @@ export default function LandingPageEn() {
 
   return (
     <Layout
-      title="The API that automates invoice collection"
+      title="The open source invoice collector API, powered by AI"
       description={siteConfig.tagline}>
       <div id="landingpage">
         <section class="gradient-bg text-white">
@@ -69,7 +69,7 @@ export default function LandingPageEn() {
                             <span class="text-sm font-medium">New API • E-invoicing compliant</span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            The API that <span class="text-yellow-300">automates</span> invoice collection for your customers, <span class="text-yellow-300">powered by AI</span>
+                            The <span class="text-yellow-300">open source</span> invoice collector API, <span class="text-yellow-300">powered by AI</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
                             Differentiate your software with our universal API. Our AI extracts invoices automatically from 9108 sources. Zero effort, maximum value with automation and artificial intelligence.
