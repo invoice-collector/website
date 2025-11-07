@@ -58,7 +58,7 @@ export default function LandingPageFr() {
 
   return (
     <Layout
-      title="The API that automates invoice collection"
+      title="L'API open source du collecteur de factures, propulsée par l'IA"
       description={siteConfig.tagline}>
       <div id="landingpage">
         <section class="gradient-bg text-white">
@@ -70,10 +70,10 @@ export default function LandingPageFr() {
                             <span class="text-sm font-medium"><Translate>Nouvelle API • Conforme e-invoicing 2026</Translate></span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
-                            L'API qui <span class="text-yellow-300">automatise</span> la collecte des factures pour vos clients, <span class="text-yellow-300">propulsée par l'IA</span>
+                            L'API <span class="text-yellow-300">open source</span> du collecteur de factures, <span class="text-yellow-300">propulsée par l'IA</span>
                         </h1>
                         <p class="text-xl mb-8 text-gray-100">
-                            Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis 9108 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
+                            Différenciez votre logiciel avec notre API universelle. Notre IA extrait automatiquement les factures depuis 9114 sources. Zéro effort, maximum de valeur grâce à l'automatisation et l'intelligence artificielle.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <Link to="https://app.invoice-collector.com/signup" target="_blank">
@@ -216,7 +216,7 @@ export default function LandingPageFr() {
                         Une API et une <span class="text-blue-600">IA pour automatiser</span> la collecte
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Invoice Collector se connecte à 9108 sources et utilise l'intelligence artificielle pour récupérer automatiquement toutes les factures de vos clients.
+                        Invoice Collector se connecte à 9114 sources et utilise l'intelligence artificielle pour récupérer automatiquement toutes les factures de vos clients.
                     </p>
                 </div>
 
@@ -778,7 +778,7 @@ export default function LandingPageFr() {
                         <p class="text-gray-200">Intégration complète</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold mb-2">9108</div>
+                        <div class="text-4xl font-bold mb-2">9114</div>
                         <p class="text-gray-200">Sources connectées</p>
                     </div>
                     <div class="text-center">

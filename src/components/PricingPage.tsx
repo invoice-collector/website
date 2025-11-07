@@ -70,17 +70,16 @@ export const PricingPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-white">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">
-              Simple, Transparent Pricing
+              Fair pricing for all
             </h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Invoice-Collector offers flexible pricing plans to suit businesses of all sizes.
-              Start free and scale as you grow.
+              Use open source for free or contact us for Premium.
             </p>
-            <div className="flex justify-center space-x-8 text-sm">
-              {/*<div className="flex items-center">
+            {/*<div className="flex justify-center space-x-8 text-sm">
+              <div className="flex items-center">
                 <Shield className="w-5 h-5 mr-2 text-green-500" />
                 <span>30-day money-back guarantee</span>
-              </div>*/}
+              </div>
               <div className="flex items-center">
                 <Zap className="w-5 h-5 mr-2 text-yellow-300" />
                 <span>No setup fees</span>
@@ -89,14 +88,14 @@ export const PricingPage: React.FC = () => {
                 <CreditCard className="w-5 h-5 mr-2 text-green-500" />
                 <span>Cancel anytime</span>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
 
       {/* Pricing Cards Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mockPlans.map((plan, index) => (
             <PricingCard
               key={plan.id}
@@ -157,7 +156,7 @@ export const PricingPage: React.FC = () => {
                   Do you offer pay-as-you-go plans?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, our Custom plan includes tailored solutions for enterprise clients with specific requirements.
+                  Yes, our Premium plan includes tailored solutions for enterprise clients with specific requirements.
                   The billing is adjusted and can be a pay-as-you-go model based on your usage.
                 </p>
               </div>

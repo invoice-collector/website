@@ -1,6 +1,7 @@
 export interface Plan {
   id: string;
   name: string;
+  type: string;
   maxUsers: number;
   maxCredentials: number;
   maxInvoicesPerMonth: number;
@@ -15,8 +16,28 @@ export interface Plan {
 
 export const mockPlans: Plan[] = [
   {
+    id: 'self-hosted',
+    name: 'Open Source',
+    type: 'Self-Hosted',
+    maxUsers: 1,
+    maxCredentials: 1,
+    maxInvoicesPerMonth: -1,
+    maxCollectors: -1,
+    priceBase: 0,
+    pricePerUser: 0,
+    pricePerCredential: 0,
+    pricePerInvoice: 0,
+    pricePerCollector: 0,
+    features: [
+      'Unlimited users',
+      'Unlimited collectors',
+      'Unlimited invoices per month',
+    ]
+  },
+  {
     id: 'trial',
     name: 'Trial',
+    type: 'Cloud',
     maxUsers: 1,
     maxCredentials: 1,
     maxInvoicesPerMonth: -1,
@@ -29,10 +50,11 @@ export const mockPlans: Plan[] = [
     features: [
       '1 user',
       '1 collector',
-      'Unlimited invoices per month'
+      'Unlimited invoices per month',
+      'AI agent collector',
     ]
   },
-  {
+  /*{
     id: 'starter',
     name: 'Starter',
     maxUsers: -1,
@@ -70,10 +92,11 @@ export const mockPlans: Plan[] = [
       'Technical support',
       'Custom collectors'
     ]
-  },
+  },*/
   {
     id: 'custom',
-    name: 'Custom',
+    name: 'Premium',
+    type: 'Cloud',
     maxUsers: -1,
     maxCredentials: -1,
     maxInvoicesPerMonth: -1,

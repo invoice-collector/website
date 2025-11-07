@@ -10,26 +10,25 @@ interface PricingCardProps {
 export const PricingCard: React.FC<PricingCardProps> = ({ plan, isPopular = false }) => {
   const formatPrice = (price: number) => {
     if (price === 0) return 'Free';
-    if (price === -1) return 'Custom';
+    if (price === -1) return 'On demand';
     return `€${price}`;
   };
 
   const getPriceUnit = (planId: string) => {
-    if (planId === 'trial') return 'forever';
-    if (planId === 'custom') return '/ month';
+    if (planId === 'trial' || planId === 'self-hosted' || planId === 'custom') return '';
     return '/ month';
   };
 
   const getButtonText = (planId: string) => {
-    if (planId === 'trial') return 'Get Started';
+    if (planId === 'self-hosted') return 'Documentation';
+    if (planId === 'trial') return 'Sign Up for Free';
     if (planId === 'custom') return 'Contact Sales';
     return 'Choose Plan';
   };
 
   const getButtonAction = (planId: string) => {
-    if (planId === 'custom') {
-      return () => window.open('mailto:contact@invoice-collector.com');
-    }
+    if (planId === 'self-hosted') return () => window.open('https://invoice-collector.com/docs/getting-started/self-hosted/installation');
+    if (planId === 'custom') return () => window.open('mailto:contact@invoice-collector.com');
     return () => window.open('https://app.invoice-collector.com/signup');
   };
 
@@ -48,8 +47,9 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, isPopular = fals
       <div className="p-8">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+          <label className="text-2sm text-gray-900 mb-2">{plan.type}</label>
           <div className="mb-4">
-            <span className="text-5xl font-bold text-gray-900">{formatPrice(plan.priceBase)}</span>
+            <span className="text-5xl text-gray-900">{formatPrice(plan.priceBase)}</span>
             <span className="text-gray-600 ml-2">{getPriceUnit(plan.id)}</span>
           </div>
           <button
@@ -58,7 +58,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, isPopular = fals
               isPopular
                 ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl'
                 : plan.id === 'custom'
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
+                ? 'bg-green-600 text-white hover:bg-green-700'
                 : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border'
             }`}
           >
@@ -68,7 +68,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, isPopular = fals
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-semibold text-gray-900 text-lg mb-4">Features included:</h4>
+          <h4 className="font-semibold text-gray-900 text-lg mb-4">Features:</h4>
           <ul className="space-y-3">
             {plan.features.map((feature, index) => (
               <li key={index} className="flex items-start">
