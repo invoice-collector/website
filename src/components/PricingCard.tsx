@@ -58,7 +58,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ plan, isPopular = fals
               isPopular
                 ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl'
                 : plan.id === 'custom'
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
+                ? 'bg-green-600 text-white hover:bg-green-700'
                 : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border'
             }`}
           >
