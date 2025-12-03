@@ -223,7 +223,7 @@ At some point, you may want to list all the credentials for a given user:
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
     ```bash
-    curl -X GET https://api.invoice-collector.com/api/v1/user/{{user_id}}/credentials \
+    curl -X GET https://api.invoice-collector.com/api/v1/user/{user_id}/credentials \
         -H "Authorization: Bearer <bearer_token>"
     ```
     
@@ -231,7 +231,7 @@ At some point, you may want to list all the credentials for a given user:
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
-    curl -X GET http://localhost:8080/api/v1/user/{{user_id}}/credentials \
+    curl -X GET http://localhost:8080/api/v1/user/{user_id}/credentials \
         -H "Authorization: Bearer <bearer_token>"
     ```
   </TabItem>
@@ -244,7 +244,7 @@ If you want to remove a credential and therefore stop invoice collection you can
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
     ```bash
-    curl -X DELETE https://api.invoice-collector.com/api/v1/user/{{user_id}}/credential/{{credential_id}} \
+    curl -X DELETE https://api.invoice-collector.com/api/v1/user/{user_id}/credential/{credential_id} \
         -H "Authorization: Bearer <bearer_token>"
     ```
     
@@ -252,7 +252,7 @@ If you want to remove a credential and therefore stop invoice collection you can
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
-    curl -X DELETE http://localhost:8080/api/v1/user/{{user_id}}/credential/{{credential_id}} \
+    curl -X DELETE http://localhost:8080/api/v1/user/{user_id}}/credential/{credential_id} \
         -H "Authorization: Bearer <bearer_token>"
     ```
   </TabItem>
