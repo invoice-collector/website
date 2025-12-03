@@ -121,7 +121,7 @@ We will start with a simple request to the endpoint `/customer` to retrieve your
     }
     ```
 
-    This is the `callback` at which invoices will be sent. Make a POST request to the [`/customer` endpoint](../../api.mdx#/paths/~1customer/post) to update your informations by your own.
+    This is the `callback` at which invoices will be sent. Make a POST request to the [`/customer` endpoint](../api.mdx#tag/Customer/paths/~1customer/post) to update your informations by your own.
   </TabItem>
 </Tabs>
 
@@ -214,7 +214,7 @@ If you do not want to wait, you can directly ask the server to send a fake invoi
 </Tabs>
 
 Checkout your callback, you must have received a fake invoice!
-See the [API Reference for the callback schema](../../api.mdx#/paths/~1test_callback/get).
+See the [API Reference for the callback schema](../api.mdx#/paths/~1test~1callback~1{type}/get).
 
 ## List credentials
 
@@ -291,5 +291,5 @@ All the credentials, collectors and user informations will be removed from the d
 
 :::note
 - Using the builtin UI is not mandatory. Developers can create there own one to better fit your needs and design rules.
-- Please refer to the [API Reference](../../api.mdx) for more advanced requests.
+- Please refer to the [API Reference](../api.mdx) for more advanced requests.
 :::
