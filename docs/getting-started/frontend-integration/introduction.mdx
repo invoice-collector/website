@@ -22,7 +22,7 @@ We'll cover the 4 main use cases that your application needs to support:
 
 Credentials go through various states during their lifecycle. Understanding these states is crucial for providing appropriate UI feedback to your users.
 
-| State | Code | Description |
+| State | Index | Description |
 |-------|------|-------------|
 | Unknown | 0 | Something went wrong - Unexpected state - A new collect will start soon |
 | Preparing collect | 1 | Initial preparation phase before collection starts |
@@ -37,31 +37,5 @@ Credentials go through various states during their lifecycle. Understanding thes
 
 ### State Flow Diagram
 
-```mermaid
-stateDiagram-v2
-    [*] --> PreparingCollect: Start Collection
-    PreparingCollect --> LoginInProgress: Begin Authentication
-    LoginInProgress --> 2FARequired: 2FA Enabled
-    2FARequired --> Performing2FA: User Provides Code
-    LoginInProgress --> CollectingData: No 2FA
-    Performing2FA --> CollectingData: 2FA Success
-    CollectingData --> DownloadingInvoices: Data Retrieved
-    DownloadingInvoices --> Done: Complete
-    
-    Done --> [*]: Success
-    [*] --> Error: Authentication error
-    [*] --> Disconnected: Disconnected error
-    [*] --> Unknown: Unknown error
-    
-    note right of PreparingCollect: State 1
-    note right of LoginInProgress: State 2
-    note right of 2FARequired: State 3
-    note right of Performing2FA: State 4
-    note right of CollectingData: State 5
-    note right of DownloadingInvoices: State 6
-    note right of Done: State 7
-    note right of Error: State -1
-    note right of Disconnected: State -2
-    note right of Unknown: State 0
-```
+![state_diagram](../../sequence_diagram/state_diagram.svg)
 
