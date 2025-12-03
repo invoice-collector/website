@@ -87,13 +87,11 @@ curl -X POST http://localhost:8080/api/v1/user \
     -H "Authorization: Bearer <bearer_token>" \
     -H "Content-Type: application/json" \
     -d '{
-        "email": "user@example.com",
-        "locale": "fr",
-        "remote_id": "A1B2C3D4"
+        "remote_id": "A1B2C3D4",
+        "locale": "fr"
     }'
 ```
 
-- `email` is required to send the [Terms of Use](https://invoice-collector.com/terms-of-use), allong with a verification code to the new user, it is never stored in the database. The email is immediatly sent.
 - `locale` is the language of the user. Only `fr` and `en` are currently available.
 - `remote_id` is used to identify the user on your system. All invoices sent to your `callback` will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
 

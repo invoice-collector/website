@@ -16,11 +16,6 @@ paths:
           required: true
           schema:
             "$ref": "#/components/schemas/token"
-        - in: query
-          name: verificationCode
-          required: false
-          schema:
-            "$ref": "#/components/schemas/verificationCode"
       responses:
         '200':
           description: Success
@@ -1229,10 +1224,6 @@ components:
           "$ref": "#/components/schemas/remote_id"
         locale:
           "$ref": "#/components/schemas/locale"
-        email:
-          type: string
-          description: Email of the user. _This email is used to send the [Trems of Use](/terms-of-use)._
-          example: user@example.com
         ip:
           type: string
           description: IP address of the user. _This ip is used to geo-locate the user and connect to collectors as close as possible._
@@ -1240,7 +1231,6 @@ components:
       required:
       - remote_id
       - locale
-      - email
     authorization_response:
       allOf:
         - "$ref": "#/components/schemas/user"
@@ -1260,10 +1250,6 @@ components:
       type: string
       description: Token to be used for password reset. _You can get it using the [`/signup`](#tag/Authentication/paths/~1signup/post) endpoint._
       example: <reset_token>
-    verificationCode:
-      type: string
-      description: Verification code received by email. _Leave it empty if the user did not receive any._
-      example: 654972
     credential_id:
         type: string
         description: Id of the credential.
