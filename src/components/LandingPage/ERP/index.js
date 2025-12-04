@@ -930,6 +930,10 @@ export default function LandingPageEn() {
                             </div>
                         </div>
                         
+                        <div>
+                            <input type="text" name="other" hidden></input>
+                        </div>
+                        
                         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                             <i class="fas fa-rocket mr-2"></i>
                             Start integration
