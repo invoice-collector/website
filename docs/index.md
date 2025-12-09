@@ -21,7 +21,7 @@ Here is how Invoice-Collector fits in your infrastructure depending on your choi
 
 | Cloud-SaaS | Self-Hosted |
 |---|---|
-| ![infra_cloud](./sequence_diagram/infra_cloud.svg) | ![infra_self_hosted](./sequence_diagram/infra_self_hosted.svg) |
+| ![infra_cloud](./diagrams/infra_cloud.svg) | ![infra_self_hosted](./diagrams/infra_self_hosted.svg) |
 
 1. User connects to the app and request to modify its collectors.
 2. App requests a token to Invoice-Collector matching the user and returns it to the user.
