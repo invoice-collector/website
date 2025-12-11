@@ -1,0 +1,98 @@
+---
+sidebar_position: 5
+---
+
+import Button from '@site/src/components/Button';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Websocket Messages
+
+Websocket messages are received and sent during a collection process.
+
+#### Messages Received from API
+
+**State** message is received on connection and everytime the collection state changes. 
+It is used to update the progress bar and be notified when the collect is finished.
+
+```typescript
+type MessageState = {
+    type: 'state';
+    state: {
+        index: 1; // Number between -2 and 7
+        max: 7;
+        title = "State title";
+        message = "State message";
+    }
+}
+```
+
+**Screenshot** message is received when the user needs to login using the video stream.
+Screenshot messages are sent approximately every 50ms during interactive login (`state.index = 2`):
+
+```typescript
+type MessageScreenshot = {
+    type: 'screenshot';
+    screenshot: string;  // Base64 encoded image
+    width: number;       // Screenshot width in pixels
+    height: number;      // Screenshot height in pixels
+}
+```
+
+#### Messages Sent to API
+
+**Twofa** message must be sent when `state.index = 3`.
+This code must be asked in your frontend.
+
+```typescript
+type MessageTwofa = {
+    type: 'twofa';
+    twofa: string;  // The 2FA code from the user
+}
+```
+
+**Click** message can be sent when `state.index = 2` and at least one screenshot has been received.
+It simulates a click on the screenshot:
+
+```typescript
+type MessageClick = {
+    type: 'click';
+    x: number;  // X coordinate as percentage (0-100) of screenshot width
+    y: number;  // Y coordinate as percentage (0-100) of screenshot height
+}
+```
+
+**Keydown** message can be sent when `state.index = 2` and at least one screenshot has been received.
+It simulates a keydown event:
+
+```typescript
+type MessageKeydown = {
+    type: 'keydown';
+    key: string;  // Key name (e.g., 'Enter', 'Backspace', 'A', 'b', '?')
+}
+```
+
+**Text** message can be sent when `state.index = 2` and at least one screenshot has been received.
+It simulates a paste (Ctrl+V) event:
+
+```typescript
+type MessageText = {
+    type: 'text';
+    text: string;  // The text to input
+}
+```
+
+**Close** message can be sent when `state.index = 2` and at least one screenshot has been received.
+It notifies that login process has been performed with screenshot.
+You will stop receiving `screenshot` events.
+
+```typescript
+type MessageClose = {
+    type: 'close';
+    reason: 'ok' | 'cancel' | 'report';
+}
+```
+
+- `ok` - Login completed successfully, collect can continue
+- `cancel` - User cancelled the process
+
