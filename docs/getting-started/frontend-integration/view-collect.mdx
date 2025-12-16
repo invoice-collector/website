@@ -1,30 +1,27 @@
 ---
-sidebar_position: 6
+sidebar_position: 4
 ---
 
 import Button from '@site/src/components/Button';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 5. Re-connect a credential
+# 3. View a collect in progress
 
-When a credential becomes disconnected or encounters authentication issues, users need a way to re-authenticate and resume collection.
-The reconnection process varies depending on your integration approach.
+When a credential addition is in progress, the user must be able to view an "In-progress" collect in order to enter 2FA code is needed.
+The view collect process varies depending on your integration approach.
 
 ---
 
 ## 1. Iframe integration (Quick & Easy)
 
-For iframe-based integrations, reconnecting a credential is straightforward.
-When user clicks "Re-connect" button, simply open the iframe with url:
+For iframe-based integrations, viewing a collect is straightforward.
+When user clicks "View collect" button, simply open the iframe with url:
 ```javascript
 /ui?token=${token}&collect=${credentialId}
 ```
 
-The iframe will handle all the re-authentication steps automatically, including:
-- Handling 2FA challenges
-- Managing the collection process
-- Providing real-time feedback to the user
+The iframe will get the current addition process and directly display the progress bar.
 
 **How it works:**
 
@@ -35,7 +32,7 @@ sequenceDiagram
     participant IFrame as Invoice-Collector iFrame
     participant API as Invoice-Collector API
     
-    User->>Frontend: Clicks "Re-connect"
+    User->>Frontend: Clicks "View collect"
     Frontend->>IFrame: GET /ui?token={token}&collect={credential_id}
     IFrame->>API: POST /credential/{credential_id}/collect
     API-->>IFrame: Returns wsPath
@@ -50,11 +47,16 @@ sequenceDiagram
     Frontend-->>User: Closes iFrame
 ```
 
+:::warning[Warning]
+Calling `/ui?token=${token}&collect=${credentialId}` if a collect is not in progress will trigger a new collect.
+Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
+:::
+
 ---
 
 ## 2. Full integration (Complete Control)
 
-For full API integrations, you have complete control over the re-authentication flow.
+For full API integrations, you have complete control over the view collect flow.
 The process is similar to adding a new credential, but starts with an existing credential.
 
 **How it works:**
@@ -66,8 +68,8 @@ sequenceDiagram
     participant Backend as Your Backend
     participant API as Invoice-Collector API
     
-    User->>Frontend: Clicks "Re-connect"
-    Frontend->>Backend: Request reconnection
+    User->>Frontend: Clicks "View collect"
+    Frontend->>Backend: Request to view collect
     Backend->>API: POST /credential/{credential_id}/collect
     API-->>Backend: Returns wsPath
     Backend-->>Frontend: Returns wsPath
@@ -84,15 +86,20 @@ sequenceDiagram
 **What you need to implement:**
 
 - Backend:
-  - Call [`POST /credential/{credential_id}/collect`](/docs/api.mdx#tag/Credential-(bearer)/paths/~1user~1{user_id}~1credential~1{credential_id}~1collect/post) to start the reconnection process and return `wsPath` to your frontend
+  - Call [`POST /credential/{credential_id}/collect`](/docs/api.mdx#tag/Credential-(bearer)/paths/~1user~1{user_id}~1credential~1{credential_id}~1collect/post) to start the view collect and return `wsPath` to your frontend
 
 - Frontend:
   - Create a page to display addition progress
   - Implement WebSocket connection `/ws` and events (state, screenshot, twofa, close)
 
+:::warning[Warning]
+Calling `/credential/{credential_id}/collect` if a collect is not in progress will trigger a new collect.
+Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
+:::
+
 ### WebSocket Messages
 
-The reconnection process uses the same WebSocket messages as credential addition:
+The view collect process uses the same WebSocket messages as credential addition:
 
 **Messages Received from API:**
 
@@ -113,11 +120,10 @@ For detailed information about WebSocket messages, refer to the [Websocket Messa
 
 ## Common Scenarios
 
-### 2FA & Session Expired
+### User exits addition process before the end
 
-Some websites require 2FA for authentication. Cookies will be saved on first connection to authenticate on the next ones.
-After few month, the token will expire and the user will have to re-authenticate.
+During the addition process, a user can exit the page by reloading the page or closing the window.
+If performed, the user looses the current addition progress bar and is not able to input 2FA code if required.
 
-- The credential `state.index` will go to `-2` and a `notification_disconnected` event will be sent to your callback.
-- User is notified that the credential is disconnected and a re-authentication is required
-- User clicks on "Re-connect"
+- User exits the addition process befrore it ends or before the 2FA input
+- User clicks on "View collect"
