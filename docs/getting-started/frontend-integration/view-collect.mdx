@@ -6,7 +6,7 @@ import Button from '@site/src/components/Button';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 3. View a collect in progress
+# 3. View a collect
 
 When a credential addition is in progress, the user must be able to view an "In-progress" collect in order to enter 2FA code is needed.
 The view collect process varies depending on your integration approach.
@@ -16,14 +16,37 @@ The view collect process varies depending on your integration approach.
 ## 1. Iframe integration (Quick & Easy)
 
 For iframe-based integrations, viewing a collect is straightforward.
-When user clicks "View collect" button, simply open the iframe with url:
-```javascript
-/ui?token=${token}&collect=${credentialId}
-```
 
-The iframe will get the current addition process and directly display the progress bar.
+### Implementation
 
-**How it works:**
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Side</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Frontend</td>
+            <td>User clicks on the "View collect" button.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Frontend</td>
+            <td>Update the iframe `href` to `/ui?token=${token}&collect=${credentialId}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
+        </tr>
+    </tbody>
+</table>
+
+:::warning[Warning]
+Calling `/ui?token=${token}&collect=${credentialId}` if a collect is not in progress will trigger a new collect.
+Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
+:::
+
+### How it works
 
 ```mermaid
 sequenceDiagram
@@ -47,11 +70,6 @@ sequenceDiagram
     Frontend-->>User: Closes iFrame
 ```
 
-:::warning[Warning]
-Calling `/ui?token=${token}&collect=${credentialId}` if a collect is not in progress will trigger a new collect.
-Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
-:::
-
 ---
 
 ## 2. Full integration (Complete Control)
@@ -59,38 +77,39 @@ Make sure the current [credential state](../credential-states) if between `0` an
 For full API integrations, you have complete control over the view collect flow.
 The process is similar to adding a new credential, but starts with an existing credential.
 
-**How it works:**
+### Implementation
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Frontend as Your Frontend
-    participant Backend as Your Backend
-    participant API as Invoice-Collector API
-    
-    User->>Frontend: Clicks "View collect"
-    Frontend->>Backend: Request to view collect
-    Backend->>API: POST /credential/{credential_id}/collect
-    API-->>Backend: Returns wsPath
-    Backend-->>Frontend: Returns wsPath
-    Frontend->>API: Establishes WebSocket connection /ws
-    API-->>Frontend: Sends real-time updates
-    Frontend-->>User: Shows progress
-    User->>Frontend: Provides updates
-    Frontend->>API: Sends updates via WebSocket
-    API-->>Frontend: Sends progress updates
-    Frontend-->>User: Shows progress
-    Frontend->>User: Shows completion message
-```
-
-**What you need to implement:**
-
-- Backend:
-  - Call [`POST /credential/{credential_id}/collect`](/docs/api.mdx#tag/Credential-(bearer)/paths/~1user~1{user_id}~1credential~1{credential_id}~1collect/post) to start the view collect and return `wsPath` to your frontend
-
-- Frontend:
-  - Create a page to display addition progress
-  - Implement WebSocket connection `/ws` and events (state, screenshot, twofa, close)
+<table>
+    <thead>
+        <tr>
+            <th>Step</th>
+            <th>Side</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Frontend</td>
+            <td>Create a page to display addition progress.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Frontend</td>
+            <td>User clicks on the "View collect" button.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Backend</td>
+            <td>Call [`POST /credential/{credential_id}/collect`](/docs/api.mdx#tag/Credential-(bearer)/paths/~1user~1{user_id}~1credential~1{credential_id}~1collect/post) to start the view collect and return `wsPath` to your frontend.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Frontend</td>
+            <td>Implement WebSocket connection `/ws` and events (state, screenshot, twofa, close).</td>
+        </tr>
+    </tbody>
+</table>
 
 :::warning[Warning]
 Calling `/credential/{credential_id}/collect` if a collect is not in progress will trigger a new collect.
@@ -115,6 +134,30 @@ The view collect process uses the same WebSocket messages as credential addition
 - **Close** - Complete interactive login session
 
 For detailed information about WebSocket messages, refer to the [Websocket Messages](../websocket-messages) documentation.
+
+### How it works
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as Your Frontend
+    participant Backend as Your Backend
+    participant API as Invoice-Collector API
+    
+    User->>Frontend: Clicks "View collect"
+    Frontend->>Backend: Request to view collect
+    Backend->>API: POST /credential/{credential_id}/collect
+    API-->>Backend: Returns wsPath
+    Backend-->>Frontend: Returns wsPath
+    Frontend->>API: Establishes WebSocket connection /ws
+    API-->>Frontend: Sends real-time updates
+    Frontend-->>User: Shows progress
+    User->>Frontend: Provides updates
+    Frontend->>API: Sends updates via WebSocket
+    API-->>Frontend: Sends progress updates
+    Frontend-->>User: Shows progress
+    Frontend->>User: Shows completion message
+```
 
 ---
 
