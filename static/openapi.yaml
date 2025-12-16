@@ -784,6 +784,15 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  wsPath:
+                    "$ref": "#/components/schemas/wsPath"
+                required:
+                - wsPath
         '400':
           description: Bad Request
           content:
@@ -1088,6 +1097,15 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  wsPath:
+                    "$ref": "#/components/schemas/wsPath"
+                required:
+                - wsPath
         '400':
           description: Bad Request
           content:
@@ -1278,14 +1296,14 @@ components:
           type: string
           description: Custom note for this credential.
           example: Regular account
-        download_from_timestamp:
-          type: number
-          description: Download from timestamp.
-          example: 1745229203582
         create_timestamp:
           type: number
           description: Creation timestamp.
           example: 1745229262287
+        download_from_timestamp:
+          type: number
+          description: Download from timestamp.
+          example: 1745229203582
         last_collect_timestamp:
           type: number
           description: Last collect timestamp.
@@ -1320,6 +1338,8 @@ components:
           "$ref": "#/components/schemas/state"
         collector:
           "$ref": "#/components/schemas/collector"
+        wsPath:
+          "$ref": "#/components/schemas/wsPath"
       required:
       - id
       - user_id
@@ -1330,6 +1350,7 @@ components:
       - state
       - invoices
       - collector
+      - wsPath
     customer:
       type: object
       properties:
@@ -1625,6 +1646,11 @@ components:
         - collected_timestamp
         - link
         - data
+    wsPath:
+      type: string
+      description: WebSocket path to connect to for real-time updates. `null` if no collect is in progress.
+      example: /api/v1/ws/30f6a13e919ceab0094e6df042166210fc00177dd392d2d2ae8b751946cbfecdb7f6e3fec3ec2d93db2a27a364dd6997adc88e439a3b96d34fe7d0257b27a616
+      
     error:
       type: object
       properties:
