@@ -43,7 +43,7 @@ For iframe-based integrations, viewing a collect is straightforward.
 
 :::warning[Warning]
 Calling `/ui?token=${token}&collect=${credentialId}` if a collect is not in progress will trigger a new collect.
-Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
+Make sure the current [credential state](../credential-states) is between `0` and `7` excluded.
 :::
 
 ### How it works
@@ -113,7 +113,7 @@ The process is similar to adding a new credential, but starts with an existing c
 
 :::warning[Warning]
 Calling `/credential/{credential_id}/collect` if a collect is not in progress will trigger a new collect.
-Make sure the current [credential state](../credential-states) if between `0` and `7` excluded.
+Make sure the current [credential state](../credential-states) is between `0` and `7` excluded.
 :::
 
 ### WebSocket Messages
