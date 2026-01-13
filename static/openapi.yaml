@@ -359,6 +359,10 @@ paths:
                   type: boolean
                   description: Whether the customer is subscribed to all collectors.
                   example: false
+                enableInteractiveLogin:
+                  type: boolean
+                  description: Whether the customer has enabled interactive login for collectors that support it.
+                  example: true
                 displaySketchCollectors:
                   type: boolean
                   description: Whether to display sketch collectors.
@@ -1388,6 +1392,10 @@ components:
           type: boolean
           description: Whether the customer is subscribed to all collectors. _If true, the `subscribedCollectors` field is ignored._
           example: false
+        enableInteractiveLogin:
+          type: boolean
+          description: Whether the customer has enabled interactive login for collectors that support it.
+          example: true
         displaySketchCollectors:
           type: boolean
           description: Whether to display sketch collectors.
