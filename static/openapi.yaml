@@ -16,6 +16,13 @@ paths:
           required: true
           schema:
             "$ref": "#/components/schemas/token"
+        - in: query
+          name: credential_id
+          schema:
+            type: string
+            description: Id of the credential.
+            _If provided, a collect will be started for this credential. If a collect is already in progress for this credential, the current progress will be shown._
+            example: 6776b5258821de266afbc3f6
       responses:
         '200':
           description: Success
