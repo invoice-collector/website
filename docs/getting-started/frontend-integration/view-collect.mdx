@@ -36,13 +36,13 @@ For iframe-based integrations, viewing a collect is straightforward.
         <tr>
             <td>2</td>
             <td>Frontend</td>
-            <td>Update the iframe `href` to `/ui?token=${token}&collect=${credentialId}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
+            <td>Update the iframe `href` to `/ui?token=${token}&credential_id=${credential_id}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
         </tr>
     </tbody>
 </table>
 
 :::warning[Warning]
-Calling `/ui?token=${token}&collect=${credentialId}` if a collect is not in progress will trigger a new collect.
+Calling `/ui?token=${token}&credential_id=${credential_id}` if a collect is not in progress will trigger a new collect.
 Make sure the current [credential state](../credential-states) is between `0` and `7` excluded.
 :::
 
@@ -56,7 +56,7 @@ sequenceDiagram
     participant API as Invoice-Collector API
     
     User->>Frontend: Clicks "View collect"
-    Frontend->>IFrame: GET /ui?token={token}&collect={credential_id}
+    Frontend->>IFrame: GET /ui?token={token}&credential_id={credential_id}
     IFrame->>API: POST /credential/{credential_id}/collect
     API-->>IFrame: Returns wsPath
     IFrame->>API: Establishes WebSocket connection /ws
