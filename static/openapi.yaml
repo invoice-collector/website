@@ -1613,10 +1613,14 @@ components:
           description: State of the collector.
           enum: [development, active]
           example: active
+        loginUrl:
+          type: string
+          description: URL to the login page of the collector. For collectors of type `sketch`, `web` and `agent` only.
+          example: https://www.mycollector.com/login
         entryUrl:
           type: string
-          description: URL to the entry point of the collector. For collectors of type `web` only.
-          example: https://www.mycollector.com/login
+          description: URL to the invoices page of the collector. For collectors of type `web` and `agent` only.
+          example: https://www.mycollector.com/customer/invoices
         baseUrl:
           type: string
           description: Base URL of the collector. For collectors of type `api` only.
