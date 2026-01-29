@@ -1611,7 +1611,7 @@ components:
         state:
           type: object
           description: State of the collector.
-          enum: [development, active]
+          enum: [planned, development, active]
           example: active
         loginUrl:
           type: string
