@@ -345,7 +345,7 @@ paths:
                   example: Awesome Company Name
                 callback:
                   type: string
-                  description: Callback url at which the new invoices are sent.
+                  description: Callback url at which the new invoices are sent. _This endpoint must accept POST requests. See [`GET /test/callback/invoice`](#/paths/~1ui/get) for the request body._
                   example: https://path.to/callback
                 remoteId:
                   type: string
@@ -1272,11 +1272,11 @@ components:
       - token
     token:
       type: string
-      description: Token to be used by the client. _You can get it using the [`/user`](#tag/User/paths/~1user/post) endpoint._
+      description: Token to be used by the client. _You can get it using the [`POST /user`](#tag/User/paths/~1user/post) endpoint._
       example: <token>
     reset_token:
       type: string
-      description: Token to be used for password reset. _You can get it using the [`/signup`](#tag/Authentication/paths/~1signup/post) endpoint._
+      description: Token to be used for password reset. _You can get it using the [`POST /signup`](#tag/Authentication/paths/~1signup/post) endpoint._
       example: <reset_token>
     credential_id:
         type: string
@@ -1378,7 +1378,7 @@ components:
           example: Awesome Company Name
         callback:
           type: string
-          description: Callback url at which the new invoices are sent.
+          description: Callback url at which the new invoices are sent. _This endpoint must accept POST requests. See [`GET /test/callback/invoice`](#/paths/~1ui/get) for the request body._
           example: https://path.to/callback
         remoteId:
           type: string
