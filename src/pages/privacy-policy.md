@@ -1,6 +1,6 @@
 # Politique de Confidentialité 
 
-https://invoice-collector.com, https://api.invoice-collector.com et https://demo.invoice-collector.com (ci-après, la « Plateforme »)
+https://invoice-collector.com, https://api.invoice-collector.com et https://app.invoice-collector.com (ci-après, la « Plateforme »)
 
 La présente politique de confidentialité a pour vocation de vous aider à comprendre comment sont collectées, traitées et conservées vos données personnelles par l’entreprise individuelle de Monsieur Lucas BERGERON (ci-après, « Nous ») via la plateforme. 
 
