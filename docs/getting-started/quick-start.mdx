@@ -88,7 +88,7 @@ We will see below how to get this token.
 
 ## First request
 
-We will start with a simple request to the endpoint `/customer` to retrieve your informations:
+We will start with a simple request to the endpoint [`GET /customer`](../api.mdx#tag/Customer/paths/~1customer/get) to retrieve your informations:
 
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
@@ -116,19 +116,26 @@ We will start with a simple request to the endpoint `/customer` to retrieve your
 
     ```json
     {
-      "name": "default",
-      "callback": "https://path.to/callback"
+      ...
+      "email": "account+dev@invoice-collector.com", // Email of your account
+      "name": "default",                            // Name of your company
+      "callback": "https://path.to/callback",       // Callback to which invoices will be sent
+      ...
     }
     ```
 
-    This is the `callback` at which invoices will be sent. Make a POST request to the [`/customer` endpoint](../api.mdx#tag/Customer/paths/~1customer/post) to update your informations by your own.
+    We strongly recommend to check the API reference for the full response body. See [`GET /customer`](../api.mdx#tag/Customer/paths/~1customer/get).
+
+    The `callback` field is the url at which invoices will be sent. This callback url must accept POST requests with the invoice informations in the request body.
+    See [`GET /test/callback/invoice`](../api.mdx#/paths/~1test~1callback~1{type}/get) for the request body schema.
+    You can update it your `callback` url with a POST request to the [`POST /customer`](../api.mdx#tag/Customer/paths/~1customer/post) endpoint.
   </TabItem>
 </Tabs>
 
 ## Create a user & Generate a user token
 
 When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server.
-You can make a POST request to the `/user` endpoint to create it in our database and generate the token.
+You can make a POST request to the `POST /user` endpoint to create it in our database and generate the token.
 If a user with this `remote_id` already exist, it will not create it.
 
 <Tabs groupId="server-base-url">
