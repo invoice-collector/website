@@ -101,9 +101,9 @@ We will start with a simple request to the endpoint [`GET /customer`](../api.mdx
     ```json
     {
       ...
-      "email": "account+dev@invoice-collector.com", // Email of your account
-      "name": "Awesome Company Name",               // Name of your company
-      "callback": "https://path.to/callback",       // Callback to which invoices will be sent
+      "email": "account+dev@invoice-collector.com",                         // Email of your account
+      "name": "Awesome Company Name",                                       // Name of your company
+      "callback": "https://your.infrastructure.com/path/to/callback",       // Callback to which invoices will be sent
       ...
     }
     ```
@@ -120,9 +120,9 @@ We will start with a simple request to the endpoint [`GET /customer`](../api.mdx
     ```json
     {
       ...
-      "email": "account+dev@invoice-collector.com", // Email of your account
-      "name": "default",                            // Name of your company
-      "callback": "https://path.to/callback",       // Callback to which invoices will be sent
+      "email": "account+dev@invoice-collector.com",                         // Email of your account
+      "name": "default",                                                    // Name of your company
+      "callback": "https://your.infrastructure.com/path/to/callback",       // Callback to which invoices will be sent
       ...
     }
     ```
@@ -131,10 +131,10 @@ We will start with a simple request to the endpoint [`GET /customer`](../api.mdx
   </TabItem>
 </Tabs>
 
-The `callback` field is the url at which invoices will be sent. This callback url must accept POST requests with the invoice informations in the request body.
+The `callback` field is the URL at which invoices will be sent. This callback URL is on your infrastructure and must accept POST requests with the invoice information in the request body.
 See [`GET /test/callback/invoice`](../api.mdx#/paths/~1test~1callback~1{type}/get) for the request body schema.
 
-We strongly recommend to check the API reference for the full response body. See [`GET /customer`](../api.mdx#tag/Customer/paths/~1customer/get).
+We strongly recommend checking the API reference for the full response body. See [`GET /customer`](../api.mdx#tag/Customer/paths/~1customer/get).
 
 ## Create a user & Generate a user token
 
