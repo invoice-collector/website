@@ -12,11 +12,12 @@ export default function LandingPageFr() {
         // Collect form data
         const formData = new FormData(e.target);
         const name = formData.get('name');
-        const email = formData.get('email');
         const company = formData.get('company');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
         const customers = formData.get('customers');
         const preference = formData.get('preference');
-        const message = `- Name: ${name}\n- Company: ${company}\n- Customers: ${customers}\n- Contact preference: ${preference}`;
+        const message = `- Name: ${name}\n- Company: ${company}\n- Customers: ${customers}\n- Contact preference: ${preference}\n- Phone: ${phone}`;
 
         fetch('https://registry.invoice-collector.com/v1/feedback', {
           method: 'POST',
@@ -27,7 +28,8 @@ export default function LandingPageFr() {
             from: "website",
             type: "landing_page",
             message: message,
-            email: email
+            email: email,
+            phone: phone
           })
         });
         alert('Merci ! Notre équipe vous contactera bientôt pour démarrer votre intégration.');
@@ -823,22 +825,37 @@ export default function LandingPageFr() {
                     
                     <form id="leadForm" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Nom complet <span class="text-red-600">*</span>
+                            </label>
                             <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email professionnel</label>
-                            <input type="text" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom de votre entreprise</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Nom de votre entreprise <span class="text-red-600">*</span>
+                            </label>
                             <input type="text" name="company" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre de clients</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Email professionnel <span class="text-red-600">*</span>
+                            </label>
+                            <input type="text" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Téléphone <span class="text-red-600">*</span>
+                            </label>
+                            <input type="text" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Nombre de clients <span class="text-red-600">*</span>
+                            </label>
                             <select required name="customers" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                 <option value="1-50">1-50</option>
                                 <option value="51-200">51-200</option>
@@ -848,7 +865,9 @@ export default function LandingPageFr() {
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Que préférez-vous ?</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                                Que préférez-vous ? <span class="text-red-600">*</span>
+                            </label>
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="radio" name="preference" value="demo" class="mr-2"></input>
