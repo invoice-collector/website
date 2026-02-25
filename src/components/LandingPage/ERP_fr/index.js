@@ -813,7 +813,7 @@ export default function LandingPageFr() {
         </div>
         <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
             <div id="leadModalBack" class="flex items-center justify-center min-h-screen p-4">
-                <div class="bg-white rounded-2xl max-w-md w-full p-8">
+                <div class="bg-white rounded-2xl max-w-2xl w-full p-8">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">
                             Commencez votre intégration
@@ -823,75 +823,85 @@ export default function LandingPageFr() {
                         </p>
                     </div>
                     
-                    <form id="leadForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Nom complet <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Nom de votre entreprise <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" name="company" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Email professionnel <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Téléphone <span class="text-red-600">*</span>
-                            </label>
-                            <input type="text" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Nombre de clients <span class="text-red-600">*</span>
-                            </label>
-                            <select required name="customers" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="1-50">1-50</option>
-                                <option value="51-200">51-200</option>
-                                <option value="201-1000">201-1000</option>
-                                <option value="1000+">1000+</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
-                                Que préférez-vous ? <span class="text-red-600">*</span>
-                            </label>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="demo" class="mr-2"></input>
-                                    <span class="text-sm">Démo personnalisée (30 min)</span>
+                    <form id="leadForm" class="grid grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Nom complet <span class="text-red-600">*</span>
                                 </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="sandbox" class="mr-2"></input>
-                                    <span class="text-sm">Accès direct au sandbox</span>
+                                <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Nom de votre entreprise <span class="text-red-600">*</span>
                                 </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="preference" value="call" class="mr-2"></input>
-                                    <span class="text-sm">Call technique avec nos ingénieurs</span>
+                                <input type="text" name="company" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Email professionnel <span class="text-red-600">*</span>
                                 </label>
+                                <input type="text" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Téléphone <span class="text-red-600">*</span>
+                                </label>
+                                <input type="text" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></input>
                             </div>
                         </div>
                         
-                        <div>
-                            <input type="text" name="other" hidden></input>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    Nombre de clients <span class="text-red-600">*</span>
+                                </label>
+                                <select required name="customers" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="1-50">1-50</option>
+                                    <option value="51-200">51-200</option>
+                                    <option value="201-1000">201-1000</option>
+                                    <option value="1000+">1000+</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Que préférez-vous ? <span class="text-red-600">*</span>
+                                </label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="preference" value="demo" class="mr-2"></input>
+                                        <span class="text-sm">
+                                            Démo personnalisée (30 min)
+                                        </span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="preference" value="sandbox" class="mr-2"></input>
+                                        <span class="text-sm">
+                                            Accès direct au sandbox
+                                        </span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="preference" value="call" class="mr-2"></input>
+                                        <span class="text-sm">
+                                            Call technique avec nos ingénieurs
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <input type="text" name="other" hidden></input>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Démarrer l'intégration
+                            </button>
                         </div>
-                        
-                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Démarrer l'intégration
-                        </button>
                     </form>
                     
                     <p class="mt-4 text-xs text-gray-500 text-center">
