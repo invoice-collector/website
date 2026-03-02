@@ -1,0 +1,485 @@
+{
+  "accountant.page.title": {
+    "message": "L'API open source du collecteur de factures, propulsée par l'IA"
+  },
+  "accountant.hero.badge": {
+    "message": "Must-have cabinet comptable 2026"
+  },
+  "accountant.hero.title": {
+    "message": "Automatisez la collecte des factures "
+  },
+  "accountant.hero.title.highlight": {
+    "message": "hors facturation électronique"
+  },
+  "accountant.hero.subtitle": {
+    "message": "Un seul outil. Tous vos clients. Toutes les factures hors e-facture récupérées automatiquement depuis un seul endroit."
+  },
+  "accountant.hero.cta.demo": {
+    "message": "Demander une démo gratuite →"
+  },
+  "accountant.hero.cta.roi": {
+    "message": "Calculer mon ROI"
+  },
+  "accountant.hero.stat1.value": {
+    "message": "30j"
+  },
+  "accountant.hero.stat1.label": {
+    "message": "Pour mesurer le ROI pilote"
+  },
+  "accountant.hero.stat2.label": {
+    "message": "Économisées par facture portail"
+  },
+  "accountant.hero.stat3.label": {
+    "message": "Du portefeuille couvert"
+  },
+  "accountant.hero.stat4.value": {
+    "message": "1 Mois"
+  },
+  "accountant.hero.stat4.label": {
+    "message": "ROI positif dès le premier mois"
+  },
+  "accountant.promise.badge": {
+    "message": "La promesse"
+  },
+  "accountant.promise.title": {
+    "message": "Un seul outil. Tous vos clients. Toutes les factures."
+  },
+  "accountant.promise.desc": {
+    "message": "Invoice Collector centralise et automatise la collecte de tous les flux qui restent hors du circuit e-facture — ceux que vous devez quand même obtenir et archiver pour produire."
+  },
+  "accountant.promise.card1.title": {
+    "message": "Fournisseurs étrangers"
+  },
+  "accountant.promise.card1.desc": {
+    "message": "SaaS, cloud, marketplaces, publicité digitale — les éditeurs internationaux qui ne transitent jamais par le flux e-facture. Notion, Google Workspace, OpenAI, Adobe, AWS…"
+  },
+  "accountant.promise.card2.title": {
+    "message": "Flux hors e-facture"
+  },
+  "accountant.promise.card2.desc": {
+    "message": "Factures B2C, associations, TPE non assujetties, professions libérales de santé — tout flux exclu du périmètre obligatoire de la réforme 2026."
+  },
+  "accountant.promise.card3.title": {
+    "message": "Le \"reste à collecter\""
+  },
+  "accountant.promise.card3.desc": {
+    "message": "Un volume récurrent, mensuel, qui grossit avec votre portefeuille et que le cabinet devra toujours traiter manuellement sans automatisation."
+  },
+  "accountant.problem.badge": {
+    "message": "Le problème"
+  },
+  "accountant.problem.title": {
+    "message": "Le coût caché des portails fournisseurs"
+  },
+  "accountant.problem.desc": {
+    "message": "Sans automatisation, chaque facture \"hors e-facture\" impose un parcours manuel qui se répète pour chaque client, chaque mois."
+  },
+  "accountant.problem.step1.title": {
+    "message": "Connexion"
+  },
+  "accountant.problem.step1.desc": {
+    "message": "Portail via identifiants & MFA"
+  },
+  "accountant.problem.step2.title": {
+    "message": "Navigation"
+  },
+  "accountant.problem.step2.desc": {
+    "message": "Rechercher la période cible"
+  },
+  "accountant.problem.step3.title": {
+    "message": "Téléchargement"
+  },
+  "accountant.problem.step3.desc": {
+    "message": "Enregistrer le PDF facture"
+  },
+  "accountant.problem.step4.title": {
+    "message": "Renommage"
+  },
+  "accountant.problem.step4.desc": {
+    "message": "Respecter conventions cabinet"
+  },
+  "accountant.problem.step5.title": {
+    "message": "Dépôt GED"
+  },
+  "accountant.problem.step5.desc": {
+    "message": "Intégration dans vos outils"
+  },
+  "accountant.problem.stat1.title": {
+    "message": "Par facture portail en moyenne"
+  },
+  "accountant.problem.stat1.desc": {
+    "message": "Connexion + téléchargement + renommage + GED. 100 factures/mois ≈ 5h de temps non facturable."
+  },
+  "accountant.problem.stat2.title": {
+    "message": "Valeur du temps collaborateur chargé"
+  },
+  "accountant.problem.stat2.desc": {
+    "message": "Sur 300 clients × 3–5 fournisseurs hors e-facture : 900 à 1 500 factures/mois à traiter."
+  },
+  "accountant.solution.badge": {
+    "message": "La solution"
+  },
+  "accountant.solution.title": {
+    "message": "Invoice Collector automatise l'intégralité du parcours"
+  },
+  "accountant.solution.desc": {
+    "message": "Notre promesse : on ne vend pas un outil. On vend du temps collaborateur récupérable et de la qualité de production."
+  },
+  "accountant.solution.card1.title": {
+    "message": "Collecte planifiée"
+  },
+  "accountant.solution.card1.desc": {
+    "message": "Mensuelle ou hebdomadaire — les factures sont récupérées automatiquement sur tous les portails connectés, sans intervention manuelle."
+  },
+  "accountant.solution.card2.title": {
+    "message": "Classement automatique"
+  },
+  "accountant.solution.card2.desc": {
+    "message": "Par client, période et fournisseur — selon vos conventions de nommage, prêt à intégrer dans votre GED ou vos outils de production."
+  },
+  "accountant.solution.card3.title": {
+    "message": "Traçabilité complète"
+  },
+  "accountant.solution.card3.desc": {
+    "message": "Quoi, quand, pour qui — chaque collecte est horodatée et auditable. Fini les doutes sur la complétude d'un dossier client."
+  },
+  "accountant.solution.card4.title": {
+    "message": "100% du portefeuille"
+  },
+  "accountant.solution.card4.desc": {
+    "message": "Un process unique, standardisé, applicable à l'ensemble de vos clients — scalable sans surcoût, pas seulement aux plus volumineux."
+  },
+  "accountant.roi.badge": {
+    "message": "Calculateur ROI"
+  },
+  "accountant.roi.title": {
+    "message": "Le calcul du ROI en 30 secondes"
+  },
+  "accountant.roi.desc": {
+    "message": "Le point mort est très bas : quelques dizaines à quelques centaines de factures automatisées par mois suffisent à amortir l'abonnement."
+  },
+  "accountant.roi.example1.header": {
+    "message": "📊 Cabinet 250 clients"
+  },
+  "accountant.roi.activeClients": {
+    "message": "Clients actifs (N)"
+  },
+  "accountant.roi.example1.accounts": {
+    "message": "250 dossiers"
+  },
+  "accountant.roi.portalInvoicesLabel": {
+    "message": "Factures portail / client / mois"
+  },
+  "accountant.roi.timeSavedLabel": {
+    "message": "Temps économisé / facture"
+  },
+  "accountant.roi.hourlyCostLabel": {
+    "message": "Coût horaire chargé"
+  },
+  "accountant.roi.example1.result": {
+    "message": "= 1 750€/mois"
+  },
+  "accountant.roi.example1.roiText": {
+    "message": "ROI × 13,5 vs plan 129€"
+  },
+  "accountant.roi.example2.header": {
+    "message": "📊 Cabinet 500 clients"
+  },
+  "accountant.roi.activeClients2": {
+    "message": "Clients actifs (N)"
+  },
+  "accountant.roi.example2.accounts": {
+    "message": "500 dossiers"
+  },
+  "accountant.roi.portalInvoicesLabel2": {
+    "message": "Factures portail / client / mois"
+  },
+  "accountant.roi.timeSavedLabel2": {
+    "message": "Temps économisé / facture"
+  },
+  "accountant.roi.hourlyCostLabel2": {
+    "message": "Coût horaire chargé"
+  },
+  "accountant.roi.example2.result": {
+    "message": "= 3 500€/mois"
+  },
+  "accountant.roi.example2.roiText": {
+    "message": "ROI × 17,5 vs plan 199€"
+  },
+  "accountant.roi.conservative.title": {
+    "message": "💡 Hypothèses conservatrices"
+  },
+  "accountant.roi.conservative.desc": {
+    "message": "Ces calculs utilisent seulement 3 min par facture et 4 fournisseurs hors e-facture par client. La plupart des cabinets dépassent largement ces volumes."
+  },
+  "accountant.roi.custom.title": {
+    "message": "🧮 Votre ROI personnalisé"
+  },
+  "accountant.roi.slider.clients": {
+    "message": "Clients actifs (N)"
+  },
+  "accountant.roi.slider.invoices": {
+    "message": "Factures portail / client / mois"
+  },
+  "accountant.roi.slider.minutes": {
+    "message": "Minutes économisées / facture"
+  },
+  "accountant.roi.slider.cost": {
+    "message": "Coût horaire collaborateur"
+  },
+  "accountant.roi.result.label": {
+    "message": "gains mensuels estimés"
+  },
+  "accountant.roi.result.ratio": {
+    "message": "soit × {roiMultiple} le plan {planPrice}€ {planName}"
+  },
+  "accountant.roi.breakeven": {
+    "message": "Point mort : {invoiceCount} — soit {clientCount} pour amortir l'abonnement"
+  },
+  "accountant.roi.breakeven.invoiceUnit": {
+    "message": "factures/mois"
+  },
+  "accountant.roi.breakeven.clientUnit": {
+    "message": "clients"
+  },
+  "accountant.roi.cta": {
+    "message": "Cadrer mon pilote →"
+  },
+  "accountant.pricing.badge": {
+    "message": "Tarification"
+  },
+  "accountant.pricing.title": {
+    "message": "Simple, lisible, prévisible"
+  },
+  "accountant.pricing.desc": {
+    "message": "Conçue pour accompagner la croissance du cabinet. 1 client actif = 1 client inscrit avec au moins un portail actif."
+  },
+  "accountant.pricing.exclVat": {
+    "message": "HT / mois"
+  },
+  "accountant.pricing.starter.limit": {
+    "message": "Jusqu'à 250 clients actifs"
+  },
+  "accountant.pricing.starter.feature1": {
+    "message": "Portails fournisseurs illimités"
+  },
+  "accountant.pricing.starter.feature2": {
+    "message": "Collecte automatique planifiée"
+  },
+  "accountant.pricing.starter.feature3": {
+    "message": "Classement client + période"
+  },
+  "accountant.pricing.starter.feature4": {
+    "message": "Traçabilité complète"
+  },
+  "accountant.pricing.starter.feature5": {
+    "message": "1h onboarding incluse"
+  },
+  "accountant.pricing.starter.cta": {
+    "message": "Démarrer"
+  },
+  "accountant.pricing.popular": {
+    "message": "Le plus populaire"
+  },
+  "accountant.pricing.exclVat2": {
+    "message": "HT / mois"
+  },
+  "accountant.pricing.standard.limit": {
+    "message": "Jusqu'à 500 clients actifs"
+  },
+  "accountant.pricing.standard.feature1": {
+    "message": "Tout le plan Starter"
+  },
+  "accountant.pricing.standard.feature2": {
+    "message": "Support prioritaire"
+  },
+  "accountant.pricing.standard.feature3": {
+    "message": "Intégrations GED avancées"
+  },
+  "accountant.pricing.standard.feature4": {
+    "message": "Reporting cabinet complet"
+  },
+  "accountant.pricing.standard.feature5": {
+    "message": "1h onboarding incluse"
+  },
+  "accountant.pricing.standard.cta": {
+    "message": "Démarrer →"
+  },
+  "accountant.pricing.exclVat3": {
+    "message": "HT / mois"
+  },
+  "accountant.pricing.enterprise.limit": {
+    "message": "Jusqu'à 1 000 clients actifs"
+  },
+  "accountant.pricing.enterprise.feature1": {
+    "message": "Tout le plan Standard"
+  },
+  "accountant.pricing.enterprise.feature2": {
+    "message": "SLA garanti"
+  },
+  "accountant.pricing.enterprise.feature3": {
+    "message": "Account manager dédié"
+  },
+  "accountant.pricing.enterprise.feature4": {
+    "message": "Connecteurs sur mesure"
+  },
+  "accountant.pricing.enterprise.feature5": {
+    "message": "1h onboarding incluse"
+  },
+  "accountant.pricing.enterprise.cta": {
+    "message": "Démarrer"
+  },
+  "accountant.pricing.custom.title": {
+    "message": "Sur devis"
+  },
+  "accountant.pricing.custom.subtitle": {
+    "message": "groupes & réseaux"
+  },
+  "accountant.pricing.custom.limit": {
+    "message": "Clients illimités + SLA dédié"
+  },
+  "accountant.pricing.custom.feature1": {
+    "message": "Tout le plan Enterprise"
+  },
+  "accountant.pricing.custom.feature2": {
+    "message": "Multi-entités / groupes"
+  },
+  "accountant.pricing.custom.feature3": {
+    "message": "Accompagnement sur mesure"
+  },
+  "accountant.pricing.custom.feature4": {
+    "message": "Intégrations propriétaires"
+  },
+  "accountant.pricing.custom.feature5": {
+    "message": "SLA premium"
+  },
+  "accountant.pricing.custom.cta": {
+    "message": "Nous contacter"
+  },
+  "accountant.pricing.setup.title": {
+    "message": "Setup one-shot — démarrez vite et bien"
+  },
+  "accountant.pricing.setup.desc": {
+    "message": "Déploiement structuré pour éviter le bricolage et mesurer le ROI rapidement. Inclut import du portefeuille, paramétrage des conventions, intégration GED et configuration des modalités d'injection par dossier client."
+  },
+  "accountant.pricing.setup.price": {
+    "message": "1 500€"
+  },
+  "accountant.pricing.setup.priceLabel": {
+    "message": "HT · one-shot"
+  },
+  "accountant.reform.badge": {
+    "message": "Réforme e-facture 2026"
+  },
+  "accountant.reform.title": {
+    "message": "L'e-facture ne supprime pas la collecte"
+  },
+  "accountant.reform.desc": {
+    "message": "La facturation électronique va automatiser une partie significative des flux B2B domestiques. Mais elle laisse un volume important de factures \"hors circuit\" que le cabinet devra toujours récupérer manuellement ou automatiser. Ce \"reste à collecter\" est récurrent, mensuel, et grossit mécaniquement avec votre portefeuille."
+  },
+  "accountant.reform.card1.title": {
+    "message": "Fournisseurs étrangers toujours exclus"
+  },
+  "accountant.reform.card1.desc": {
+    "message": "Notion, Google, Meta Ads, AWS, Adobe — aucun de ces éditeurs ne transitera par le circuit e-facture français."
+  },
+  "accountant.reform.card2.title": {
+    "message": "Nombreuses structures hors périmètre"
+  },
+  "accountant.reform.card2.desc": {
+    "message": "Professions libérales de santé, associations, micro-entreprises non assujetties à la TVA restent hors réforme."
+  },
+  "accountant.reform.card3.title": {
+    "message": "Couverture 100% avec Invoice Collector"
+  },
+  "accountant.reform.card3.desc": {
+    "message": "E-factures françaises via PDP + Invoice Collector pour tout le reste = chaîne comptable complète sans angle mort."
+  },
+  "accountant.deployment.badge": {
+    "message": "Déploiement"
+  },
+  "accountant.deployment.title": {
+    "message": "Un démarrage rapide et mesurable en 30 jours"
+  },
+  "accountant.deployment.desc": {
+    "message": "Un pilote structuré en 3 phases pour prouver le ROI sur votre portefeuille avant de généraliser à l'ensemble de vos clients."
+  },
+  "accountant.deployment.phase1.title": {
+    "message": "Phase 1 — Pilote"
+  },
+  "accountant.deployment.phase1.desc": {
+    "message": "10 à 20 clients représentatifs, quelques fournisseurs internationaux clés. 1h d'onboarding incluse avec notre équipe pour prise en main et cadrage du process."
+  },
+  "accountant.deployment.phase2.title": {
+    "message": "Phase 2 — Mesure"
+  },
+  "accountant.deployment.phase2.desc": {
+    "message": "Sur 30 jours : volume collecté, temps économisé, impact sur la complétude des dossiers. Données réelles pour calculer votre ROI exact avant de généraliser."
+  },
+  "accountant.deployment.phase3.title": {
+    "message": "Phase 3 — Déploiement"
+  },
+  "accountant.deployment.phase3.desc": {
+    "message": "Extension progressive à l'ensemble du portefeuille, avec un process standardisé et documenté. Adoption sans friction côté clients."
+  },
+  "accountant.deployment.onboarding.title": {
+    "message": "L'onboarding inclus (1h)"
+  },
+  "accountant.deployment.onboarding.desc": {
+    "message": "Une session dédiée avec notre équipe pour lancer votre pilote sans friction."
+  },
+  "accountant.deployment.onboarding.item1.title": {
+    "message": "Prise en main produit côté cabinet"
+  },
+  "accountant.deployment.onboarding.item1.desc": {
+    "message": "Configuration de votre espace, imports clients, paramétrage initial."
+  },
+  "accountant.deployment.onboarding.item2.title": {
+    "message": "Identifier les bons usages"
+  },
+  "accountant.deployment.onboarding.item2.desc": {
+    "message": "Pilotage, contrôle qualité, intégration dans votre process de production."
+  },
+  "accountant.deployment.onboarding.item3.title": {
+    "message": "Cadrer l'adoption côté clients"
+  },
+  "accountant.deployment.onboarding.item3.desc": {
+    "message": "Modalités de connexion portails, communication clients, démarrage sans friction."
+  },
+  "accountant.cta.badge": {
+    "message": "Prochaine étape"
+  },
+  "accountant.cta.title": {
+    "message": "Démo + cadrage pilote — 30 jours pour prouver le ROI"
+  },
+  "accountant.cta.desc": {
+    "message": "Prouvez sur votre portefeuille réel qu'Invoice Collector s'amortit dès le premier mois — puis standardisez la collecte hors e-facture au niveau cabinet."
+  },
+  "accountant.cta.demo": {
+    "message": "Demander une démo personnalisée →"
+  },
+  "accountant.cta.sandbox": {
+    "message": "Accès sandbox direct"
+  },
+  "accountant.cta.tagline": {
+    "message": "Sans engagement · Onboarding 1h inclus · Setup en moins d'une semaine · ROI mesurable dès le 1er cycle"
+  },
+  "accountant.cta.card1.title": {
+    "message": "Démo personnalisée"
+  },
+  "accountant.cta.card1.desc": {
+    "message": "Présentation adaptée à votre organisation et à votre portefeuille clients."
+  },
+  "accountant.cta.card2.title": {
+    "message": "Cadrage pilote"
+  },
+  "accountant.cta.card2.desc": {
+    "message": "Sélection des premiers clients, portails prioritaires, définition des KPIs de ROI."
+  },
+  "accountant.cta.card3.title": {
+    "message": "Mise en production"
+  },
+  "accountant.cta.card3.desc": {
+    "message": "Setup + onboarding en moins d'une semaine. Résultats mesurables dès le premier cycle."
+  }
+}
