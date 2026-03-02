@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
 
 export default function LandingPageFr() {
   useEffect(() => {
@@ -69,7 +68,7 @@ export default function LandingPageFr() {
                     <div>
                         <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-4 py-2 mb-6">
                             <i class="fas fa-rocket text-yellow-300 mr-2"></i>
-                            <span class="text-sm font-medium"><Translate>Nouvelle API • Conforme e-invoicing 2026</Translate></span>
+                            <span class="text-sm font-medium">Nouvelle API • Conforme e-invoicing 2026</span>
                         </div>
                         <h1 class="text-5xl font-bold mb-6 leading-tight">
                             L'API <span class="text-yellow-300">open source</span> du collecteur de factures, <span class="text-yellow-300">propulsée par l'IA</span>
