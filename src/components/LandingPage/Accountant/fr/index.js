@@ -86,6 +86,10 @@ export default function LandingPageFr() {
                     /* SECTION COLORS */
 
                     .bg-section-odd { background-color: #faf8f4; }
+
+                    /* RANGE INPUTS */
+
+                    .roi-range { accent-color: #d1d5db; }
                 `}</style>
 
                 {/* HERO */}
@@ -261,19 +265,19 @@ export default function LandingPageFr() {
                                 <div className="font-title font-bold text-lg text-secondary mb-6">🧮 Votre ROI personnalisé</div>
                                 <div className="mb-5">
                                     <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Clients actifs (N)</span><span className="font-semibold text-primary">{clients}</span></div>
-                                    <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className="w-full" />
+                                    <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className="w-full roi-range" />
                                 </div>
                                 <div className="mb-5">
                                     <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Factures portail / client / mois</span><span className="font-semibold text-primary">{invoicesPerClient}</span></div>
-                                    <input type="range" min="1" max="15" value={invoicesPerClient} onChange={e => setInvoicesPerClient(Number(e.target.value))} className="w-full" />
+                                    <input type="range" min="1" max="15" value={invoicesPerClient} onChange={e => setInvoicesPerClient(Number(e.target.value))} className="w-full roi-range" />
                                 </div>
                                 <div className="mb-5">
                                     <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Minutes économisées / facture</span><span className="font-semibold text-primary">{minutesSaved} min</span></div>
-                                    <input type="range" min="2" max="8" value={minutesSaved} onChange={e => setMinutesSaved(Number(e.target.value))} className="w-full" />
+                                    <input type="range" min="2" max="8" value={minutesSaved} onChange={e => setMinutesSaved(Number(e.target.value))} className="w-full roi-range" />
                                 </div>
                                 <div className="mb-6">
                                     <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Coût horaire collaborateur</span><span className="font-semibold text-primary">{hourlyCost}€</span></div>
-                                    <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className="w-full" />
+                                    <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className="w-full roi-range" />
                                 </div>
                                 <div className="bg-primary-light rounded-xl p-6 text-center mb-4">
                                     <div className="text-3xl font-title font-extrabold text-primary">{formatCurrency(Math.round(monthlySavings))}</div>
