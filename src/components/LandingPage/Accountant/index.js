@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import styles from './index.module.css';
 
 export default function LandingPage() {
     const {siteConfig, i18n: {currentLocale}} = useDocusaurusContext();
@@ -45,7 +47,7 @@ export default function LandingPage() {
                 <style>{`
                     /* PRIMARY GREEN */
 
-                    .font-title { font-family: 'Playfair Display', serif; }
+                    /*.font-title { font-family: 'Playfair Display', serif; }*/
 
                     /* PRIMARY GREEN */
 
@@ -129,7 +131,7 @@ export default function LandingPage() {
                         <span className="w-2 h-2 rounded-full animate-pulse bg-primary"></span>
                         <Translate id="accountant.hero.badge">Must-have for accounting firms 2026</Translate>
                     </div>
-                    <h1 className="text-4xl md:text-5xl text-secondary font-extrabold font-title leading-tight max-w-3xl mx-auto mb-6">
+                    <h1 className={clsx(styles.font_title, "text-4xl md:text-5xl text-secondary font-extrabold leading-tight max-w-3xl mx-auto mb-6")}>
                         <Translate id="accountant.hero.title">Automate invoice collection </Translate><em className="text-primary not-italic"><Translate id="accountant.hero.title.highlight">beyond e-invoicing</Translate></em>
                     </h1>
                     <p className="text-lg md:text-xl text-secondary-light max-w-2xl mx-auto mb-10">
@@ -140,10 +142,10 @@ export default function LandingPage() {
                         <Link to="#roi" className="inline-block border border-secondary-light border-opacity-30 hover:border-opacity-60 text-secondary-light px-8 py-3 rounded-xl transition no-underline"><Translate id="accountant.hero.cta.roi">Calculate my ROI</Translate></Link>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary"><Translate id="accountant.hero.stat1.value">30d</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat1.label">To measure trial ROI</Translate></div></div>
-                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary">3 min</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat2.label">Saved per portal invoice</Translate></div></div>
-                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary">100%</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat3.label">Portfolio coverage</Translate></div></div>
-                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary"><Translate id="accountant.hero.stat4.value">1 Month</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat4.label">Positive ROI from month one</Translate></div></div>
+                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className={clsx(styles.font_title, "text-4xl font-bold text-primary")}><Translate id="accountant.hero.stat1.value">30d</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat1.label">To measure trial ROI</Translate></div></div>
+                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className={clsx(styles.font_title, "text-4xl font-bold text-primary")}>3 min</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat2.label">Saved per portal invoice</Translate></div></div>
+                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className={clsx(styles.font_title, "text-4xl font-bold text-primary")}>100%</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat3.label">Portfolio coverage</Translate></div></div>
+                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className={clsx(styles.font_title, "text-4xl font-bold text-primary")}><Translate id="accountant.hero.stat4.value">1 Month</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat4.label">Positive ROI from month one</Translate></div></div>
                     </div>
                 </section>
 
@@ -152,23 +154,23 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-14">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.promise.badge">The promise</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.promise.title">One tool. All your clients. Every invoice.</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.promise.title">One tool. All your clients. Every invoice.</Translate></h2>
                             <p className="text-gray-500 max-w-2xl mx-auto"><Translate id="accountant.promise.desc">Invoice Collector centralizes and automates the collection of all invoices that remain outside the e-invoicing circuit — those you still need to obtain and archive for production.</Translate></p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="bg-gray-50 rounded-2xl p-8 text-center">
                                 <div className="text-4xl mb-4">🌍</div>
-                                <div className="font-semibold font-title text-secondary mb-2"><Translate id="accountant.promise.card1.title">Foreign suppliers</Translate></div>
+                                <div className={clsx(styles.font_title, "font-semibold text-secondary mb-2")}><Translate id="accountant.promise.card1.title">Foreign suppliers</Translate></div>
                                 <div className="text-sm text-gray-500"><Translate id="accountant.promise.card1.desc">SaaS, cloud, marketplaces, digital advertising — international vendors that never go through the e-invoicing flow. Notion, Google Workspace, OpenAI, Adobe, AWS…</Translate></div>
                             </div>
                             <div className="bg-gray-50 rounded-2xl p-8 text-center">
                                 <div className="text-4xl mb-4">📄</div>
-                                <div className="font-semibold font-title text-secondary mb-2"><Translate id="accountant.promise.card2.title">Non e-invoice flows</Translate></div>
+                                <div className={clsx(styles.font_title, "font-semibold text-secondary mb-2")}><Translate id="accountant.promise.card2.title">Non e-invoice flows</Translate></div>
                                 <div className="text-sm text-gray-500"><Translate id="accountant.promise.card2.desc">B2C invoices, nonprofits, small businesses not VAT-registered, healthcare professionals — all flows excluded from the mandatory 2026 reform scope.</Translate></div>
                             </div>
                             <div className="bg-gray-50 rounded-2xl p-8 text-center">
                                 <div className="text-4xl mb-4">🔄</div>
-                                <div className="font-semibold font-title text-secondary mb-2"><Translate id="accountant.promise.card3.title">The "remaining to collect"</Translate></div>
+                                <div className={clsx(styles.font_title, "font-semibold text-secondary mb-2")}><Translate id="accountant.promise.card3.title">The "remaining to collect"</Translate></div>
                                 <div className="text-sm text-gray-500"><Translate id="accountant.promise.card3.desc">A recurring, monthly volume that grows with your portfolio and that your firm will always have to process manually without automation.</Translate></div>
                             </div>
                         </div>
@@ -180,7 +182,7 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.problem.badge">The problem</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.problem.title">The hidden cost of supplier portals</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.problem.title">The hidden cost of supplier portals</Translate></h2>
                             <p className="text-gray-500 max-w-2xl"><Translate id="accountant.problem.desc">Without automation, each invoice outside e-invoicing requires a manual process that repeats for every client, every month.</Translate></p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
@@ -217,11 +219,11 @@ export default function LandingPage() {
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="bg-white rounded-2xl p-8 shadow-sm">
-                                <div className="text-3xl font-title font-extrabold text-primary mb-2">3 min</div>
+                                <div className={clsx(styles.font_title, "text-3xl font-extrabold text-primary mb-2")}>3 min</div>
                                 <div className="text-sm text-gray-600"><strong><Translate id="accountant.problem.stat1.title">Per portal invoice on average</Translate></strong><br/><Translate id="accountant.problem.stat1.desc">Login + download + renaming + DMS. 100 invoices/month ≈ 5h of non-billable time.</Translate></div>
                             </div>
                             <div className="bg-white rounded-2xl p-8 shadow-sm">
-                                <div className="text-3xl font-title font-extrabold text-primary mb-2">35€/h</div>
+                                <div className={clsx(styles.font_title, "text-3xl font-extrabold text-primary mb-2")}>35€/h</div>
                                 <div className="text-sm text-gray-600"><strong><Translate id="accountant.problem.stat2.title">Loaded cost of staff time</Translate></strong><br/><Translate id="accountant.problem.stat2.desc">Across 300 clients × 3–5 non e-invoice suppliers: 900 to 1,500 invoices/month to process.</Translate></div>
                             </div>
                         </div>
@@ -233,7 +235,7 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.solution.badge">The solution</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.solution.title">Invoice Collector automates the entire process</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.solution.title">Invoice Collector automates the entire process</Translate></h2>
                             <p className="text-gray-500 max-w-2xl"><Translate id="accountant.solution.desc">Our promise: we don't sell a tool. We sell recoverable staff time and production quality.</Translate></p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
@@ -262,7 +264,7 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-14">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.roi.badge">ROI Calculator</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.roi.title">Calculate your ROI in 30 seconds</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.roi.title">Calculate your ROI in 30 seconds</Translate></h2>
                             <p className="text-gray-500 max-w-2xl"><Translate id="accountant.roi.desc">The break-even point is very low: just a few dozen to a few hundred automated invoices per month are enough to cover the subscription.</Translate></p>
                         </div>
                         <div className="grid lg:grid-cols-2 gap-8">
@@ -275,7 +277,7 @@ export default function LandingPage() {
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500"><Translate id="accountant.roi.timeSavedLabel">Time saved / invoice</Translate></span><span className="font-medium">3 min</span></div>
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500"><Translate id="accountant.roi.hourlyCostLabel">Loaded hourly cost</Translate></span><span className="font-medium">35€/h</span></div>
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500">250 × 4 × (3/60) × 35</span><span className="font-bold text-primary"><Translate id="accountant.roi.example1.result">= 1,750€/month</Translate></span></div>
-                                    <div className="mt-4 text-primary font-title font-bold text-center py-2 text-xl"><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €129 plan</Translate></div>
+                                    <div className={clsx(styles.font_title, "mt-4 text-primary font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €129 plan</Translate></div>
                                 </div>
                                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                                     <div className="font-bold text-secondary mb-4"><Translate id="accountant.roi.example2.header">📊 Firm with 500 clients</Translate></div>
@@ -284,7 +286,7 @@ export default function LandingPage() {
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500"><Translate id="accountant.roi.timeSavedLabel2">Time saved / invoice</Translate></span><span className="font-medium">3 min</span></div>
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500"><Translate id="accountant.roi.hourlyCostLabel2">Loaded hourly cost</Translate></span><span className="font-medium">35€/h</span></div>
                                     <div className="flex justify-between py-2 border-b border-gray-100 text-sm"><span className="text-gray-500">500 × 4 × (3/60) × 35</span><span className="font-bold text-primary"><Translate id="accountant.roi.example2.result">= 3,500€/month</Translate></span></div>
-                                    <div className="mt-4 text-primary font-title font-bold text-center py-2 text-xl"><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs 199€ plan</Translate></div>
+                                    <div className={clsx(styles.font_title, "mt-4 text-primary font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs 199€ plan</Translate></div>
                                 </div>
                                 <div className="bg-primary-light rounded-2xl p-5">
                                     <div className="font-semibold text-secondary mb-1"><Translate id="accountant.roi.conservative.title">💡 Conservative assumptions</Translate></div>
@@ -293,7 +295,7 @@ export default function LandingPage() {
                             </div>
                             {/* ROI Calculator */}
                             <div className="bg-white rounded-2xl p-8 shadow-sm">
-                                <div className="font-title font-bold text-lg text-secondary mb-6"><Translate id="accountant.roi.custom.title">🧮 Your custom ROI</Translate></div>
+                                <div className={clsx(styles.font_title, "font-bold text-lg text-secondary mb-6")}><Translate id="accountant.roi.custom.title">🧮 Your custom ROI</Translate></div>
                                 <div className="mb-5">
                                     <div className="flex justify-between text-sm mb-1"><span className="text-gray-600"><Translate id="accountant.roi.slider.clients">Active clients (N)</Translate></span><span className="font-semibold text-primary">{clients}</span></div>
                                     <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className="w-full roi-slider" />
@@ -311,7 +313,7 @@ export default function LandingPage() {
                                     <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className="w-full roi-slider" />
                                 </div>
                                 <div className="bg-primary-light rounded-xl p-6 text-center mb-4">
-                                    <div className="text-3xl font-title font-extrabold text-primary">{formatCurrency(Math.round(monthlySavings))}</div>
+                                    <div className={clsx(styles.font_title, "text-3xl font-extrabold text-primary")}>{formatCurrency(Math.round(monthlySavings))}</div>
                                     <div className="text-sm text-secondary-light mt-1"><Translate id="accountant.roi.result.label">estimated monthly savings</Translate></div>
                                     <div className="text-xs text-primary mt-2">
                                         <Translate id="accountant.roi.result.ratio" values={{roiMultiple, planPrice, planName}}>
@@ -340,14 +342,14 @@ export default function LandingPage() {
                     <div className="max-w-6xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.pricing.badge">Pricing</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.pricing.title">Simple, transparent, predictable</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.pricing.title">Simple, transparent, predictable</Translate></h2>
                             <p className="text-gray-500 max-w-2xl mx-auto"><Translate id="accountant.pricing.desc">Designed to scale with your firm. 1 active client = 1 registered client with at least one active portal.</Translate></p>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
                             {/* Plan Starter */}
                             <div className="bg-gray-50 border border-secondary-light rounded-2xl p-6 flex flex-col">
                                 <div className="font-semibold text-secondary mb-1">Starter</div>
-                                <div className="text-4xl font-title font-extrabold text-secondary mb-0">129€</div>
+                                <div className={clsx(styles.font_title, "text-4xl font-extrabold text-secondary mb-0")}>129€</div>
                                 <div className="text-sm text-gray-400"><Translate id="accountant.pricing.exclVat">excl. VAT / month</Translate></div>
                                 <div className="text-xs text-gray-500 mt-1 mb-4"><Translate id="accountant.pricing.starter.limit">Up to 250 active clients</Translate></div>
                                 <ul className="list-none p-0 space-y-2 text-sm text-gray-600 flex-1">
@@ -363,7 +365,7 @@ export default function LandingPage() {
                             <div className="relative bg-secondary rounded-2xl p-6 flex flex-col text-white shadow-lg">
                                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full"><Translate id="accountant.pricing.popular">Most popular</Translate></div>
                                 <div className="font-semibold mb-1">Standard</div>
-                                <div className="text-4xl font-title font-extrabold mb-0">199€</div>
+                                <div className={clsx(styles.font_title, "text-4xl font-extrabold mb-0")}>199€</div>
                                 <div className="text-sm text-primary-lighter"><Translate id="accountant.pricing.exclVat2">excl. VAT / month</Translate></div>
                                 <div className="text-xs text-primary-lighter mt-1 mb-4"><Translate id="accountant.pricing.standard.limit">Up to 500 active clients</Translate></div>
                                 <ul className="list-none p-0 space-y-2 text-sm text-primary-lighter flex-1">
@@ -378,7 +380,7 @@ export default function LandingPage() {
                             {/* Plan Enterprise */}
                             <div className="bg-gray-50 border border-secondary-light rounded-2xl p-6 flex flex-col">
                                 <div className="font-semibold text-secondary mb-1">Enterprise</div>
-                                <div className="text-4xl font-title font-extrabold text-secondary mb-0">299€</div>
+                                <div className={clsx(styles.font_title, "text-4xl font-extrabold text-secondary mb-0")}>299€</div>
                                 <div className="text-sm text-gray-400"><Translate id="accountant.pricing.exclVat3">excl. VAT / month</Translate></div>
                                 <div className="text-xs text-gray-500 mt-1 mb-4"><Translate id="accountant.pricing.enterprise.limit">Up to 1,000 active clients</Translate></div>
                                 <ul className="list-none p-0 space-y-2 text-sm text-gray-600 flex-1">
@@ -393,7 +395,7 @@ export default function LandingPage() {
                             {/* Plan Custom */}
                             <div className="bg-gray-50 border border-secondary-light rounded-2xl p-6 flex flex-col">
                                 <div className="font-semibold text-secondary mb-1">Custom</div>
-                                <div className="text-2xl font-title font-extrabold text-secondary pt-1 leading-snug"><Translate id="accountant.pricing.custom.title">Custom quote</Translate></div>
+                                <div className={clsx(styles.font_title, "text-2xl font-extrabold text-secondary pt-1 leading-snug")}><Translate id="accountant.pricing.custom.title">Custom quote</Translate></div>
                                 <div className="text-sm text-gray-400 mt-1"><Translate id="accountant.pricing.custom.subtitle">groups &amp; networks</Translate></div>
                                 <div className="text-xs text-gray-500 mt-1 mb-4"><Translate id="accountant.pricing.custom.limit">Unlimited clients + dedicated SLA</Translate></div>
                                 <ul className="list-none p-0 space-y-2 text-sm text-gray-600 flex-1">
@@ -416,7 +418,7 @@ export default function LandingPage() {
                                 </div>
                             </div>
                             <div className="text-center flex-shrink-0">
-                                <div className="text-3xl font-extrabold font-title text-primary-dark"><Translate id="accountant.pricing.setup.price">1,500€</Translate></div>
+                                <div className={clsx(styles.font_title, "text-3xl font-extrabold text-primary-dark")}><Translate id="accountant.pricing.setup.price">1,500€</Translate></div>
                                 <div className="text-sm text-gray-500"><Translate id="accountant.pricing.setup.priceLabel">excl. VAT · one-time</Translate></div>
                             </div>
                         </div>
@@ -429,7 +431,7 @@ export default function LandingPage() {
                         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
                             <div className="mb-8">
                                 <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.reform.badge">E-invoicing reform 2026</Translate></span>
-                                <h2 className="text-2xl md:text-3xl font-bold font-title text-secondary mb-4"><Translate id="accountant.reform.title">E-invoicing doesn't eliminate collection</Translate></h2>
+                                <h2 className={clsx(styles.font_title, "text-2xl md:text-3xl font-bold text-secondary mb-4")}><Translate id="accountant.reform.title">E-invoicing doesn't eliminate collection</Translate></h2>
                                 <p className="text-gray-500"><Translate id="accountant.reform.desc">Electronic invoicing will automate a significant portion of domestic B2B flows. But it leaves a substantial volume of "off-circuit" invoices that your firm will still need to retrieve manually or automate. This "remaining to collect" is recurring, monthly, and grows mechanically with your portfolio.</Translate></p>
                             </div>
                             <div className="grid md:grid-cols-3 gap-6">
@@ -455,7 +457,7 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.deployment.badge">Deployment</Translate></span>
-                            <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.deployment.title">A fast, measurable start in 30 days</Translate></h2>
+                            <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold text-secondary mb-4")}><Translate id="accountant.deployment.title">A fast, measurable start in 30 days</Translate></h2>
                             <p className="text-gray-500 max-w-2xl mx-auto"><Translate id="accountant.deployment.desc">A structured trial in 3 phases to prove ROI on your portfolio before rolling out to all your clients.</Translate></p>
                         </div>
                         <div className="grid lg:grid-cols-2 gap-8">
@@ -476,7 +478,7 @@ export default function LandingPage() {
                             </div>
                             {/* Onboarding card */}
                             <div className="bg-gray-50 rounded-2xl p-8">
-                                <div className="font-bold font-title text-secondary text-lg mb-2"><Translate id="accountant.deployment.onboarding.title">Onboarding included (1h)</Translate></div>
+                                <div className={clsx(styles.font_title, "font-bold text-secondary text-lg mb-2")}><Translate id="accountant.deployment.onboarding.title">Onboarding included (1h)</Translate></div>
                                 <div className="text-sm text-gray-500 mb-6"><Translate id="accountant.deployment.onboarding.desc">A dedicated session with our team to launch your trial without friction.</Translate></div>
                                 <div className="space-y-5">
                                     <div className="flex gap-3 items-start">
@@ -500,7 +502,7 @@ export default function LandingPage() {
                 {/* CTA — dark */}
                 <section id="contact" className="bg-gray-900 text-white text-center py-20 px-6">
                     <span className="inline-block bg-white bg-opacity-10 text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6"><Translate id="accountant.cta.badge">Next step</Translate></span>
-                    <h2 className="text-3xl md:text-4xl font-bold font-title max-w-2xl mx-auto mb-5"><Translate id="accountant.cta.title">Demo + Trial — 30 days to prove the ROI</Translate></h2>
+                    <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5")}><Translate id="accountant.cta.title">Demo + Trial — 30 days to prove the ROI</Translate></h2>
                     <p className="text-gray-400 max-w-2xl mx-auto mb-10"><Translate id="accountant.cta.desc">Prove on your real portfolio that Invoice Collector pays for itself from the first month — then standardize non e-invoice collection firm-wide.</Translate></p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
                         <Link href="mailto:contact@invoice-collector.com" className="inline-block bg-primary hover-bg-primary-dark text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline"><Translate id="accountant.cta.demo">Request a personalized demo →</Translate></Link>

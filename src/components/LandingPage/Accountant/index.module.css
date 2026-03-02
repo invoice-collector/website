@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap');
+
+/* PRIMARY GREEN */
+
+.font_title { font-family: 'Playfair Display', serif; }
+
+/* PRIMARY GREEN */
+
+.bg_primary { background-color: #239e65; }
+.text_primary { color: #239e65; }
+.border_primary { border-color: #239e65; }
+
+/* PRIMARY GREEN DARK */
+
+.bg_primary_dark { background-color: #1d8656; }
+.hover_bg-primary-dark:hover { background-color: #1d8656; }
+.text_primary_dark { color: #1d8656; }
+.hover_text_primary_dark:hover { color: #1d8656; }
+.border_primary_dark { border-color: #1d8656; }
+.hover_border_primary_dark:hover { border-color: #1d8656; }
+
+/* PRIMARY GREEN LIGHT */
+
+.bg_primary_light { background-color: #e9f5ef; }
+
+/* SECONDARY GRAY */
+
+.bg_secondary { background-color: #002147; }
+.hover_bg_secondary:hover { background-color: #002147; }
+.text_secondary { color: #002147; }
+.hover_text_secondary:hover { color: #002147; }
+.border_secondary { border-color: #002147; }
+.hover_border_secondary:hover { border-color: #002147; }
+
+/* SECONDARY GRAY LIGHT */
+
+.bg_secondary_light { background-color: #5a7080; }
+.hover_bg_secondary_light:hover { background-color: #5a7080; }
+.text_secondary_light { color: #5a7080; }
+.hover_text_secondary_light:hover { color: #5a7080; }
+.border_secondary_light { border-color: #5a7080; }
+.hover_border_secondary_light:hover { border-color: #5a7080; }
+
+/* SECTION COLORS */
+
+.bg_section_odd { background-color: #faf8f4; }
+
+/* RANGE INPUTS */
+
+.roi_slider {
+    accent-color: #d1d5db;
+    height: 2px;
+    border: none;
+    outline: none;
+    background-color: #faf8f4;
+}
+.roi_slider::-webkit-slider-runnable-track { background-color: #faf8f4; border: none; height: 4px; }
+.roi_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background-color: #239e65;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    margin-top: -5px; /* center thumb on 4px track */
+    cursor: pointer;
+}
+.roi_slider::-moz-range-track { background-color: #faf8f4; border: none; height: 4px; }
+.roi_slider::-moz-range-progress { background-color: #faf8f4; border: none; height: 4px; }
+.roi_slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background-color: #239e65;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    cursor: pointer;
+}
