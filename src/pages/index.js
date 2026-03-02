@@ -1,20 +1,18 @@
 import { useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import LandingPage from '@site/src/components/LandingPage/Accountant';
 
 export default function Home() {
-  const {i18n: {currentLocale}} = useDocusaurusContext();
-  const isFrench = currentLocale && currentLocale.startsWith('fr');
+  const isDev = process.env.NODE_ENV === 'development';
+  const isFrench = typeof navigator !== 'undefined' && navigator.language && navigator.language.startsWith('fr');
   const history = useHistory();
-  console.log('currentLocale', currentLocale);
+  console.log('isDev', isDev);
   console.log('isFrench', isFrench);
 
   useEffect(() => {
-    if (isFrench) {
+    if (!isDev && isFrench) {
       history.push('/fr/');
     }
   }, [isFrench]);
-
   return <LandingPage />;
 }
