@@ -8,7 +8,7 @@ export default function Home() {
   console.log('isFrench', isFrench);
 
   useEffect(() => {
-    if (!isDev && isFrench) {
+    if (!isDev && isFrench && !window.location.pathname.includes('/fr/')) {
       window.location.replace('/fr/');
     }
   }, [isFrench]);
