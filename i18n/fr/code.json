@@ -24,7 +24,7 @@
     "message": "30j"
   },
   "accountant.hero.stat1.label": {
-    "message": "Pour mesurer le ROI pilote"
+    "message": "Pour mesurer le ROI de votre essai"
   },
   "accountant.hero.stat2.label": {
     "message": "Économisées par facture portail"
@@ -243,7 +243,7 @@
     "message": "clients"
   },
   "accountant.roi.cta": {
-    "message": "Cadrer mon pilote →"
+    "message": "Démarrer mon essai →"
   },
   "accountant.pricing.badge": {
     "message": "Tarification"
@@ -402,10 +402,10 @@
     "message": "Un démarrage rapide et mesurable en 30 jours"
   },
   "accountant.deployment.desc": {
-    "message": "Un pilote structuré en 3 phases pour prouver le ROI sur votre portefeuille avant de généraliser à l'ensemble de vos clients."
+    "message": "Un essai structuré en 3 phases pour prouver le ROI sur votre portefeuille avant de généraliser à l'ensemble de vos clients."
   },
   "accountant.deployment.phase1.title": {
-    "message": "Phase 1 — Pilote"
+    "message": "Phase 1 — Essai"
   },
   "accountant.deployment.phase1.desc": {
     "message": "10 à 20 clients représentatifs, quelques fournisseurs internationaux clés. 1h d'onboarding incluse avec notre équipe pour prise en main et cadrage du process."
@@ -426,7 +426,7 @@
     "message": "L'onboarding inclus (1h)"
   },
   "accountant.deployment.onboarding.desc": {
-    "message": "Une session dédiée avec notre équipe pour lancer votre pilote sans friction."
+    "message": "Une session dédiée avec notre équipe pour lancer votre essai sans friction."
   },
   "accountant.deployment.onboarding.item1.title": {
     "message": "Prise en main produit côté cabinet"
@@ -450,7 +450,7 @@
     "message": "Prochaine étape"
   },
   "accountant.cta.title": {
-    "message": "Démo + cadrage pilote — 30 jours pour prouver le ROI"
+    "message": "Démo + Essai — 30 jours pour prouver le ROI"
   },
   "accountant.cta.desc": {
     "message": "Prouvez sur votre portefeuille réel qu'Invoice Collector s'amortit dès le premier mois — puis standardisez la collecte hors e-facture au niveau cabinet."
@@ -471,7 +471,7 @@
     "message": "Présentation adaptée à votre organisation et à votre portefeuille clients."
   },
   "accountant.cta.card2.title": {
-    "message": "Cadrage pilote"
+    "message": "Essai"
   },
   "accountant.cta.card2.desc": {
     "message": "Sélection des premiers clients, portails prioritaires, définition des KPIs de ROI."

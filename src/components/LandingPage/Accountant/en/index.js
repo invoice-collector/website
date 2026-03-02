@@ -140,7 +140,7 @@ export default function LandingPageEn() {
                         <Link to="#roi" className="inline-block border border-secondary-light border-opacity-30 hover:border-opacity-60 text-secondary-light px-8 py-3 rounded-xl transition no-underline"><Translate id="accountant.hero.cta.roi">Calculate my ROI</Translate></Link>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary"><Translate id="accountant.hero.stat1.value">30d</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat1.label">To measure pilot ROI</Translate></div></div>
+                        <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary"><Translate id="accountant.hero.stat1.value">30d</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat1.label">To measure trial ROI</Translate></div></div>
                         <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary">3 min</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat2.label">Saved per portal invoice</Translate></div></div>
                         <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary">100%</div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat3.label">Portfolio coverage</Translate></div></div>
                         <div className="bg-white bg-opacity-5 rounded-xl p-4"><div className="text-4xl font-title font-bold text-primary"><Translate id="accountant.hero.stat4.value">1 Month</Translate></div><div className="text-xs text-gray-400 mt-1"><Translate id="accountant.hero.stat4.label">Positive ROI from month one</Translate></div></div>
@@ -329,7 +329,7 @@ export default function LandingPageEn() {
                                         {'Break-even: {invoiceCount} — i.e. {clientCount} to cover the subscription'}
                                     </Translate>
                                 </div>
-                                <Link to="#contact" className="block text-center bg-primary hover-bg-primary-dark text-white hover:text-white font-semibold py-3 rounded-xl transition no-underline text-sm"><Translate id="accountant.roi.cta">Plan my pilot →</Translate></Link>
+                                <Link to="#contact" className="block text-center bg-primary hover-bg-primary-dark text-white hover:text-white font-semibold py-3 rounded-xl transition no-underline text-sm"><Translate id="accountant.roi.cta">Start my trial →</Translate></Link>
                             </div>
                         </div>
                     </div>
@@ -456,14 +456,14 @@ export default function LandingPageEn() {
                         <div className="text-center mb-12">
                             <span className="inline-block bg-primary-light text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4"><Translate id="accountant.deployment.badge">Deployment</Translate></span>
                             <h2 className="text-3xl md:text-4xl font-bold font-title text-secondary mb-4"><Translate id="accountant.deployment.title">A fast, measurable start in 30 days</Translate></h2>
-                            <p className="text-gray-500 max-w-2xl mx-auto"><Translate id="accountant.deployment.desc">A structured pilot in 3 phases to prove ROI on your portfolio before rolling out to all your clients.</Translate></p>
+                            <p className="text-gray-500 max-w-2xl mx-auto"><Translate id="accountant.deployment.desc">A structured trial in 3 phases to prove ROI on your portfolio before rolling out to all your clients.</Translate></p>
                         </div>
                         <div className="grid lg:grid-cols-2 gap-8">
                             {/* Phases */}
                             <div className="space-y-6">
                                 <div className="flex gap-4 items-start">
                                     <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                                    <div><div className="font-semibold text-secondary mb-1"><Translate id="accountant.deployment.phase1.title">Phase 1 — Pilot</Translate></div><div className="text-sm text-gray-500"><Translate id="accountant.deployment.phase1.desc">10 to 20 representative clients, a few key international suppliers. 1h onboarding included with our team for hands-on setup and process framing.</Translate></div></div>
+                                    <div><div className="font-semibold text-secondary mb-1"><Translate id="accountant.deployment.phase1.title">Phase 1 — Trial</Translate></div><div className="text-sm text-gray-500"><Translate id="accountant.deployment.phase1.desc">10 to 20 representative clients, a few key international suppliers. 1h onboarding included with our team for hands-on setup and process framing.</Translate></div></div>
                                 </div>
                                 <div className="flex gap-4 items-start">
                                     <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
@@ -477,7 +477,7 @@ export default function LandingPageEn() {
                             {/* Onboarding card */}
                             <div className="bg-gray-50 rounded-2xl p-8">
                                 <div className="font-bold font-title text-secondary text-lg mb-2"><Translate id="accountant.deployment.onboarding.title">Onboarding included (1h)</Translate></div>
-                                <div className="text-sm text-gray-500 mb-6"><Translate id="accountant.deployment.onboarding.desc">A dedicated session with our team to launch your pilot without friction.</Translate></div>
+                                <div className="text-sm text-gray-500 mb-6"><Translate id="accountant.deployment.onboarding.desc">A dedicated session with our team to launch your trial without friction.</Translate></div>
                                 <div className="space-y-5">
                                     <div className="flex gap-3 items-start">
                                         <div className="w-2.5 h-2.5 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
@@ -500,7 +500,7 @@ export default function LandingPageEn() {
                 {/* CTA — dark */}
                 <section id="contact" className="bg-gray-900 text-white text-center py-20 px-6">
                     <span className="inline-block bg-white bg-opacity-10 text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6"><Translate id="accountant.cta.badge">Next step</Translate></span>
-                    <h2 className="text-3xl md:text-4xl font-bold font-title max-w-2xl mx-auto mb-5"><Translate id="accountant.cta.title">Demo + pilot setup — 30 days to prove the ROI</Translate></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold font-title max-w-2xl mx-auto mb-5"><Translate id="accountant.cta.title">Demo + Trial — 30 days to prove the ROI</Translate></h2>
                     <p className="text-gray-400 max-w-2xl mx-auto mb-10"><Translate id="accountant.cta.desc">Prove on your real portfolio that Invoice Collector pays for itself from the first month — then standardize non e-invoice collection firm-wide.</Translate></p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
                         <Link href="mailto:contact@invoice-collector.com" className="inline-block bg-primary hover-bg-primary-dark text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline"><Translate id="accountant.cta.demo">Request a personalized demo →</Translate></Link>
@@ -515,7 +515,7 @@ export default function LandingPageEn() {
                         </div>
                         <div className="bg-white bg-opacity-5 rounded-2xl p-6">
                             <div className="text-2xl mb-3">⚙️</div>
-                            <div className="font-semibold mb-1"><Translate id="accountant.cta.card2.title">Pilot setup</Translate></div>
+                            <div className="font-semibold mb-1"><Translate id="accountant.cta.card2.title">Trial setup</Translate></div>
                             <div className="text-sm text-gray-400"><Translate id="accountant.cta.card2.desc">Selection of first clients, priority portals, ROI KPI definition.</Translate></div>
                         </div>
                         <div className="bg-white bg-opacity-5 rounded-2xl p-6">
