@@ -1,9 +1,40 @@
+import { useState } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 
 export default function LandingPageFr() {
     const {siteConfig} = useDocusaurusContext();
+
+    // ROI Calculator state
+    const [clients, setClients] = useState(200);
+    const [invoicesPerClient, setInvoicesPerClient] = useState(4);
+    const [minutesSaved, setMinutesSaved] = useState(3);
+    const [hourlyCost, setHourlyCost] = useState(35);
+
+    // Determine plan price based on client count
+    const getPlanPrice = (n) => {
+        if (n <= 250) return 129;
+        if (n <= 500) return 199;
+        if (n <= 1000) return 299;
+        return 399;
+    };
+    const getPlanName = (n) => {
+        if (n <= 250) return 'Starter';
+        if (n <= 500) return 'Standard';
+        if (n <= 1000) return 'Enterprise';
+        return 'Custom';
+    };
+
+    const planPrice = getPlanPrice(clients);
+    const planName = getPlanName(clients);
+    const monthlySavings = clients * invoicesPerClient * (minutesSaved / 60) * hourlyCost;
+    const roiMultiple = (monthlySavings / planPrice).toFixed(1);
+    const costPerInvoice = (minutesSaved / 60) * hourlyCost;
+    const breakEvenInvoices = Math.ceil(planPrice / costPerInvoice);
+    const breakEvenClients = Math.ceil(breakEvenInvoices / invoicesPerClient);
+
+    const formatCurrency = (v) => v >= 1000 ? `${v.toLocaleString('fr-FR')}€` : `${v}€`;
 
     return (
         <Layout
@@ -229,27 +260,27 @@ export default function LandingPageFr() {
                             <div className="bg-white rounded-2xl p-8 shadow-sm">
                                 <div className="font-title font-bold text-lg text-secondary mb-6">🧮 Votre ROI personnalisé</div>
                                 <div className="mb-5">
-                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Clients actifs (N)</span><span className="font-semibold text-primary" id="vN">200</span></div>
-                                    <input type="range" min="20" max="1000" defaultValue="200" id="sN" className="w-full" />
+                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Clients actifs (N)</span><span className="font-semibold text-primary">{clients}</span></div>
+                                    <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className="w-full" />
                                 </div>
                                 <div className="mb-5">
-                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Factures portail / client / mois</span><span className="font-semibold text-primary" id="vX">4</span></div>
-                                    <input type="range" min="1" max="15" defaultValue="4" id="sX" className="w-full" />
+                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Factures portail / client / mois</span><span className="font-semibold text-primary">{invoicesPerClient}</span></div>
+                                    <input type="range" min="1" max="15" value={invoicesPerClient} onChange={e => setInvoicesPerClient(Number(e.target.value))} className="w-full" />
                                 </div>
                                 <div className="mb-5">
-                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Minutes économisées / facture</span><span className="font-semibold text-primary" id="vT">3 min</span></div>
-                                    <input type="range" min="2" max="8" defaultValue="3" id="sT" className="w-full" />
+                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Minutes économisées / facture</span><span className="font-semibold text-primary">{minutesSaved} min</span></div>
+                                    <input type="range" min="2" max="8" value={minutesSaved} onChange={e => setMinutesSaved(Number(e.target.value))} className="w-full" />
                                 </div>
                                 <div className="mb-6">
-                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Coût horaire collaborateur</span><span className="font-semibold text-primary" id="vH">35€</span></div>
-                                    <input type="range" min="25" max="65" defaultValue="35" id="sH" className="w-full" />
+                                    <div className="flex justify-between text-sm mb-1"><span className="text-gray-600">Coût horaire collaborateur</span><span className="font-semibold text-primary">{hourlyCost}€</span></div>
+                                    <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className="w-full" />
                                 </div>
                                 <div className="bg-primary-light rounded-xl p-6 text-center mb-4">
-                                    <div className="text-3xl font-title font-extrabold text-primary" id="rG">1 400€</div>
+                                    <div className="text-3xl font-title font-extrabold text-primary">{formatCurrency(Math.round(monthlySavings))}</div>
                                     <div className="text-sm text-secondary-light mt-1">gains mensuels estimés</div>
-                                    <div className="text-xs text-primary mt-2" id="rR">soit × 10.9 le plan 129€</div>
+                                    <div className="text-xs text-primary mt-2">soit × {roiMultiple} le plan {planPrice}€ {planName}</div>
                                 </div>
-                                <div className="text-sm text-gray-500 text-center mb-5">Point mort : <strong id="rBE">74 factures/mois</strong> — soit <strong id="rC">~19 clients</strong> pour amortir l'abonnement</div>
+                                <div className="text-sm text-gray-500 text-center mb-5">Point mort : <strong>{breakEvenInvoices} factures/mois</strong> — soit <strong>~{breakEvenClients} clients</strong> pour amortir l'abonnement</div>
                                 <Link to="#contact" className="block text-center bg-primary hover-bg-primary-dark text-white hover:text-white font-semibold py-3 rounded-xl transition no-underline text-sm">Cadrer mon pilote →</Link>
                             </div>
                         </div>
