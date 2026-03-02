@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 
-export default function LandingPageEn() {
+export default function LandingPage() {
     const {siteConfig, i18n: {currentLocale}} = useDocusaurusContext();
 
     // ROI Calculator state
