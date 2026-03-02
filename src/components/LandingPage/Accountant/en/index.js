@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 
 export default function LandingPageEn() {
-    const {siteConfig} = useDocusaurusContext();
+    const {siteConfig, i18n: {currentLocale}} = useDocusaurusContext();
 
     // ROI Calculator state
     const [clients, setClients] = useState(200);
@@ -35,7 +35,7 @@ export default function LandingPageEn() {
     const breakEvenInvoices = Math.ceil(planPrice / costPerInvoice);
     const breakEvenClients = Math.ceil(breakEvenInvoices / invoicesPerClient);
 
-    const formatCurrency = (v) => v >= 1000 ? `${v.toLocaleString('en-US')}€` : `${v}€`;
+    const formatCurrency = (v) => currentLocale === 'fr' ? `${v.toLocaleString('fr-FR')}€` : `${v.toLocaleString('en-US')}€`;
 
     return (
         <Layout
