@@ -97,21 +97,25 @@ const config = {
             to: '/#solution',
             label: 'Solution',
             position: 'left',
+            activeBaseRegex: 'matchnothing^',
           },
           {
             to: '/#roi',
             label: 'ROI',
             position: 'left',
+            activeBaseRegex: 'matchnothing^',
           },
           {
             to: '/#pricing',
             label: 'Pricing',
             position: 'left',
+            activeBaseRegex: 'matchnothing^',
           },
           {
             to: '/#deployment',
             label: 'Deployment',
             position: 'left',
+            activeBaseRegex: 'matchnothing^',
           },
           {
             to: 'https://app.invoice-collector.com/login',
