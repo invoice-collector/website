@@ -9,11 +9,12 @@
 .bg_primary { background-color: #239e65; }
 .text_primary { color: #239e65; }
 .border_primary { border-color: #239e65; }
+.hover_border_primary:hover { border-color: #239e65; }
 
 /* PRIMARY GREEN DARK */
 
 .bg_primary_dark { background-color: #1d8656; }
-.hover_bg-primary-dark:hover { background-color: #1d8656; }
+.hover_bg_primary_dark:hover { background-color: #1d8656; }
 .text_primary_dark { color: #1d8656; }
 .hover_text_primary_dark:hover { color: #1d8656; }
 .border_primary_dark { border-color: #1d8656; }
