@@ -97,10 +97,8 @@ paths:
                           enum:
                             - invoice
                           example: invoice
-                        id:
-                          type: string
-                          description: Id of the collector.
-                          example: free
+                        collector:
+                          "$ref": "#/components/schemas/collector"
                         remote_id:
                           type: string
                           description: Remote id of the user.
@@ -109,7 +107,7 @@ paths:
                           "$ref": "#/components/schemas/invoice"
                       required:
                         - type
-                        - id
+                        - collector
                         - remote_id
                         - invoice
               responses:
@@ -131,10 +129,8 @@ paths:
                           type: string
                           description: Type of the payload.
                           example: notification_disconnected
-                        id:
-                          type: string
-                          description: Id of the collector.
-                          example: free
+                        collector:
+                          "$ref": "#/components/schemas/collector"
                         credential_id:
                           type: string
                           description: Id of the credential.
@@ -149,7 +145,7 @@ paths:
                           example: R121439
                       required:
                         - type
-                        - id
+                        - collector
                         - credential_id
                         - user_id
                         - remote_id
