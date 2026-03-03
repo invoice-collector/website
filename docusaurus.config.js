@@ -94,22 +94,22 @@ const config = {
         },
         items: [
           {
-            to: '#solution',
+            to: '/#solution',
             label: 'Solution',
             position: 'left',
           },
           {
-            to: '#roi',
+            to: '/#roi',
             label: 'ROI',
             position: 'left',
           },
           {
-            to: '#pricing',
+            to: '/#pricing',
             label: 'Pricing',
             position: 'left',
           },
           {
-            to: '#deployment',
+            to: '/#deployment',
             label: 'Deployment',
             position: 'left',
           },
