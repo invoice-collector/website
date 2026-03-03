@@ -207,7 +207,7 @@ export default function LandingPage() {
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.portalInvoicesLabel">Portal invoices / client / month</Translate></span><span className={clsx("font-medium")}>4</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.hourlyCostLabel">Loaded hourly cost</Translate></span><span className={clsx("font-medium")}>35€/h</span></div>
-                                    <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>250 × 4 × (3/60) × 35</span><span className={clsx("font-bold styles.text_primary")}><Translate id="accountant.roi.example1.result">= 1,750€/month</Translate></span></div>
+                                    <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>250 × 4 × (3/60) × 35</span><span className={clsx(styles.text_primary, "font-bold")}><Translate id="accountant.roi.example1.result">= 1,750€/month</Translate></span></div>
                                     <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €129 plan</Translate></div>
                                 </div>
                                 <div className={clsx("bg-white rounded-2xl p-6 shadow-sm")}>
@@ -216,7 +216,7 @@ export default function LandingPage() {
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.portalInvoicesLabel2">Portal invoices / client / month</Translate></span><span className={clsx("font-medium")}>4</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel2">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.hourlyCostLabel2">Loaded hourly cost</Translate></span><span className={clsx("font-medium")}>35€/h</span></div>
-                                    <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>500 × 4 × (3/60) × 35</span><span className={clsx("font-bold styles.text_primary")}><Translate id="accountant.roi.example2.result">= 3,500€/month</Translate></span></div>
+                                    <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>500 × 4 × (3/60) × 35</span><span className={clsx(styles.text_primary, "font-bold")}><Translate id="accountant.roi.example2.result">= 3,500€/month</Translate></span></div>
                                     <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs 199€ plan</Translate></div>
                                 </div>
                                 <div className={clsx(styles.bg_primary_light, "rounded-2xl p-5")}>
@@ -228,20 +228,20 @@ export default function LandingPage() {
                             <div className={clsx("bg-white rounded-2xl p-8 shadow-sm")}>
                                 <div className={clsx(styles.font_title, styles.text_secondary, "font-bold text-lg mb-6")}><Translate id="accountant.roi.custom.title">🧮 Your custom ROI</Translate></div>
                                 <div className={clsx("mb-5")}>
-                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.clients">Active clients (N)</Translate></span><span className={clsx("font-semibold styles.text_primary")}>{clients}</span></div>
-                                    <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className={clsx("w-full  styles.roi_slider")} />
+                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.clients">Active clients (N)</Translate></span><span className={clsx(styles.text_primary, "font-semibold")}>{clients}</span></div>
+                                    <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className={clsx(styles.roi_slider, "w-full")} />
                                 </div>
                                 <div className={clsx("mb-5")}>
-                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.invoices">Portal invoices / client / month</Translate></span><span className={clsx("font-semibold styles.text_primary")}>{invoicesPerClient}</span></div>
-                                    <input type="range" min="1" max="15" value={invoicesPerClient} onChange={e => setInvoicesPerClient(Number(e.target.value))} className={clsx("w-full  styles.roi_slider")} />
+                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.invoices">Portal invoices / client / month</Translate></span><span className={clsx(styles.text_primary, "font-semibold")}>{invoicesPerClient}</span></div>
+                                    <input type="range" min="1" max="15" value={invoicesPerClient} onChange={e => setInvoicesPerClient(Number(e.target.value))} className={clsx(styles.roi_slider, "w-full")} />
                                 </div>
                                 <div className={clsx("mb-5")}>
-                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.minutes">Minutes saved / invoice</Translate></span><span className={clsx("font-semibold styles.text_primary")}>{minutesSaved} min</span></div>
-                                    <input type="range" min="2" max="8" value={minutesSaved} onChange={e => setMinutesSaved(Number(e.target.value))} className={clsx("w-full  styles.roi_slider")} />
+                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.minutes">Minutes saved / invoice</Translate></span><span className={clsx(styles.text_primary, "font-semibold")}>{minutesSaved} min</span></div>
+                                    <input type="range" min="2" max="8" value={minutesSaved} onChange={e => setMinutesSaved(Number(e.target.value))} className={clsx(styles.roi_slider, "w-full")} />
                                 </div>
                                 <div className={clsx("mb-6")}>
-                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.cost">Staff hourly cost</Translate></span><span className={clsx("font-semibold styles.text_primary")}>{hourlyCost}€</span></div>
-                                    <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className={clsx("w-full  styles.roi_slider")} />
+                                    <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.cost">Staff hourly cost</Translate></span><span className={clsx(styles.text_primary, "font-semibold")}>{hourlyCost}€</span></div>
+                                    <input type="range" min="25" max="65" value={hourlyCost} onChange={e => setHourlyCost(Number(e.target.value))} className={clsx(styles.roi_slider, "w-full")} />
                                 </div>
                                 <div className={clsx(styles.bg_primary_light, "rounded-xl p-6 text-center mb-4")}>
                                     <div className={clsx(styles.font_title, styles.text_primary, "text-3xl font-extrabold")}>{formatCurrency(Math.round(monthlySavings))}</div>
