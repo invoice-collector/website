@@ -57,8 +57,8 @@ export default function LandingPage() {
                         <Translate id="accountant.hero.subtitle">One tool. All your clients. Every invoice outside e-invoicing collected automatically from a single place.</Translate>
                     </p>
                     <div className={clsx("flex flex-wrap justify-center gap-4 mb-14")}>
-                        <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline")}><Translate id="accountant.hero.cta.demo">Request a free demo →</Translate></Link>
-                        <Link to="#roi" className={clsx(styles.border_secondary_light, styles.text_secondary_light, "inline-block border border-opacity-30 hover:border-opacity-60 px-8 py-3 rounded-xl transition no-underline")}><Translate id="accountant.hero.cta.roi">Calculate my ROI</Translate></Link>
+                        <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.hero.cta.demo">Request a free demo →</Translate></Link>
+                        <Link to="#roi" className={clsx(styles.border_secondary_light, styles.text_secondary_light, "inline-block border border-opacity-30 hover:border-opacity-60 px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.hero.cta.roi">Calculate my ROI</Translate></Link>
                     </div>
                     <div className={clsx("grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto")}>
                         <div className={clsx("bg-white bg-opacity-5 rounded-xl p-4")}>
@@ -262,7 +262,7 @@ export default function LandingPage() {
                                         {'Break-even: {invoiceCount} — i.e. {clientCount} to cover the subscription'}
                                     </Translate>
                                 </div>
-                                <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "block text-center text-white hover:text-white font-semibold py-3 rounded-xl transition no-underline text-sm")}><Translate id="accountant.roi.cta">Start my trial →</Translate></Link>
+                                <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "block text-center text-white hover:text-white font-semibold py-3 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.roi.cta">Start my trial →</Translate></Link>
                             </div>
                         </div>
                     </div>
@@ -290,7 +290,7 @@ export default function LandingPage() {
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature4">Full traceability</Translate></li>
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature5">1h onboarding included</Translate></li>
                                 </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition no-underline text-sm")}><Translate id="accountant.pricing.starter.cta">Get started</Translate></Link>
+                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.starter.cta">Get started</Translate></Link>
                             </div>
                             {/* Plan Standard */}
                             <div className={clsx("relative", styles.bg_secondary, "rounded-2xl p-6 flex flex-col text-white shadow-lg")}>
@@ -306,7 +306,7 @@ export default function LandingPage() {
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature4">Full firm reporting</Translate></li>
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature5">1h onboarding included</Translate></li>
                                 </ul>
-                                <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "mt-6 block text-center text-white hover:text-white font-semibold py-2.5 rounded-xl transition no-underline text-sm")}><Translate id="accountant.pricing.standard.cta">Get started →</Translate></Link>
+                                <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "mt-6 block text-center text-white hover:text-white font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.standard.cta">Get started →</Translate></Link>
                             </div>
                             {/* Plan Enterprise */}
                             <div className={clsx(styles.border_secondary_light, "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
@@ -321,7 +321,7 @@ export default function LandingPage() {
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature4">Custom connectors</Translate></li>
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature5">1h onboarding included</Translate></li>
                                 </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition no-underline text-sm")}><Translate id="accountant.pricing.enterprise.cta">Get started</Translate></Link>
+                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.enterprise.cta">Get started</Translate></Link>
                             </div>
                             {/* Plan Custom */}
                             <div className={clsx(styles.border_secondary_light, "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
@@ -336,7 +336,7 @@ export default function LandingPage() {
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature4">Proprietary integrations</Translate></li>
                                     <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature5">Premium SLA</Translate></li>
                                 </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition no-underline text-sm")}><Translate id="accountant.pricing.custom.cta">Contact us</Translate></Link>
+                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_secondary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.custom.cta">Contact us</Translate></Link>
                             </div>
                         </div>
                         {/* Setup box */}
@@ -436,8 +436,8 @@ export default function LandingPage() {
                     <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5")}><Translate id="accountant.cta.title">Demo + Trial — 30 days to prove the ROI</Translate></h2>
                     <p className={clsx("text-gray-400 max-w-2xl mx-auto mb-10")}><Translate id="accountant.cta.desc">Prove on your real portfolio that Invoice Collector pays for itself from the first month — then standardize non e-invoice collection firm-wide.</Translate></p>
                     <div className={clsx("flex flex-wrap justify-center gap-4 mb-8")}>
-                        <Link href="mailto:contact@invoice-collector.com" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline")}><Translate id="accountant.cta.demo">Request a personalized demo →</Translate></Link>
-                        <Link href="https://app.invoice-collector.com/signup" className={clsx("inline-block border border-white border-opacity-20 hover:border-opacity-50 text-gray-300 font-semibold px-8 py-3 rounded-xl transition no-underline")}><Translate id="accountant.cta.sandbox">Direct sandbox access</Translate></Link>
+                        <Link href="mailto:contact@invoice-collector.com" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.cta.demo">Request a personalized demo →</Translate></Link>
+                        <Link href="https://app.invoice-collector.com/signup" className={clsx("inline-block border border-white border-opacity-20 hover:border-opacity-50 text-gray-300 font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.cta.sandbox">Direct sandbox access</Translate></Link>
                     </div>
                     <div className={clsx("text-xs text-gray-500 mb-12")}><Translate id="accountant.cta.tagline">No commitment · 1h onboarding included · Setup in less than a week · Measurable ROI from the 1st cycle</Translate></div>
                     <div className={clsx("grid md:grid-cols-3 gap-6 max-w-3xl mx-auto")}>
