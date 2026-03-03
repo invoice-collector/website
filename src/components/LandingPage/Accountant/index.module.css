@@ -7,7 +7,9 @@
 /* PRIMARY GREEN */
 
 .bg_primary { background-color: #239e65; }
+.hover_bg_primary:hover { color: #239e65; }
 .text_primary { color: #239e65; }
+.hover_text_primary:hover { color: #239e65; }
 .border_primary { border-color: #239e65; }
 .hover_border_primary:hover { border-color: #239e65; }
 
