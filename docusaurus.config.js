@@ -47,6 +47,16 @@ const config = {
   },
   themes: ['@docusaurus/theme-mermaid'],
 
+  plugins: [
+    [
+      './plugins/fetch-openapi',
+      {
+        url: 'https://app.invoice-collector.com/views/openapi/openapi.yml',
+        outputPath: 'openapi.yaml',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
