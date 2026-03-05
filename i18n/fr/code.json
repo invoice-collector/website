@@ -27,7 +27,7 @@
     "message": "Pour mesurer le ROI de votre essai"
   },
   "accountant.hero.stat2.label": {
-    "message": "Économisées par facture portail"
+    "message": "Économisées par facture"
   },
   "accountant.hero.stat3.label": {
     "message": "Du portefeuille couvert"
@@ -105,7 +105,7 @@
     "message": "Intégration dans vos outils"
   },
   "accountant.problem.stat1.title": {
-    "message": "Par facture portail en moyenne"
+    "message": "Par facture en moyenne"
   },
   "accountant.problem.stat1.desc": {
     "message": "Connexion + téléchargement + renommage + GED. 100 factures/mois ≈ 5h de temps non facturable."
@@ -168,7 +168,7 @@
     "message": "250 dossiers"
   },
   "accountant.roi.portalInvoicesLabel": {
-    "message": "Factures portail / client / mois"
+    "message": "Factures / client / mois"
   },
   "accountant.roi.timeSavedLabel": {
     "message": "Temps économisé / facture"
@@ -192,7 +192,7 @@
     "message": "500 dossiers"
   },
   "accountant.roi.portalInvoicesLabel2": {
-    "message": "Factures portail / client / mois"
+    "message": "Factures / client / mois"
   },
   "accountant.roi.timeSavedLabel2": {
     "message": "Temps économisé / facture"
@@ -219,7 +219,7 @@
     "message": "Clients actifs (N)"
   },
   "accountant.roi.slider.invoices": {
-    "message": "Factures portail / client / mois"
+    "message": "Factures / client / mois"
   },
   "accountant.roi.slider.minutes": {
     "message": "Minutes économisées / facture"
