@@ -206,7 +206,7 @@ paths:
   "/signup":
     post:
       summary: Signup
-      description: Signup a new customer. _If the email is already used, a password reset link will be sent by email. `name` is not mandatory in case of password reset._
+      description: Signup a new customer or a new user.
       tags:
         - Authentication
       requestBody:
@@ -218,14 +218,28 @@ paths:
               properties:
                 email:
                   type: string
-                  description: Email of the customer.
+                  description: Email of the customer or user.
                   example: customer@example.com
                 name:
                   type: string
-                  description: Name of the company.
+                  description: Name of the company of the customer or user.
                   example: Awesome Company
+                cid:
+                  type: string
+                  description: Company id of the customer or the user.
+                  example: C121439
+                locale:
+                  type: string
+                  description: Locale of the user. _This field is only used to set the locale of the user._
+                  example: fr
+                inviteId:
+                  type: string
+                  description: Invite id of the user. _If provided, it will be used to link the user to a customer._
+                  example: awesome-comany-xyz
               required:
               - email
+              - name
+              - cid
       responses:
         '200':
           description: Success
@@ -243,8 +257,8 @@ paths:
                 "$ref": "#/components/schemas/error"
   "/reset":
     post:
-      summary: Reset
-      description: Reset the password of the customer.
+      summary: Reset Password
+      description: Reset the password of the customer or the user.
       tags:
         - Authentication
       parameters:
@@ -262,7 +276,7 @@ paths:
               properties:
                 password:
                   type: string
-                  description: New password of the customer.
+                  description: New password of the customer or the user.
                   example: newsecurepassword123
               required:
               - password
@@ -276,6 +290,49 @@ paths:
                 "$ref": "#/components/schemas/error"
         '401':
           description: Unauthorized - Invalid reset token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+  "/forgot":
+    post:
+      summary: Forgot Password
+      description: Send a reset password email to the customer or the user.
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Email of the customer or the user.
+                  example: customer@example.com
+              required:
+              - email
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  resetLink:
+                    type: string
+                    description: Reset password link.
+                    example: https://app.invoice-collector.com/reset?token=abc123
+        '400':
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -317,7 +374,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error"
-    post:
+    put:
       summary: Customer
       description: Update your informations.
       tags:
@@ -372,6 +429,10 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/customer"
         '400':
           description: Bad Request
           content:
@@ -455,6 +516,36 @@ paths:
               schema:
                 "$ref": "#/components/schemas/error"
   "/user":
+    get:
+      summary: User
+      description: Get your informations. _You need to authenticate using bearer._
+      tags:
+        - User
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/user"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     post:
       summary: User
       description: Create a new user or update an existing one. Generate a token for a specific user. _This token must be used by the client to authenticate itself. The user is created if it does not exist._
@@ -471,7 +562,24 @@ paths:
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/authorization_body"
+              type: object
+              properties:
+                remoteId:
+                  type: string
+                  description: Remote id of the user.
+                  example: R121439
+                name:
+                  type: string
+                  description: Name of the user company.
+                  example: Awesome Company
+                cid:
+                  type: string
+                  description: Company id of the user.
+                  example: C121439
+                locale:
+                  type: string
+                  description: Locale of the customer.
+                  example: fr
       responses:
         '200':
           description: Success
@@ -498,9 +606,73 @@ paths:
               schema:
                 "$ref": "#/components/schemas/error"
   "/user/{user_id}":
+    put:
+      summary: User
+      description: Update the user.
+      tags:
+        - User
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            "$ref": "#/components/schemas/bearer"
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            "$ref": "#/components/schemas/user_id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                remoteId:
+                  type: string
+                  description: Remote id of the user.
+                  example: R121439
+                name:
+                  type: string
+                  description: Name of the user company.
+                  example: Awesome Company
+                cid:
+                  type: string
+                  description: Company id of the user.
+                  example: C121439
+                locale:
+                  type: string
+                  description: Locale of the customer.
+                  example: fr
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/authorization_response"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '401':
+          description: Unauthorized - Invalid bearer token
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/error"
     delete:
       summary: User
-      description: Delete the user and all its credentials. _By deleting the user, you are also deleting the terms of use acceptance. The user will be asked to accept the terms of use again when it will try to authorize again._
+      description: Delete the user and all its credentials.
       tags:
         - User
       parameters:
