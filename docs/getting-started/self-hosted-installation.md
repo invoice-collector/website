@@ -2,7 +2,11 @@
 sidebar_position: 1
 ---
 
-# Installation
+# Self-hosted Installation
+
+:::info[INFO]
+Skip this section if you use the cloud version of Invoice-Collector. You can create an account on [app.invoice-collector.com](https://app.invoice-collector.com) and start using it in less than a minute.
+:::
 
 ### Requirements
 
@@ -30,7 +34,7 @@ services:
       - mongodb
     environment:
       - PORT=8080
-      - REGISTRY_SERVER_ENDPOINT=https://registry.invoice-collector.com
+      - REGISTRY_SERVER_ENDPOINT=
       - DATABASE_URI=mongodb://mongodb:27017
       - DATABASE_MONGODB_NAME=prod
       - SECRET_MANAGER_TYPE=bitwarden

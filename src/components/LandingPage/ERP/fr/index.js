@@ -18,7 +18,8 @@ export default function LandingPageFr() {
         const preference = formData.get('preference');
         const message = `- Name: ${name}\n- Company: ${company}\n- Customers: ${customers}\n- Contact preference: ${preference}\n- Phone: ${phone}`;
 
-        fetch('https://registry.invoice-collector.com/v1/feedback', {
+        const registryEndpoint = (process.env.REACT_APP_REGISTRY_SERVER_ENDPOINT || 'http://localhost:8080') + '/v1/feedback';
+        fetch(registryEndpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
