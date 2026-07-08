@@ -34,7 +34,8 @@ services:
       - mongodb
     environment:
       - PORT=8080
-      - REGISTRY_SERVER_ENDPOINT=
+      - ANALYTICS_SERVER_ENDPOINT=
+      - ANALYTICS_SERVER_HEADERS=
       - DATABASE_URI=mongodb://mongodb:27017
       - DATABASE_MONGODB_NAME=prod
       - SECRET_MANAGER_TYPE=bitwarden

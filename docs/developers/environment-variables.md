@@ -12,8 +12,8 @@ hide_table_of_contents: true
 | `OAUTH_TOKEN_VALIDITY_DURATION_MS` | Duration in milliseconds for which the OAuth token is valid. | `*` | ❌ | `600000` | None |
 | `RESET_PASSWORD_TOKEN_VALIDITY_DURATION_MS` | Duration in milliseconds for which the reset password token is valid. | `*` | ❌ | `3600000` | None |
 | `UI_BEARER_VALIDITY_DURATION_MS` | Duration in milliseconds for which the UI bearer token is valid. | `*` | ❌ | `3600000` | None |
-| `REGISTRY_SERVER_ENDPOINT` | This is the endpoint at which logs are sent and collector updates are downloaded from. | `*` | ❌ | Empty | None |
-| `REGISTRY_SERVER_HEADERS` | Headers to be sent to the registry server. | `*` | ❌ | `{}` | None |
+| `ANALYTICS_SERVER_ENDPOINT` | This is the endpoint at which logs are sent. | `*` | ❌ | Empty | None |
+| `ANALYTICS_SERVER_HEADERS` | Headers to be sent to the analytics server. | `*` | ❌ | `{}` | None |
 | `DATABASE_URI` | Uri of the MongoDB used to store the data. The credentials are not stored in this database. | `*` | ✔️ | `mongodb://mongodb:27017` | None |
 | `DATABASE_MONGODB_NAME` | Name of the database to use. | `*` | ✔️ | `prod` | If `DATABASE_URI` starts with `mongodb` |
 | `SECRET_MANAGER_TYPE` | Type of secret manager to use. This is where the credentials are stored. | `bitwarden` | ✔️ | `bitwarden` | None |
