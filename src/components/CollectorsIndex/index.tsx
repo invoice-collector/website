@@ -4,11 +4,51 @@ import Link from '@docusaurus/Link';
 import type { CollectorSummary } from '@site/src/types/collector';
 import styles from './styles.module.css';
 
-const STATE_LABELS: Record<string, string> = {
-  active: 'Active',
-  development: 'In development',
-  planned: 'Planned',
-};
+function searchCollectorsWithScore(
+  collectors: CollectorSummary[],
+  searchTerm: string
+): CollectorSummary[] {
+  if (!searchTerm || searchTerm.length < 1) return collectors.slice(0, 100);
+
+  const computeCollectorScore = (collector: CollectorSummary, term: string) => {
+    if (!term || term.length < 1) return 0;
+
+    // Remove accents and special characters, convert to lowercase
+    const normalize = (str: string) =>
+      str.normalize('NFD').replace(/[^a-zA-Z\s]/g, '').toLowerCase();
+    const name = normalize(collector.name);
+    const termLower = normalize(term);
+
+    let score = 0;
+    const terms = termLower.split(' ');
+    const firstTerm = terms.shift();
+
+    if (!firstTerm) return 0;
+
+    if (name === firstTerm) score += 8;
+    else if (name.startsWith(firstTerm)) score += 4;
+    else if (name.includes(firstTerm)) score += 2;
+
+    if (score > 0) {
+      terms.forEach((word) => {
+        if (name.includes(word)) score += 2;
+        else score = 0;
+      });
+    }
+
+    return score;
+  };
+
+  return collectors
+    .map((collector) => ({
+      collector,
+      score: computeCollectorScore(collector, searchTerm),
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(({ collector }) => collector)
+    .slice(0, 100);
+}
 
 function CollectorCard({ collector }: { collector: CollectorSummary }) {
   return (
@@ -23,11 +63,6 @@ function CollectorCard({ collector }: { collector: CollectorSummary }) {
       )}
       <div className={styles.cardBody}>
         <span className={styles.cardName}>{collector.name}</span>
-        <span
-          className={`${styles.badge} ${styles[`state_${collector.state}`] ?? ''}`}
-        >
-          {STATE_LABELS[collector.state] ?? collector.state}
-        </span>
       </div>
     </Link>
   );
@@ -40,20 +75,10 @@ export default function CollectorsIndex({
 }): JSX.Element {
   const [query, setQuery] = useState('');
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const sorted = [...collectors].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-    if (!q) {
-      return sorted;
-    }
-    return sorted.filter(
-      (c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.description?.toLowerCase().includes(q)
-    );
-  }, [collectors, query]);
+  const filtered = useMemo(
+    () => searchCollectorsWithScore(collectors, query.trim()),
+    [collectors, query]
+  );
 
   return (
     <Layout
