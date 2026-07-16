@@ -55,6 +55,15 @@ const config = {
         outputPath: 'openapi.yaml',
       },
     ],
+    [
+      './plugins/collectors',
+      {
+        url: 'https://api.invoice-collector.com/api/v1/collectors',
+        cachePath: 'collectors.json',
+        routeBasePath: '/collectors',
+        states: ['active', 'development'],
+      },
+    ],
   ],
 
   presets: [
