@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "Invoice Collector",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Solution": {
+    "message": "Solution",
+    "description": "Navbar item with label Solution"
+  },
+  "item.label.ROI": {
+    "message": "ROI",
+    "description": "Navbar item with label ROI"
+  },
+  "item.label.Pricing": {
+    "message": "Tarifs",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Deployment": {
+    "message": "Déploiement",
+    "description": "Navbar item with label Deployment"
+  },
+  "item.label.Collectors": {
+    "message": "Collecteurs",
+    "description": "Navbar item with label Collectors"
+  },
+  "item.label.Login": {
+    "message": "Connexion",
+    "description": "Navbar item with label Login"
+  },
+  "item.label.Sign Up for Free": {
+    "message": "Inscription gratuite",
+    "description": "Navbar item with label Sign Up for Free"
+  },
+  "item.label.Doc": {
+    "message": "Doc",
+    "description": "Navbar item with label Doc"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
