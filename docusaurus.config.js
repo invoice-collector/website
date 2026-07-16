@@ -137,6 +137,11 @@ const config = {
             activeBaseRegex: 'matchnothing^',
           },
           {
+            to: '/collectors',
+            label: 'Collectors',
+            position: 'left',
+          },
+          {
             to: 'https://app.invoice-collector.com/login',
             label: 'Login',
             position: 'right',
@@ -173,6 +178,10 @@ const config = {
               {
                 label: 'Doc',
                 to: '/docs',
+              },
+              {
+                label: 'Collectors',
+                to: '/collectors',
               },
               {
                 label: 'Contact',
