@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap');
+
+.page {
+  padding: 3rem 1rem 5rem;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #239e65;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  margin: 0.5rem 0 0;
+  font-size: 2.15rem;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.state_active {
+  background: #e9f5ef;
+  color: #1d8656;
+}
+
+.state_development {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.state_planned {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-900);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2.5rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-heading-color);
+}
+
+/* HOW IT WORKS STEPS */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #239e65;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepText {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding-top: 0.15rem;
+}
+
+/* DETAILS TABLE */
+
+.info {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+.infoValue {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.websiteButton {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  border: 2px solid #239e65;
+  color: #239e65;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.websiteButton:hover {
+  background: #239e65;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* FAQ */
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 1.25rem;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.faqAnswer {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* CTA */
+
+.cta {
+  text-align: center;
+  background: #002147;
+  color: #fff;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin-top: 1rem;
+}
+
+.ctaTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.ctaText {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 480px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  background: #239e65;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.ctaButton:hover {
+  background: #1d8656;
+  color: #fff;
+  text-decoration: none;
+}
+
