@@ -343,4 +343,4 @@ export class MyCollector extends LinearWebCollector {
 
 -----------
 
-Great job! You now have created your first web collector. The next step is to **test** it. See [Testing a Collector](../testing_collector.md) for instructions.
+Great job! You now have created your first web collector. The next step is to **test** it. See [Testing a Collector](../testing.md) for instructions.
