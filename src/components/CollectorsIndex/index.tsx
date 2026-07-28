@@ -49,7 +49,7 @@ function searchCollectorsWithScore(
 
     // Remove accents and special characters, convert to lowercase
     const normalize = (str: string) =>
-      str.normalize('NFD').replace(/[^a-zA-Z\s]/g, '').toLowerCase();
+      str.normalize('NFD').replace(/[^0-9a-zA-Z\s]/g, '').toLowerCase();
     const name = normalize(collector.name);
     const termLower = normalize(term);
 
