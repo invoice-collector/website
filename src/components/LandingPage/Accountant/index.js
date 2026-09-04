@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import styles from './index.module.css';
+import PricingCard from './PricingCard';
 
 export default function LandingPage() {
     const {siteConfig, i18n: {currentLocale}} = useDocusaurusContext();
@@ -300,69 +301,41 @@ export default function LandingPage() {
                                 </button>
                             ))}
                         </div>
-                        {pricingAudience === 'accountant' && <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
-                            {/* Plan Starter */}
-                            <div className={clsx(styles.border_secondary_light , "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
-                                <div className={clsx(styles.text_secondary, "font-semibold mb-1")}>Starter</div>
-                                    <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>130€</div>
-                                <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.pricing.exclVat">excl. VAT / month</Translate></div>
-                                <div className={clsx("text-xs text-gray-500 mt-1 mb-4")}><Translate id="accountant.pricing.starter.limit">Up to 250 active clients</Translate></div>
-                                <ul className={clsx("list-none p-0 space-y-2 text-sm text-gray-600 flex-1")}>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature1">Unlimited supplier portals</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature2">Scheduled automatic collection</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature3">Client + period filing</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature4">Full traceability</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.starter.feature5">1h onboarding included</Translate></li>
-                                </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.starter.cta">Get started</Translate></Link>
+                        {pricingAudience === 'accountant' && (
+                            <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
+                                <PricingCard
+                                    name="Starter"
+                                    price="130€"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 250 active clients"
+                                    features={['Unlimited supplier portals', 'Scheduled automatic collection', 'Client + period filing', 'Full traceability', '1h onboarding included']}
+                                />
+                                <PricingCard
+                                    name="Standard"
+                                    price="200€"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 500 active clients"
+                                    popular
+                                    features={['Everything in plan Starter', 'Priority support', 'Advanced DMS integrations', 'Full firm reporting', '1h onboarding included']}
+                                    cta="Get started →"
+                                />
+                                <PricingCard
+                                    name="Enterprise"
+                                    price="300€"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 1,000 active clients"
+                                    features={['Everything in plan Standard', 'Guaranteed SLA', 'Dedicated account manager', 'Custom connectors', '1h onboarding included']}
+                                />
+                                <PricingCard
+                                    name="Custom"
+                                    price="Custom quote"
+                                    priceNote="groups & networks"
+                                    limit="Unlimited clients + dedicated SLA"
+                                    features={['Everything in plan Enterprise', 'Multi-entity / groups', 'Tailored support', 'Proprietary integrations', 'Premium SLA']}
+                                    cta="Contact us"
+                                />
                             </div>
-                            {/* Plan Standard */}
-                            <div className={clsx("relative", styles.bg_secondary, "rounded-2xl p-6 flex flex-col text-white shadow-lg")}>
-                                <div className={clsx("absolute -top-3 left-1/2 transform -translate-x-1/2", styles.bg_primary, "text-white text-xs font-bold px-3 py-1 rounded-full")}><Translate id="accountant.pricing.popular">Most popular</Translate></div>
-                                <div className={clsx("font-semibold mb-1")}>Standard</div>
-                                <div className={clsx(styles.font_title, "text-4xl font-extrabold mb-0")}>200€</div>
-                                <div className={clsx(styles.text_primary_lighter, "text-sm")}><Translate id="accountant.pricing.exclVat2">excl. VAT / month</Translate></div>
-                                <div className={clsx(styles.text_primary_lighter, "text-xs mt-1 mb-4")}><Translate id="accountant.pricing.standard.limit">Up to 500 active clients</Translate></div>
-                                <ul className={clsx(styles.text_primary_lighter, "list-none p-0 space-y-2 text-sm flex-1")}>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature1">Everything in plan Starter</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature2">Priority support</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature3">Advanced DMS integrations</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature4">Full firm reporting</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.standard.feature5">1h onboarding included</Translate></li>
-                                </ul>
-                                <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "mt-6 block text-center text-white hover:text-white font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.standard.cta">Get started →</Translate></Link>
-                            </div>
-                            {/* Plan Enterprise */}
-                            <div className={clsx(styles.border_secondary_light, "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
-                                <div className={clsx(styles.text_secondary, "font-semibold mb-1")}>Enterprise</div>
-                                <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>300€</div>
-                                <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.pricing.exclVat3">excl. VAT / month</Translate></div>
-                                <div className={clsx("text-xs text-gray-500 mt-1 mb-4")}><Translate id="accountant.pricing.enterprise.limit">Up to 1,000 active clients</Translate></div>
-                                <ul className={clsx("list-none p-0 space-y-2 text-sm text-gray-600 flex-1")}>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature1">Everything in plan Standard</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature2">Guaranteed SLA</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature3">Dedicated account manager</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature4">Custom connectors</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.enterprise.feature5">1h onboarding included</Translate></li>
-                                </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.enterprise.cta">Get started</Translate></Link>
-                            </div>
-                            {/* Plan Custom */}
-                            <div className={clsx(styles.border_secondary_light, "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
-                                <div className={clsx(styles.text_secondary, "font-semibold mb-1")}>Custom</div>
-                                <div className={clsx(styles.font_title, styles.text_secondary, "text-2xl font-extrabold pt-1 leading-snug")}><Translate id="accountant.pricing.custom.title">Custom quote</Translate></div>
-                                <div className={clsx("text-sm text-gray-400 mt-1")}><Translate id="accountant.pricing.custom.subtitle">groups &amp; networks</Translate></div>
-                                <div className={clsx("text-xs text-gray-500 mt-1 mb-4")}><Translate id="accountant.pricing.custom.limit">Unlimited clients + dedicated SLA</Translate></div>
-                                <ul className={clsx("list-none p-0 space-y-2 text-sm text-gray-600 flex-1")}>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature1">Everything in plan Enterprise</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature2">Multi-entity / groups</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature3">Tailored support</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature4">Proprietary integrations</Translate></li>
-                                    <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span><Translate id="accountant.pricing.custom.feature5">Premium SLA</Translate></li>
-                                </ul>
-                                <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.custom.cta">Contact us</Translate></Link>
-                            </div>
-                        </div>}
+                        )}
                         {pricingAudience === 'company' && (
                             <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
                                 {[
@@ -371,38 +344,29 @@ export default function LandingPage() {
                                     ['Enterprise', '€100', 'Up to 300 invoices per month'],
                                     ['Custom', 'Contact us', 'More than 300 invoices per month'],
                                 ].map(([name, price, limit]) => (
-                                    <div key={name} className={clsx(
-                                        "relative bg-gray-50 border rounded-2xl p-6 flex flex-col",
-                                        price === '€50' ? [styles.bg_secondary, "text-white shadow-lg"] : styles.border_secondary_light
-                                    )}>
-                                        {price === '€50' && <div className={clsx("absolute -top-3 left-1/2 transform -translate-x-1/2", styles.bg_primary, "text-white text-xs font-bold px-3 py-1 rounded-full")}>Most popular</div>}
-                                        <div className={clsx(price === '€50' ? "font-semibold mb-1" : [styles.text_secondary, "font-semibold mb-1"])}>{name}</div>
-                                        <div className={clsx(styles.font_title, price === '€50' ? "text-white" : styles.text_secondary, "text-3xl font-extrabold mb-1")}>{price}</div>
-                                        {price !== 'Contact us' && <div className={clsx(price === '€50' ? styles.text_primary_lighter : "text-sm text-gray-400", "mb-1")}>excl. VAT / month</div>}
-                                        <div className={clsx(price === '€50' ? styles.text_primary_lighter : "text-sm text-gray-500", "mb-5")}>{limit}</div>
-                                        <ul className={clsx(price === '€50' ? styles.text_primary_lighter : "text-gray-600", "list-none p-0 space-y-2 text-sm flex-1")}>
-                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>All collectors</li>
-                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Automatic collection</li>
-                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Standard support</li>
-                                        </ul>
-                                        <Link to="#contact" className={clsx(price === '€50' ? [styles.bg_primary, styles.hover_bg_primary_dark, "text-white hover:text-white"] : [styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "hover:bg-gray-100 border-2 border-gray-300"], "mt-6 block text-center font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}>{price === 'Contact us' ? 'Contact us' : 'Get started'}</Link>
-                                    </div>
+                                    <PricingCard
+                                        key={name}
+                                        name={name}
+                                        price={price}
+                                        priceNote={price === 'Contact us' ? null : 'excl. VAT / month'}
+                                        limit={limit}
+                                        popular={price === '€50'}
+                                        cta={price === 'Contact us' ? 'Contact us' : 'Get started'}
+                                        features={['All collectors', 'Automatic collection', 'Standard support']}
+                                    />
                                 ))}
                             </div>
                         )}
                         {pricingAudience === 'software' && (
                             <div className={clsx("max-w-xl mx-auto mb-10")}>
-                                <div className={clsx(styles.bg_secondary, "rounded-2xl p-8 text-white text-center shadow-lg")}>
-                                    <div className={clsx("font-semibold mb-2")}>Software publisher</div>
-                                    <div className={clsx(styles.font_title, "text-3xl font-extrabold mb-2")}>Fixed price per user</div>
-                                    <p className={clsx(styles.text_primary_lighter, "mb-6")}>Pricing tailored to your integration and number of users.</p>
-                                    <ul className={clsx(styles.text_primary_lighter, "list-none p-0 space-y-2 text-sm mb-8")}>
-                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Integration with your software</li>
-                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Fixed price per user</li>
-                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Dedicated support</li>
-                                    </ul>
-                                    <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}>Contact us</Link>
-                                </div>
+                                <PricingCard
+                                    name="Software publisher"
+                                    price="Fixed price per user"
+                                    limit="Pricing tailored to your integration and number of users."
+                                    dark
+                                    cta="Contact us"
+                                    features={['Integration with your software', 'Fixed price per user', 'Dedicated support']}
+                                />
                             </div>
                         )}
                         {/* Setup box */}
