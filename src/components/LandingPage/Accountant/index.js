@@ -364,7 +364,7 @@ export default function LandingPage() {
                             <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
                                 <PricingCard
                                     name={<Translate id="company.pricing.starter.name">Starter</Translate>}
-                                    price="€20"
+                                    price="20€"
                                     priceNote={<Translate id="company.pricing.exclVat">excl. VAT / month</Translate>}
                                     limit={<Translate id="company.pricing.starter.limit">Up to 30 invoices per month</Translate>}
                                     cta={<Translate id="company.pricing.cta">Get started</Translate>}
@@ -376,7 +376,7 @@ export default function LandingPage() {
                                 />
                                 <PricingCard
                                     name={<Translate id="company.pricing.standard.name">Standard</Translate>}
-                                    price="€50"
+                                    price="50€"
                                     priceNote={<Translate id="company.pricing.exclVat2">excl. VAT / month</Translate>}
                                     limit={<Translate id="company.pricing.standard.limit">Up to 100 invoices per month</Translate>}
                                     popular
@@ -389,7 +389,7 @@ export default function LandingPage() {
                                 />
                                 <PricingCard
                                     name={<Translate id="company.pricing.enterprise.name">Enterprise</Translate>}
-                                    price="€100"
+                                    price="100€"
                                     priceNote={<Translate id="company.pricing.exclVat3">excl. VAT / month</Translate>}
                                     limit={<Translate id="company.pricing.enterprise.limit">Up to 300 invoices per month</Translate>}
                                     cta={<Translate id="company.pricing.cta3">Get started</Translate>}
