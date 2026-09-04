@@ -279,9 +279,9 @@ export default function LandingPage() {
                         </div>
                         <div className={clsx("flex flex-wrap justify-center gap-3 mb-10")} role="tablist" aria-label="Pricing audience">
                             {[
-                                ['company', 'Company'],
-                                ['accountant', 'Accounting firm'],
-                                ['software', 'Software publisher'],
+                                ['company', <Translate id="accountant.pricing.audience.company" message="Company" />],
+                                ['accountant', <Translate id="accountant.pricing.audience.accountant" message="Accounting firm" />],
+                                ['software', <Translate id="accountant.pricing.audience.software" message="Software publisher" />],
                             ].map(([audience, label]) => (
                                 <button
                                     key={audience}

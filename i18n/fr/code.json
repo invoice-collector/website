@@ -919,5 +919,14 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "accountant.pricing.audience.company": {
+    "message": "Entreprise"
+  },
+  "accountant.pricing.audience.accountant": {
+    "message": "Cabinet comptable"
+  },
+  "accountant.pricing.audience.software": {
+    "message": "Éditeur de logiciel"
   }
 }
