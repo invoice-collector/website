@@ -276,7 +276,6 @@ export default function LandingPage() {
                         <div className={clsx("text-center mb-12")}>
                             <span className={clsx(styles.bg_primary_light, styles.text_primary, "inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4")}><Translate id="accountant.pricing.badge">Pricing</Translate></span>
                             <h2 className={clsx(styles.font_title, styles.text_secondary, "text-3xl md:text-4xl font-bold mb-4")}><Translate id="accountant.pricing.title">Simple, transparent, predictable</Translate></h2>
-                            <p className={clsx("text-gray-500 max-w-2xl mx-auto")}><Translate id="accountant.pricing.desc">Designed to scale with your firm. 1 active client = 1 registered client with at least one active portal.</Translate></p>
                         </div>
                         <div className={clsx("flex flex-wrap justify-center gap-3 mb-10")} role="tablist" aria-label="Pricing audience">
                             {[

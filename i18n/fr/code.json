@@ -251,9 +251,6 @@
   "accountant.pricing.title": {
     "message": "Simple, lisible, prévisible"
   },
-  "accountant.pricing.desc": {
-    "message": "Conçue pour accompagner la croissance du cabinet. 1 client actif = 1 client inscrit avec au moins un portail actif."
-  },
   "accountant.pricing.exclVat": {
     "message": "HT / mois"
   },
