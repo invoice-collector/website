@@ -338,23 +338,38 @@ export default function LandingPage() {
                         )}
                         {pricingAudience === 'company' && (
                             <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
-                                {[
-                                    ['Starter', '€20', 'Up to 30 invoices per month'],
-                                    ['Standard', '€50', 'Up to 100 invoices per month'],
-                                    ['Enterprise', '€100', 'Up to 300 invoices per month'],
-                                    ['Custom', 'Contact us', 'More than 300 invoices per month'],
-                                ].map(([name, price, limit]) => (
-                                    <PricingCard
-                                        key={name}
-                                        name={name}
-                                        price={price}
-                                        priceNote={price === 'Contact us' ? null : 'excl. VAT / month'}
-                                        limit={limit}
-                                        popular={price === '€50'}
-                                        cta={price === 'Contact us' ? 'Contact us' : 'Get started'}
-                                        features={['All collectors', 'Automatic collection', 'Standard support']}
-                                    />
-                                ))}
+                                <PricingCard
+                                    name="Starter"
+                                    price="€20"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 30 invoices per month"
+                                    cta="Get started"
+                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                />
+                                <PricingCard
+                                    name="Standard"
+                                    price="€50"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 100 invoices per month"
+                                    popular
+                                    cta="Get started"
+                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                />
+                                <PricingCard
+                                    name="Enterprise"
+                                    price="€100"
+                                    priceNote="excl. VAT / month"
+                                    limit="Up to 300 invoices per month"
+                                    cta="Get started"
+                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                />
+                                <PricingCard
+                                    name="Custom"
+                                    price="Contact us"
+                                    limit="More than 300 invoices per month"
+                                    cta="Contact us"
+                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                />
                             </div>
                         )}
                         {pricingAudience === 'software' && (
