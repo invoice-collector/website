@@ -14,12 +14,13 @@ export default function LandingPage() {
     const [invoicesPerClient, setInvoicesPerClient] = useState(4);
     const [minutesSaved, setMinutesSaved] = useState(3);
     const [hourlyCost, setHourlyCost] = useState(35);
+    const [pricingAudience, setPricingAudience] = useState('company');
 
     // Determine plan price based on client count
     const getPlanPrice = (n) => {
-        if (n <= 250) return 129;
-        if (n <= 500) return 199;
-        if (n <= 1000) return 299;
+        if (n <= 250) return 130;
+        if (n <= 500) return 200;
+        if (n <= 1000) return 300;
         return 399;
     };
     const getPlanName = (n) => {
@@ -208,7 +209,7 @@ export default function LandingPage() {
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.hourlyCostLabel">Loaded hourly cost</Translate></span><span className={clsx("font-medium")}>35€/h</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>250 × 4 × (3/60) × 35</span><span className={clsx(styles.text_primary, "font-bold")}><Translate id="accountant.roi.example1.result">= 1,750€/month</Translate></span></div>
-                                    <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €129 plan</Translate></div>
+                                    <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €130 plan</Translate></div>
                                 </div>
                                 <div className={clsx("bg-white rounded-2xl p-6 shadow-sm")}>
                                     <div className={clsx(styles.text_secondary, "font-bold mb-4")}><Translate id="accountant.roi.example2.header">📊 Firm with 500 clients</Translate></div>
@@ -217,7 +218,7 @@ export default function LandingPage() {
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel2">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.hourlyCostLabel2">Loaded hourly cost</Translate></span><span className={clsx("font-medium")}>35€/h</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}>500 × 4 × (3/60) × 35</span><span className={clsx(styles.text_primary, "font-bold")}><Translate id="accountant.roi.example2.result">= 3,500€/month</Translate></span></div>
-                                    <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs 199€ plan</Translate></div>
+                                    <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs €200 plan</Translate></div>
                                 </div>
                                 <div className={clsx(styles.bg_primary_light, "rounded-2xl p-5")}>
                                     <div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.roi.conservative.title">💡 Conservative assumptions</Translate></div>
@@ -276,11 +277,34 @@ export default function LandingPage() {
                             <h2 className={clsx(styles.font_title, styles.text_secondary, "text-3xl md:text-4xl font-bold mb-4")}><Translate id="accountant.pricing.title">Simple, transparent, predictable</Translate></h2>
                             <p className={clsx("text-gray-500 max-w-2xl mx-auto")}><Translate id="accountant.pricing.desc">Designed to scale with your firm. 1 active client = 1 registered client with at least one active portal.</Translate></p>
                         </div>
-                        <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
+                        <div className={clsx("flex flex-wrap justify-center gap-3 mb-10")} role="tablist" aria-label="Pricing audience">
+                            {[
+                                ['company', 'Company'],
+                                ['accountant', 'Accounting firm'],
+                                ['software', 'Software publisher'],
+                            ].map(([audience, label]) => (
+                                <button
+                                    key={audience}
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={pricingAudience === audience}
+                                    onClick={() => setPricingAudience(audience)}
+                                    className={clsx(
+                                        "px-5 py-3 rounded-xl font-semibold transition",
+                                        pricingAudience === audience
+                                            ? [styles.bg_primary, "text-white"]
+                                            : ["bg-gray-100", styles.text_secondary, "hover:bg-gray-200"]
+                                    )}
+                                >
+                                    {label}
+                                </button>
+                            ))}
+                        </div>
+                        {pricingAudience === 'accountant' && <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
                             {/* Plan Starter */}
                             <div className={clsx(styles.border_secondary_light , "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
                                 <div className={clsx(styles.text_secondary, "font-semibold mb-1")}>Starter</div>
-                                <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>129€</div>
+                                    <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>130€</div>
                                 <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.pricing.exclVat">excl. VAT / month</Translate></div>
                                 <div className={clsx("text-xs text-gray-500 mt-1 mb-4")}><Translate id="accountant.pricing.starter.limit">Up to 250 active clients</Translate></div>
                                 <ul className={clsx("list-none p-0 space-y-2 text-sm text-gray-600 flex-1")}>
@@ -296,7 +320,7 @@ export default function LandingPage() {
                             <div className={clsx("relative", styles.bg_secondary, "rounded-2xl p-6 flex flex-col text-white shadow-lg")}>
                                 <div className={clsx("absolute -top-3 left-1/2 transform -translate-x-1/2", styles.bg_primary, "text-white text-xs font-bold px-3 py-1 rounded-full")}><Translate id="accountant.pricing.popular">Most popular</Translate></div>
                                 <div className={clsx("font-semibold mb-1")}>Standard</div>
-                                <div className={clsx(styles.font_title, "text-4xl font-extrabold mb-0")}>199€</div>
+                                <div className={clsx(styles.font_title, "text-4xl font-extrabold mb-0")}>200€</div>
                                 <div className={clsx(styles.text_primary_lighter, "text-sm")}><Translate id="accountant.pricing.exclVat2">excl. VAT / month</Translate></div>
                                 <div className={clsx(styles.text_primary_lighter, "text-xs mt-1 mb-4")}><Translate id="accountant.pricing.standard.limit">Up to 500 active clients</Translate></div>
                                 <ul className={clsx(styles.text_primary_lighter, "list-none p-0 space-y-2 text-sm flex-1")}>
@@ -311,7 +335,7 @@ export default function LandingPage() {
                             {/* Plan Enterprise */}
                             <div className={clsx(styles.border_secondary_light, "bg-gray-50 border rounded-2xl p-6 flex flex-col")}>
                                 <div className={clsx(styles.text_secondary, "font-semibold mb-1")}>Enterprise</div>
-                                <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>299€</div>
+                                <div className={clsx(styles.font_title, styles.text_secondary, "text-4xl font-extrabold mb-0")}>300€</div>
                                 <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.pricing.exclVat3">excl. VAT / month</Translate></div>
                                 <div className={clsx("text-xs text-gray-500 mt-1 mb-4")}><Translate id="accountant.pricing.enterprise.limit">Up to 1,000 active clients</Translate></div>
                                 <ul className={clsx("list-none p-0 space-y-2 text-sm text-gray-600 flex-1")}>
@@ -338,7 +362,49 @@ export default function LandingPage() {
                                 </ul>
                                 <Link to="#contact" className={clsx(styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "mt-6 block hover:bg-gray-100 text-center border-2 border-gray-300 font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}><Translate id="accountant.pricing.custom.cta">Contact us</Translate></Link>
                             </div>
-                        </div>
+                        </div>}
+                        {pricingAudience === 'company' && (
+                            <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
+                                {[
+                                    ['Starter', '€20', 'Up to 30 invoices per month'],
+                                    ['Standard', '€50', 'Up to 100 invoices per month'],
+                                    ['Enterprise', '€100', 'Up to 300 invoices per month'],
+                                    ['Custom', 'Contact us', 'More than 300 invoices per month'],
+                                ].map(([name, price, limit]) => (
+                                    <div key={name} className={clsx(
+                                        "relative bg-gray-50 border rounded-2xl p-6 flex flex-col",
+                                        price === '€50' ? [styles.bg_secondary, "text-white shadow-lg"] : styles.border_secondary_light
+                                    )}>
+                                        {price === '€50' && <div className={clsx("absolute -top-3 left-1/2 transform -translate-x-1/2", styles.bg_primary, "text-white text-xs font-bold px-3 py-1 rounded-full")}>Most popular</div>}
+                                        <div className={clsx(price === '€50' ? "font-semibold mb-1" : [styles.text_secondary, "font-semibold mb-1"])}>{name}</div>
+                                        <div className={clsx(styles.font_title, price === '€50' ? "text-white" : styles.text_secondary, "text-3xl font-extrabold mb-1")}>{price}</div>
+                                        {price !== 'Contact us' && <div className={clsx(price === '€50' ? styles.text_primary_lighter : "text-sm text-gray-400", "mb-1")}>excl. VAT / month</div>}
+                                        <div className={clsx(price === '€50' ? styles.text_primary_lighter : "text-sm text-gray-500", "mb-5")}>{limit}</div>
+                                        <ul className={clsx(price === '€50' ? styles.text_primary_lighter : "text-gray-600", "list-none p-0 space-y-2 text-sm flex-1")}>
+                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>All collectors</li>
+                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Automatic collection</li>
+                                            <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Standard support</li>
+                                        </ul>
+                                        <Link to="#contact" className={clsx(price === '€50' ? [styles.bg_primary, styles.hover_bg_primary_dark, "text-white hover:text-white"] : [styles.hover_border_primary, styles.text_secondary_light, styles.hover_text_primary, "hover:bg-gray-100 border-2 border-gray-300"], "mt-6 block text-center font-semibold py-2.5 rounded-xl transition text-sm no-underline hover:no-underline")}>{price === 'Contact us' ? 'Contact us' : 'Get started'}</Link>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        {pricingAudience === 'software' && (
+                            <div className={clsx("max-w-xl mx-auto mb-10")}>
+                                <div className={clsx(styles.bg_secondary, "rounded-2xl p-8 text-white text-center shadow-lg")}>
+                                    <div className={clsx("font-semibold mb-2")}>Software publisher</div>
+                                    <div className={clsx(styles.font_title, "text-3xl font-extrabold mb-2")}>Fixed price per user</div>
+                                    <p className={clsx(styles.text_primary_lighter, "mb-6")}>Pricing tailored to your integration and number of users.</p>
+                                    <ul className={clsx(styles.text_primary_lighter, "list-none p-0 space-y-2 text-sm mb-8")}>
+                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Integration with your software</li>
+                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Fixed price per user</li>
+                                        <li><span className={clsx(styles.text_primary, "mr-2")}>✓</span>Dedicated support</li>
+                                    </ul>
+                                    <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}>Contact us</Link>
+                                </div>
+                            </div>
+                        )}
                         {/* Setup box */}
                         <div className={clsx(styles.bg_primary_light, "flex flex-col md:flex-row items-center gap-6 rounded-2xl p-8")}>
                             <div className={clsx("flex items-start gap-4 flex-1")}>
