@@ -304,83 +304,127 @@ export default function LandingPage() {
                         {pricingAudience === 'accountant' && (
                             <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
                                 <PricingCard
-                                    name="Starter"
+                                    name={<Translate id="accountant.pricing.starter.name">Starter</Translate>}
                                     price="130€"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 250 active clients"
-                                    features={['Unlimited supplier portals', 'Scheduled automatic collection', 'Client + period filing', 'Full traceability', '1h onboarding included']}
+                                    priceNote={<Translate id="accountant.pricing.exclVat">excl. VAT / month</Translate>}
+                                    limit={<Translate id="accountant.pricing.starter.limit">Up to 250 active clients</Translate>}
+                                    features={[
+                                        <Translate id="accountant.pricing.starter.feature1">Unlimited supplier portals</Translate>,
+                                        <Translate id="accountant.pricing.starter.feature2">Scheduled automatic collection</Translate>,
+                                        <Translate id="accountant.pricing.starter.feature3">Client + period filing</Translate>,
+                                        <Translate id="accountant.pricing.starter.feature4">Full traceability</Translate>,
+                                        <Translate id="accountant.pricing.starter.feature5">1h onboarding included</Translate>,
+                                    ]}
                                 />
                                 <PricingCard
-                                    name="Standard"
+                                    name={<Translate id="accountant.pricing.standard.name">Standard</Translate>}
                                     price="200€"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 500 active clients"
+                                    priceNote={<Translate id="accountant.pricing.exclVat2">excl. VAT / month</Translate>}
+                                    limit={<Translate id="accountant.pricing.standard.limit">Up to 500 active clients</Translate>}
                                     popular
-                                    features={['Everything in plan Starter', 'Priority support', 'Advanced DMS integrations', 'Full firm reporting', '1h onboarding included']}
-                                    cta="Get started →"
+                                    features={[
+                                        <Translate id="accountant.pricing.standard.feature1">Everything in plan Starter</Translate>,
+                                        <Translate id="accountant.pricing.standard.feature2">Priority support</Translate>,
+                                        <Translate id="accountant.pricing.standard.feature3">Advanced DMS integrations</Translate>,
+                                        <Translate id="accountant.pricing.standard.feature4">Full firm reporting</Translate>,
+                                        <Translate id="accountant.pricing.standard.feature5">1h onboarding included</Translate>,
+                                    ]}
+                                    cta={<Translate id="accountant.pricing.standard.cta">Get started →</Translate>}
                                 />
                                 <PricingCard
-                                    name="Enterprise"
+                                    name={<Translate id="accountant.pricing.enterprise.name">Enterprise</Translate>}
                                     price="300€"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 1,000 active clients"
-                                    features={['Everything in plan Standard', 'Guaranteed SLA', 'Dedicated account manager', 'Custom connectors', '1h onboarding included']}
+                                    priceNote={<Translate id="accountant.pricing.exclVat3">excl. VAT / month</Translate>}
+                                    limit={<Translate id="accountant.pricing.enterprise.limit">Up to 1,000 active clients</Translate>}
+                                    features={[
+                                        <Translate id="accountant.pricing.enterprise.feature1">Everything in plan Standard</Translate>,
+                                        <Translate id="accountant.pricing.enterprise.feature2">Guaranteed SLA</Translate>,
+                                        <Translate id="accountant.pricing.enterprise.feature3">Dedicated account manager</Translate>,
+                                        <Translate id="accountant.pricing.enterprise.feature4">Custom connectors</Translate>,
+                                        <Translate id="accountant.pricing.enterprise.feature5">1h onboarding included</Translate>,
+                                    ]}
                                 />
                                 <PricingCard
-                                    name="Custom"
-                                    price="Custom quote"
-                                    priceNote="groups & networks"
-                                    limit="Unlimited clients + dedicated SLA"
-                                    features={['Everything in plan Enterprise', 'Multi-entity / groups', 'Tailored support', 'Proprietary integrations', 'Premium SLA']}
-                                    cta="Contact us"
+                                    name={<Translate id="accountant.pricing.custom.name">Custom</Translate>}
+                                    price={<Translate id="accountant.pricing.custom.title">Custom quote</Translate>}
+                                    priceNote={<Translate id="accountant.pricing.custom.subtitle">groups &amp; networks</Translate>}
+                                    limit={<Translate id="accountant.pricing.custom.limit">Unlimited clients + dedicated SLA</Translate>}
+                                    features={[
+                                        <Translate id="accountant.pricing.custom.feature1">Everything in plan Enterprise</Translate>,
+                                        <Translate id="accountant.pricing.custom.feature2">Multi-entity / groups</Translate>,
+                                        <Translate id="accountant.pricing.custom.feature3">Tailored support</Translate>,
+                                        <Translate id="accountant.pricing.custom.feature4">Proprietary integrations</Translate>,
+                                        <Translate id="accountant.pricing.custom.feature5">Premium SLA</Translate>,
+                                    ]}
+                                    cta={<Translate id="accountant.pricing.custom.cta">Contact us</Translate>}
                                 />
                             </div>
                         )}
                         {pricingAudience === 'company' && (
                             <div className={clsx("grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10")}>
                                 <PricingCard
-                                    name="Starter"
+                                    name={<Translate id="company.pricing.starter.name">Starter</Translate>}
                                     price="€20"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 30 invoices per month"
-                                    cta="Get started"
-                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                    priceNote={<Translate id="company.pricing.exclVat">excl. VAT / month</Translate>}
+                                    limit={<Translate id="company.pricing.starter.limit">Up to 30 invoices per month</Translate>}
+                                    cta={<Translate id="company.pricing.cta">Get started</Translate>}
+                                    features={[
+                                        <Translate id="company.pricing.feature.collectors">All collectors</Translate>,
+                                        <Translate id="company.pricing.feature.automatic">Automatic collection</Translate>,
+                                        <Translate id="company.pricing.feature.support">Standard support</Translate>,
+                                    ]}
                                 />
                                 <PricingCard
-                                    name="Standard"
+                                    name={<Translate id="company.pricing.standard.name">Standard</Translate>}
                                     price="€50"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 100 invoices per month"
+                                    priceNote={<Translate id="company.pricing.exclVat2">excl. VAT / month</Translate>}
+                                    limit={<Translate id="company.pricing.standard.limit">Up to 100 invoices per month</Translate>}
                                     popular
-                                    cta="Get started"
-                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                    cta={<Translate id="company.pricing.cta2">Get started</Translate>}
+                                    features={[
+                                        <Translate id="company.pricing.feature.collectors2">All collectors</Translate>,
+                                        <Translate id="company.pricing.feature.automatic2">Automatic collection</Translate>,
+                                        <Translate id="company.pricing.feature.support2">Standard support</Translate>,
+                                    ]}
                                 />
                                 <PricingCard
-                                    name="Enterprise"
+                                    name={<Translate id="company.pricing.enterprise.name">Enterprise</Translate>}
                                     price="€100"
-                                    priceNote="excl. VAT / month"
-                                    limit="Up to 300 invoices per month"
-                                    cta="Get started"
-                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                    priceNote={<Translate id="company.pricing.exclVat3">excl. VAT / month</Translate>}
+                                    limit={<Translate id="company.pricing.enterprise.limit">Up to 300 invoices per month</Translate>}
+                                    cta={<Translate id="company.pricing.cta3">Get started</Translate>}
+                                    features={[
+                                        <Translate id="company.pricing.feature.collectors3">All collectors</Translate>,
+                                        <Translate id="company.pricing.feature.automatic3">Automatic collection</Translate>,
+                                        <Translate id="company.pricing.feature.support3">Standard support</Translate>,
+                                    ]}
                                 />
                                 <PricingCard
-                                    name="Custom"
+                                    name={<Translate id="company.pricing.custom.name">Custom</Translate>}
                                     price="Contact us"
-                                    limit="More than 300 invoices per month"
-                                    cta="Contact us"
-                                    features={['All collectors', 'Automatic collection', 'Standard support']}
+                                    limit={<Translate id="company.pricing.custom.limit">More than 300 invoices per month</Translate>}
+                                    cta={<Translate id="company.pricing.custom.cta">Contact us</Translate>}
+                                    features={[
+                                        <Translate id="company.pricing.feature.collectors4">All collectors</Translate>,
+                                        <Translate id="company.pricing.feature.automatic4">Automatic collection</Translate>,
+                                        <Translate id="company.pricing.feature.support4">Standard support</Translate>,
+                                    ]}
                                 />
                             </div>
                         )}
                         {pricingAudience === 'software' && (
                             <div className={clsx("max-w-xl mx-auto mb-10")}>
                                 <PricingCard
-                                    name="Software publisher"
-                                    price="Fixed price per user"
-                                    limit="Pricing tailored to your integration and number of users."
+                                    name={<Translate id="software.pricing.name">Software publisher</Translate>}
+                                    price={<Translate id="software.pricing.price">Fixed price per user</Translate>}
+                                    limit={<Translate id="software.pricing.limit">Pricing tailored to your integration and number of users.</Translate>}
                                     dark
-                                    cta="Contact us"
-                                    features={['Integration with your software', 'Fixed price per user', 'Dedicated support']}
+                                    cta={<Translate id="software.pricing.cta">Contact us</Translate>}
+                                    features={[
+                                        <Translate id="software.pricing.feature.integration">Integration with your software</Translate>,
+                                        <Translate id="software.pricing.feature.price">Fixed price per user</Translate>,
+                                        <Translate id="software.pricing.feature.support">Dedicated support</Translate>,
+                                    ]}
                                 />
                             </div>
                         )}
