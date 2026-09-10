@@ -16,7 +16,7 @@ Lors de votre utilisation de notre plateforme, nous pouvons être amenés à vou
 
 Le terme « données à caractère personnel » désigne toutes les données qui permettent d’identifier un individu, ce qui correspond notamment à vos nom, prénoms, pseudonyme, photographie, adresse postale et de courrier électronique, intitulé de votre poste, numéros de téléphone, date de naissance, données relatives à vos transactions sur la plateforme, détails de vos achats, numéros de carte bancaire, SIRET, numéro de TVA intracommunautaire, adresse IP, ainsi qu’à tout autre renseignement que vous choisirez de nous communiquer à votre sujet. 
 
-Si vous choisissez de connecter un compte tiers (notamment votre compte Google) à la Plateforme, ces données peuvent également inclure le contenu de certains emails de la boîte de messagerie ainsi connectée et leurs pièces jointes, dans les conditions décrites à l’article 5 ci-dessous. 
+Si vous choisissez de connecter un compte tiers (notamment votre compte Google, Microsoft ou Tesla) à la Plateforme, ces données peuvent également inclure, selon le compte tiers connecté, le contenu de certains emails de la boîte de messagerie ainsi connectée et leurs pièces jointes, ou l’historique de commandes et factures associé à ce compte, dans les conditions décrites à l’article 5 ci-dessous. 
 
 ## 2. Objet 
 
@@ -77,53 +77,61 @@ Nous collectons vos données personnelles afin de vous livrer votre commande/ser
 
 Nous vous informons, lors de la collecte de vos données personnelles, si certaines données doivent être obligatoirement renseignées ou si elles sont facultatives. 
 
-## 5. Données collectées via votre compte Google (Gmail)
+## 5. Données collectées via un compte tiers connecté (Google, Microsoft, Tesla, etc.)
 
-Si vous choisissez de connecter votre compte Google à la Plateforme, vous nous autorisez, par l’intermédiaire du protocole d’authentification OAuth 2.0 de Google, à accéder à certaines données de votre compte Gmail, dans la stricte mesure nécessaire au fonctionnement du Logiciel.
+Si vous choisissez de connecter un compte tiers à la Plateforme (notamment un compte Google, Microsoft ou Tesla), vous nous autorisez, par l’intermédiaire du protocole d’authentification OAuth 2.0 du fournisseur concerné, à accéder à certaines données de ce compte, dans la stricte mesure nécessaire au fonctionnement du Logiciel.
 
-### 5.1. Données Google auxquelles nous accédons
+### 5.1. Données auxquelles nous accédons
 
-Dans le cadre de cette autorisation, nous pouvons accéder :
+Dans le cadre de cette autorisation, nous pouvons accéder, selon la nature du compte tiers connecté :
 
-- au contenu des emails présents dans votre boîte Gmail (expéditeur, objet, corps du message) ;
+- pour les comptes de messagerie électronique (notamment Google/Gmail ou Microsoft/Outlook) :
 
-- aux pièces jointes de ces emails, notamment les factures et documents assimilés ;
+  - au contenu des emails présents dans votre boîte de messagerie (expéditeur, objet, corps du message) ;
 
-- aux métadonnées associées à ces emails (dates de réception, libellés ou dossiers).
+  - aux pièces jointes de ces emails, notamment les factures et documents assimilés ;
 
-Nous n’accédons à aucune autre donnée de votre compte Google (contacts, agenda, Drive, etc.) que celles strictement nécessaires à la fourniture du Logiciel, conformément au principe de minimisation des données.
+  - aux métadonnées associées à ces emails (dates de réception, libellés ou dossiers) ;
 
-### 5.2. Utilisation des données Google
+- pour les comptes tiers donnant directement accès aux factures de l’utilisateur (notamment Tesla) :
 
-Les données issues de votre compte Gmail sont utilisées exclusivement pour :
+  - à l’historique de commandes et factures associé à ce compte ;
 
-- détecter automatiquement, au sein de votre boîte de réception, les emails contenant des factures ou documents assimilés ;
+  - aux informations nécessaires à l’identification et à l’extraction desdites factures (montant, date, numéro de facture, etc.).
+
+Nous n’accédons à aucune autre donnée de votre compte tiers (contacts, agenda, Drive, données personnelles, localisation, etc.) que celles strictement nécessaires à la fourniture du Logiciel, conformément au principe de minimisation des données.
+
+### 5.2. Utilisation des données du compte tiers
+
+Les données issues du compte tiers connecté sont utilisées exclusivement pour :
+
+- détecter automatiquement, au sein de votre boîte de réception ou de l’historique de votre compte, les emails ou commandes contenant des factures ou documents assimilés ;
 
 - extraire, structurer et vous restituer ces factures au sein de la Plateforme.
 
 Ces données ne sont en aucun cas utilisées à des fins de publicité, de profilage commercial, de revente à des courtiers de données ou à des tiers, ni pour évaluer votre solvabilité ou à des fins d’octroi de crédit.
 
-Conformément à la [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), y compris ses exigences de « Limited Use », notre utilisation des données obtenues via les API Google est limitée à la fourniture et à l’amélioration des fonctionnalités visibles par l’utilisateur et directement en lien avec le Logiciel. Ces données ne sont ni utilisées, ni transférées, à des fins de développement, d’amélioration ou d’entraînement de modèles d’intelligence artificielle ou d’apprentissage automatique à caractère généraliste (non personnalisés).
+Conformément à la [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), y compris ses exigences de « Limited Use », ainsi qu’aux politiques d’utilisation des données équivalentes des autres fournisseurs tiers (notamment Microsoft et Tesla), notre utilisation des données obtenues via leurs API est limitée à la fourniture et à l’amélioration des fonctionnalités visibles par l’utilisateur et directement en lien avec le Logiciel. Ces données ne sont ni utilisées, ni transférées, à des fins de développement, d’amélioration ou d’entraînement de modèles d’intelligence artificielle ou d’apprentissage automatique à caractère généraliste (non personnalisés).
 
-### 5.3. Partage des données Google
+### 5.3. Partage des données issues du compte tiers
 
-Les données issues de votre compte Gmail peuvent être transmises à nos sous-traitants techniques (hébergement, traitement et analyse automatisée des documents) intervenant en notre nom et pour notre compte, dans la seule finalité d’extraction des factures décrite ci-dessus. Ces sous-traitants sont contractuellement tenus aux mêmes obligations de confidentialité et de sécurité que celles décrites dans la présente Charte, et ne peuvent utiliser ces données pour aucune autre finalité que celle pour laquelle elles leur ont été confiées.
+Les données issues du compte tiers connecté peuvent être transmises à nos sous-traitants techniques (hébergement, traitement et analyse automatisée des documents) intervenant en notre nom et pour notre compte, dans la seule finalité d’extraction des factures décrite ci-dessus. Ces sous-traitants sont contractuellement tenus aux mêmes obligations de confidentialité et de sécurité que celles décrites dans la présente Charte, et ne peuvent utiliser ces données pour aucune autre finalité que celle pour laquelle elles leur ont été confiées.
 
 Nous ne vendons ni ne partageons ces données à des fins publicitaires ou commerciales, ni avec des organismes tiers pour leur propre compte.
 
-### 5.4. Conservation et suppression des données Google
+### 5.4. Conservation et suppression des données issues du compte tiers
 
-Le contenu des emails et pièces jointes consultés via l’API Gmail n’est conservé que le temps strictement nécessaire à la détection et à l’extraction des factures qu’ils contiennent, puis est supprimé. Seules les données extraites de la facture elle-même (montant, date, fournisseur, numéro de facture, etc.) sont conservées, pour la durée nécessaire à la fourniture du service, conformément à l’article 7 de la présente Charte.
+Le contenu des emails et pièces jointes, ou les données d’historique de commandes, consultés via l’API du fournisseur tiers concerné, ne sont conservés que le temps strictement nécessaire à la détection et à l’extraction des factures qu’ils contiennent, puis sont supprimés. Seules les données extraites de la facture elle-même (montant, date, fournisseur, numéro de facture, etc.) sont conservées, pour la durée nécessaire à la fourniture du service, conformément à l’article 7 de la présente Charte.
 
-Vous pouvez à tout moment demander la suppression des données issues de votre compte Google en nous contactant à l’adresse contact@invoice-collector.com.
+Vous pouvez à tout moment demander la suppression des données issues de votre compte tiers en nous contactant à l’adresse contact@invoice-collector.com.
 
-### 5.5. Révocation de l’accès à votre compte Google
+### 5.5. Révocation de l’accès à votre compte tiers
 
-Vous pouvez révoquer à tout moment l’autorisation d’accès à votre compte Gmail :
+Vous pouvez révoquer à tout moment l’autorisation d’accès à votre compte tiers :
 
-- directement depuis la Plateforme, en supprimant le connecteur Gmail. Les données extraites de votre compte Google seront définitivementsupprimées de la Plateforme.
+- directement depuis la Plateforme, en supprimant le connecteur concerné. Les données extraites de votre compte tiers seront définitivement supprimées de la Plateforme.
 
-- ou depuis les paramètres de sécurité de votre compte Google, à l’adresse suivante : [myaccount.google.com/permissions](https://myaccount.google.com/permissions). La révocation de cet accès n’entraîne pas la suppression rétroactive des factures déjà extraites et conservées sur la Plateforme antérieurement à cette révocation.
+- ou depuis les paramètres de sécurité de votre compte tiers, à l’adresse suivante selon le fournisseur concerné : [myaccount.google.com/permissions](https://myaccount.google.com/permissions) pour Google, [account.live.com/consent/Manage](https://account.live.com/consent/Manage) pour Microsoft, ou l’espace « Sécurité et confidentialité » de votre compte Tesla. La révocation de cet accès n’entraîne pas la suppression rétroactive des factures déjà extraites et conservées sur la Plateforme antérieurement à cette révocation.
 
 ## 6. Destinataires des données à caractère personnel
 
@@ -137,7 +145,7 @@ Auront accès à vos données personnelles :
 
 - Peuvent également être destinataires de vos données à caractère personnel les organismes publics, exclusivement pour répondre à nos obligations légales, les auxiliaires de justice, les officiers ministériels et les organismes chargés d’effectuer le recouvrement de créances. 
 
-S’agissant plus spécifiquement des données issues de votre compte Google (Gmail), se reporter à l’article 5.3 ci-dessus. 
+S’agissant plus spécifiquement des données issues des comptes tiers connectés (Google, Microsoft, Tesla, etc.), se reporter à l’article 5.3 ci-dessus. 
 
 ## 7. Durée de conservation des données à caractères personnel 
 
@@ -179,7 +187,7 @@ Les informations stockées dans le terminal des utilisateurs ou tout autre élé
 
 Nous vous informons prendre toutes précautions utiles, mesures organisationnelles et techniques appropriées pour préserver la sécurité, l’intégrité et la confidentialité de vos données à caractère personnel et notamment, empêcher qu’elles soient déformées, endommagées ou que des tiers non autorisés y aient accès. Nous recourrons également à des systèmes de paiement sécurisé conformes à l’état de l’art et à la réglementation applicable. 
 
-S’agissant en particulier des données issues de votre compte Google, celles-ci sont chiffrées en transit (HTTPS/TLS) et au repos, et leur accès est strictement limité au personnel habilité en ayant besoin dans le cadre de ses fonctions.
+S’agissant en particulier des données issues des comptes tiers connectés (Google, Microsoft, Tesla, etc.), celles-ci sont chiffrées en transit (HTTPS/TLS) et au repos, et leur accès est strictement limité au personnel habilité en ayant besoin dans le cadre de ses fonctions.
 
 ## 9. Hébergement 
 

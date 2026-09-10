@@ -86,15 +86,15 @@ L’Utilisateur Client a accès aux Fonctionnalités souscrites par l’Utilisat
 
 En tout état de cause, il peut récupérer automatiquement les factures auprès de ses fournisseurs, à condition que les fournisseurs répondent aux conditions fixées par nous. 
 
-#### 4.2.2 Connexion à un compte de messagerie tiers 
+#### 4.2.2 Connexion à un compte tiers
 
-Afin de bénéficier de la récupération automatique de ses factures, l’Utilisateur Client peut être amené à connecter à la Plateforme un compte de messagerie électronique (notamment un compte Google/Gmail), via le protocole d’authentification OAuth 2.0 du fournisseur concerné. 
+Afin de bénéficier de la récupération automatique de ses factures, l’Utilisateur Client peut être amené à connecter à la Plateforme un compte tiers (notamment un compte Google, Microsoft ou Tesla), via le protocole d’authentification OAuth 2.0 du fournisseur concerné.
 
-Cette connexion vaut autorisation expresse donnée par l’Utilisateur Client de nous permettre d’accéder aux données de sa messagerie strictement nécessaires à la détection et à l’extraction de ses factures, dans les conditions décrites dans notre Politique de Confidentialité. 
+Cette connexion vaut autorisation expresse donnée par l’Utilisateur Client de nous permettre d’accéder aux données de ce compte tiers strictement nécessaires à la détection et à l’extraction de ses factures, dans les conditions décrites dans notre Politique de Confidentialité. 
 
-L’Utilisateur Client garantit être titulaire du compte de messagerie qu’il connecte à la Plateforme, ou dûment autorisé par son titulaire à le faire, et à en assumer l’entière responsabilité. 
+L’Utilisateur Client garantit être titulaire du compte tiers qu’il connecte à la Plateforme, ou dûment autorisé par son titulaire à le faire, et à en assumer l’entière responsabilité. 
 
-L’Utilisateur Client peut révoquer à tout moment l’autorisation d’accès ainsi donnée, notamment depuis les paramètres de son compte de messagerie, dans les conditions décrites dans notre Politique de Confidentialité. 
+L’Utilisateur Client peut révoquer à tout moment l’autorisation d’accès ainsi donnée, notamment depuis les paramètres de son compte tiers, dans les conditions décrites dans notre Politique de Confidentialité.
 
 #### 4.2.3 Inscription 
 
@@ -192,7 +192,7 @@ Notamment, l’Utilisateur s’interdit :
 
 - d’accéder frauduleusement à la Plateforme ;  
 
-- de connecter à la Plateforme un compte de messagerie électronique (notamment un compte Google/Gmail) dont il n’est pas titulaire ou pour lequel il ne dispose pas de l’autorisation du titulaire ; 
+- de connecter à la Plateforme un compte tiers (notamment un compte Google, Microsoft ou Tesla) dont il n’est pas titulaire ou pour lequel il ne dispose pas de l’autorisation du titulaire ; 
 
 - de transmettre tout message contenant des virus informatiques ou tout autre code, dossier ou programme conçus notamment pour interrompre, détruire ou limiter la fonctionnalité notamment de tout logiciel, ordinateur, ou outil de télécommunication ; 
 
