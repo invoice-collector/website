@@ -16,6 +16,8 @@ Lors de votre utilisation de notre plateforme, nous pouvons être amenés à vou
 
 Le terme « données à caractère personnel » désigne toutes les données qui permettent d’identifier un individu, ce qui correspond notamment à vos nom, prénoms, pseudonyme, photographie, adresse postale et de courrier électronique, intitulé de votre poste, numéros de téléphone, date de naissance, données relatives à vos transactions sur la plateforme, détails de vos achats, numéros de carte bancaire, SIRET, numéro de TVA intracommunautaire, adresse IP, ainsi qu’à tout autre renseignement que vous choisirez de nous communiquer à votre sujet. 
 
+Si vous choisissez de connecter un compte tiers (notamment votre compte Google) à la Plateforme, ces données peuvent également inclure le contenu de certains emails de la boîte de messagerie ainsi connectée et leurs pièces jointes, dans les conditions décrites à l’article 5 ci-dessous. 
+
 ## 2. Objet 
 
 La présente charte (ci-après la « Charte ») a pour objet de vous informer sur les moyens que nous mettons en œuvre pour collecter vos données à caractère personnel, dans le respect le plus strict de vos droits. 
@@ -75,7 +77,55 @@ Nous collectons vos données personnelles afin de vous livrer votre commande/ser
 
 Nous vous informons, lors de la collecte de vos données personnelles, si certaines données doivent être obligatoirement renseignées ou si elles sont facultatives. 
 
-## 5. Destinataires des données à caractère personnel
+## 5. Données collectées via votre compte Google (Gmail)
+
+Si vous choisissez de connecter votre compte Google à la Plateforme, vous nous autorisez, par l’intermédiaire du protocole d’authentification OAuth 2.0 de Google, à accéder à certaines données de votre compte Gmail, dans la stricte mesure nécessaire au fonctionnement du Logiciel.
+
+### 5.1. Données Google auxquelles nous accédons
+
+Dans le cadre de cette autorisation, nous pouvons accéder :
+
+- au contenu des emails présents dans votre boîte Gmail (expéditeur, objet, corps du message) ;
+
+- aux pièces jointes de ces emails, notamment les factures et documents assimilés ;
+
+- aux métadonnées associées à ces emails (dates de réception, libellés ou dossiers).
+
+Nous n’accédons à aucune autre donnée de votre compte Google (contacts, agenda, Drive, etc.) que celles strictement nécessaires à la fourniture du Logiciel, conformément au principe de minimisation des données.
+
+### 5.2. Utilisation des données Google
+
+Les données issues de votre compte Gmail sont utilisées exclusivement pour :
+
+- détecter automatiquement, au sein de votre boîte de réception, les emails contenant des factures ou documents assimilés ;
+
+- extraire, structurer et vous restituer ces factures au sein de la Plateforme.
+
+Ces données ne sont en aucun cas utilisées à des fins de publicité, de profilage commercial, de revente à des courtiers de données ou à des tiers, ni pour évaluer votre solvabilité ou à des fins d’octroi de crédit.
+
+Conformément à la [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), y compris ses exigences de « Limited Use », notre utilisation des données obtenues via les API Google est limitée à la fourniture et à l’amélioration des fonctionnalités visibles par l’utilisateur et directement en lien avec le Logiciel. Ces données ne sont ni utilisées, ni transférées, à des fins de développement, d’amélioration ou d’entraînement de modèles d’intelligence artificielle ou d’apprentissage automatique à caractère généraliste (non personnalisés).
+
+### 5.3. Partage des données Google
+
+Les données issues de votre compte Gmail peuvent être transmises à nos sous-traitants techniques (hébergement, traitement et analyse automatisée des documents) intervenant en notre nom et pour notre compte, dans la seule finalité d’extraction des factures décrite ci-dessus. Ces sous-traitants sont contractuellement tenus aux mêmes obligations de confidentialité et de sécurité que celles décrites dans la présente Charte, et ne peuvent utiliser ces données pour aucune autre finalité que celle pour laquelle elles leur ont été confiées.
+
+Nous ne vendons ni ne partageons ces données à des fins publicitaires ou commerciales, ni avec des organismes tiers pour leur propre compte.
+
+### 5.4. Conservation et suppression des données Google
+
+Le contenu des emails et pièces jointes consultés via l’API Gmail n’est conservé que le temps strictement nécessaire à la détection et à l’extraction des factures qu’ils contiennent, puis est supprimé. Seules les données extraites de la facture elle-même (montant, date, fournisseur, numéro de facture, etc.) sont conservées, pour la durée nécessaire à la fourniture du service, conformément à l’article 7 de la présente Charte.
+
+Vous pouvez à tout moment demander la suppression des données issues de votre compte Google en nous contactant à l’adresse contact@invoice-collector.com.
+
+### 5.5. Révocation de l’accès à votre compte Google
+
+Vous pouvez révoquer à tout moment l’autorisation d’accès à votre compte Gmail :
+
+- directement depuis la Plateforme, en supprimant le connecteur Gmail. Les données extraites de votre compte Google seront définitivementsupprimées de la Plateforme.
+
+- ou depuis les paramètres de sécurité de votre compte Google, à l’adresse suivante : [myaccount.google.com/permissions](https://myaccount.google.com/permissions). La révocation de cet accès n’entraîne pas la suppression rétroactive des factures déjà extraites et conservées sur la Plateforme antérieurement à cette révocation.
+
+## 6. Destinataires des données à caractère personnel
 
 Auront accès à vos données personnelles : 
 
@@ -87,9 +137,11 @@ Auront accès à vos données personnelles :
 
 - Peuvent également être destinataires de vos données à caractère personnel les organismes publics, exclusivement pour répondre à nos obligations légales, les auxiliaires de justice, les officiers ministériels et les organismes chargés d’effectuer le recouvrement de créances. 
 
-## 6. Durée de conservation des données à caractères personnel 
+S’agissant plus spécifiquement des données issues de votre compte Google (Gmail), se reporter à l’article 5.3 ci-dessus. 
 
-### 6.1. Concernant les données relatives à la gestion de clients et prospects : 
+## 7. Durée de conservation des données à caractères personnel 
+
+### 7.1. Concernant les données relatives à la gestion de clients et prospects : 
 
 Vos données à caractère personnel ne seront pas conservées au-delà de la durée strictement nécessaire à la gestion de notre relation commerciale avec vous. 
 
@@ -115,25 +167,27 @@ Si vous refusez que vos données à caractère personnel relatives à vos numér
 
 En tout état de cause, les données relatives à celles-ci pourront être conservées, pour une finalité de preuve en cas d’éventuelle contestation de la transaction, en archives intermédiaires, pour la durée prévue par l’article L 133-24 du Code monétaire et financier, en l’occurrence treize (13) mois suivant la date de débit. Ce délai peut être étendu à quinze (15) mois afin de prendre en compte la possibilité d’utilisation des cartes de paiement à débit différé. 
 
-### 6.2. Concernant la gestion des listes d’opposition à recevoir de la prospection :  
+### 7.2. Concernant la gestion des listes d’opposition à recevoir de la prospection :  
 
 Les informations permettant de prendre en compte votre droit d’opposition sont conservées au minimum trois (3) ans à compter de l’exercice du droit d’opposition. 
 
-### 6.3 Concernant les statistiques de mesure d’audience :  
+### 7.3 Concernant les statistiques de mesure d’audience :  
 
 Les informations stockées dans le terminal des utilisateurs ou tout autre élément utilisé pour identifier les utilisateurs et permettant leur traçabilité ou fréquentation ne seront pas conservées au-delà de treize (13) mois. 
 
-## 7. Sécurité 
+## 8. Sécurité 
 
 Nous vous informons prendre toutes précautions utiles, mesures organisationnelles et techniques appropriées pour préserver la sécurité, l’intégrité et la confidentialité de vos données à caractère personnel et notamment, empêcher qu’elles soient déformées, endommagées ou que des tiers non autorisés y aient accès. Nous recourrons également à des systèmes de paiement sécurisé conformes à l’état de l’art et à la réglementation applicable. 
 
-## 8. Hébergement 
+S’agissant en particulier des données issues de votre compte Google, celles-ci sont chiffrées en transit (HTTPS/TLS) et au repos, et leur accès est strictement limité au personnel habilité en ayant besoin dans le cadre de ses fonctions.
+
+## 9. Hébergement 
 
 Nous vous informons que vos données sont conservées et stockées, en conformité avec les standards de sécurité en vigueur et pendant toute la durée de leur conservation, dans des centres de données situés en France et au sein de l’Union Européenne. 
 
 Il n’existe aucun transfert en-dehors de l’Union Européenne. 
 
-## 9. Accès, Rectification, limitation et effacement de vos données à caractère personnel 
+## 10. Accès, Rectification, limitation et effacement de vos données à caractère personnel 
 
 Conformément à la réglementation européenne en matière de protections des données à caractère personnel, vous bénéficiez des droits suivants : 
 
@@ -171,7 +225,7 @@ Vos droits peuvent être exercés, à tout moment, en envoyant un courrier physi
 
 Si vous avez des réclamations concernant la manière dont nous traitons vos données personnelles, vous pouvez nous contacter en utilisant les coordonnées fournies ci-dessus.  
 
-## 10. Portabilité de vos données à caractère personnel 
+## 11. Portabilité de vos données à caractère personnel 
 
 Vous disposez d’un droit à la portabilité des données à caractère personnel que vous nous aurez fournies, entendues comme les données que vous avez déclarées activement et consciemment dans le cadre de l’accès et de l’utilisation des services, ainsi que des données générées par votre activité dans le cadre de l’utilisation des services.  
 
@@ -181,13 +235,13 @@ Ce droit peut être exercé gratuitement, à tout moment, et notamment lors de l
 
 Dans ce cadre, nous vous adresserons vos données à caractère personnel, par tous moyens jugés utiles, dans un format ouvert standard couramment utilisé et lisible par informatique, conformément à l’état de l’art. 
 
-## 11. Introduction d'une réclamation devant une autorité de controle
+## 12. Introduction d'une réclamation devant une autorité de controle
 
 Vous êtes également informés que vous disposez du droit d’introduire une réclamation auprès d’une autorité de contrôle compétente, (la Commission Nationale Informatique et Libertés pour la France), dans l’Etat membre dans lequel se trouve votre résidence habituelle, votre lieu de travail ou le lieu où la violation de vos droits aurait été commise, si vous considérez que le traitement de vos données à caractère personnel objet de la présente charte constitue une violation des textes applicables. 
 
 Ce recours pourra être exercé sans préjudice de tout autre recours devant une juridiction administrative ou juridictionnelle. En effet, vous disposez également d’un droit à un recours administratif ou juridictionnel effectif si vous considérez que traitement de vos données à caractère personnel objet de la présente charte constitue une violation des textes applicables. 
 
-## 12. Modifications 
+## 13. Modifications 
 
 Nous nous réservons le droit, à notre seule discrétion, de modifier à tout moment la présente charte en totalité ou en partie.  
 

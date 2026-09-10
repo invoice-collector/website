@@ -86,11 +86,21 @@ L’Utilisateur Client a accès aux Fonctionnalités souscrites par l’Utilisat
 
 En tout état de cause, il peut récupérer automatiquement les factures auprès de ses fournisseurs, à condition que les fournisseurs répondent aux conditions fixées par nous. 
 
-#### 4.2.2 Inscription 
+#### 4.2.2 Connexion à un compte de messagerie tiers 
+
+Afin de bénéficier de la récupération automatique de ses factures, l’Utilisateur Client peut être amené à connecter à la Plateforme un compte de messagerie électronique (notamment un compte Google/Gmail), via le protocole d’authentification OAuth 2.0 du fournisseur concerné. 
+
+Cette connexion vaut autorisation expresse donnée par l’Utilisateur Client de nous permettre d’accéder aux données de sa messagerie strictement nécessaires à la détection et à l’extraction de ses factures, dans les conditions décrites dans notre Politique de Confidentialité. 
+
+L’Utilisateur Client garantit être titulaire du compte de messagerie qu’il connecte à la Plateforme, ou dûment autorisé par son titulaire à le faire, et à en assumer l’entière responsabilité. 
+
+L’Utilisateur Client peut révoquer à tout moment l’autorisation d’accès ainsi donnée, notamment depuis les paramètres de son compte de messagerie, dans les conditions décrites dans notre Politique de Confidentialité. 
+
+#### 4.2.3 Inscription 
 
 L’accès aux Fonctionnalités ne nécessite pas que l’Utilisateur Client s’inscrive sur la Plateforme. Le Logiciel est en effet directement intégré à celui utilisé par l’Utilisateur Professionnel avec lequel il a conclu un contrat.  
 
-#### 4.2.3. Suspension de l’accès 
+#### 4.2.4. Suspension de l’accès 
 
 Nous pouvons suspendre l’accès à la Plateforme d’un Utilisateur Client si celui-ci ne respecte pas les CGU. 
 
@@ -98,7 +108,7 @@ Si l’Utilisateur Client le souhaite, il sera toujours en mesure de clarifier l
 
 Si suite à cette discussion, nous déterminons que la suspension n’est pas une solution appropriée, nous rétablirons l’accès de l’Utilisateur Client à la Plateforme.  
 
-#### 4.2.4. Suppression de l’accès 
+#### 4.2.5. Suppression de l’accès 
 
 En cas de violation par l’Utilisateur Client de ses obligations issues des CGU, nous pouvons supprimer l’accès aux Fonctionnalités de l’Utilisateur Client, quatorze (14) jours après une mise en demeure par courrier électronique, restée infructueuse, d’avoir à remédier au(x) manquement(s) contractuel(s).  
 
@@ -181,6 +191,8 @@ Notamment, l’Utilisateur s’interdit :
 - de publier des informations contrevenant à la législation sur la protection des données personnelles permettant l’identification des personnes physiques sans leur consentement, notamment leur nom de famille, adresse postale et/ou électronique, téléphone, photographie, enregistrement sonore ou audiovisuel, ou de collecter et stocker des données personnelles afférentes aux autres Utilisateurs ; 
 
 - d’accéder frauduleusement à la Plateforme ;  
+
+- de connecter à la Plateforme un compte de messagerie électronique (notamment un compte Google/Gmail) dont il n’est pas titulaire ou pour lequel il ne dispose pas de l’autorisation du titulaire ; 
 
 - de transmettre tout message contenant des virus informatiques ou tout autre code, dossier ou programme conçus notamment pour interrompre, détruire ou limiter la fonctionnalité notamment de tout logiciel, ordinateur, ou outil de télécommunication ; 
 
