@@ -27,8 +27,15 @@ The server base url is:
 
 In this documentation, the following terms are used:
 
-- **Customer**: Refers to the company which has a contract with Invoice-Collector.
-- **User**: Refers to the individual users of Invoice-Collector.
+- **Customer**: Refers to the company which has a contract with Invoice-Collector. _It should be you._
+- **User**: Refers to a company interacting with Invoice-Collector on behalf of the customer (Company A, Company B, etc). _Users are your customers._
+- **Credential**: Refers to the authentication information (such as username and password) required by the collector to download the user's invoices.
+- **Collector**: Refers to the entity responsible for collecting invoices on behalf of the user(OpenAI, Google, Amazon, etc).
+
+In other words:
+- A customer has multiple users
+- A user has multiple credentials.
+- A credential uses a collector to download the user's invoices.
 
 ## Authentication
 
@@ -170,7 +177,7 @@ If a user with this `remote_id` already exist, it will not create it.
 </Tabs>
 
 - `locale` is the language of the user. Only `fr` and `en` are currently available.
-- `remote_id` is used to identify the user on your system. All invoices sent to your `callback` will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
+- `remote_id` is used to identify the user on your system. We recommend you to use the id the company. All invoices sent to your `callback` will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
 
 Json body response:
 
@@ -183,7 +190,7 @@ Json body response:
 
 This user `token` has an expiry duration of 30 minutes and can be used to add collectors.
 
-## Add credentials
+## Add a credential
 
 Once you have the user token, you must redirect the user to the following endpoint to be rendered **in a browser or an iframe**:
 
@@ -196,10 +203,9 @@ Once you have the user token, you must redirect the user to the following endpoi
   </TabItem>
 </Tabs>
 
-From there, the user can add new credential.
-Only the new invoices will be sent to the `callback` endpoint allong with the `remote_id`.
+From there, the user can select the collector (OpenAI, Google, Amazon, etc.) and connect its account.
 
-And that is it 🎉 New invoices will be sent to your callback!
+And that is it 🎉 New invoices will be sent to your callback allong with the `remote_id`.
 
 If like us, you have no time to waste, you can [test the callback in the next section](#test-callback).
 
@@ -209,16 +215,11 @@ If you do not want to wait, you can directly ask the server to send a fake invoi
 
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
-    ```bash
-    curl -X GET https://api.invoice-collector.com/api/v1/test_callback \
-        -H "Authorization: Bearer <bearer_token>"
-    ```
-    
-    You can also send a fake invoice from the [Settings page](https://app.invoice-collector.com/settings).
+  From the [Integrations page](https://app.invoice-collector.com/customer/integrations), click the "Test" button on the integration of your choice.
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
-    curl -X GET http://localhost:8080/api/v1/test_callback \
+    curl -X GET http://localhost:8080/api/v1/callback/{callback_id}/test/invoice \
         -H "Authorization: Bearer <bearer_token>"
     ```
   </TabItem>
@@ -263,7 +264,7 @@ If you want to remove a credential and therefore stop invoice collection you can
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
-    curl -X DELETE http://localhost:8080/api/v1/user/{user_id}}/credential/{credential_id} \
+    curl -X DELETE http://localhost:8080/api/v1/user/{user_id}/credential/{credential_id} \
         -H "Authorization: Bearer <bearer_token>"
     ```
   </TabItem>
