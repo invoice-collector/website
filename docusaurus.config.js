@@ -226,6 +226,10 @@ const config = {
                 label: 'Privacy Policy',
                 to: '/privacy-policy',
               },
+              {
+                label: 'Legal Notice',
+                to: '/legal-notice',
+              },
             ],
           },
         ],

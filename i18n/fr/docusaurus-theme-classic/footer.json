@@ -8,7 +8,7 @@
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.Legal": {
-    "message": "Mentions légales",
+    "message": "Informations légales",
     "description": "The title of the footer links column with title=Legal in the footer"
   },
   "link.item.label.Doc": {
@@ -42,6 +42,10 @@
   "link.item.label.Privacy Policy": {
     "message": "Politique de confidentialité",
     "description": "The label of footer link with label=Privacy Policy linking to /privacy-policy"
+  },
+  "link.item.label.Legal Notice": {
+    "message": "Mentions légales",
+    "description": "The label of footer link with label=Legal Notice linking to /legal-notice"
   },
   "copyright": {
     "message": "Copyright © 2026 Invoice-Collector",
