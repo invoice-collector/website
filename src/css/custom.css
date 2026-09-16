@@ -52,3 +52,13 @@
 svg {
   display: inline-block;
 }
+
+/* Restore the default list styles in Markdown content */
+.markdown ul {
+  list-style-type: disc !important;
+  padding-left: 2rem !important;
+}
+.markdown ol {
+  list-style-type: decimal !important;
+  padding-left: 2rem !important;
+}

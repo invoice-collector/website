@@ -23,11 +23,11 @@ Here is how Invoice-Collector fits in your infrastructure depending on your choi
 |---|---|
 | ![infra_cloud](./diagrams/infra_cloud.svg) | ![infra_self_hosted](./diagrams/infra_self_hosted.svg) |
 
-1. User connects to the app and request to modify its collectors.
+1. User connects to the app and request to add a new collector.
 2. App requests a token to Invoice-Collector matching the user and returns it to the user.
-3. The user accepts the [Terms of Use](/terms-of-use), add and delete collectors.
+3. The user adds the collector.
 4. Credentials are stored in the secret manager.
-5. Invoice-Collector periodically retrieve the credentials from secret manager and collect invoices
+5. Invoice-Collector periodically retrieves the credentials from secret manager and collects invoices
 6. New invoices are sent to the app
 7. Success and error are sent to the log server in order to maintain collectors and perform analytics.
 
