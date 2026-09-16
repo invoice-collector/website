@@ -8,9 +8,9 @@ Les présentes conditions générales d’utilisation s’appliquent sans restri
 
 - en mode SaaS et disponible à l’adresse https://api.invoice-collector.com ;
 
-(ci-après, la « Plateforme »), édité par l’entreprise individuelle de Monsieur Lucas BERGERON, située 1301 route de Paquier – 38650 Saint-Martin-de-la-Cluze et immatriculée sous le numéro 928 546 670 (ci-après, « Nous »). 
+(ci-après, la « Plateforme »), édité par l’entreprise individuelle de Monsieur Lucas BERGERON, située 1 Rue Malcousinat 31000 Toulouse France et immatriculée sous le numéro 928 546 670 (ci-après, « Nous »). 
 
-Nous pouvons être contactés aux coordonnées suivantes, notamment pour toute réclamation : Adresse postale : 1301 route de Paquier – 38650 Saint-Martin-de-la-Cluze, France
+Nous pouvons être contactés aux coordonnées suivantes, notamment pour toute réclamation : Adresse postale : 1 Rue Malcousinat 31000 Toulouse France
 
 La Plateforme permet aux internautes professionnels (ci-après, les « Utilisateurs Professionnels ») d’intégrer les fonctionnalités du Logiciel au sein de leur propre solution destinée à leurs propres clients afin que ces derniers puissent bénéficier des fonctionnalités du Logiciel (ci-après, les « Utilisateurs Clients ») (ci-après, ensemble, les « Utilisateurs »).  
 
