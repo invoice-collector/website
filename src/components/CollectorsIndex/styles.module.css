@@ -85,6 +85,7 @@
 .badge {
   align-self: flex-start;
   padding: 0.15rem 0.6rem;
+  margin-right: 0.5rem;
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 600;

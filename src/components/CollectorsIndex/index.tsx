@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { CollectorSummary } from '@site/src/types/collector';
@@ -8,6 +9,7 @@ import styles from './styles.module.css';
 interface CollectorsIndexContent {
   metaTitle: string;
   metaDescription: string;
+  keywords: string;
   title: string;
   subtitle: (count: number) => string;
   searchPlaceholder: string;
@@ -20,6 +22,7 @@ function getContent(locale: string): CollectorsIndexContent {
       metaTitle: 'Collecteurs',
       metaDescription:
         'Parcourez tous les collecteurs de factures pris en charge par Invoice Collector.',
+      keywords: 'collecteur de factures, liste des collecteurs, intégrations invoice collector, télécharger factures automatiquement',
       title: 'Collecteurs',
       subtitle: (count) => `${count} collecteurs disponibles.`,
       searchPlaceholder: 'Rechercher des collecteurs…',
@@ -31,6 +34,7 @@ function getContent(locale: string): CollectorsIndexContent {
     metaTitle: 'Collectors',
     metaDescription:
       'Browse all invoice collectors supported by Invoice-Collector.',
+    keywords: 'invoice collectors, list of collectors, invoice collector integrations, automate invoice download',
     title: 'Collectors',
     subtitle: (count) => `${count} collectors available.`,
     searchPlaceholder: 'Search collectors…',
@@ -97,6 +101,10 @@ function CollectorCard({ collector }: { collector: CollectorSummary }) {
       )}
       <div className={styles.cardBody}>
         <span className={styles.cardName}>{collector.name}</span>
+        <div>
+          <span className={styles.badge}>{collector.state}</span>
+          <span className={styles.badge}>{collector.type}</span>
+        </div>
       </div>
     </Link>
   );
@@ -108,7 +116,8 @@ export default function CollectorsIndex({
   collectors: CollectorSummary[];
 }): JSX.Element {
   const {
-    i18n: { currentLocale },
+    siteConfig,
+    i18n: { currentLocale, defaultLocale },
   } = useDocusaurusContext();
   const t = getContent(currentLocale);
   const [query, setQuery] = useState('');
@@ -118,8 +127,29 @@ export default function CollectorsIndex({
     [collectors, query]
   );
 
+  const localePath = currentLocale === defaultLocale ? '' : `/${currentLocale}`;
+  const siteUrl = `${siteConfig.url}${localePath}`;
+
+  // Full catalog for crawlers/LLMs, independent of the client-side search filter and its 100-item cap
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: t.title,
+    numberOfItems: collectors.length,
+    itemListElement: collectors.map((collector, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: collector.name,
+      url: `${siteUrl}/collectors/${collector.id}`,
+    })),
+  };
+
   return (
     <Layout title={t.metaTitle} description={t.metaDescription}>
+      <Head>
+        <meta name="keywords" content={t.keywords} />
+        <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
+      </Head>
       <main className={styles.page}>
         <div className={styles.container}>
           <h1 className={styles.title}>{t.title}</h1>
