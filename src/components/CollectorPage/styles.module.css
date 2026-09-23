@@ -52,21 +52,6 @@
   color: var(--ifm-color-emphasis-800);
 }
 
-.state_active {
-  background: #e9f5ef;
-  color: #1d8656;
-}
-
-.state_development {
-  background: #fef9c3;
-  color: #854d0e;
-}
-
-.state_planned {
-  background: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-700);
-}
-
 .lead {
   font-size: 1.2rem;
   line-height: 1.7;

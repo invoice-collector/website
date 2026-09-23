@@ -88,6 +88,8 @@ function searchCollectorsWithScore(
     .slice(0, 100);
 }
 
+
+
 function CollectorCard({ collector }: { collector: CollectorSummary }) {
   return (
     <Link to={`/collectors/${collector.id}`} className={styles.card}>
@@ -102,8 +104,8 @@ function CollectorCard({ collector }: { collector: CollectorSummary }) {
       <div className={styles.cardBody}>
         <span className={styles.cardName}>{collector.name}</span>
         <div>
-          <span className={styles.badge}>{collector.state}</span>
-          <span className={styles.badge}>{collector.type}</span>
+          <span className={`${styles.badge} ${styles[`badge-state-${collector.state}`]}`}>{collector.state}</span>
+          <span className={`${styles.badge} ${styles[`badge-type-${collector.type}`]}`}>{collector.type}</span>
         </div>
       </div>
     </Link>
