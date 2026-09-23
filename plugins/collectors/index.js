@@ -40,7 +40,7 @@ export default function collectorsPlugin(context, options) {
         }
         collectors = await response.json();
         fs.mkdirSync(path.dirname(dest), { recursive: true });
-        fs.writeFileSync(dest, JSON.stringify(collectors));
+        fs.writeFileSync(dest, JSON.stringify(collectors, null, 2));
         console.log(`[collectors] Downloaded ${collectors.length} collectors from ${url}`);
       } catch (error) {
         if (fs.existsSync(dest)) {
