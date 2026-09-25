@@ -88,7 +88,7 @@
   margin-right: 0.5rem;
   border-radius: 999px;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .badge-type-web {
@@ -97,8 +97,8 @@
 }
 
 .badge-type-api {
-  background: #ede9fe;
-  color: #7e22ce;
+  background: #ffedd5;
+  color: #c2410c;
 }
 
 .badge-type-email {
@@ -112,6 +112,11 @@
 }
 
 .badge-type-sketch {
+  background: #ede9fe;
+  color: #7e22ce;
+}
+
+.badge-type-provider {
   background: #f3f4f6;
   color: #374151;
 }
