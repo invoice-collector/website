@@ -1,5 +1,6 @@
 {
   "label": "Embed in your app",
   "position": 3,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-embed"
 }

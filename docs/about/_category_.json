@@ -1,5 +1,6 @@
 {
   "label": "About",
   "position": 1,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-about"
 }

@@ -1,5 +1,6 @@
 {
   "label": "Self-hosting",
   "position": 2,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-self-hosting"
 }

@@ -1,5 +1,6 @@
 {
   "label": "Developers",
   "position": 5,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-developers"
 }

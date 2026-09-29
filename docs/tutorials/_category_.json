@@ -1,5 +1,6 @@
 {
   "label": "Tutorials",
   "position": 7,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-tutorials"
 }

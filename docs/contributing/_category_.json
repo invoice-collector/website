@@ -1,5 +1,6 @@
 {
   "label": "Contributing",
   "position": 6,
-  "collapsible": false
+  "collapsible": false,
+  "className": "docs-sidebar-section-contributing"
 }

@@ -62,3 +62,56 @@ svg {
   list-style-type: decimal !important;
   padding-left: 2rem !important;
 }
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-weight: 700;
+}
+
+.theme-doc-sidebar-item-link-level-1.docs-sidebar-section-api > .menu__link {
+  font-weight: 700;
+}
+
+.docs-sidebar-section-about > .menu__list-item-collapsible > .menu__link::before,
+.docs-sidebar-section-self-hosting > .menu__list-item-collapsible > .menu__link::before,
+.docs-sidebar-section-embed > .menu__list-item-collapsible > .menu__link::before,
+.docs-sidebar-section-api > .menu__link::before,
+.docs-sidebar-section-developers > .menu__list-item-collapsible > .menu__link::before,
+.docs-sidebar-section-contributing > .menu__list-item-collapsible > .menu__link::before,
+.docs-sidebar-section-tutorials > .menu__list-item-collapsible > .menu__link::before {
+  display: inline-block;
+  flex: 0 0 1.25rem;
+  margin-right: 0.5rem;
+  color: var(--ifm-color-primary);
+  font-family: 'Font Awesome 6 Free';
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.docs-sidebar-section-about > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f05a';
+}
+
+.docs-sidebar-section-self-hosting > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f233';
+}
+
+.docs-sidebar-section-embed > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f121';
+}
+
+.docs-sidebar-section-api > .menu__link::before {
+  content: '\f1c9';
+}
+
+.docs-sidebar-section-developers > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f5fc';
+}
+
+.docs-sidebar-section-contributing > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f0c0';
+}
+
+.docs-sidebar-section-tutorials > .menu__list-item-collapsible > .menu__link::before {
+  content: '\f518';
+}
