@@ -59,7 +59,7 @@ function Feature({title, offer, price, unit, features}) {
         <Heading as="h1" className="text--primary">{price}</Heading>
         <p><em>{unit}</em></p>
         {offer === 'Free' ? (
-          <Link className="button button--secondary" to="/docs">Get Started</Link>
+          <Link className="button button--secondary" to="/docs/about/Overview">Get Started</Link>
         ) : (
           <Link to="mailto:Invoice-Collector<contact@invoice-collector.com>" className="button button--primary">Contact us</Link>
         )}

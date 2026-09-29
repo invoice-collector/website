@@ -84,7 +84,7 @@ export default function LandingPageEn() {
                                     Start for Free
                                 </button>
                             </Link>
-                            <Link to="/docs">
+                            <Link to="/docs/about/Overview">
                                 <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
                                     <i class="fas fa-code mr-2"></i>
                                     Documentation
@@ -848,7 +848,7 @@ export default function LandingPageEn() {
                             Start for free
                         </button>
                     </Link>
-                    <Link to="/docs">
+                    <Link to="/docs/about/Overview">
                         <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
                             <i class="fas fa-code mr-2"></i>
                             Documentation

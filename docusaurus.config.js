@@ -177,7 +177,7 @@ const config = {
             items: [
               {
                 label: 'Doc',
-                to: '/docs',
+                to: '/docs/about/Overview',
               },
               {
                 label: 'Collectors',
