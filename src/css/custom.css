@@ -64,20 +64,18 @@ svg {
   padding-left: 2rem !important;
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
-  margin-top: 1rem;
-}
-
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
-  color: color-mix(in srgb, var(--ifm-menu-color) 50%, #000);
-}
-
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible,
 .theme-doc-sidebar-item-link-level-1.docs-sidebar-section-api {
   margin-top: 1rem;
 }
 
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link,
 .theme-doc-sidebar-item-link-level-1.docs-sidebar-section-api > .menu__link {
   color: color-mix(in srgb, var(--ifm-menu-color) 50%, #000);
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible:hover {
+  background: transparent;
 }
 
 .docs-sidebar-section-about > .menu__list-item-collapsible > .menu__link::before,
