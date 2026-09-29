@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Self-hosted Installation
+# Installation
 
 :::info[INFO]
 Skip this section if you use the cloud version of Invoice-Collector. You can create an account on [app.invoice-collector.com](https://app.invoice-collector.com) and start using it in less than a minute.
