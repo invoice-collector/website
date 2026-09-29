@@ -1,4 +1,5 @@
 {
   "label": "Self-hosting",
-  "position": 2
+  "position": 2,
+  "collapsible": false
 }
