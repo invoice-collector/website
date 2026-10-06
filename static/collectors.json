@@ -33073,7 +33073,7 @@
     "id": "eaux_de_grenoble_alpes",
     "name": "Eaux de Grenoble Alpes",
     "description": "Online service for managing water supply and related services in the Grenoble-Alpes region.",
-    "version": "2",
+    "version": "3",
     "website": "https://eau.grenoblealpesmetropole.fr",
     "logo": "https://www.somei.fr/site2017/wp-content/uploads/2019/05/Sans-titre-1.jpg",
     "type": "agent",
@@ -61311,7 +61311,7 @@
     "id": "laposte",
     "name": "La Poste",
     "description": "La Poste is a French postal service provider.",
-    "version": "18",
+    "version": "20",
     "website": "https://www.laposte.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg",
     "type": "web",
@@ -116719,21 +116719,6 @@
     "state": "planned"
   },
   {
-    "id": "uber",
-    "name": "Uber",
-    "description": "A ride-hailing platform connecting passengers with drivers for convenient and affordable transportation.",
-    "version": "1",
-    "website": "https://riders.uber.com/trips",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg",
-    "type": "agent",
-    "params": {},
-    "loginUrl": "https://riders.uber.com/trips",
-    "entryUrl": "https://riders.uber.com/trips",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "development"
-  },
-  {
     "id": "uber_box",
     "name": "Uber Box",
     "description": "Uber's enterprise file-sharing and collaboration platform hosted on Box.",
@@ -116748,6 +116733,27 @@
     "state": "planned"
   },
   {
+    "id": "uber_business_web",
+    "name": "Uber for Business (Web)",
+    "description": "Download Uber for Business ride and Uber Eats receipt invoices for known organization orders.",
+    "version": "3",
+    "website": "business.uber.com",
+    "logo": "https://logovtor.com/wp-content/uploads/2021/03/uber-for-business-logo-vector.png",
+    "type": "agent",
+    "params": {},
+    "loginUrl": "https://business.uber.com/dashboard",
+    "entryUrl": "https://business.uber.com/dashboard",
+    "remoteBrowser": true,
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development",
+    "autoLogin": {
+      "cookieNames": [
+        "sid"
+      ]
+    }
+  },
+  {
     "id": "uber_direct",
     "name": "Uber Direct",
     "description": "A delivery service by Uber that allows businesses to send packages to customers directly.",
@@ -116757,63 +116763,6 @@
     "type": "sketch",
     "params": {},
     "loginUrl": "https://direct.uber.com/accounts/e8d05837-e82c-45d3-ae3e-52c0bb8b26eb/billing",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
-  },
-  {
-    "id": "uber_eats",
-    "name": "Uber Eats (.com)",
-    "description": "A food delivery service connecting users with local restaurants for quick and convenient meals.",
-    "version": "1",
-    "website": "https://www.ubereats.com",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Uber_Eats_2018_logo.svg",
-    "type": "agent",
-    "params": {},
-    "loginUrl": "https://www.ubereats.com/orders",
-    "entryUrl": "https://www.ubereats.com/orders",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "development"
-  },
-  {
-    "id": "uber_eats_be",
-    "name": "Uber Eats (.be)",
-    "description": "A food delivery service that connects users with local restaurants for quick and convenient meal orders.",
-    "version": "0",
-    "website": "https://www.ubereats.com/be/orders",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/2658868.jpg",
-    "type": "sketch",
-    "params": {},
-    "loginUrl": "https://www.ubereats.com/be/orders",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
-  },
-  {
-    "id": "uber_eats_de",
-    "name": "Uber Eats (.de)",
-    "description": "A food delivery service bringing meals from local restaurants to your doorstep in Germany.",
-    "version": "0",
-    "website": "https://www.ubereats.com/de/orders#",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/1229803.jpg",
-    "type": "sketch",
-    "params": {},
-    "loginUrl": "https://www.ubereats.com/de/orders#",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
-  },
-  {
-    "id": "uber_eats_fr",
-    "name": "Uber Eats (.fr)",
-    "description": "A food delivery service connecting users with local restaurants for quick and convenient meals.",
-    "version": "0",
-    "website": "https://www.ubereats.com/fr",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/812447.jpg",
-    "type": "sketch",
-    "params": {},
-    "loginUrl": "https://www.ubereats.com/fr",
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "planned"
@@ -116845,6 +116794,48 @@
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "planned"
+  },
+  {
+    "id": "uber_eats_web",
+    "name": "Uber Eats (Web)",
+    "description": "A food delivery service connecting users with local restaurants for quick and convenient meals.",
+    "version": "4",
+    "website": "https://www.ubereats.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Uber_Eats_2018_logo.svg",
+    "type": "agent",
+    "params": {},
+    "loginUrl": "https://www.ubereats.com/orders",
+    "entryUrl": "https://www.ubereats.com/orders",
+    "remoteBrowser": true,
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development",
+    "autoLogin": {
+      "cookieNames": [
+        "sid"
+      ]
+    }
+  },
+  {
+    "id": "uber_rides_web",
+    "name": "Uber Rides (Web)",
+    "description": "A service that allows you to book and pay for a ride with a private driver in just a few clicks.",
+    "version": "4",
+    "website": "https://riders.uber.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg",
+    "type": "agent",
+    "params": {},
+    "loginUrl": "https://riders.uber.com/trips",
+    "entryUrl": "https://riders.uber.com/trips",
+    "remoteBrowser": true,
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development",
+    "autoLogin": {
+      "cookieNames": [
+        "sid"
+      ]
+    }
   },
   {
     "id": "uberconference",
