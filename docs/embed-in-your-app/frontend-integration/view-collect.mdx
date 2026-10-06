@@ -36,13 +36,13 @@ For iframe-based integrations, viewing a collect is straightforward.
         <tr>
             <td>2</td>
             <td>Frontend</td>
-            <td>Update the iframe `href` to `/ui?token=${token}&credential_id=${credential_id}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
+            <td>Update the iframe `href` to `/ui?token=${token}&credential_id=${credentialId}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
         </tr>
     </tbody>
 </table>
 
 :::warning[Warning]
-Calling `/ui?token=${token}&credential_id=${credential_id}` if a collect is not in progress will trigger a new collect.
+Calling `/ui?token=${token}&credential_id=${credentialId}` if a collect is not in progress will trigger a new collect.
 Make sure the current [credential & collector states](../credential-and-collector-states) is between `0` and `7` excluded.
 :::
 
@@ -56,8 +56,8 @@ sequenceDiagram
     participant API as Invoice-Collector API
     
     User->>Frontend: Clicks "View collect"
-    Frontend->>IFrame: GET /ui?token={token}&credential_id={credential_id}
-    IFrame->>API: POST /credential/{credential_id}/collect
+    Frontend->>IFrame: GET /ui?token={token}&credential_id={credentialId}
+    IFrame->>API: POST /credential/{credentialId}/collect
     API-->>IFrame: Returns wsPath
     IFrame->>API: Establishes WebSocket connection /ws
     API-->>IFrame: Sends real-time updates
@@ -101,7 +101,7 @@ The process is similar to adding a new credential, but starts with an existing c
         <tr>
             <td>3</td>
             <td>Backend</td>
-            <td>Call [`POST /credential/{credential_id}/collect`](/docs/api#tag/Credential-(bearer)/paths/~1user~1{userId}~1credential~1{credentialId}~1collect/post) to start the view collect and return `wsPath` to your frontend.</td>
+            <td>Call [`POST /credential/{credentialId}/collect`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credential~1{credentialId}~1collect/post) to start the view collect and return `wsPath` to your frontend.</td>
         </tr>
         <tr>
             <td>4</td>
@@ -112,7 +112,7 @@ The process is similar to adding a new credential, but starts with an existing c
 </table>
 
 :::warning[Warning]
-Calling `/credential/{credential_id}/collect` if a collect is not in progress will trigger a new collect.
+Calling `/credential/{credentialId}/collect` if a collect is not in progress will trigger a new collect.
 Make sure the current [credential & collector states](../credential-and-collector-states) is between `0` and `7` excluded.
 :::
 
@@ -146,7 +146,7 @@ sequenceDiagram
     
     User->>Frontend: Clicks "View collect"
     Frontend->>Backend: Request to view collect
-    Backend->>API: POST /credential/{credential_id}/collect
+    Backend->>API: POST /credential/{credentialId}/collect
     API-->>Backend: Returns wsPath
     Backend-->>Frontend: Returns wsPath
     Frontend->>API: Establishes WebSocket connection /ws
