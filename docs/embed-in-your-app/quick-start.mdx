@@ -107,8 +107,8 @@ We will start with a simple request to the endpoint [`GET /customer`](../api#tag
 
     ```json
     {
-      ...
-      "email": "account+dev@invoice-collector.com",                         // Email of your account
+      "id": "69ba7e0a7f5568d0b8f4770f",                                     // Id of the customer
+      "email": "mycompany@domain.com",                                      // Email of your account
       "name": "Awesome Company Name",                                       // Name of your company
       "callback": "https://your.infrastructure.com/path/to/callback",       // Callback to which invoices will be sent
       ...
@@ -124,8 +124,8 @@ We will start with a simple request to the endpoint [`GET /customer`](../api#tag
 
     ```json
     {
-      ...
-      "email": "account+dev@invoice-collector.com",                         // Email of your account
+      "id": "69ba7e0a7f5568d0b8f4770f",                                     // Id of the customer
+      "email": "mycompany@domain.com",                                      // Email of your account
       "name": "default",                                                    // Name of your company
       "cid": "123456",                                                      // Company ID
       ...
@@ -174,10 +174,10 @@ Json body response:
 
 ```json
 {
-  ...
+  "id": "6abb7e61c3de21af286333ae",
   "customer_id": "69ba7e0a7f5568d0b8f4770f",
   "remote_id": "A1B2C3D4",
-  "locale": "en",
+  "locale": "fr",
   "token": "fca8a33006220b69dfc922596e77ffe1c2fe5d9f89664fe78f305ac836927fe52a788208d2f881fb829141eac12d2c384468d5e6a89c92dbe40f64a1366d2f22"
   ...
 }

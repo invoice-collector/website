@@ -36,7 +36,7 @@ For iframe-based integrations, viewing a collect is straightforward.
         <tr>
             <td>2</td>
             <td>Frontend</td>
-            <td>Update the iframe `href` to `/ui?token=${token}&credential_id=${credentialId}` and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
+            <td>Update the iframe `href` to [`/ui?token=${token}&credential_id=${credentialId}`](../../api#tag/General/paths/~1ui/get) and display the iframe. The iframe will get the current addition process and directly display the progress bar.</td>
         </tr>
     </tbody>
 </table>
@@ -101,12 +101,12 @@ The process is similar to adding a new credential, but starts with an existing c
         <tr>
             <td>3</td>
             <td>Backend</td>
-            <td>Call [`POST /credential/{credentialId}/collect`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credential~1{credentialId}~1collect/post) to start the view collect and return `wsPath` to your frontend.</td>
+            <td>Call [`POST /credential/{credentialId}/collect`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credential/post) to start the view collect and return `wsPath` to your frontend.</td>
         </tr>
         <tr>
             <td>4</td>
             <td>Frontend</td>
-            <td>Implement WebSocket connection `/ws` and events (state, screenshot, twofa, close).</td>
+            <td>Connect to `wsPath` and implement WebSocket connection `/ws` and events (state, screenshot, twofa, close).</td>
         </tr>
     </tbody>
 </table>
