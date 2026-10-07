@@ -136,8 +136,8 @@ We will start with a simple request to the endpoint [`GET /customer`](../api#tag
 
 ## Create a user & Generate a user token
 
-When a user on your system requests to manage collectors, you need to generate a temporary token to authorize him access to Invoice-Collector server.
-You can make a request to the `POST /user` endpoint to create it in our database and generate the token.
+When a user on your system requests to manage its credentials, you need to generate a temporary token to authorize him access to Invoice-Collector server.
+You can make a request to the [`POST /user`](../api#tag/User/paths/~1user/post) endpoint to create it in our database and generate the token.
 If a user with this `remote_id` already exist, it will not create it.
 
 <Tabs groupId="server-base-url">
@@ -152,7 +152,7 @@ If a user with this `remote_id` already exist, it will not create it.
         }'
     ```
 
-    You can also create a user from the [Users page](https://app.invoice-collector.com/users).
+    You can also create a user from the [Users page](https://app.invoice-collector.com/customer/users).
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
@@ -168,14 +168,18 @@ If a user with this `remote_id` already exist, it will not create it.
 </Tabs>
 
 - `locale` is the language of the user. Only `fr` and `en` are currently available.
-- `remote_id` is used to identify the user on your system. We recommend you to use the id the company. All invoices sent to your `callback` will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
+- `remote_id` is used to identify the user on your system. We recommend you to use the id of the user in your system. All invoices sent to your callback will contain the `remote_id` allong with it so you can identify the user to whom the invoice belongs.
 
 Json body response:
 
 ```json
 {
   ...
+  "customer_id": "69ba7e0a7f5568d0b8f4770f",
+  "remote_id": "A1B2C3D4",
+  "locale": "en",
   "token": "fca8a33006220b69dfc922596e77ffe1c2fe5d9f89664fe78f305ac836927fe52a788208d2f881fb829141eac12d2c384468d5e6a89c92dbe40f64a1366d2f22"
+  ...
 }
 ```
 
@@ -221,7 +225,7 @@ See the [API Reference for the callback schema](/docs/api#/paths/~1test~1callbac
 
 ## List credentials
 
-At some point, you may want to list all the credentials for a given user:
+At some point, you may want to list all the credentials with the endpoint [`GET /user/{userId}/credentials`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credentials/get):
 
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
@@ -230,7 +234,7 @@ At some point, you may want to list all the credentials for a given user:
         -H "Authorization: Bearer <bearer_token>"
     ```
     
-    You can also list the credentials from the [Users page](https://app.invoice-collector.com/users).
+    You can also list the credentials from the [Users page](https://app.invoice-collector.com/customer/user).
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
@@ -242,7 +246,7 @@ At some point, you may want to list all the credentials for a given user:
 
 ## Remove a credential
 
-If you want to remove a credential and therefore stop invoice collection you can use:
+If you want to remove a credential and therefore stop invoice collection you can use [`DELETE /user/{userId}/credential/{credentialId}`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credential~1{credentialId}/delete):
 
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
@@ -251,7 +255,7 @@ If you want to remove a credential and therefore stop invoice collection you can
         -H "Authorization: Bearer <bearer_token>"
     ```
     
-    You can also remove a  credentials from the [Users page](https://app.invoice-collector.com/users).
+    You can also remove a  credentials from the [Users page](https://app.invoice-collector.com/customer/user).
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
@@ -263,7 +267,7 @@ If you want to remove a credential and therefore stop invoice collection you can
 
 ## Remove a user
 
-If a user does no longer needs automatic invoice collection, it can be removed:
+If a user does no longer needs automatic invoice collection, it can be removed with [`DELETE /user`](/docs/api#tag/User/paths/~1user~1{userId}/delete):
 
 <Tabs groupId="server-base-url">
   <TabItem value="cloud" label="Cloud" default>
@@ -276,7 +280,7 @@ If a user does no longer needs automatic invoice collection, it can be removed:
         }'
     ```
 
-    You can also remove a user from the [Users page](https://app.invoice-collector.com/users).
+    You can also remove a user from the [Users page](https://app.invoice-collector.com/customer/user).
   </TabItem>
   <TabItem value="self-hosted" label="Self-Hosted">
     ```bash
