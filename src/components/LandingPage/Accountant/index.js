@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import { Calculator, ChartNoAxesCombined, Download, FileText, FolderArchive, FolderUp, Globe, Hospital, Lightbulb, RefreshCw, Rocket, Search, Settings, ShieldCheck, Tags, Target, Zap } from 'lucide-react';
 import styles from './index.module.css';
 import PricingCard from './PricingCard';
 
@@ -92,17 +93,17 @@ export default function LandingPage() {
                         </div>
                         <div className={clsx("grid md:grid-cols-3 gap-8")}>
                             <div className={clsx("bg-gray-50 rounded-2xl p-8 text-center")}>
-                                <div className={clsx("text-4xl mb-4")}>🌍</div>
+                                <Globe size={36} className={clsx(styles.text_primary, "mb-4")} aria-hidden="true" />
                                 <div className={clsx(styles.font_title, styles.text_secondary, "font-semibold mb-2")}><Translate id="accountant.promise.card1.title">Foreign suppliers</Translate></div>
                                 <div className={clsx("text-sm text-gray-500")}><Translate id="accountant.promise.card1.desc">SaaS, cloud, marketplaces, digital advertising — international vendors that never go through the e-invoicing flow. Notion, Google Workspace, OpenAI, Adobe, AWS…</Translate></div>
                             </div>
                             <div className={clsx("bg-gray-50 rounded-2xl p-8 text-center")}>
-                                <div className={clsx("text-4xl mb-4")}>📄</div>
+                                <FileText size={36} className={clsx(styles.text_primary, "mb-4")} aria-hidden="true" />
                                 <div className={clsx(styles.font_title, styles.text_secondary, "font-semibold mb-2")}><Translate id="accountant.promise.card2.title">Non e-invoice flows</Translate></div>
                                 <div className={clsx("text-sm text-gray-500")}><Translate id="accountant.promise.card2.desc">B2C invoices, nonprofits, small businesses not VAT-registered, healthcare professionals — all flows excluded from the mandatory 2026 reform scope.</Translate></div>
                             </div>
                             <div className={clsx("bg-gray-50 rounded-2xl p-8 text-center")}>
-                                <div className={clsx("text-4xl mb-4")}>🔄</div>
+                                <RefreshCw size={36} className={clsx(styles.text_primary, "mb-4")} aria-hidden="true" />
                                 <div className={clsx(styles.font_title, styles.text_secondary, "font-semibold mb-2")}><Translate id="accountant.promise.card3.title">The "remaining to collect"</Translate></div>
                                 <div className={clsx("text-sm text-gray-500")}><Translate id="accountant.promise.card3.desc">A recurring, monthly volume that grows with your portfolio and that your firm will always have to process manually without automation.</Translate></div>
                             </div>
@@ -121,31 +122,31 @@ export default function LandingPage() {
                         <div className={clsx("grid grid-cols-2 md:grid-cols-5 gap-4 mb-10")}>
                             <div className={clsx("bg-white rounded-xl p-5 text-center shadow-sm")}>
                                 <div className={clsx(styles.text_primary, "text-xs font-bold mb-2")}>01</div>
-                                <div className={clsx("text-2xl mb-2")}>🔐</div>
+                                <ShieldCheck size={28} className={clsx(styles.text_primary, "mb-2")} aria-hidden="true" />
                                 <div className={clsx(styles.text_secondary, "font-semibold text-sm")}><Translate id="accountant.problem.step1.title">Login</Translate></div>
                                 <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.problem.step1.desc">Portal via credentials &amp; MFA</Translate></div>
                             </div>
                             <div className={clsx("bg-white rounded-xl p-5 text-center shadow-sm")}>
                                 <div className={clsx(styles.text_primary, "text-xs font-bold mb-2")}>02</div>
-                                <div className={clsx("text-2xl mb-2")}>🔍</div>
+                                <Search size={28} className={clsx(styles.text_primary, "mb-2")} aria-hidden="true" />
                                 <div className={clsx(styles.text_secondary, "font-semibold text-sm")}><Translate id="accountant.problem.step2.title">Navigation</Translate></div>
                                 <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.problem.step2.desc">Find the target period</Translate></div>
                             </div>
                             <div className={clsx("bg-white rounded-xl p-5 text-center shadow-sm")}>
                                 <div className={clsx(styles.text_primary, "text-xs font-bold mb-2")}>03</div>
-                                <div className={clsx("text-2xl mb-2")}>⬇️</div>
+                                <Download size={28} className={clsx(styles.text_primary, "mb-2")} aria-hidden="true" />
                                 <div className={clsx(styles.text_secondary, "font-semibold text-sm")}><Translate id="accountant.problem.step3.title">Download</Translate></div>
                                 <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.problem.step3.desc">Save the invoice PDF</Translate></div>
                             </div>
                             <div className={clsx("bg-white rounded-xl p-5 text-center shadow-sm")}>
                                 <div className={clsx(styles.text_primary, "text-xs font-bold mb-2")}>04</div>
-                                <div className={clsx("text-2xl mb-2")}>🏷️</div>
+                                <Tags size={28} className={clsx(styles.text_primary, "mb-2")} aria-hidden="true" />
                                 <div className={clsx(styles.text_secondary, "font-semibold text-sm")}><Translate id="accountant.problem.step4.title">Renaming</Translate></div>
                                 <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.problem.step4.desc">Follow firm naming conventions</Translate></div>
                             </div>
                             <div className={clsx("bg-white rounded-xl p-5 text-center shadow-sm")}>
                                 <div className={clsx(styles.text_primary, "text-xs font-bold mb-2")}>05</div>
-                                <div className={clsx("text-2xl mb-2")}>📁</div>
+                                <FolderUp size={28} className={clsx(styles.text_primary, "mb-2")} aria-hidden="true" />
                                 <div className={clsx(styles.text_secondary, "font-semibold text-sm")}><Translate id="accountant.problem.step5.title">DMS Upload</Translate></div>
                                 <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.problem.step5.desc">Integration into your tools</Translate></div>
                             </div>
@@ -173,19 +174,19 @@ export default function LandingPage() {
                         </div>
                         <div className={clsx("grid md:grid-cols-2 gap-6")}>
                             <div className={clsx("flex gap-4 bg-gray-50 rounded-2xl p-6")}>
-                                <div className={clsx("text-3xl flex-shrink-0")}>⚡</div>
+                                <Zap size={30} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                 <div><div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.solution.card1.title">Scheduled collection</Translate></div><div className={clsx("text-sm text-gray-500")}><Translate id="accountant.solution.card1.desc">Monthly or weekly — invoices are automatically retrieved from all connected portals, with no manual intervention.</Translate></div></div>
                             </div>
                             <div className={clsx("flex gap-4 bg-gray-50 rounded-2xl p-6")}>
-                                <div className={clsx("text-3xl flex-shrink-0")}>🗂️</div>
+                                <FolderArchive size={30} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                 <div><div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.solution.card2.title">Automatic filing</Translate></div><div className={clsx("text-sm text-gray-500")}><Translate id="accountant.solution.card2.desc">By client, period and supplier — following your naming conventions, ready to integrate into your DMS or production tools.</Translate></div></div>
                             </div>
                             <div className={clsx("flex gap-4 bg-gray-50 rounded-2xl p-6")}>
-                                <div className={clsx("text-3xl flex-shrink-0")}>🔍</div>
+                                <Search size={30} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                 <div><div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.solution.card3.title">Full traceability</Translate></div><div className={clsx("text-sm text-gray-500")}><Translate id="accountant.solution.card3.desc">What, when, for whom — every collection is timestamped and auditable. No more doubts about the completeness of a client file.</Translate></div></div>
                             </div>
                             <div className={clsx("flex gap-4 bg-gray-50 rounded-2xl p-6")}>
-                                <div className={clsx("text-3xl flex-shrink-0")}>🌐</div>
+                                <Globe size={30} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                 <div><div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.solution.card4.title">100% of your portfolio</Translate></div><div className={clsx("text-sm text-gray-500")}><Translate id="accountant.solution.card4.desc">A single, standardized process applicable to all your clients — scalable at no extra cost, not just for the largest ones.</Translate></div></div>
                             </div>
                         </div>
@@ -204,7 +205,7 @@ export default function LandingPage() {
                             {/* ROI Examples */}
                             <div className={clsx("space-y-6")}>
                                 <div className={clsx("bg-white rounded-2xl p-6 shadow-sm")}>
-                                    <div className={clsx(styles.text_secondary, "font-bold  mb-4")}><Translate id="accountant.roi.example1.header">📊 Firm with 250 clients</Translate></div>
+                                    <div className={clsx(styles.text_secondary, "flex items-center gap-2 font-bold mb-4")}><ChartNoAxesCombined size={22} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" /><Translate id="accountant.roi.example1.header">Firm with 250 clients</Translate></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.activeClients">Active clients (N)</Translate></span><span className={clsx("font-medium")}><Translate id="accountant.roi.example1.accounts">250 accounts</Translate></span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.portalInvoicesLabel">Invoices / client / month</Translate></span><span className={clsx("font-medium")}>4</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
@@ -213,7 +214,7 @@ export default function LandingPage() {
                                     <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example1.roiText">ROI × 13.5 vs €130 plan</Translate></div>
                                 </div>
                                 <div className={clsx("bg-white rounded-2xl p-6 shadow-sm")}>
-                                    <div className={clsx(styles.text_secondary, "font-bold mb-4")}><Translate id="accountant.roi.example2.header">📊 Firm with 500 clients</Translate></div>
+                                    <div className={clsx(styles.text_secondary, "flex items-center gap-2 font-bold mb-4")}><ChartNoAxesCombined size={22} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" /><Translate id="accountant.roi.example2.header">Firm with 500 clients</Translate></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.activeClients2">Active clients (N)</Translate></span><span className={clsx("font-medium")}><Translate id="accountant.roi.example2.accounts">500 accounts</Translate></span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.portalInvoicesLabel2">Invoices / client / month</Translate></span><span className={clsx("font-medium")}>4</span></div>
                                     <div className={clsx("flex justify-between py-2 border-b border-gray-100 text-sm")}><span className={clsx("text-gray-500")}><Translate id="accountant.roi.timeSavedLabel2">Time saved / invoice</Translate></span><span className={clsx("font-medium")}>3 min</span></div>
@@ -222,13 +223,13 @@ export default function LandingPage() {
                                     <div className={clsx(styles.font_title, styles.text_primary, "mt-4 font-bold text-center py-2 text-xl")}><Translate id="accountant.roi.example2.roiText">ROI × 17.5 vs €200 plan</Translate></div>
                                 </div>
                                 <div className={clsx(styles.bg_primary_light, "rounded-2xl p-5")}>
-                                    <div className={clsx(styles.text_secondary, "font-semibold mb-1")}><Translate id="accountant.roi.conservative.title">💡 Conservative assumptions</Translate></div>
+                                    <div className={clsx(styles.text_secondary, "flex items-center gap-2 font-semibold mb-1")}><Lightbulb size={22} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" /><Translate id="accountant.roi.conservative.title">Conservative assumptions</Translate></div>
                                     <div className={clsx(styles.text_secondary_light, "text-sm")}><Translate id="accountant.roi.conservative.desc">These calculations use only 3 min per invoice and 4 non e-invoice suppliers per client. Most firms far exceed these volumes.</Translate></div>
                                 </div>
                             </div>
                             {/* ROI Calculator */}
                             <div className={clsx("bg-white rounded-2xl p-8 shadow-sm")}>
-                                <div className={clsx(styles.font_title, styles.text_secondary, "font-bold text-lg mb-6")}><Translate id="accountant.roi.custom.title">🧮 Your custom ROI</Translate></div>
+                                <div className={clsx(styles.font_title, styles.text_secondary, "flex items-center gap-2 font-bold text-lg mb-6")}><Calculator size={24} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" /><Translate id="accountant.roi.custom.title">Your custom ROI</Translate></div>
                                 <div className={clsx("mb-5")}>
                                     <div className={clsx("flex justify-between text-sm mb-1")}><span className={clsx("text-gray-600")}><Translate id="accountant.roi.slider.clients">Active clients (N)</Translate></span><span className={clsx(styles.text_primary, "font-semibold")}>{clients}</span></div>
                                     <input type="range" min="20" max="1000" value={clients} onChange={e => setClients(Number(e.target.value))} className={clsx(styles.roi_slider, "w-full")} />
@@ -279,9 +280,9 @@ export default function LandingPage() {
                         </div>
                         <div className={clsx("flex flex-wrap justify-center gap-3 mb-10")} role="tablist" aria-label="Pricing audience">
                             {[
-                                ['company', <Translate id="accountant.pricing.audience.company" message="Company" />],
-                                ['accountant', <Translate id="accountant.pricing.audience.accountant" message="Accounting firm" />],
-                                ['software', <Translate id="accountant.pricing.audience.software" message="Software publisher" />],
+                                ['company', <Translate id="accountant.pricing.audience.company">Company</Translate>],
+                                ['accountant', <Translate id="accountant.pricing.audience.accountant">Accounting firm</Translate>],
+                                ['software', <Translate id="accountant.pricing.audience.software">Software publisher</Translate>],
                             ].map(([audience, label]) => (
                                 <button
                                     key={audience}
@@ -430,7 +431,7 @@ export default function LandingPage() {
                         {/* Setup box */}
                         <div className={clsx(styles.bg_primary_light, "flex flex-col md:flex-row items-center gap-6 rounded-2xl p-8")}>
                             <div className={clsx("flex items-start gap-4 flex-1")}>
-                                <div className={clsx("text-4xl flex-shrink-0")}>🚀</div>
+                                <Rocket size={40} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                 <div>
                                     <div className={clsx(styles.text_secondary, "font-bold mb-1")}><Translate id="accountant.pricing.setup.title">One-time setup — get started right</Translate></div>
                                     <div className={clsx("text-sm text-gray-600")}><Translate id="accountant.pricing.setup.desc">Structured deployment to avoid patchwork and measure ROI quickly. Includes portfolio import, naming convention setup, DMS integration, and per-client injection configuration.</Translate></div>
@@ -455,15 +456,15 @@ export default function LandingPage() {
                             </div>
                             <div className={clsx("grid md:grid-cols-3 gap-6")}>
                                 <div className={clsx("flex gap-3")}>
-                                    <div className={clsx("text-2xl flex-shrink-0")}>🌍</div>
+                                    <Globe size={26} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                     <div><div className={clsx(styles.text_secondary, "font-semibold mb-1 text-sm")}><Translate id="accountant.reform.card1.title">Foreign suppliers still excluded</Translate></div><div className={clsx("text-xs text-gray-500")}><Translate id="accountant.reform.card1.desc">Notion, Google, Meta Ads, AWS, Adobe — none of these vendors will go through the French e-invoicing circuit.</Translate></div></div>
                                 </div>
                                 <div className={clsx("flex gap-3")}>
-                                    <div className={clsx("text-2xl flex-shrink-0")}>🏥</div>
+                                    <Hospital size={26} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                     <div><div className={clsx(styles.text_secondary, "font-semibold mb-1 text-sm")}><Translate id="accountant.reform.card2.title">Many entities outside scope</Translate></div><div className={clsx("text-xs text-gray-500")}><Translate id="accountant.reform.card2.desc">Healthcare professionals, nonprofits, micro-businesses not VAT-registered remain outside the reform scope.</Translate></div></div>
                                 </div>
                                 <div className={clsx("flex gap-3")}>
-                                    <div className={clsx("text-2xl flex-shrink-0")}>🔄</div>
+                                    <RefreshCw size={26} className={clsx(styles.text_primary, "flex-shrink-0")} aria-hidden="true" />
                                     <div><div className={clsx(styles.text_secondary, "font-semibold mb-1 text-sm")}><Translate id="accountant.reform.card3.title">100% coverage with Invoice Collector</Translate></div><div className={clsx("text-xs text-gray-500")}><Translate id="accountant.reform.card3.desc">French e-invoices via PDP + Invoice Collector for everything else = complete accounting chain with no blind spots.</Translate></div></div>
                                 </div>
                             </div>
@@ -530,17 +531,17 @@ export default function LandingPage() {
                     <div className={clsx("text-xs text-gray-500 mb-12")}><Translate id="accountant.cta.tagline">No commitment · 1h onboarding included · Setup in less than a week · Measurable ROI from the 1st cycle</Translate></div>
                     <div className={clsx("grid md:grid-cols-3 gap-6 max-w-3xl mx-auto")}>
                         <div className={clsx("bg-white bg-opacity-5 rounded-2xl p-6")}>
-                            <div className={clsx("text-2xl mb-3")}>🎯</div>
+                            <Target size={28} className={clsx(styles.text_primary, "mb-3")} aria-hidden="true" />
                             <div className={clsx("font-semibold mb-1")}><Translate id="accountant.cta.card1.title">Personalized demo</Translate></div>
                             <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.cta.card1.desc">Presentation tailored to your organization and client portfolio.</Translate></div>
                         </div>
                         <div className={clsx("bg-white bg-opacity-5 rounded-2xl p-6")}>
-                            <div className={clsx("text-2xl mb-3")}>⚙️</div>
+                            <Settings size={28} className={clsx(styles.text_primary, "mb-3")} aria-hidden="true" />
                             <div className={clsx("font-semibold mb-1")}><Translate id="accountant.cta.card2.title">Trial setup</Translate></div>
                             <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.cta.card2.desc">Selection of first clients, priority portals, ROI KPI definition.</Translate></div>
                         </div>
                         <div className={clsx("bg-white bg-opacity-5 rounded-2xl p-6")}>
-                            <div className={clsx("text-2xl mb-3")}>🚀</div>
+                            <Rocket size={28} className={clsx(styles.text_primary, "mb-3")} aria-hidden="true" />
                             <div className={clsx("font-semibold mb-1")}><Translate id="accountant.cta.card3.title">Go live</Translate></div>
                             <div className={clsx("text-sm text-gray-400")}><Translate id="accountant.cta.card3.desc">Setup + onboarding in less than a week. Measurable results from the first cycle.</Translate></div>
                         </div>

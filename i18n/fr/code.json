@@ -159,7 +159,7 @@
     "message": "Le point mort est très bas : quelques dizaines à quelques centaines de factures automatisées par mois suffisent à amortir l'abonnement."
   },
   "accountant.roi.example1.header": {
-    "message": "📊 Cabinet 250 clients"
+    "message": "Cabinet 250 clients"
   },
   "accountant.roi.activeClients": {
     "message": "Clients actifs (N)"
@@ -183,7 +183,7 @@
     "message": "ROI × 13,5 vs plan 129€"
   },
   "accountant.roi.example2.header": {
-    "message": "📊 Cabinet 500 clients"
+    "message": "Cabinet 500 clients"
   },
   "accountant.roi.activeClients2": {
     "message": "Clients actifs (N)"
@@ -207,13 +207,13 @@
     "message": "ROI × 17,5 vs plan 199€"
   },
   "accountant.roi.conservative.title": {
-    "message": "💡 Hypothèses conservatrices"
+    "message": "Hypothèses conservatrices"
   },
   "accountant.roi.conservative.desc": {
     "message": "Ces calculs utilisent seulement 3 min par facture et 4 fournisseurs hors e-facture par client. La plupart des cabinets dépassent largement ces volumes."
   },
   "accountant.roi.custom.title": {
-    "message": "🧮 Votre ROI personnalisé"
+    "message": "Votre ROI personnalisé"
   },
   "accountant.roi.slider.clients": {
     "message": "Clients actifs (N)"
