@@ -97,18 +97,13 @@
 }
 
 .badge-type-api {
-  background: #ffedd5;
-  color: #c2410c;
+  background: #dcfce7;
+  color: #15803d;
 }
 
 .badge-type-email {
   background: #ffedd5;
   color: #c2410c;
-}
-
-.badge-type-agent {
-  background: #dcfce7;
-  color: #15803d;
 }
 
 .badge-type-sketch {
