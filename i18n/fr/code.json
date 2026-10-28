@@ -928,5 +928,32 @@
   },
   "accountant.pricing.audience.software": {
     "message": "Éditeur de logiciel"
+  },
+  "invoiceFlow.suppliers": {
+    "message": "Vos fournisseurs"
+  },
+  "invoiceFlow.exports": {
+    "message": "Vos destinations"
+  },
+  "invoiceFlow.processing": {
+    "message": "Collectées. Classées. Transmises."
+  },
+  "invoiceFlow.destination.email": {
+    "message": "Email"
+  },
+  "invoiceFlow.destination.dms": {
+    "message": "GED"
+  },
+  "invoiceFlow.caption": {
+    "message": "Les factures de vos fournisseurs passent par Invoice Collector, puis sont transmises à votre webhook, votre email, votre GED ou Google Drive."
+  },
+  "invoiceFlow.reducedMotion": {
+    "message": "Animations réduites"
+  },
+  "invoiceFlow.play": {
+    "message": "Lancer l'animation"
+  },
+  "invoiceFlow.pause": {
+    "message": "Mettre en pause"
   }
 }
