@@ -224,7 +224,7 @@ export default function InvoiceFlow() {
                         </div>
                     ))}
                 </div>
-                <figcaption className={styles.footer}>
+                {/* <figcaption className={styles.footer}>
                     <span className={styles.caption}><Translate id="invoiceFlow.caption">Supplier invoices flow through Invoice Collector to your webhook, email, DMS or Google Drive.</Translate></span>
                     <button
                         type="button"
@@ -240,7 +240,7 @@ export default function InvoiceFlow() {
                                 ? <Translate id="invoiceFlow.play">Play animation</Translate>
                                 : <Translate id="invoiceFlow.pause">Pause animation</Translate>}
                     </button>
-                </figcaption>
+                </figcaption> */}
             </figure>
         </section>
     );
