@@ -158,7 +158,6 @@ export default function InvoiceFlow() {
                         </svg>
                     )}
                     <div className={styles.supplierGroup}>
-                        <div className={styles.stageLabel}><span>01</span><Translate id="invoiceFlow.suppliers">Your suppliers</Translate></div>
                         <div className={styles.cloud}>
                             {suppliers.map((supplier, index) => (
                                 <div
@@ -197,7 +196,6 @@ export default function InvoiceFlow() {
                         <div className={styles.hubCaption}><Translate id="invoiceFlow.processing">Collected. Sorted. Delivered.</Translate></div>
                     </div>
                     <div className={styles.destinationGroup}>
-                        <div className={styles.stageLabel}><span>02</span><Translate id="invoiceFlow.exports">Your destinations</Translate></div>
                         <div className={styles.destinations}>
                             {destinations.map(({id, Icon, label}, index) => (
                                 <div
