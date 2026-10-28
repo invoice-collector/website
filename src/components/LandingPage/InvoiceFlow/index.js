@@ -17,10 +17,6 @@ const suppliers = [
     {name: 'Canva', logo: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Canva_Logo.svg', x: 57, y: 32},
     {name: 'Airbnb', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg', x: 11, y: 80},
     {name: 'PayPal', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg', x: 70, y: 90},
-    {name: 'EDF', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg', x: 10, y: 55},
-    {name: 'SFR', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/97/SFR-2022-logo.svg', x: 90, y: 88},
-    {name: 'Free', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Free_logo.svg', x: 33, y: 12},
-    {name: 'DHL', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg', x: 90, y: 69},
 ];
 
 function connectionPath(from, to, vertical) {
