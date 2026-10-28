@@ -102,19 +102,19 @@
     position: absolute;
     display: grid;
     place-items: center;
-    width: 72px;
-    height: 72px;
-    padding: 14px;
+    width: 56px;
+    height: 56px;
+    padding: 10px;
     transform: translate(-50%, -50%);
     border: 1px solid #e4eae6;
-    border-radius: 19px;
+    border-radius: 15px;
     background: #fff;
     box-shadow: 0 6px 20px -8px rgba(0, 33, 71, 0.16);
 }
 
 .supplier img {
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
@@ -327,8 +327,8 @@
 
 @media (min-width: 701px) and (max-width: 950px) {
     .scene { gap: 16px; padding: 24px; }
-    .supplier { width: 56px; height: 56px; padding: 10px; border-radius: 15px; }
-    .supplier img { width: 36px; height: 36px; }
+    .supplier { width: 44px; height: 44px; padding: 7px; border-radius: 12px; }
+    .supplier img { width: 28px; height: 28px; }
     .destination { gap: 8px; padding: 10px; font-size: 12px; }
     .destinationDot { display: none; }
 }
@@ -338,8 +338,8 @@
     .figure { border-radius: 22px; }
     .scene { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; }
     .cloud { height: 240px; max-width: 400px; margin: 0 auto; }
-    .supplier { width: 56px; height: 56px; padding: 10px; border-radius: 15px; }
-    .supplier img { width: 36px; height: 36px; }
+    .supplier { width: 42px; height: 42px; padding: 7px; border-radius: 12px; }
+    .supplier img { width: 26px; height: 26px; }
     .hubHalo { margin: 16px 0; }
     .hub { width: 88px; height: 88px; border-radius: 22px; }
     .hub img { width: 60px; height: 60px; }

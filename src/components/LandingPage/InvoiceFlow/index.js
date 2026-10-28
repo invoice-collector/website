@@ -5,14 +5,22 @@ import { FileText, FolderOpen, HardDrive, Mail, Pause, Play, Sparkles, Webhook }
 import styles from './index.module.css';
 
 const suppliers = [
-    {name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg', x: 14, y: 22},
-    {name: 'Adobe', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg', x: 52, y: 12},
-    {name: 'Orange', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg', x: 86, y: 30},
-    {name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg', x: 38, y: 44},
-    {name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_(symbol).svg', x: 12, y: 70},
-    {name: 'Uber', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg', x: 74, y: 60},
-    {name: 'OVH', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Logo_OVH.svg', x: 42, y: 82},
-    {name: 'Slack', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg', x: 85, y: 87},
+    {name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg', x: 25, y: 34},
+    {name: 'Adobe', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg', x: 69, y: 71},
+    {name: 'Orange', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg', x: 31, y: 64},
+    {name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg', x: 53, y: 13},
+    {name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_(symbol).svg', x: 57, y: 51},
+    {name: 'Uber', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg', x: 83, y: 19},
+    {name: 'OVH', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Logo_OVH.svg', x: 85, y: 50},
+    {name: 'Slack', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg', x: 43, y: 87},
+    {name: 'Google Ads', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', x: 13, y: 10},
+    {name: 'Canva', logo: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Canva_Logo.svg', x: 57, y: 32},
+    {name: 'Airbnb', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg', x: 11, y: 80},
+    {name: 'PayPal', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg', x: 70, y: 90},
+    {name: 'EDF', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/12/%C3%89lectricit%C3%A9_de_France_logo.svg', x: 10, y: 55},
+    {name: 'SFR', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/97/SFR-2022-logo.svg', x: 90, y: 88},
+    {name: 'Free', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Free_logo.svg', x: 33, y: 12},
+    {name: 'DHL', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/DHL_Logo.svg', x: 90, y: 69},
 ];
 
 function connectionPath(from, to, vertical) {
@@ -166,8 +174,8 @@ export default function InvoiceFlow() {
                                         <img
                                             src={supplier.logo}
                                             alt=""
-                                            width="44"
-                                            height="44"
+                                            width="34"
+                                            height="34"
                                             loading="lazy"
                                             onError={() => {
                                                 console.warn(`InvoiceFlow: could not load the ${supplier.name} logo.`);
