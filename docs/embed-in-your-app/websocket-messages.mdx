@@ -39,6 +39,17 @@ type MessageScreenshot = {
 }
 ```
 
+**Oauth2** message is received when the user needs to authenticate using OAuth2.
+It contains the URL where the user should be redirected to complete the authentication:
+
+```typescript
+type MessageOauth2 = {
+    type: 'oauth2';
+    url: string;      // The OAuth2 authentication URL
+    iframe: boolean;  // Indicates if the OAuth2 URL can be opened in an iframe
+}
+```
+
 #### Messages Sent to API
 
 **Twofa** message must be sent when `state.index = 3`.
@@ -82,17 +93,18 @@ type MessageText = {
 }
 ```
 
-**Close** message can be sent when `state.index = 2` and at least one screenshot has been received.
-It notifies that login process has been performed with screenshot.
-You will stop receiving `screenshot` events.
+**Interactive** message can be sent when interactive login is in progress:
 
 ```typescript
-type MessageClose = {
-    type: 'close';
-    reason: 'ok' | 'cancel' | 'report';
+type MessageInteractive = {
+    type: 'interactive';
+    reason: 'open' | 'close' | 'cancel' | 'remove' | 'report';
+    instructions: string;
 }
 ```
 
-- `ok` - Login completed successfully, collect can continue
+- `open` - User opened the interactive element
+- `close` - User closed the interactive element
 - `cancel` - User cancelled the process
-
+- `remove` - User removed the interactive element
+- `report` - User reported an issue
