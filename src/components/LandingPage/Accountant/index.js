@@ -84,6 +84,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* Flow animation */}
                 <InvoiceFlow />
 
                 {/* PROMISE — white */}

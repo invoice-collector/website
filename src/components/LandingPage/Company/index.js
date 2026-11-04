@@ -8,6 +8,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import { ArrowRight, BriefcaseBusiness, Calculator, CircleCheck, Clock, Download, FileText, FolderOpen, Globe, Mail, Plug, RefreshCw, Search, ShieldCheck, Sparkles } from 'lucide-react';
 import styles from '../Accountant/index.module.css';
 import PricingCard from '../Accountant/PricingCard';
+import InvoiceFlow from '../InvoiceFlow';
 
 const plans = [
     {name: 'Starter', price: 20, limit: 30},
@@ -81,6 +82,9 @@ export default function LandingPage() {
                         ))}
                     </div>
                 </section>
+                
+                {/* Flow animation */}
+                <InvoiceFlow />
 
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">

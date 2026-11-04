@@ -8,6 +8,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import { ArrowRight, Blocks, Braces, ChartNoAxesCombined, CircleCheck, Cloud, CodeXml, FileText, Globe, Layers, Plug, Rocket, Settings, ShieldCheck, Webhook } from 'lucide-react';
 import styles from '../Accountant/index.module.css';
 import PricingCard from '../Accountant/PricingCard';
+import InvoiceFlow from '../InvoiceFlow';
 
 export default function LandingPage() {
     const {i18n: {currentLocale}} = useDocusaurusContext();
@@ -63,6 +64,9 @@ export default function LandingPage() {
                         ))}
                     </div>
                 </section>
+                
+                {/* Flow animation */}
+                <InvoiceFlow />
 
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
