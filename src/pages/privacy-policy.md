@@ -16,7 +16,7 @@ Lors de votre utilisation de notre plateforme, nous pouvons être amenés à vou
 
 Le terme « données à caractère personnel » désigne toutes les données qui permettent d’identifier un individu, ce qui correspond notamment à vos nom, prénoms, pseudonyme, photographie, adresse postale et de courrier électronique, intitulé de votre poste, numéros de téléphone, date de naissance, données relatives à vos transactions sur la plateforme, détails de vos achats, numéros de carte bancaire, SIRET, numéro de TVA intracommunautaire, adresse IP, ainsi qu’à tout autre renseignement que vous choisirez de nous communiquer à votre sujet. 
 
-Si vous choisissez de connecter un compte tiers (notamment votre compte Google, Microsoft ou Tesla) à la Plateforme, ces données peuvent également inclure, selon le compte tiers connecté, le contenu de certains emails de la boîte de messagerie ainsi connectée et leurs pièces jointes, ou l’historique de commandes et factures associé à ce compte, dans les conditions décrites à l’article 5 ci-dessous. 
+Si vous choisissez de connecter un compte tiers (notamment un espace client fournisseur ou votre compte Google, Microsoft ou Tesla) à la Plateforme, ces données peuvent également inclure les éléments d’authentification nécessaires à la connexion et, selon le compte tiers connecté, le contenu de certains emails et leurs pièces jointes, ou l’historique de commandes et factures associé à ce compte. Une localisation estimée à partir de votre adresse IP est également traitée pour les connexions via proxy, dans les conditions décrites à l’article 5 ci-dessous.
 
 ## 2. Objet 
 
@@ -79,11 +79,13 @@ Nous vous informons, lors de la collecte de vos données personnelles, si certai
 
 ## 5. Données collectées via un compte tiers connecté (Google, Microsoft, Tesla, etc.)
 
-Si vous choisissez de connecter un compte tiers à la Plateforme (notamment un compte Google, Microsoft ou Tesla), vous nous autorisez, par l’intermédiaire du protocole d’authentification OAuth 2.0 du fournisseur concerné, à accéder à certaines données de ce compte, dans la stricte mesure nécessaire au fonctionnement du Logiciel.
+Si vous choisissez de connecter un compte tiers à la Plateforme, notamment un espace client auprès d’un fournisseur ou un compte Google, Microsoft ou Tesla, la connexion peut s’effectuer via OAuth 2.0 ou à l’aide des identifiants et autres éléments d’authentification que vous fournissez, selon les modalités proposées par le fournisseur et le collecteur concerné. Comme prévu à l’article 4.2.2 de nos [Conditions Générales d’Utilisation](/terms-of-use/), vous nous autorisez à utiliser ces moyens d’accès pour nous connecter automatiquement, en votre nom et pour votre compte, strictement afin de récupérer vos factures.
 
 ### 5.1. Données auxquelles nous accédons
 
-Dans le cadre de cette autorisation, nous pouvons accéder, selon la nature du compte tiers connecté :
+Dans le cadre de cette connexion, nous collectons et utilisons uniquement les éléments d’authentification nécessaires au collecteur concerné : identifiant ou adresse email de connexion, mot de passe, clé API, cookies de session, ainsi que les jetons d’accès et de renouvellement obtenus notamment via OAuth 2.0 (ci-après, les « Secrets »). Une connexion OAuth 2.0 ne nécessite pas que vous nous communiquiez le mot de passe du compte tiers.
+
+Nous pouvons également accéder, selon la nature du compte tiers connecté :
 
 - pour les comptes de messagerie électronique (notamment Google/Gmail ou Microsoft/Outlook) :
 
@@ -93,7 +95,7 @@ Dans le cadre de cette autorisation, nous pouvons accéder, selon la nature du c
 
   - aux métadonnées associées à ces emails (dates de réception, libellés ou dossiers) ;
 
-- pour les comptes tiers donnant directement accès aux factures de l’utilisateur (notamment Tesla) :
+- pour les espaces clients fournisseurs et les autres comptes tiers donnant directement accès aux factures de l’utilisateur (notamment Tesla) :
 
   - à l’historique de commandes et factures associé à ce compte ;
 
@@ -105,9 +107,11 @@ Nous n’accédons à aucune autre donnée de votre compte tiers (contacts, agen
 
 Les données issues du compte tiers connecté sont utilisées exclusivement pour :
 
-- détecter automatiquement, au sein de votre boîte de réception ou de l’historique de votre compte, les emails ou commandes contenant des factures ou documents assimilés ;
+- établir et renouveler les connexions automatiques au compte tiers à l’aide des Secrets, uniquement pour permettre la récupération des factures ;
 
-- extraire, structurer et vous restituer ces factures au sein de la Plateforme.
+- détecter automatiquement, au sein de votre boîte de réception, de votre espace client fournisseur ou de l’historique de votre compte, les emails, commandes ou documents contenant des factures ou documents assimilés ;
+
+- consulter, télécharger, extraire, structurer et vous restituer ces factures au sein de la Plateforme.
 
 Ces données ne sont en aucun cas utilisées à des fins de publicité, de profilage commercial, de revente à des courtiers de données ou à des tiers, ni pour évaluer votre solvabilité ou à des fins d’octroi de crédit.
 
@@ -121,7 +125,9 @@ Nous ne vendons ni ne partageons ces données à des fins publicitaires ou comme
 
 ### 5.4. Conservation et suppression des données issues du compte tiers
 
-Le contenu des emails et pièces jointes, ou les données d’historique de commandes, consultés via l’API du fournisseur tiers concerné, ne sont conservés que le temps strictement nécessaire à la détection et à l’extraction des factures qu’ils contiennent, puis sont supprimés. Seules les données extraites de la facture elle-même (montant, date, fournisseur, numéro de facture, etc.) sont conservées, pour la durée nécessaire à la fourniture du service, conformément à l’article 7 de la présente Charte.
+Les Secrets sont stockés chiffrés dans un coffre-fort dédié Bitwarden. Leur accès est limité aux besoins de la connexion et de la récupération des factures. Ils sont conservés tant que le compte fournisseur reste connecté à la Plateforme et sont supprimés lors de la suppression de ce compte fournisseur. Nous ne conservons pas de copie de sauvegarde de ces Secrets. La suppression de l’utilisateur entraîne également la suppression de tous ses comptes fournisseurs connectés et des Secrets associés.
+
+Le contenu des emails et pièces jointes, ou les données d’historique de commandes, consultés via l’API ou l’espace client du fournisseur tiers concerné, ne sont conservés que le temps strictement nécessaire à la détection et à l’extraction des factures qu’ils contiennent, puis sont supprimés. Parmi ces contenus consultés, seules les données extraites de la facture elle-même (montant, date, fournisseur, numéro de facture, etc.) sont conservées, pour la durée nécessaire à la fourniture du service, conformément à l’article 7 de la présente Charte.
 
 Vous pouvez à tout moment demander la suppression des données issues de votre compte tiers en nous contactant à l’adresse contact@invoice-collector.com.
 
@@ -129,9 +135,19 @@ Vous pouvez à tout moment demander la suppression des données issues de votre 
 
 Vous pouvez révoquer à tout moment l’autorisation d’accès à votre compte tiers :
 
-- directement depuis la Plateforme, en supprimant le connecteur concerné. Les données extraites de votre compte tiers seront définitivement supprimées de la Plateforme.
+- directement depuis la Plateforme, en supprimant le compte fournisseur connecté concerné. Cette suppression met fin aux connexions automatiques à ce compte et entraîne la suppression des Secrets associés ainsi que des données extraites de ce compte sur la Plateforme ;
 
-- ou depuis les paramètres de sécurité de votre compte tiers, à l’adresse suivante selon le fournisseur concerné : [myaccount.google.com/permissions](https://myaccount.google.com/permissions) pour Google, [account.live.com/consent/Manage](https://account.live.com/consent/Manage) pour Microsoft, ou l’espace « Sécurité et confidentialité » de votre compte Tesla. La révocation de cet accès n’entraîne pas la suppression rétroactive des factures déjà extraites et conservées sur la Plateforme antérieurement à cette révocation.
+- pour une connexion OAuth 2.0, depuis les paramètres de sécurité de votre compte tiers : [myaccount.google.com/permissions](https://myaccount.google.com/permissions) pour Google, [account.live.com/consent/Manage](https://account.live.com/consent/Manage) pour Microsoft, ou l’espace « Sécurité et confidentialité » de votre compte Tesla ;
+
+- pour les autres modes de connexion, en révoquant les clés API ou les sessions autorisées, ou en modifiant vos identifiants auprès du fournisseur, selon les possibilités offertes par celui-ci. Un changement de mot de passe ne révoque pas nécessairement les sessions ou les autres moyens d’accès déjà accordés.
+
+La révocation d’un moyen d’accès auprès du fournisseur n’entraîne pas à elle seule la suppression des Secrets ni des factures déjà extraites sur la Plateforme. Pour supprimer les Secrets conservés et mettre fin à l’ensemble des connexions de notre service à ce compte, supprimez le compte fournisseur connecté sur la Plateforme.
+
+### 5.6. Localisation utilisée pour les connexions via proxy
+
+Pour les connexions aux comptes tiers via proxy, nous utilisons une estimation de votre localisation obtenue à partir de votre adresse IP : pays, latitude et longitude. Il ne s’agit pas d’une position GPS collectée auprès de votre appareil.
+
+Cette localisation est stockée dans notre base de données au niveau de l’utilisateur, et non dans Bitwarden ni au niveau de chaque compte fournisseur. Elle est conservée tant que l’utilisateur existe sur la Plateforme et supprimée lors de sa suppression. La suppression d’un seul compte fournisseur ne supprime donc pas cette localisation.
 
 ## 6. Destinataires des données à caractère personnel
 

@@ -88,13 +88,19 @@ En tout état de cause, il peut récupérer automatiquement les factures auprès
 
 #### 4.2.2 Connexion à un compte tiers
 
-Afin de bénéficier de la récupération automatique de ses factures, l’Utilisateur Client peut être amené à connecter à la Plateforme un compte tiers (notamment un compte Google, Microsoft ou Tesla), via le protocole d’authentification OAuth 2.0 du fournisseur concerné.
+Afin de bénéficier de la récupération automatique de ses factures, l’Utilisateur Client peut connecter à la Plateforme un compte tiers, notamment un espace client auprès d’un fournisseur ou un compte Google, Microsoft ou Tesla. Selon les modalités proposées par le fournisseur et le collecteur concerné, cette connexion peut être réalisée :
 
-Cette connexion vaut autorisation expresse donnée par l’Utilisateur Client de nous permettre d’accéder aux données de ce compte tiers strictement nécessaires à la détection et à l’extraction de ses factures, dans les conditions décrites dans notre Politique de Confidentialité. 
+- via le protocole d’authentification OAuth 2.0 du fournisseur ;
 
-L’Utilisateur Client garantit être titulaire du compte tiers qu’il connecte à la Plateforme, ou dûment autorisé par son titulaire à le faire, et à en assumer l’entière responsabilité. 
+- par la fourniture d’identifiants de connexion (identifiant ou adresse email et mot de passe), de clés API, de cookies de session ou d’autres éléments d’authentification nécessaires à l’accès au compte (ci-après, les « Secrets »).
 
-L’Utilisateur Client peut révoquer à tout moment l’autorisation d’accès ainsi donnée, notamment depuis les paramètres de son compte tiers, dans les conditions décrites dans notre Politique de Confidentialité.
+En connectant ce compte, l’Utilisateur Client nous autorise expressément à utiliser les Secrets qu’il fournit, ainsi que les jetons d’accès ou de renouvellement et les cookies de session obtenus lors de la connexion, pour nous connecter automatiquement, en son nom et pour son compte, à l’espace client ou au service tiers concerné. Cette autorisation couvre les connexions initiales et ultérieures nécessaires à la récupération automatique des factures, tant que le compte reste connecté et que l’autorisation n’a pas été révoquée. Elle est strictement limitée à l’accès aux données nécessaires à la détection, à la consultation, au téléchargement et à l’extraction de ses factures ; elle ne nous autorise pas à effectuer des achats ni à modifier ses contrats auprès du fournisseur.
+
+L’Utilisateur Client garantit être titulaire du compte tiers ou dûment autorisé par son titulaire à permettre ces accès et à nous confier les Secrets correspondants. Il s’engage à respecter les conditions d’utilisation du service tiers concerné. Son autorisation ne dispense pas du respect de ces conditions ni des lois applicables et ne permet pas de contourner les restrictions d’accès du fournisseur.
+
+Les modalités de traitement, de sécurisation et de conservation des Secrets et des données consultées sont décrites à l’article 5 de notre [Politique de Confidentialité](/privacy-policy/).
+
+L’Utilisateur Client peut mettre fin à cette autorisation à tout moment en supprimant le compte fournisseur connecté à la Plateforme, ce qui entraîne la suppression des Secrets associés. Il peut également révoquer les autorisations OAuth ou les autres moyens d’accès depuis le service tiers, selon les possibilités offertes par celui-ci. La révocation auprès du service tiers ne remplace pas la suppression du compte connecté sur la Plateforme pour obtenir la suppression des Secrets qui y sont conservés.
 
 #### 4.2.3 Inscription 
 
@@ -192,7 +198,7 @@ Notamment, l’Utilisateur s’interdit :
 
 - d’accéder frauduleusement à la Plateforme ;  
 
-- de connecter à la Plateforme un compte tiers (notamment un compte Google, Microsoft ou Tesla) dont il n’est pas titulaire ou pour lequel il ne dispose pas de l’autorisation du titulaire ; 
+- de connecter à la Plateforme un compte tiers, notamment un espace client fournisseur ou un compte Google, Microsoft ou Tesla, ou de fournir des identifiants, mots de passe, clés API, cookies de session ou autres moyens d’accès à un tel compte, sans en être titulaire ou sans disposer de l’autorisation de son titulaire pour permettre les accès décrits à l’article 4.2.2 ;
 
 - de transmettre tout message contenant des virus informatiques ou tout autre code, dossier ou programme conçus notamment pour interrompre, détruire ou limiter la fonctionnalité notamment de tout logiciel, ordinateur, ou outil de télécommunication ; 
 
