@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import { ArrowRight, BriefcaseBusiness, Calculator, CircleCheck, Clock, Download, FileText, FolderOpen, Globe, Mail, Plug, RefreshCw, Search, ShieldCheck, Sparkles } from 'lucide-react';
-import styles from '../Accountant/index.module.css';
-import PricingCard from '../Accountant/PricingCard';
+import styles from '../shared/index.module.css';
+import PricingCard from '../shared/PricingCard';
 import InvoiceFlow from '../InvoiceFlow';
 
 const plans = [

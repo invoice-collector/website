@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import { ArrowRight, Blocks, Braces, ChartNoAxesCombined, CircleCheck, Cloud, CodeXml, FileText, Globe, Layers, Plug, Rocket, Settings, ShieldCheck, Webhook } from 'lucide-react';
-import styles from '../Accountant/index.module.css';
-import PricingCard from '../Accountant/PricingCard';
+import styles from '../shared/index.module.css';
+import PricingCard from '../shared/PricingCard';
 import InvoiceFlow from '../InvoiceFlow';
 
 export default function LandingPage() {

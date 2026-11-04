@@ -5,8 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import { Calculator, ChartNoAxesCombined, Download, FileText, FolderArchive, FolderUp, Globe, Hospital, Lightbulb, RefreshCw, Rocket, Search, Settings, ShieldCheck, Tags, Target, Zap } from 'lucide-react';
-import styles from './index.module.css';
-import PricingCard from './PricingCard';
+import styles from '../shared/index.module.css';
+import PricingCard from '../shared/PricingCard';
 import InvoiceFlow from '../InvoiceFlow';
 
 export default function LandingPage() {
