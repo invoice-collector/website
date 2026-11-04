@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import LandingPage from '@site/src/components/LandingPage/Accountant';
+import LandingPage from '@site/src/components/LandingPage/Software';
 
 export default function Home() {
   const isDev = process.env.NODE_ENV === 'development';
