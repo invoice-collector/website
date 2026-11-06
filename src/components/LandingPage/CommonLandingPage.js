@@ -43,7 +43,7 @@ export default function CommonLandingPage() {
                 <section id="customer-type" className="bg-white px-6 py-12">
                     <fieldset className="max-w-5xl mx-auto border-0 p-0 min-w-0">
                         <legend className={clsx(styles.font_title, styles.text_secondary, 'text-2xl font-bold text-center w-full mb-8')}>
-                            <Translate id="commonLanding.customerType.title">Who are you collecting invoices for?</Translate>
+                            <Translate id="commonLanding.customerType.title">Who are you?</Translate>
                         </legend>
                         <div className="grid md:grid-cols-3 gap-4">
                             <label className={clsx('border rounded-lg p-5 cursor-pointer', customerType === 'software' && styles.bg_primary_light)}>
