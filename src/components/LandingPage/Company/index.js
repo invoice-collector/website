@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
-import Translate, {translate} from '@docusaurus/Translate';
+import Translate from '@docusaurus/Translate';
 import { ArrowRight, BriefcaseBusiness, Calculator, CircleCheck, Clock, Download, FileText, FolderOpen, Globe, Mail, Plug, RefreshCw, Search, ShieldCheck, Sparkles } from 'lucide-react';
 import styles from '../shared/index.module.css';
 import PricingCard from '../shared/PricingCard';
-import InvoiceFlow from '../InvoiceFlow';
 
 const plans = [
     {name: 'Starter', price: 20, limit: 30},
@@ -47,46 +45,7 @@ export default function LandingPage() {
     ];
 
     return (
-        <Layout
-            title={translate({id: 'companyLanding.page.title', message: 'Let AI collect your business invoices'})}
-            description={translate({id: 'companyLanding.page.description', message: 'Stop chasing supplier invoices. Invoice Collector automatically collects your business invoices from supported supplier portals and inboxes, so you can spend less time on admin.'})}>
-            <div id="landingpage" className={clsx(styles.text_secondary, 'font-sans')}>
-                {/* HERO */}
-                <section className={clsx(styles.bg_section_odd, 'relative text-center py-24 px-6')}>
-                    <div className={clsx(styles.bg_primary_light, styles.text_primary, 'inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-8')}>
-                        <BriefcaseBusiness size={18} aria-hidden="true" />
-                        <Translate id="companyLanding.hero.badge">Built for your business</Translate>
-                    </div>
-                    <h1 className={clsx(styles.font_title, styles.text_secondary, 'text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl mx-auto mb-6')}>
-                        <Translate id="companyLanding.hero.title">Let AI collect your invoices.</Translate>
-                        <em className={clsx(styles.text_primary, 'block not-italic')}><Translate id="companyLanding.hero.highlight">Get back to your business.</Translate></em>
-                    </h1>
-                    <p className={clsx(styles.text_secondary_light, 'text-lg md:text-xl max-w-2xl mx-auto mb-10')}>
-                        <Translate id="companyLanding.hero.subtitle">No more jumping between supplier portals or searching your inbox. Connect your accounts and let Invoice Collector bring your business invoices together automatically.</Translate>
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-14">
-                        <Link href="https://app.invoice-collector.com/signup" className={primaryButton}><Translate id="companyLanding.hero.start">Start collecting my invoices</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
-                        <Link to="#roi" className={secondaryButton}><Translate id="companyLanding.hero.roi">See how much time I could save</Translate></Link>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                        {[
-                            [RefreshCw, <Translate id="companyLanding.hero.automatic">Automatic</Translate>, <Translate id="companyLanding.hero.automatic.desc">Collection from connected sources</Translate>],
-                            [FolderOpen, <Translate id="companyLanding.hero.centralized">One place</Translate>, <Translate id="companyLanding.hero.centralized.desc">Your business invoices together</Translate>],
-                            [Clock, <Translate id="companyLanding.hero.time">Less admin</Translate>, <Translate id="companyLanding.hero.time.desc">More time for your business</Translate>],
-                            [CircleCheck, <Translate id="companyLanding.hero.simple">No coding</Translate>, <Translate id="companyLanding.hero.simple.desc">Get started in the online app</Translate>],
-                        ].map(([Icon, title, description], index) => (
-                            <div key={index} className="bg-white rounded-xl p-4">
-                                <Icon size={28} className={clsx(styles.text_primary, 'mb-3')} aria-hidden="true" />
-                                <div className={clsx(styles.text_secondary, 'font-bold')}>{title}</div>
-                                <div className={clsx(styles.text_secondary_light, 'text-xs mt-1')}>{description}</div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-                
-                {/* Flow animation */}
-                <InvoiceFlow />
-
+        <>
                 {/* PROMISE — white */}
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
@@ -362,7 +321,6 @@ export default function LandingPage() {
                         ))}
                     </div>
                 </section>
-            </div>
-        </Layout>
+            </>
     );
 }

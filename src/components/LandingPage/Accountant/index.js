@@ -1,23 +1,21 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import { Calculator, ChartNoAxesCombined, Download, FileText, FolderArchive, FolderUp, Globe, Hospital, Lightbulb, RefreshCw, Rocket, Search, Settings, ShieldCheck, Tags, Target, Zap } from 'lucide-react';
 import styles from '../shared/index.module.css';
 import PricingCard from '../shared/PricingCard';
-import InvoiceFlow from '../InvoiceFlow';
 
 export default function LandingPage() {
-    const {siteConfig, i18n: {currentLocale}} = useDocusaurusContext();
+    const {i18n: {currentLocale}} = useDocusaurusContext();
 
     // ROI Calculator state
     const [clients, setClients] = useState(200);
     const [invoicesPerClient, setInvoicesPerClient] = useState(4);
     const [minutesSaved, setMinutesSaved] = useState(3);
     const [hourlyCost, setHourlyCost] = useState(35);
-    const [pricingAudience, setPricingAudience] = useState('company');
+    const [pricingAudience, setPricingAudience] = useState('accountant');
 
     // Determine plan price based on client count
     const getPlanPrice = (n) => {
@@ -44,49 +42,7 @@ export default function LandingPage() {
     const formatCurrency = (v) => currentLocale === 'fr' ? `${v.toLocaleString('fr-FR')}€` : `${v.toLocaleString('en-US')}€`;
 
     return (
-        <Layout
-        title={translate({id: 'accountant.page.title', message: 'The open source invoice collector API, powered by AI'})}
-        description={siteConfig.tagline}>
-            <div id="landingpage" className={clsx(styles.text_secondary, "font-sans")}>
-                {/* HERO */}
-                <section className={clsx(styles.bg_section_odd, "relative text-white text-center py-24 px-6")}>
-                    <div className={clsx(styles.bg_primary_light, styles.text_primary, styles.border_primary, "inline-flex items-center gap-2 backdrop-blur rounded-full px-4 py-1.5 text-sm font-medium mb-8")}>
-                        <span className={clsx(styles.bg_primary, "w-2 h-2 rounded-full animate-pulse")}></span>
-                        <Translate id="accountant.hero.badge">Must-have for accounting firms 2026</Translate>
-                    </div>
-                    <h1 className={clsx(styles.font_title, styles.text_secondary, "text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl mx-auto mb-6")}>
-                        <Translate id="accountant.hero.title">Automate invoice collection </Translate><em className={clsx(styles.text_primary, "not-italic")}><Translate id="accountant.hero.title.highlight">beyond e-invoicing</Translate></em>
-                    </h1>
-                    <p className={clsx(styles.text_secondary_light, "text-lg md:text-xl max-w-2xl mx-auto mb-10")}>
-                        <Translate id="accountant.hero.subtitle">One tool. All your clients. Every invoice outside e-invoicing collected automatically from a single place.</Translate>
-                    </p>
-                    <div className={clsx("flex flex-wrap justify-center gap-4 mb-14")}>
-                        <Link to="#contact" className={clsx(styles.bg_primary, styles.hover_bg_primary_dark, "inline-block text-white hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.hero.cta.demo">Request a free demo →</Translate></Link>
-                        <Link to="#roi" className={clsx(styles.border_secondary_light, styles.hover_border_primary_dark, styles.text_secondary_light, styles.hover_text_primary_dark, "inline-block border border-opacity-30 hover:border-opacity-60 px-8 py-3 rounded-xl transition no-underline hover:no-underline")}><Translate id="accountant.hero.cta.roi">Calculate my ROI</Translate></Link>
-                    </div>
-                    <div className={clsx("grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto")}>
-                        <div className={clsx("bg-white bg-opacity-5 rounded-xl p-4")}>
-                            <div className={clsx(styles.font_title, styles.text_primary, "text-4xl font-bold")}><Translate id="accountant.hero.stat1.value">30d</Translate></div>
-                            <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.hero.stat1.label">To measure trial ROI</Translate></div>
-                        </div>
-                        <div className={clsx("bg-white bg-opacity-5 rounded-xl p-4")}>
-                            <div className={clsx(styles.font_title, styles.text_primary, "text-4xl font-bold")}>3 min</div>
-                            <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.hero.stat2.label">Saved per invoice</Translate></div>
-                        </div>
-                        <div className={clsx("bg-white bg-opacity-5 rounded-xl p-4")}>
-                            <div className={clsx(styles.font_title, styles.text_primary, "text-4xl font-bold")}>100%</div>
-                            <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.hero.stat3.label">Portfolio coverage</Translate></div>
-                        </div>
-                        <div className={clsx("bg-white bg-opacity-5 rounded-xl p-4")}>
-                            <div className={clsx(styles.font_title, styles.text_primary, "text-4xl font-bold")}><Translate id="accountant.hero.stat4.value">1 Month</Translate></div>
-                            <div className={clsx("text-xs text-gray-400 mt-1")}><Translate id="accountant.hero.stat4.label">Positive ROI from month one</Translate></div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Flow animation */}
-                <InvoiceFlow />
-
+        <>
                 {/* PROMISE — white */}
                 <div id="promise" className={clsx("bg-white")}>
                     <div className={clsx("max-w-5xl mx-auto px-6 py-20")}>
@@ -551,7 +507,6 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
-            </div>
-        </Layout>
+            </>
     );
 }

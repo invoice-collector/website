@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import LandingPage from '@site/src/components/LandingPage/Software';
+import CommonLandingPage from '@site/src/components/LandingPage/CommonLandingPage';
 
 export default function Home() {
   const isDev = process.env.NODE_ENV === 'development';
@@ -12,5 +12,5 @@ export default function Home() {
       window.location.replace('/fr/');
     }
   }, [isFrench]);
-  return <LandingPage />;
+  return <CommonLandingPage />;
 }

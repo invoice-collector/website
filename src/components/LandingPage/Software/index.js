@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
-import Translate, {translate} from '@docusaurus/Translate';
-import { ArrowRight, Blocks, Braces, ChartNoAxesCombined, CircleCheck, Cloud, CodeXml, FileText, Globe, Layers, Plug, Rocket, Settings, ShieldCheck, Webhook } from 'lucide-react';
+import Translate from '@docusaurus/Translate';
+import { ArrowRight, Blocks, ChartNoAxesCombined, CircleCheck, CodeXml, FileText, Globe, Layers, Plug, Rocket, Settings, ShieldCheck, Webhook } from 'lucide-react';
 import styles from '../shared/index.module.css';
 import PricingCard from '../shared/PricingCard';
-import InvoiceFlow from '../InvoiceFlow';
 
 export default function LandingPage() {
     const {i18n: {currentLocale}} = useDocusaurusContext();
@@ -29,46 +27,7 @@ export default function LandingPage() {
     const heading = clsx(styles.font_title, styles.text_secondary, 'text-3xl md:text-4xl font-bold mb-4');
 
     return (
-        <Layout
-            title={translate({id: 'softwareLanding.page.title', message: 'AI-powered invoice collection for your software'})}
-            description={translate({id: 'softwareLanding.page.description', message: "Let AI collect your users' invoices and deliver them straight into your software. Include collection in your package for a fixed price per user, or sell it as an option and keep 50% of the revenue."})}>
-            <div id="landingpage" className={clsx(styles.text_secondary, 'font-sans')}>
-                {/* HERO */}
-                <section className={clsx(styles.bg_section_odd, 'relative text-center py-24 px-6')}>
-                    <div className={clsx(styles.bg_primary_light, styles.text_primary, 'inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-8')}>
-                        <CodeXml size={18} aria-hidden="true" />
-                        <Translate id="softwareLanding.hero.badge">Built for software publishers</Translate>
-                    </div>
-                    <h1 className={clsx(styles.font_title, styles.text_secondary, 'text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl mx-auto mb-6')}>
-                        <Translate id="softwareLanding.hero.title">Let AI collect your users' invoices. </Translate>
-                        <em className={clsx(styles.text_primary, 'not-italic')}><Translate id="softwareLanding.hero.highlight">Straight into your software.</Translate></em>
-                    </h1>
-                    <p className={clsx(styles.text_secondary_light, 'text-lg md:text-xl max-w-2xl mx-auto mb-10')}>
-                        <Translate id="softwareLanding.hero.subtitle">Turn scattered supplier invoices into a seamless product feature. Our AI collects them for your users, so they can stop chasing documents and start getting more from your software.</Translate>
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-14">
-                        <Link to="#contact" className={primaryButton}><Translate id="softwareLanding.hero.demo">Book a technical demo</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
-                        <Link to="/docs/embed-in-your-app/quick-start" className={secondaryButton}><Translate id="softwareLanding.hero.docs">Explore the API</Translate></Link>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                        {[
-                            [Braces, <Translate id="softwareLanding.hero.api">REST API</Translate>, <Translate id="softwareLanding.hero.api.desc">One interface for your product</Translate>],
-                            [Webhook, <Translate id="softwareLanding.hero.callbacks">Callbacks</Translate>, <Translate id="softwareLanding.hero.callbacks.desc">Invoices delivered to your backend</Translate>],
-                            [CodeXml, <Translate id="softwareLanding.hero.open">Open source</Translate>, <Translate id="softwareLanding.hero.open.desc">Inspect and extend the collectors</Translate>],
-                            [Cloud, <Translate id="softwareLanding.hero.cloud">Hosted API</Translate>, <Translate id="softwareLanding.hero.cloud.desc">No collection infrastructure to manage</Translate>],
-                        ].map(([Icon, title, description], index) => (
-                            <div key={index} className="bg-white rounded-xl p-4">
-                                <Icon size={28} className={clsx(styles.text_primary, 'mb-3')} aria-hidden="true" />
-                                <div className={clsx(styles.text_secondary, 'font-bold')}>{title}</div>
-                                <div className={clsx(styles.text_secondary_light, 'text-xs mt-1')}>{description}</div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-                
-                {/* Flow animation */}
-                <InvoiceFlow />
-
+        <>
                 {/* PROMISE — white */}
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
@@ -352,7 +311,6 @@ export default function LandingPage() {
                         ))}
                     </div>
                 </section>
-            </div>
-        </Layout>
+            </>
     );
 }

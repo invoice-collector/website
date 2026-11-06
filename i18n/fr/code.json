@@ -1,4 +1,43 @@
 {
+  "commonLanding.page.title": {
+    "message": "Invoice Collector - Collecte de factures par IA"
+  },
+  "commonLanding.page.description": {
+    "message": "Collectez automatiquement les factures de votre entreprise, de vos clients ou des utilisateurs de votre logiciel depuis les portails fournisseurs et les boîtes mail."
+  },
+  "commonLanding.hero.title": {
+    "message": "Invoice Collector"
+  },
+  "commonLanding.hero.subtitle": {
+    "message": "Laissez l'IA collecter vos factures."
+  },
+  "commonLanding.hero.desc": {
+    "message": "Les factures qu'il vous faut, sans avoir à les chercher. Laissez l'IA gérer la collecte et avancez sur l'essentiel, avec plus de 9 000 collecteurs référencés dans notre catalogue."
+  },
+  "commonLanding.hero.cta": {
+    "message": "Trouver ma solution"
+  },
+  "commonLanding.customerType.title": {
+    "message": "Pour qui souhaitez-vous collecter des factures ?"
+  },
+  "commonLanding.customerType.software": {
+    "message": "Éditeur logiciel"
+  },
+  "commonLanding.customerType.software.desc": {
+    "message": "Je souhaite collecter les factures de mes utilisateurs"
+  },
+  "commonLanding.customerType.company": {
+    "message": "Une entreprise"
+  },
+  "commonLanding.customerType.company.desc": {
+    "message": "Je souhaite collecter mes factures"
+  },
+  "commonLanding.customerType.accountant": {
+    "message": "Un expert-comptable"
+  },
+  "commonLanding.customerType.accountant.desc": {
+    "message": "Je souhaite collecter les factures de mes clients"
+  },
   "accountant.page.title": {
     "message": "L'API open source du collecteur de factures, propulsée par l'IA"
   },
