@@ -24,8 +24,8 @@ export default function CommonLandingPage() {
                 {/* HERO */}
                 <section className={clsx(styles.bg_section_odd, 'relative text-center py-24 px-6')}>
                     <h1 className={clsx(styles.font_title, styles.text_secondary, 'text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl mx-auto mb-6')}>
-                        <Translate id="softwareLanding.hero.title">Let AI collect the invoices.</Translate><br />
-                        <em className={clsx(styles.text_primary, 'not-italic')}><Translate id="softwareLanding.hero.highlight">Straight into your software.</Translate></em>
+                        <Translate id="commonLanding.hero.title">Let AI collect the invoices.</Translate><br />
+                        <em className={clsx(styles.text_primary, 'not-italic')}><Translate id="commonLanding.hero.highlight">Straight into your software.</Translate></em>
                     </h1>
                     <p className={clsx(styles.text_secondary_light, 'text-lg md:text-xl max-w-2xl mx-auto mb-10')}>
                         <Translate id="commonLanding.hero.desc">The invoices you need, without the chase. Let AI handle the collection and keep work moving, with over 9,000 collectors referenced in our catalog.</Translate>

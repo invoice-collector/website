@@ -6,7 +6,10 @@
     "message": "Collectez automatiquement les factures de votre entreprise, de vos clients ou des utilisateurs de votre logiciel depuis les portails fournisseurs et les boîtes mail."
   },
   "commonLanding.hero.title": {
-    "message": "Invoice Collector"
+    "message": "Laissez l'IA collecter les factures."
+  },
+  "commonLanding.hero.highlight": {
+    "message": "Directement dans votre logiciel."
   },
   "commonLanding.hero.subtitle": {
     "message": "Laissez l'IA collecter vos factures."
