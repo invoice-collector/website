@@ -523,7 +523,7 @@ export default function LandingPage() {
                     </div>
                 </div>
 
-                {/* CTA — dark */}
+                {/* CONTACT — dark */}
                 <section id="contact" className={clsx("bg-gray-900 text-white text-center py-20 px-6")}>
                     <span className={clsx(styles.text_primary, "inline-block bg-white bg-opacity-10 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6")}><Translate id="accountant.cta.badge">Next step</Translate></span>
                     <h2 className={clsx(styles.font_title, "text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5")}><Translate id="accountant.cta.title">Demo + Trial — 30 days to prove the ROI</Translate></h2>

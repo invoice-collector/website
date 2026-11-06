@@ -51,6 +51,7 @@ export default function LandingPage() {
             title={translate({id: 'companyLanding.page.title', message: 'Let AI collect your business invoices'})}
             description={translate({id: 'companyLanding.page.description', message: 'Stop chasing supplier invoices. Invoice Collector automatically collects your business invoices from supported supplier portals and inboxes, so you can spend less time on admin.'})}>
             <div id="landingpage" className={clsx(styles.text_secondary, 'font-sans')}>
+                {/* HERO */}
                 <section className={clsx(styles.bg_section_odd, 'relative text-center py-24 px-6')}>
                     <div className={clsx(styles.bg_primary_light, styles.text_primary, 'inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-8')}>
                         <BriefcaseBusiness size={18} aria-hidden="true" />
@@ -86,6 +87,7 @@ export default function LandingPage() {
                 {/* Flow animation */}
                 <InvoiceFlow />
 
+                {/* PROMISE — white */}
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-14">
@@ -112,6 +114,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* PROBLEM — beige */}
                 <section id="problem" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
@@ -140,6 +143,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* SOLUTION — white */}
                 <section id="solution" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
@@ -180,6 +184,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* ROI — beige */}
                 <section id="roi" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-14">
@@ -243,6 +248,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* PRICING — white */}
                 <section id="pricing" className="bg-white">
                     <div className="max-w-6xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
@@ -283,6 +289,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* REFORM — beige */}
                 <section id="reform" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
@@ -293,6 +300,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* DEPLOYMENT — white */}
                 <section id="deployment" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
@@ -331,6 +339,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* CONTACT — dark */}
                 <section id="contact" className="bg-gray-900 text-white text-center py-20 px-6">
                     <span className={clsx(styles.text_primary, 'inline-block bg-white bg-opacity-10 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6')}><Translate id="companyLanding.cta.badge">Your next step</Translate></span>
                     <h2 className={clsx(styles.font_title, 'text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5')}><Translate id="companyLanding.cta.title">Your next month-end could involve fewer downloads</Translate></h2>

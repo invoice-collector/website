@@ -33,6 +33,7 @@ export default function LandingPage() {
             title={translate({id: 'softwareLanding.page.title', message: 'AI-powered invoice collection for your software'})}
             description={translate({id: 'softwareLanding.page.description', message: "Let AI collect your users' invoices and deliver them straight into your software. Include collection in your package for a fixed price per user, or sell it as an option and keep 50% of the revenue."})}>
             <div id="landingpage" className={clsx(styles.text_secondary, 'font-sans')}>
+                {/* HERO */}
                 <section className={clsx(styles.bg_section_odd, 'relative text-center py-24 px-6')}>
                     <div className={clsx(styles.bg_primary_light, styles.text_primary, 'inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium mb-8')}>
                         <CodeXml size={18} aria-hidden="true" />
@@ -68,6 +69,7 @@ export default function LandingPage() {
                 {/* Flow animation */}
                 <InvoiceFlow />
 
+                {/* PROMISE — white */}
                 <section id="promise" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-14">
@@ -91,6 +93,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* PROBLEM — beige */}
                 <section id="problem" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
@@ -126,6 +129,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* SOLUTION — white */}
                 <section id="solution" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-10">
@@ -172,6 +176,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* ROI — beige */}
                 <section id="roi" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="mb-14">
@@ -218,6 +223,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* PRICING — white */}
                 <section id="pricing" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
@@ -260,6 +266,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* REFORM — beige */}
                 <section id="reform" className={styles.bg_section_odd}>
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
@@ -282,6 +289,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* DEPLOYMENT — white */}
                 <section id="deployment" className="bg-white">
                     <div className="max-w-5xl mx-auto px-6 py-20">
                         <div className="text-center mb-12">
@@ -320,6 +328,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
+                {/* CONTACT — dark */}
                 <section id="contact" className="bg-gray-900 text-white text-center py-20 px-6">
                     <span className={clsx(styles.text_primary, 'inline-block bg-white bg-opacity-10 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6')}><Translate id="softwareLanding.cta.badge">Build with us</Translate></span>
                     <h2 className={clsx(styles.font_title, 'text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5')}><Translate id="softwareLanding.cta.title">Make invoice collection your next product advantage</Translate></h2>
