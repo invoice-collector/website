@@ -68,8 +68,8 @@ It simulates a click on the screenshot:
 ```typescript
 type MessageClick = {
     type: 'click';
-    x: number;  // X coordinate as percentage (0-100) of screenshot width
-    y: number;  // Y coordinate as percentage (0-100) of screenshot height
+    x: number;  // X coordinate as ratio (0-1) of screenshot width
+    y: number;  // Y coordinate as ratio (0-1) of screenshot height
 }
 ```
 
@@ -108,3 +108,14 @@ type MessageInteractive = {
 - `cancel` - User cancelled the process
 - `remove` - User removed the interactive element
 - `report` - User reported an issue
+
+**Resize** message can be sent when the client window is resized:
+
+```typescript
+type MessageResize = {
+    type: 'resize';
+    width: number;                  // New width of the client window in pixels
+    height: number;                 // New height of the client window in pixels
+    deviceScaleFactor?: number;     // Optional device scale factor (e.g., for high-DPI displays)
+}
+```
