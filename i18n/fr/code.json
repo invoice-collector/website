@@ -17,6 +17,12 @@
   "commonLanding.hero.desc": {
     "message": "Les factures qu'il vous faut, sans avoir à les chercher. Laissez l'IA gérer la collecte et avancez sur l'essentiel, avec plus de 9 000 collecteurs référencés dans notre catalogue."
   },
+  "commonLanding.hero.demo": {
+    "message": "Réserver une démo technique"
+  },
+  "commonLanding.hero.docs": {
+    "message": "Explorer l'API"
+  },
   "commonLanding.hero.cta": {
     "message": "Trouver ma solution"
   },
