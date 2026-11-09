@@ -614,6 +614,288 @@
   "company.pricing.feature.support4": {
     "message": "Support standard"
   },
+  "company.promise.badge": {
+    "message": "La promesse"
+  },
+  "company.promise.title": {
+    "message": "Vos factures devraient venir à vous."
+  },
+  "company.promise.highlight": {
+    "message": "Pas l'inverse."
+  },
+  "company.promise.desc": {
+    "message": "Des abonnements logiciels aux dépenses courantes de l'entreprise, arrêtez de répéter la même routine de collecte chaque mois."
+  },
+  "company.promise.portals.title": {
+    "message": "Portails fournisseurs"
+  },
+  "company.promise.portals.desc": {
+    "message": "Collectez les factures de vos comptes fournisseurs compatibles sans vous connecter à chaque site vous-même."
+  },
+  "company.promise.email.title": {
+    "message": "Factures par email"
+  },
+  "company.promise.email.desc": {
+    "message": "Connectez une boîte mail compatible pour collecter les factures reçues par email, en plus de celles des portails."
+  },
+  "company.promise.team.title": {
+    "message": "Votre entreprise, organisée"
+  },
+  "company.promise.team.desc": {
+    "message": "Perdez moins de temps à chercher vos documents quand votre comptable ou votre équipe financière en a besoin."
+  },
+  "company.problem.badge": {
+    "message": "Le problème"
+  },
+  "company.problem.title": {
+    "message": "Gérer une entreprise, c'est déjà bien assez de travail"
+  },
+  "company.problem.desc": {
+    "message": "Chaque facture peut vouloir dire une nouvelle connexion, une nouvelle recherche et un nouveau téléchargement. De petites tâches qui s'accumulent quand on les répète fournisseur après fournisseur, mois après mois."
+  },
+  "company.problem.login": {
+    "message": "Se connecter au portail fournisseur"
+  },
+  "company.problem.find": {
+    "message": "Trouver la bonne facture"
+  },
+  "company.problem.download": {
+    "message": "Télécharger le document"
+  },
+  "company.problem.file": {
+    "message": "Le classer pour votre comptabilité"
+  },
+  "company.problem.example.title": {
+    "message": "100 factures à 3 minutes chacune = 5 heures par mois"
+  },
+  "company.problem.example.desc": {
+    "message": "Un exemple illustratif du temps passé à collecter des documents au lieu de servir vos clients, gérer votre équipe ou développer votre entreprise. Ajustez les hypothèses ci-dessous pour refléter votre propre routine."
+  },
+  "company.solution.badge": {
+    "message": "La solution"
+  },
+  "company.solution.title": {
+    "message": "Connectez vos fournisseurs. Laissez l'IA faire la collecte."
+  },
+  "company.solution.desc": {
+    "message": "Invoice Collector récupère les factures de vos sources connectées et les centralise dans votre compte. Concentrez-vous sur votre entreprise, pas sur le prochain téléchargement."
+  },
+  "company.solution.flow.sources": {
+    "message": "Vos fournisseurs et vos boîtes mail"
+  },
+  "company.solution.flow.destination": {
+    "message": "Vos factures, au même endroit"
+  },
+  "company.solution.automatic.title": {
+    "message": "Collecte automatique"
+  },
+  "company.solution.automatic.desc": {
+    "message": "Continuez à collecter depuis vos comptes connectés sans répéter les mêmes téléchargements manuels chaque mois."
+  },
+  "company.solution.documents.title": {
+    "message": "Des documents prêts quand vous en avez besoin"
+  },
+  "company.solution.documents.desc": {
+    "message": "Réunissez vos factures collectées au même endroit pour simplifier la préparation des documents pour votre comptabilité."
+  },
+  "company.solution.visibility.title": {
+    "message": "Suivez vos connexions"
+  },
+  "company.solution.visibility.desc": {
+    "message": "Vérifiez l'avancement de la collecte et reconnectez un compte fournisseur quand il demande votre attention."
+  },
+  "company.solution.simple.title": {
+    "message": "Aucun projet d'intégration"
+  },
+  "company.solution.simple.desc": {
+    "message": "Utilisez l'application en ligne pour connecter vos fournisseurs. Pas besoin de développer une intégration API ni de gérer un serveur."
+  },
+  "company.solution.catalog": {
+    "message": "Vérifiez quels fournisseurs vous pouvez connecter"
+  },
+  "company.roi.badge": {
+    "message": "ROI"
+  },
+  "company.roi.title": {
+    "message": "Combien vaut votre temps de collecte de factures ?"
+  },
+  "company.roi.desc": {
+    "message": "Estimez le temps que vous pourriez récupérer chaque mois et comparez sa valeur à l'abonnement adapté à votre volume de factures."
+  },
+  "company.roi.example.title": {
+    "message": "Un calcul type, pas une promesse"
+  },
+  "company.roi.example.desc": {
+    "message": "Pour 100 factures par mois, économiser 3 minutes par facture vous rend 5 heures chaque mois. À un coût horaire de 35 €, ce temps vaut 175 € par mois."
+  },
+  "company.roi.assumptions.title": {
+    "message": "Utilisez vos propres chiffres"
+  },
+  "company.roi.assumptions.desc": {
+    "message": "Comptez les factures issues des sources compatibles et le temps manuel que vous comptez éviter. Les résultats estiment la valeur du temps, pas des économies garanties. Le temps de mise en place, les reconnexions occasionnelles et les taxes ne sont pas inclus."
+  },
+  "company.roi.calculator.title": {
+    "message": "Votre estimation de temps économisé"
+  },
+  "company.roi.invoices": {
+    "message": "Factures collectées par mois"
+  },
+  "company.roi.minutes": {
+    "message": "Minutes économisées par facture"
+  },
+  "company.roi.hourlyCost": {
+    "message": "Valeur d'une heure de votre temps"
+  },
+  "company.roi.hours.label": {
+    "message": "Temps économisé par mois"
+  },
+  "company.roi.hours.value": {
+    "message": "{hours} heures"
+  },
+  "company.roi.value.label": {
+    "message": "Valeur estimée de ce temps"
+  },
+  "company.roi.plan.label": {
+    "message": "Abonnement mensuel, HT"
+  },
+  "company.roi.plan.value": {
+    "message": "{name} : {price}"
+  },
+  "company.roi.plan.custom": {
+    "message": "Sur devis"
+  },
+  "company.roi.net.label": {
+    "message": "valeur mensuelle estimée du temps après abonnement"
+  },
+  "company.roi.net.negative": {
+    "message": "Avec ces hypothèses, la valeur estimée du temps ne couvre pas l'abonnement."
+  },
+  "company.roi.custom.desc": {
+    "message": "Au-delà de 300 factures par mois, nous vous fournirons un devis avant de calculer la valeur après abonnement."
+  },
+  "company.roi.cta.plans": {
+    "message": "Voir les offres"
+  },
+  "company.roi.cta.quote": {
+    "message": "Obtenir mon devis personnalisé"
+  },
+  "company.pricing.badge": {
+    "message": "Tarification"
+  },
+  "company.pricing.title": {
+    "message": "Une offre simple pour vos factures mensuelles"
+  },
+  "company.pricing.desc": {
+    "message": "Choisissez selon votre volume de factures. Chaque offre inclut tous les collecteurs, la collecte automatique et le support standard."
+  },
+  "company.pricing.limit": {
+    "message": "Jusqu'à {count} factures par mois"
+  },
+  "company.pricing.custom.price": {
+    "message": "Contactez-nous"
+  },
+  "company.pricing.sources.title": {
+    "message": "Commencez par les fournisseurs que vous utilisez le plus"
+  },
+  "company.pricing.sources.desc": {
+    "message": "Vérifiez dans le catalogue des collecteurs vos abonnements, vos fournisseurs d'énergie et vos autres dépenses courantes avant de choisir votre offre."
+  },
+  "company.pricing.sources.cta": {
+    "message": "Parcourir les collecteurs"
+  },
+  "company.reform.badge": {
+    "message": "Au-delà de la facturation électronique"
+  },
+  "company.reform.title": {
+    "message": "Pour les factures que vous devez encore aller chercher"
+  },
+  "company.reform.desc": {
+    "message": "Toutes les factures fournisseurs ne passent pas par votre plateforme de facturation électronique. Abonnements internationaux, téléchargements sur portails et factures par email peuvent encore demander une collecte manuelle. Invoice Collector complète votre processus existant en collectant depuis les sources compatibles."
+  },
+  "company.deployment.badge": {
+    "message": "Déploiement"
+  },
+  "company.deployment.title": {
+    "message": "Commencez à collecter, sans projet technique"
+  },
+  "company.deployment.desc": {
+    "message": "Débutez avec quelques fournisseurs réguliers, vérifiez vos premières factures collectées, puis ajoutez d'autres comptes au fil du temps."
+  },
+  "company.deployment.step1.title": {
+    "message": "Créez votre compte"
+  },
+  "company.deployment.step1.desc": {
+    "message": "Inscrivez-vous dans l'application en ligne et choisissez les fournisseurs dont vous voulez collecter les factures."
+  },
+  "company.deployment.step2.title": {
+    "message": "Connectez vos sources"
+  },
+  "company.deployment.step2.desc": {
+    "message": "Suivez les étapes de connexion pour vos comptes fournisseurs ou votre boîte mail. Complétez l'authentification demandée par votre fournisseur."
+  },
+  "company.deployment.step3.title": {
+    "message": "Laissez la collecte s'exécuter"
+  },
+  "company.deployment.step3.desc": {
+    "message": "Vérifiez vos premières factures, suivez l'avancement de la collecte et reconnectez un compte si besoin."
+  },
+  "company.deployment.help.title": {
+    "message": "Un peu de préparation. Moins d'admin chaque mois."
+  },
+  "company.deployment.help.desc": {
+    "message": "Préparez vos fournisseurs habituels et vos accès aux comptes. Commencez par les factures qui demandent le plus d'effort à récupérer."
+  },
+  "company.deployment.sources.title": {
+    "message": "Trouvez vos fournisseurs"
+  },
+  "company.deployment.sources.desc": {
+    "message": "Vérifiez les comptes compatibles dans le catalogue avant de les connecter."
+  },
+  "company.deployment.sources.link": {
+    "message": "Explorer le catalogue des collecteurs"
+  },
+  "company.deployment.support.title": {
+    "message": "Besoin d'un coup de main pour démarrer ?"
+  },
+  "company.deployment.support.desc": {
+    "message": "Parlez-nous de vos fournisseurs et de votre volume mensuel de factures. Nous pouvons vous aider à choisir par où commencer."
+  },
+  "company.deployment.support.link": {
+    "message": "Parler à notre équipe"
+  },
+  "company.cta.badge": {
+    "message": "Prochaine étape"
+  },
+  "company.cta.title": {
+    "message": "Votre prochaine fin de mois pourrait compter moins de téléchargements"
+  },
+  "company.cta.desc": {
+    "message": "Connectez vos premiers fournisseurs et laissez l'IA retirer la collecte de factures de votre liste de tâches. Besoin d'accompagnement ou d'un devis personnalisé ? Notre équipe peut vous aider."
+  },
+  "company.cta.start": {
+    "message": "Commencer à collecter mes factures"
+  },
+  "company.cta.demo": {
+    "message": "Réserver une démo personnalisée"
+  },
+  "company.cta.connect.title": {
+    "message": "Connectez vos comptes"
+  },
+  "company.cta.connect.desc": {
+    "message": "Commencez par les fournisseurs que vous utilisez chaque mois."
+  },
+  "company.cta.collect.title": {
+    "message": "Laissez l'IA collecter"
+  },
+  "company.cta.collect.desc": {
+    "message": "Réunissez les factures de vos sources connectées au même endroit."
+  },
+  "company.cta.time.title": {
+    "message": "Récupérez votre temps"
+  },
+  "company.cta.time.desc": {
+    "message": "Concentrez-vous sur votre entreprise plutôt que de courir après les documents."
+  },
   "software.pricing.name": {
     "message": "Éditeur de logiciel"
   },
