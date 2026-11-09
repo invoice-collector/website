@@ -917,6 +917,333 @@
   "software.pricing.feature.support": {
     "message": "Support dédié"
   },
+  "software.promise.badge": {
+    "message": "La promesse"
+  },
+  "software.promise.title": {
+    "message": "Faites de votre produit l'endroit où arrivent les factures"
+  },
+  "software.promise.desc": {
+    "message": "Pour les plateformes ERP, comptables, de gestion des notes de frais et financières : apportez directement dans les workflows que vos utilisateurs utilisent déjà les documents dont ils ont besoin."
+  },
+  "software.promise.native.title": {
+    "message": "Une fonctionnalité, pas un énième outil"
+  },
+  "software.promise.native.desc": {
+    "message": "Laissez vos utilisateurs connecter leurs fournisseurs depuis votre application et gardez la collecte de factures au plus près de leur travail quotidien."
+  },
+  "software.promise.revenue.title": {
+    "message": "Une nouvelle raison de passer à l'offre supérieure"
+  },
+  "software.promise.revenue.desc": {
+    "message": "Packagez la collecte en option payante ou incluez-la dans une offre premium. C'est vous qui décidez de la façon dont elle crée de la valeur pour vos clients."
+  },
+  "software.promise.focus.title": {
+    "message": "Gardez vos équipes d'ingénierie concentrées"
+  },
+  "software.promise.focus.desc": {
+    "message": "Construisez votre produit cœur au lieu de recréer les flux de connexion fournisseurs, la logique de téléchargement et le monitoring de collecte."
+  },
+  "software.problem.badge": {
+    "message": "Le problème"
+  },
+  "software.problem.title": {
+    "message": "Vos utilisateurs font encore le travail entre vos outils"
+  },
+  "software.problem.desc": {
+    "message": "Une plateforme financière puissante reste dépendante des documents entrants. Quand les factures restent éparpillées entre portails fournisseurs et boîtes mail, vos utilisateurs quittent votre logiciel pour les collecter à la main."
+  },
+  "software.problem.find": {
+    "message": "Trouver le fournisseur"
+  },
+  "software.problem.login": {
+    "message": "Se connecter et s'authentifier"
+  },
+  "software.problem.download": {
+    "message": "Télécharger la facture"
+  },
+  "software.problem.match": {
+    "message": "Rattacher au bon compte"
+  },
+  "software.problem.import": {
+    "message": "Importer dans votre logiciel"
+  },
+  "software.problem.users.title": {
+    "message": "De la friction pour vos utilisateurs"
+  },
+  "software.problem.users.desc": {
+    "message": "Téléchargements répétés, documents manquants et imports manuels ralentissent la réconciliation et les processus de fin de mois."
+  },
+  "software.problem.team.title": {
+    "message": "De la maintenance pour votre équipe"
+  },
+  "software.problem.team.desc": {
+    "message": "Chaque fournisseur a un portail différent. Développer la collecte en interne, c'est maintenir ces intégrations en plus de votre propre roadmap."
+  },
+  "software.solution.badge": {
+    "message": "La solution"
+  },
+  "software.solution.title": {
+    "message": "Vous gardez l'expérience. Nous gérons la collecte."
+  },
+  "software.solution.desc": {
+    "message": "Invoice Collector récupère les factures de vos utilisateurs auprès de leurs fournisseurs et les livre à votre application via le callback de votre backend. Vous gardez le contrôle de l'expérience ; notre IA gère la collecte."
+  },
+  "software.solution.flow.suppliers": {
+    "message": "Les fournisseurs de vos utilisateurs"
+  },
+  "software.solution.flow.product": {
+    "message": "Votre application"
+  },
+  "software.solution.sources.title": {
+    "message": "Portails fournisseurs et email"
+  },
+  "software.solution.sources.desc": {
+    "message": "Utilisez le catalogue de collecteurs pour couvrir les sources de vos utilisateurs, des abonnements SaaS aux opérateurs télécom et aux boîtes mail."
+  },
+  "software.solution.frontend.title": {
+    "message": "Un parcours utilisateur embarqué"
+  },
+  "software.solution.frontend.desc": {
+    "message": "Intégrez la gestion des connexions dans votre frontend : ajouter une source, suivre l'avancement de la collecte et relancer une connexion quand une authentification est nécessaire."
+  },
+  "software.solution.delivery.title": {
+    "message": "Les factures livrées à votre backend"
+  },
+  "software.solution.delivery.desc": {
+    "message": "Recevez les documents via votre callback et aiguillez-les vers vos workflows de réconciliation, de gestion des notes de frais ou de comptabilité."
+  },
+  "software.solution.users.title": {
+    "message": "Pensé autour de vos utilisateurs"
+  },
+  "software.solution.users.desc": {
+    "message": "Associez chaque utilisateur à votre propre identifiant et gérez ses identifiants connectés via la même API."
+  },
+  "software.solution.catalog": {
+    "message": "Parcourir le catalogue des collecteurs"
+  },
+  "software.solution.guide": {
+    "message": "Voir le guide d'intégration frontend"
+  },
+  "software.roi.badge": {
+    "message": "ROI"
+  },
+  "software.roi.title": {
+    "message": "Votre modèle économique. Un retour clair par utilisateur."
+  },
+  "software.roi.desc": {
+    "message": "Incluez la collecte de factures dans votre offre logicielle à prix fixe par utilisateur, ou vendez-la en option et gagnez des revenus à chaque abonnement."
+  },
+  "software.roi.package.title": {
+    "message": "Votre application est une offre tout-en-un"
+  },
+  "software.roi.package.desc": {
+    "message": "Incluez la collecte de factures dans votre abonnement existant. Vous payez Invoice Collector à prix fixe par utilisateur, convenu avec notre équipe."
+  },
+  "software.roi.package.result": {
+    "message": "Plus de valeur dans votre offre. Un coût par utilisateur prévisible."
+  },
+  "software.roi.option.title": {
+    "message": "Votre application a un produit cœur avec des options"
+  },
+  "software.roi.option.desc": {
+    "message": "Vendez Invoice Collector en option payante au prix de votre choix. Nous recevons 50% du prix de l'option par utilisateur, et vous gardez les 50% restants."
+  },
+  "software.roi.option.result": {
+    "message": "Une option utile pour vos utilisateurs. Des revenus récurrents pour vous."
+  },
+  "software.roi.custom.title": {
+    "message": "Voyez ce que vous gagnez par utilisateur"
+  },
+  "software.roi.price": {
+    "message": "Votre prix d'option mensuel / utilisateur"
+  },
+  "software.roi.sellingPrice": {
+    "message": "Votre utilisateur paie / mois"
+  },
+  "software.roi.collectorShare": {
+    "message": "Part Invoice Collector (50%)"
+  },
+  "software.roi.publisherShare": {
+    "message": "que vous gardez par utilisateur, chaque mois (50%)"
+  },
+  "software.roi.note": {
+    "message": "Cet exemple s'applique au modèle de l'option payante. Votre part est un chiffre d'affaires avant vos propres coûts et taxes, pas un bénéfice net. Pour une offre tout-en-un, contactez-nous pour votre prix fixe par utilisateur."
+  },
+  "software.roi.cta": {
+    "message": "Discuter de mon modèle tarifaire"
+  },
+  "software.pricing.badge": {
+    "message": "Tarification"
+  },
+  "software.pricing.title": {
+    "message": "Une tarification prévisible pour votre produit"
+  },
+  "software.pricing.desc": {
+    "message": "Deux modèles adaptés à votre façon de vendre votre logiciel : un coût fixe par utilisateur pour une offre tout-en-un, ou un partage de revenus 50/50 pour une option payante."
+  },
+  "software.pricing.name": {
+    "message": "Offre tout-en-un"
+  },
+  "software.pricing.price": {
+    "message": "Prix fixe par utilisateur"
+  },
+  "software.pricing.limit": {
+    "message": "Contactez-nous pour un devis adapté à votre produit et à votre usage prévu."
+  },
+  "software.pricing.cta": {
+    "message": "Obtenir un devis d'intégration"
+  },
+  "software.pricing.feature.api": {
+    "message": "Collecte incluse dans votre offre logicielle"
+  },
+  "software.pricing.feature.users": {
+    "message": "Tarification par utilisateur adaptée à votre volume"
+  },
+  "software.pricing.feature.support": {
+    "message": "Support dédié"
+  },
+  "software.pricing.option.name": {
+    "message": "Produit cœur + options payantes"
+  },
+  "software.pricing.option.price": {
+    "message": "50% pour vous. 50% pour nous."
+  },
+  "software.pricing.option.limit": {
+    "message": "Invoice Collector reçoit la moitié du prix de l'option que vous facturez par utilisateur."
+  },
+  "software.pricing.option.cta": {
+    "message": "Lancer votre option de collecte"
+  },
+  "software.pricing.option.feature.price": {
+    "message": "Vous fixez le prix de vente de l'option"
+  },
+  "software.pricing.option.feature.revenue": {
+    "message": "Vous gardez 50% du revenu par utilisateur"
+  },
+  "software.pricing.option.feature.support": {
+    "message": "Support dédié"
+  },
+  "software.pricing.setup.title": {
+    "message": "Cadrez l'intégration avant de vous engager"
+  },
+  "software.pricing.setup.desc": {
+    "message": "Passez en revue avec notre équipe vos collecteurs prioritaires, le parcours utilisateur, la gestion du callback et les exigences de lancement. Accord sur le périmètre du déploiement et les éventuels coûts d'onboarding dans votre devis."
+  },
+  "software.reform.badge": {
+    "message": "Au-delà de la facturation électronique"
+  },
+  "software.reform.title": {
+    "message": "Complétez vos workflows de facturation électronique"
+  },
+  "software.reform.desc": {
+    "message": "Vos utilisateurs peuvent encore recevoir des factures en dehors de leur plateforme de facturation électronique. Ajoutez la collecte depuis les portails et boîtes mail compatibles à côté de vos flux existants, plutôt que de demander à vos utilisateurs de combler les manques à la main."
+  },
+  "software.reform.international.title": {
+    "message": "Fournisseurs internationaux"
+  },
+  "software.reform.international.desc": {
+    "message": "Intégrez les factures de SaaS et de services étrangers dans la même expérience produit."
+  },
+  "software.reform.portals.title": {
+    "message": "Factures sur portail"
+  },
+  "software.reform.portals.desc": {
+    "message": "Collectez les documents qui doivent encore être téléchargés depuis les comptes fournisseurs."
+  },
+  "software.reform.workflows.title": {
+    "message": "Workflows connectés"
+  },
+  "software.reform.workflows.desc": {
+    "message": "Alimentez vos logiques de traitement et de réconciliation existantes avec les documents collectés."
+  },
+  "software.deployment.badge": {
+    "message": "Déploiement"
+  },
+  "software.deployment.title": {
+    "message": "Du premier appel API à une fonctionnalité que vos utilisateurs adorent"
+  },
+  "software.deployment.desc": {
+    "message": "Commencez par un pilote ciblé, validez l'expérience avec de vrais utilisateurs et étendez à votre rythme."
+  },
+  "software.deployment.phase1.title": {
+    "message": "Connectez votre produit"
+  },
+  "software.deployment.phase1.desc": {
+    "message": "Créez votre compte, configurez l'accès API côté backend et mappez vos identifiants utilisateurs. Choisissez les sources fournisseurs qui comptent le plus pour vos clients."
+  },
+  "software.deployment.phase2.title": {
+    "message": "Validez le parcours de bout en bout"
+  },
+  "software.deployment.phase2.desc": {
+    "message": "Embarquez la gestion des connexions, recevez les factures via votre callback et testez la collecte, la reconnexion et le routage des documents avec un groupe pilote."
+  },
+  "software.deployment.phase3.title": {
+    "message": "Lancez, mesurez et étendez"
+  },
+  "software.deployment.phase3.desc": {
+    "message": "Suivez l'activation, les factures collectées et l'adoption de la fonctionnalité. Affinez votre packaging, puis déployez vers plus d'utilisateurs et de sources compatibles."
+  },
+  "software.deployment.support.title": {
+    "message": "Votre équipe, accompagnée dès le premier jour"
+  },
+  "software.deployment.support.desc": {
+    "message": "Offrez à vos développeurs un chemin clair, du premier appel API au lancement, avec la documentation et l'accompagnement technique de notre équipe."
+  },
+  "software.deployment.docs.title": {
+    "message": "Une documentation prête pour les développeurs"
+  },
+  "software.deployment.docs.desc": {
+    "message": "Suivez des guides pratiques pour l'authentification, les connexions utilisateurs et la livraison des factures à votre application."
+  },
+  "software.deployment.docs.link": {
+    "message": "Explorer le guide d'intégration"
+  },
+  "software.deployment.guidance.title": {
+    "message": "Un accompagnement technique pour votre produit"
+  },
+  "software.deployment.guidance.desc": {
+    "message": "Passez en revue votre parcours utilisateur, vos fournisseurs prioritaires et votre intégration de callback avec notre équipe avant de déployer auprès de vos utilisateurs."
+  },
+  "software.deployment.guidance.link": {
+    "message": "Parler à notre équipe"
+  },
+  "software.cta.badge": {
+    "message": "Construisons ensemble"
+  },
+  "software.cta.title": {
+    "message": "Faites de la collecte de factures votre prochain avantage produit"
+  },
+  "software.cta.desc": {
+    "message": "Apportez votre cas d'usage, votre stack et vos premiers utilisateurs cibles. Nous vous aidons à cartographier l'intégration et à construire le business case de votre produit."
+  },
+  "software.cta.demo": {
+    "message": "Réserver une démo technique"
+  },
+  "software.cta.account": {
+    "message": "Créer un compte développeur"
+  },
+  "software.cta.tagline": {
+    "message": "Collecteurs open source. API documentée. Un déploiement façonné autour de votre produit."
+  },
+  "software.cta.demo.title": {
+    "message": "Présentation technique"
+  },
+  "software.cta.demo.desc": {
+    "message": "Passez en revue l'API, les flux frontend et l'intégration du callback avec votre équipe."
+  },
+  "software.cta.pilot.title": {
+    "message": "Pilote ciblé"
+  },
+  "software.cta.pilot.desc": {
+    "message": "Choisissez les premiers utilisateurs et sources, puis validez le parcours de collecte complet."
+  },
+  "software.cta.launch.title": {
+    "message": "Lancement produit"
+  },
+  "software.cta.launch.desc": {
+    "message": "Mettez-vous d'accord sur la tarification et le déploiement, puis apportez la fonctionnalité à vos utilisateurs."
+  },
   "theme.ErrorPageContent.title": {
     "message": "Cette page a planté.",
     "description": "The title of the fallback page when the page crashed"
