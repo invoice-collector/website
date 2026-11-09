@@ -31,7 +31,7 @@ export default function CommonLandingPage() {
                         <Translate id="commonLanding.hero.desc">The invoices you need, without the chase. Let AI handle the collection and keep work moving, with over 9,000 collectors referenced in our catalog.</Translate>
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-14">
-                        <Link to="#contact" className={primaryButton}><Translate id="commonLanding.hero.demo">Book a technical demo</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
+                        <Link to="#contact" className={primaryButton}><Translate id="commonLanding.hero.demo">Book a demo</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
                         <Link to="/docs/embed-in-your-app/quick-start" className={secondaryButton}><Translate id="commonLanding.hero.docs">Explore the API</Translate></Link>
                     </div>
                 </section>

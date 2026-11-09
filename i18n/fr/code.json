@@ -18,7 +18,7 @@
     "message": "Les factures qu'il vous faut, sans avoir à les chercher. Laissez l'IA gérer la collecte et avancez sur l'essentiel, avec plus de 9 000 collecteurs référencés dans notre catalogue."
   },
   "commonLanding.hero.demo": {
-    "message": "Réserver une démo technique"
+    "message": "Réserver une démo"
   },
   "commonLanding.hero.docs": {
     "message": "Explorer l'API"
@@ -1593,7 +1593,7 @@
     "message": "Vos destinations"
   },
   "invoiceFlow.processing": {
-    "message": "Collectées. Classées. Transmises."
+    "message": "Collectées. Transmises."
   },
   "invoiceFlow.destination.email": {
     "message": "Email"

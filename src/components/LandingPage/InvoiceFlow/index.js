@@ -189,7 +189,7 @@ export default function InvoiceFlow() {
                             </div>
                         </div>
                         <div className={styles.hubName}>Invoice Collector</div>
-                        <div className={styles.hubCaption}><Translate id="invoiceFlow.processing">Collected. Sorted. Delivered.</Translate></div>
+                        <div className={styles.hubCaption}><Translate id="invoiceFlow.processing">Collected. Delivered.</Translate></div>
                     </div>
                     <div className={styles.destinationGroup}>
                         <div className={styles.destinations}>
