@@ -293,7 +293,7 @@ export default function LandingPage() {
                     <h2 className={clsx(styles.font_title, 'text-3xl md:text-4xl font-bold max-w-2xl mx-auto mb-5')}><Translate id="software.cta.title">Make invoice collection your next product advantage</Translate></h2>
                     <p className="text-gray-400 max-w-2xl mx-auto mb-10"><Translate id="software.cta.desc">Bring your use case, your stack and your first target users. We will help you map the integration and build a business case for your product.</Translate></p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <Link href="https://calendly.com/lucas-bergeron-invoice-collector/30min" className={primaryButton}><Translate id="software.cta.demo">Book a technical demo</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
+                        <Link href="https://calendly.com/lucas-bergeron-invoice-collector/30min" className={primaryButton}><Translate id="software.cta.demo">Book a demo</Translate> <ArrowRight size={18} aria-hidden="true" /></Link>
                         <Link href="https://app.invoice-collector.com/signup" className={clsx(styles.hover_border_primary, 'inline-block border border-white border-opacity-20 text-gray-300 hover:text-white font-semibold px-8 py-3 rounded-xl transition no-underline hover:no-underline')}><Translate id="software.cta.account">Create a developer account</Translate></Link>
                     </div>
                     <p className="text-xs text-gray-400 mb-12"><Translate id="software.cta.tagline">Open-source collectors. Documented API. A rollout shaped around your product.</Translate></p>

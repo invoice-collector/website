@@ -1224,7 +1224,7 @@
     "message": "Apportez votre cas d'usage, votre stack et vos premiers utilisateurs cibles. Nous vous aidons à cartographier l'intégration et à construire le business case de votre produit."
   },
   "software.cta.demo": {
-    "message": "Réserver une démo technique"
+    "message": "Réserver une démo"
   },
   "software.cta.account": {
     "message": "Créer un compte développeur"
