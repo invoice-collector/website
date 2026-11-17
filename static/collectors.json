@@ -5284,7 +5284,7 @@
     "id": "amazon",
     "name": "Amazon (.fr)",
     "description": "Amazon is an online marketplace.",
-    "version": "44",
+    "version": "45",
     "website": "https://www.amazon.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
     "type": "web",
@@ -34924,18 +34924,36 @@
     "state": "planned"
   },
   {
-    "id": "elevenlabs",
-    "name": "Elevenlabs",
-    "description": "An AI-powered voice synthesis platform for creating realistic and natural-sounding speech.",
-    "version": "0",
-    "website": "https://elevenlabs.io/subscription",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/2157923.jpg",
-    "type": "sketch",
+    "id": "elevenlabs_email",
+    "name": "Elevenlabs (Email)",
+    "description": "Automatically collect your invoices from your mailbox.",
+    "version": "1",
+    "website": "https://elevenlabs.io",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/ElevenLabs_logo.png",
+    "type": "email",
     "params": {},
-    "loginUrl": "https://elevenlabs.io/subscription",
+    "wildcards": {
+      "sender": "*@*elevenlabs.io",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
+  },
+  {
+    "id": "elevenlabs_web",
+    "name": "Elevenlabs (Web)",
+    "description": "Automatically collect your invoices from the the web portal.",
+    "version": "1",
+    "website": "https://elevenlabs.io",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/ElevenLabs_logo.png",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://elevenlabs.io/app/sign-in",
+    "entryUrl": "https://elevenlabs.io/subscription",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "elevon_merchant_services",
@@ -42672,7 +42690,7 @@
     "id": "free",
     "name": "Free",
     "description": "A French internet service provider offering various online services.",
-    "version": "12",
+    "version": "13",
     "website": "https://www.free.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/5/52/Free_logo.svg",
     "type": "web",
@@ -46554,7 +46572,7 @@
     "id": "google_ads",
     "name": "Google Ads",
     "description": "An online advertising platform to create and manage ads across Google's networks.",
-    "version": "2",
+    "version": "3",
     "website": "https://ads.google.com",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
     "type": "web",
@@ -46563,7 +46581,7 @@
     "entryUrl": "https://ads.google.com/aw/billing/documents",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "development"
+    "state": "active"
   },
   {
     "id": "google_adwords_express",
@@ -46682,7 +46700,7 @@
     "id": "google_workspace",
     "name": "Google Workspace",
     "description": "A suite of cloud-based productivity and collaboration tools by Google.",
-    "version": "7",
+    "version": "8",
     "website": "https://workspace.google.com",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Workspace_Logo.svg",
     "type": "web",
@@ -53378,7 +53396,7 @@
     "id": "imap",
     "name": "Email IMAP",
     "description": "Connect your mailbox through IMAP.",
-    "version": "1",
+    "version": "2",
     "website": "https://imap.example.com",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Email_icon.png",
     "type": "provider",
@@ -66731,7 +66749,7 @@
   {
     "id": "makro_co_za",
     "name": "Makro.co.za",
-    "description": "A leading South African online retail store offering a wide range of products including electronics, groceries, and home appliances.",
+    "description": "An online wholesale platform offering a wide range of products for businesses.",
     "version": "0",
     "website": "https://www.makro.co.za/login",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/403623.jpg",
@@ -66745,7 +66763,7 @@
   {
     "id": "makro_es",
     "name": "Makro.es",
-    "description": "Makro.es is an online wholesale platform offering a wide range of products for businesses in Spain.",
+    "description": "An online wholesale platform offering a wide range of products for businesses.",
     "version": "0",
     "website": "https://docs.makro.es/?_ga=2.64458799.1836613730.1568624469-1760255380.1568027377",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/166538.jpg",
@@ -66755,6 +66773,20 @@
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "planned"
+  },
+  {
+    "id": "makro_nl",
+    "name": "Makro (.nl)",
+    "description": "An online wholesale platform offering a wide range of products for businesses.",
+    "version": "1",
+    "website": "https://makro.nl",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/13/Makro_Europe_logo.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.makro.nl/",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "active"
   },
   {
     "id": "malakoff_mederic_retraite",
@@ -76366,18 +76398,35 @@
     "state": "planned"
   },
   {
-    "id": "netlify",
-    "name": "Netlify",
-    "description": "A platform for deploying, hosting, and managing modern web projects with continuous integration.",
+    "id": "netlify_email",
+    "name": "Netlify (Email)",
+    "description": "Automatically collect your invoices from your mailbox.",
     "version": "0",
-    "website": "https://app.netlify.com/login/email?next=true",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/31089.jpg",
-    "type": "sketch",
+    "website": "https://www.netlify.com/",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Netlify_logo_(2).svg",
+    "type": "email",
     "params": {},
-    "loginUrl": "https://app.netlify.com/login/email?next=true",
+    "wildcards": {
+      "sender": "*@*netlify.com",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
+  },
+  {
+    "id": "netlify_web",
+    "name": "Netlify (Web)",
+    "description": "Automatically collect your invoices from the the web portal.",
+    "version": "0",
+    "website": "https://www.netlify.com/",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Netlify_logo_(2).svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://app.netlify.com/login/email",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "netregistry",
@@ -116742,7 +116791,7 @@
     "id": "uber_business_web",
     "name": "Uber for Business (Web)",
     "description": "Download Uber for Business ride and Uber Eats receipt invoices for known organization orders.",
-    "version": "5",
+    "version": "6",
     "website": "business.uber.com",
     "logo": "https://logovtor.com/wp-content/uploads/2021/03/uber-for-business-logo-vector.png",
     "type": "web",
