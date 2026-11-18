@@ -5663,7 +5663,7 @@
   {
     "id": "amazon_seller_central_be",
     "name": "Amazon Seller Central (.be)",
-    "description": "A platform for sellers to manage their Amazon (.be) marketplace listings, orders, and inventory.",
+    "description": "Download your fee invoices from the Amazon Seller Central Belgium web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.com.be/",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/2846245.jpg",
@@ -5677,7 +5677,7 @@
   {
     "id": "amazon_seller_central_ca",
     "name": "Amazon Seller Central (.ca)",
-    "description": "A platform for sellers to manage their Amazon.ca marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Canada web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.ca/",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/1076227.jpg",
@@ -5691,7 +5691,7 @@
   {
     "id": "amazon_seller_central_co_uk",
     "name": "Amazon Seller Central (.co.uk)",
-    "description": "A platform for sellers to manage their Amazon UK marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central UK web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.co.uk/",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/860631.jpg",
@@ -5705,7 +5705,7 @@
   {
     "id": "amazon_seller_central_com",
     "name": "Amazon Seller Central (.com)",
-    "description": "A platform for businesses to manage their Amazon sales, inventory, and customer interactions.",
+    "description": "Download your fee invoices from the Amazon Seller Central US web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.com",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/116294.jpg",
@@ -5719,7 +5719,7 @@
   {
     "id": "amazon_seller_central_com_au",
     "name": "Amazon Seller Central (.com.au)",
-    "description": "A platform for sellers to manage their Amazon Australia marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Australia web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.com.au/tax/seller-fee-invoices",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/514920.jpg",
@@ -5733,7 +5733,7 @@
   {
     "id": "amazon_seller_central_de",
     "name": "Amazon Seller Central (.de)",
-    "description": "A platform for sellers to manage their Amazon.de marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Germany web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.de/gp/payments-account/past-settlements.html/ref=ag_xx_cont_pymtvtrans",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/916.jpg",
@@ -5747,7 +5747,7 @@
   {
     "id": "amazon_seller_central_es",
     "name": "Amazon Seller Central (.es)",
-    "description": "A platform for sellers to manage their business on Amazon's Spanish marketplace.",
+    "description": "Download your fee invoices from the Amazon Seller Central Spain web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.es/",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/527633.jpg",
@@ -5761,7 +5761,7 @@
   {
     "id": "amazon_seller_central_eu",
     "name": "Amazon Seller Central (.eu)",
-    "description": "A platform for businesses to manage their sales, inventory, and customer interactions on Amazon's European marketplaces.",
+    "description": "Download your fee invoices from the Amazon Seller Central Europe's web portal.",
     "version": "0",
     "website": "https://sellercentral-europe.amazon.com",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/156697.jpg",
@@ -5775,21 +5775,22 @@
   {
     "id": "amazon_seller_central_fr",
     "name": "Amazon Seller Central (.fr)",
-    "description": "A platform for sellers to manage their Amazon France marketplace listings, orders, and performance.",
-    "version": "0",
-    "website": "https://sellercentral.amazon.fr/tax/seller-fee-invoices",
+    "description": "Download your fee invoices from the Amazon Seller Central France web portal.",
+    "version": "1",
+    "website": "https://sellercentral.amazon.fr/",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/1863263.jpg",
-    "type": "sketch",
+    "type": "web",
     "params": {},
     "loginUrl": "https://sellercentral.amazon.fr/tax/seller-fee-invoices",
+    "entryUrl": "https://sellercentral.amazon.fr/tax/seller-fee-invoices",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "amazon_seller_central_it",
     "name": "amazon seller central (.it)",
-    "description": "A platform for sellers to manage their Amazon.it marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Italy web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.it/tax/seller-fee-invoices",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/2225195.jpg",
@@ -5803,7 +5804,7 @@
   {
     "id": "amazon_seller_central_jp",
     "name": "Amazon Seller Central (.jp)",
-    "description": "A platform for sellers to manage their business on Amazon's Japanese marketplace.",
+    "description": "Download your fee invoices from the Amazon Seller Central Japan web portal.",
     "version": "0",
     "website": "https://sellercentral-japan.amazon.com/tax/seller-fee-invoices",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/514926.jpg",
@@ -5817,7 +5818,7 @@
   {
     "id": "amazon_seller_central_mx",
     "name": "Amazon Seller Central (.mx)",
-    "description": "A platform for sellers to manage their Amazon Mexico marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Mexico web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.com.mx/sellertaxinvoice/displaySellerTaxInvoices",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/3015111.jpg",
@@ -5831,7 +5832,7 @@
   {
     "id": "amazon_seller_central_nl",
     "name": "Amazon Seller Central (.nl)",
-    "description": "A platform for sellers to manage their Amazon.nl marketplace listings, orders, and performance metrics.",
+    "description": "Download your fee invoices from the Amazon Seller Central Netherlands web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.nl/tax/seller-fee-invoices",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/514925.jpg",
@@ -5845,7 +5846,7 @@
   {
     "id": "amazon_seller_central_se",
     "name": "Amazon Seller Central (.se)",
-    "description": "A platform for sellers to manage their Amazon Sweden (SE) marketplace listings, orders, and performance.",
+    "description": "Download your fee invoices from the Amazon Seller Central Sweden web portal.",
     "version": "0",
     "website": "https://sellercentral.amazon.se/payments/event/view?resultsPerPage=10&pageNumber=1",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/2842035.jpg",
@@ -14877,29 +14878,16 @@
     "id": "boulanger",
     "name": "Boulanger",
     "description": "A leading French retailer specializing in electronics, appliances, and multimedia products.",
-    "version": "8",
+    "version": "9",
     "website": "https://www.boulanger.com",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/4/46/Logo_Boulanger_2004.svg",
     "type": "web",
-    "params": {
-      "email": {
-        "type": "email",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.boulanger.com/account/auth",
     "entryUrl": "https://www.boulanger.com/account/my-orders/finished",
     "captcha": "none",
     "autoLogin": {},
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "active"
   },
   {
@@ -16475,28 +16463,15 @@
     "id": "bureau_vallee",
     "name": "Bureau Vallée",
     "description": "Bureau Vallée is an office furniture supplier for professionals and individuals.",
-    "version": "15",
+    "version": "16",
     "website": "https://www.bureau-vallee.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/3/32/Logo-bureau-vallee-2021.png",
     "type": "web",
-    "params": {
-      "id": {
-        "type": "string",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.bureau-vallee.fr/customer/account/login",
     "entryUrl": "https://www.bureau-vallee.fr/customer/invoices",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "active"
   },
   {
@@ -19713,15 +19688,46 @@
     "state": "planned"
   },
   {
-    "id": "chronopost",
-    "name": "Chronopost",
-    "description": "Online service to retrieve and verify Chronopost delivery proofs.",
-    "version": "2",
+    "id": "chronopost_email",
+    "name": "Chronopost (Email)",
+    "description": "Download your invoices from your mailbox whether you are an individual or a professional.",
+    "version": "1",
+    "website": "https://www.chronopost.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/d/d0/Chronopost-logo.svg",
+    "type": "email",
+    "params": {},
+    "wildcards": {
+      "sender": "*@*chronopost.fr",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
+  },
+  {
+    "id": "chronopost_particulier_web",
+    "name": "Chronopost Particulier (Web)",
+    "description": "Download your invoices from the online web portal for individuals.",
+    "version": "3",
     "website": "https://www.chronopost.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/d/d0/Chronopost-logo.svg",
     "type": "web",
     "params": {},
     "loginUrl": "https://www.chronopost.fr/fr/authentification",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development"
+  },
+  {
+    "id": "chronopost_professionnel_web",
+    "name": "Chronopost Professionnel (Web)",
+    "description": "Download your invoices from the online web portal for professionals.",
+    "version": "3",
+    "website": "https://www.chronopost.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/d/d0/Chronopost-logo.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.chronopost.fr/fr/professionnel",
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "development"
@@ -29489,18 +29495,36 @@
     "state": "planned"
   },
   {
-    "id": "dkv_mobility_com",
-    "name": "dkv-mobility.com",
-    "description": "A comprehensive mobility service offering fuel cards, toll payments, and fleet management solutions for businesses.",
-    "version": "0",
-    "website": "https://my.dkv-mobility.com/customer/invoices/",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/1664932.jpg",
-    "type": "sketch",
+    "id": "dkv_mobility_email",
+    "name": "DKV mobility (Email)",
+    "description": "Download your DKV Mobility invoices from your mailbox.",
+    "version": "1",
+    "website": "https://www.dkv-mobility.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/de/6/64/DKV-Logo.svg",
+    "type": "email",
     "params": {},
-    "loginUrl": "https://my.dkv-mobility.com/customer/invoices/",
+    "wildcards": {
+      "sender": "*@*dkv-mobility.com",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
+  },
+  {
+    "id": "dkv_mobility_web",
+    "name": "Dkv mobility (Web)",
+    "description": "Download your invoices from the DKV Mobility web portal.",
+    "version": "1",
+    "website": "https://www.dkv-mobility.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/de/6/64/DKV-Logo.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://my.dkv-mobility.com/",
+    "entryUrl": "https://my.dkv-mobility.com/customer/invoices/",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "dlvrit_com",
@@ -33076,28 +33100,15 @@
     "id": "eaux_de_grenoble_alpes",
     "name": "Eaux de Grenoble Alpes",
     "description": "Online service for managing water supply and related services in the Grenoble-Alpes region.",
-    "version": "3",
+    "version": "4",
     "website": "https://eau.grenoblealpesmetropole.fr",
     "logo": "https://www.somei.fr/site2017/wp-content/uploads/2019/05/Sans-titre-1.jpg",
     "type": "web",
-    "params": {
-      "email": {
-        "type": "email",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://eau.grenoblealpesmetropole.fr/#/login",
     "entryUrl": "https://eau.grenoblealpesmetropole.fr/#/facture",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "active"
   },
   {
@@ -34926,7 +34937,7 @@
   {
     "id": "elevenlabs_email",
     "name": "Elevenlabs (Email)",
-    "description": "Automatically collect your invoices from your mailbox.",
+    "description": "Download your ElevenLabs invoices from your mailbox.",
     "version": "1",
     "website": "https://elevenlabs.io",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/ElevenLabs_logo.png",
@@ -34943,7 +34954,7 @@
   {
     "id": "elevenlabs_web",
     "name": "Elevenlabs (Web)",
-    "description": "Automatically collect your invoices from the the web portal.",
+    "description": "Download your invoices from the ElevenLabs web portal.",
     "version": "1",
     "website": "https://elevenlabs.io",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/ElevenLabs_logo.png",
@@ -46657,13 +46668,13 @@
     "id": "google_play",
     "name": "Google Play",
     "description": "A digital distribution service for apps, games, and media content on Android devices.",
-    "version": "2",
-    "website": "https://payments.google.com",
+    "version": "3",
+    "website": "https://play.google.com",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Google_Play_2022_logo.svg",
     "type": "web",
     "params": {},
-    "loginUrl": "https://payments.google.com/payments/home",
-    "entryUrl": "https://payments.google.com/gp/w/u/0/home/subscriptionsandservices",
+    "loginUrl": "https://payments.google.com/gp/w/u/0/home/activity",
+    "entryUrl": "https://payments.google.com/gp/w/u/0/home/activity",
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "development"
@@ -54868,28 +54879,15 @@
     "id": "integral_systeme",
     "name": "Intégral Système",
     "description": "A French provider of software solutions and IT services for businesses.",
-    "version": "5",
+    "version": "6",
     "website": "https://www.integral-systeme.fr",
     "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/1313045.jpg",
     "type": "web",
-    "params": {
-      "email": {
-        "type": "email",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.integral-systeme.fr/module/dgtxerpevolubat/CustomerInvoice",
     "entryUrl": "https://www.integral-systeme.fr/module/dgtxerpevolubat/CustomerInvoice",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "active"
   },
   {
@@ -61323,10 +61321,38 @@
     "state": "planned"
   },
   {
-    "id": "laposte",
-    "name": "La Poste",
-    "description": "La Poste is a French postal service provider.",
-    "version": "24",
+    "id": "laposte_colissimo",
+    "name": "LaPoste Colissimo",
+    "description": "Download your invoices from LaPoste Colissimo web portal.",
+    "version": "1",
+    "website": "https://www.colissimo.entreprise.laposte.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/3/39/Colissimo_Logo.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.colissimo.entreprise.laposte.fr/",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development"
+  },
+  {
+    "id": "laposte_companies_collectivities",
+    "name": "LaPoste Companies & Collectivities",
+    "description": "Download your invoices from LaPoste Companies & Collectivities web portal.",
+    "version": "1",
+    "website": "https://www.laposte.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.laposte.fr/entreprise-collectivites",
+    "captcha": "other",
+    "authenticationMethod": "all",
+    "state": "development"
+  },
+  {
+    "id": "laposte_particuliers",
+    "name": "LaPoste Individuals",
+    "description": "Download your invoices from LaPoste Particuliers web portal.",
+    "version": "25",
     "website": "https://www.laposte.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg",
     "type": "web",
@@ -61338,18 +61364,18 @@
     "state": "active"
   },
   {
-    "id": "laposte_colissimo",
-    "name": "La Poste Colissimo",
-    "description": "La Poste Colissimo is a French postal service offering domestic and international shipping solutions.",
-    "version": "0",
-    "website": "https://www.colissimo.entreprise.laposte.fr",
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/3/39/Colissimo_Logo.svg",
-    "type": "sketch",
+    "id": "laposte_pro",
+    "name": "LaPoste Professionals",
+    "description": "Download your invoices from LaPoste Pro web portal.",
+    "version": "1",
+    "website": "https://www.laposte.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0d/La_Poste_2022.svg",
+    "type": "web",
     "params": {},
-    "loginUrl": "https://www.colissimo.entreprise.laposte.fr/",
-    "captcha": "none",
+    "loginUrl": "https://www.laposte.fr/professionnel",
+    "captcha": "other",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "lara_jobs",
@@ -76400,7 +76426,7 @@
   {
     "id": "netlify_email",
     "name": "Netlify (Email)",
-    "description": "Automatically collect your invoices from your mailbox.",
+    "description": "Download your Netlify invoices from your mailbox.",
     "version": "0",
     "website": "https://www.netlify.com/",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Netlify_logo_(2).svg",
@@ -76417,7 +76443,7 @@
   {
     "id": "netlify_web",
     "name": "Netlify (Web)",
-    "description": "Automatically collect your invoices from the the web portal.",
+    "description": "Download your invoices from the Netlify web portal.",
     "version": "0",
     "website": "https://www.netlify.com/",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Netlify_logo_(2).svg",
@@ -76698,27 +76724,14 @@
     "id": "new_loc_fr",
     "name": "Newloc",
     "description": "A French platform for renting construction equipment and machinery for professionals and individuals.",
-    "version": "1",
+    "version": "2",
     "website": "https://www.newloc.fr",
     "logo": "https://play-lh.googleusercontent.com/M4Nnq_CsB0bM8tbjo7y0XUJ24loLJRbYWadd4U3z56tsRQputAuYFiLzKZOTlmmwucXaC3SrM0aQNVw4bj4x",
     "type": "web",
-    "params": {
-      "email": {
-        "type": "email",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.newloc.fr/connexion",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "development"
   },
   {
@@ -83253,32 +83266,51 @@
     "state": "planned"
   },
   {
-    "id": "paypal",
-    "name": "Paypal",
-    "description": "PayPal is an online payment system that allows users to make and receive payments over the Internet securely.",
-    "version": "0",
-    "website": "https://paypal.com",
+    "id": "paypal_email",
+    "name": "PayPal (Email)",
+    "description": "Download your PayPal invoices from your mailbox.",
+    "version": "1",
+    "website": "https://www.paypal.com",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
-    "type": "sketch",
+    "type": "email",
     "params": {},
-    "loginUrl": "https://www.paypal.com/signin",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
+    "wildcards": {
+      "sender": "*@*paypal.com",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
   },
   {
-    "id": "paypal_shipping_by_packlink",
-    "name": "Paypal Shipping by Packlink",
-    "description": "A shipping service integrated with PayPal for seamless order fulfillment and logistics.",
-    "version": "0",
-    "website": "https://paypal.packlink.com/de/private/settings/billing/invoices",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/4420932.jpg",
-    "type": "sketch",
+    "id": "paypal_sales_web",
+    "name": "PayPal Sales (Web)",
+    "description": "Download your PayPal sales invoices from the web portal.",
+    "version": "1",
+    "website": "https://paypal.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
+    "type": "web",
     "params": {},
-    "loginUrl": "https://paypal.packlink.com/de/private/settings/billing/invoices",
+    "loginUrl": "https://www.paypal.com/invoice/s/manage",
+    "entryUrl": "https://www.paypal.com/invoice/s/manage",
     "captcha": "none",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
+  },
+  {
+    "id": "paypal_statements_web",
+    "name": "PayPal Statements (Web)",
+    "description": "Download your PayPal account statements from the web portal.",
+    "version": "1",
+    "website": "https://paypal.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.paypal.com/reports/accountStatements",
+    "entryUrl": "https://www.paypal.com/reports/accountStatements",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development"
   },
   {
     "id": "payplug",
@@ -103279,13 +103311,13 @@
     "id": "sonepar_fr",
     "name": "Sonepar (.fr)",
     "description": "Sonepar is a leading global distributor of electrical and digital building solutions for professionals.",
-    "version": "3",
+    "version": "5",
     "website": "https://www.sonepar.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/de/b/ba/Sonepar_2025_logo.svg",
     "type": "web",
     "params": {},
-    "loginUrl": "https://www.sonepar.fr/account/api/login?redirect_to=https%3A%2F%2Fwww.sonepar.fr%2Ffr-fr",
-    "entryUrl": "https://www.sonepar.fr/account/api/login?redirect_to=https%3A%2F%2Fwww.sonepar.fr%2Ffr-fr",
+    "loginUrl": "https://www.sonepar.fr/account/fr-fr/invoice-credit-notes/",
+    "entryUrl": "https://www.sonepar.fr/account/fr-fr/invoice-credit-notes/",
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "active"
@@ -114266,62 +114298,6 @@
     "state": "planned"
   },
   {
-    "id": "total_energies_eg_particuliers_fr",
-    "name": "Total Energies (Electricity & Gas) - Individuals",
-    "description": "Total Energies is an electricity and gas supplier.",
-    "version": "11",
-    "website": "https://www.totalenergies.fr",
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
-    "type": "web",
-    "params": {
-      "id": {
-        "type": "string",
-        "name": "Email",
-        "placeholder": "example@domain.com",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
-    "loginUrl": "https://www.totalenergies.fr/clients/mes-factures/mon-historique-de-factures",
-    "entryUrl": "https://www.totalenergies.fr/clients/mes-factures/mon-historique-de-factures",
-    "captcha": "none",
-    "authenticationMethod": "secretsOnly",
-    "state": "active"
-  },
-  {
-    "id": "total_energies_eg_pro_fr",
-    "name": "Total Energies (Electricity & Gas) - Companies & Collectivities",
-    "description": "Total Energies is an electricity and gas supplier.",
-    "version": "0",
-    "website": "https://pro.totalenergies.fr/",
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
-    "type": "sketch",
-    "params": {},
-    "loginUrl": "https://pro.totalenergies.fr/",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
-  },
-  {
-    "id": "total_energies_mobility_business",
-    "name": "Total Energies Mobility Business",
-    "description": "TotalEnergies Mobility Business supports you and develops products and services to optimize your travel.",
-    "version": "0",
-    "website": "https://mobility.totalenergies.com",
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
-    "type": "sketch",
-    "params": {},
-    "loginUrl": "https://client.mobilitybusiness.totalenergies.com/signIn",
-    "captcha": "none",
-    "authenticationMethod": "all",
-    "state": "planned"
-  },
-  {
     "id": "totalav",
     "name": "TOTALAV",
     "description": "TotalAV is an all-in-one antivirus and system optimization tool for enhanced digital security.",
@@ -114334,6 +114310,64 @@
     "captcha": "none",
     "authenticationMethod": "all",
     "state": "planned"
+  },
+  {
+    "id": "totalenergies_eg_companies_collectivities_fr",
+    "name": "TotalEnergies (Electricity & Gas) - Companies & Communities",
+    "description": "Download your TotalEnergies company and community, electricity and gas, bills from the customer portal.",
+    "version": "1",
+    "website": "https://totalenergies.fr/",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://pro.totalenergies.fr/",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development"
+  },
+  {
+    "id": "totalenergies_eg_particuliers_fr",
+    "name": "TotalEnergies (Electricity & Gas) - Individuals",
+    "description": "Download your TotalEnergies individual, electricity and gas, bills from the customer portal.",
+    "version": "11",
+    "website": "https://www.totalenergies.fr",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.totalenergies.fr/clients/connexion",
+    "entryUrl": "https://www.totalenergies.fr/clients/mes-factures/mon-historique-de-factures",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "active"
+  },
+  {
+    "id": "totalenergies_eg_pro_fr",
+    "name": "TotalEnergies (Electricity & Gas) - Professionals",
+    "description": "Download your TotalEnergies professional, electricity and gas, bills from the customer portal.",
+    "version": "1",
+    "website": "https://totalenergies.fr/",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.totalenergies.fr/clients/connexion#pro",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "development"
+  },
+  {
+    "id": "totalenergies_mobility_business",
+    "name": "TotalEnergies Mobility Business",
+    "description": "Download your TotalEnergies Mobility Business bills from the customer portal.",
+    "version": "2",
+    "website": "https://mobility.totalenergies.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://client.mobilitybusiness.totalenergies.com/signIn",
+    "entryUrl": "https://client.mobilitybusiness.totalenergies.com/dashboard",
+    "captcha": "none",
+    "authenticationMethod": "all",
+    "state": "active"
   },
   {
     "id": "totalhealth",
@@ -116506,18 +116540,36 @@
     "state": "planned"
   },
   {
-    "id": "twilio",
-    "name": "twilio",
-    "description": "A cloud communications platform enabling voice, video, and messaging via APIs.",
-    "version": "0",
-    "website": "https://www.twilio.com/console/billing/payment-history",
-    "logo": "https://portal-ui-images.s3.eu-central-1.amazonaws.com/logo/120x120/7157.jpg",
-    "type": "sketch",
+    "id": "twilio_email",
+    "name": "Twilio (Email)",
+    "description": "Download your Twilio invoices from your mailbox.",
+    "version": "1",
+    "website": "https://www.twilio.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg",
+    "type": "email",
     "params": {},
-    "loginUrl": "https://www.twilio.com/console/billing/payment-history",
-    "captcha": "none",
+    "wildcards": {
+      "sender": "*@*twilio.com",
+      "subject": "*",
+      "body": "*",
+      "attachmentName": "*.pdf"
+    },
+    "state": "development"
+  },
+  {
+    "id": "twilio_web",
+    "name": "Twilio (Web)",
+    "description": "Download your invoices from the Twilio web portal.",
+    "version": "1",
+    "website": "https://www.twilio.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg",
+    "type": "web",
+    "params": {},
+    "loginUrl": "https://www.twilio.com/login",
+    "entryUrl": "https://www.twilio.com/console/billing/payment-history",
+    "captcha": "cloudflare",
     "authenticationMethod": "all",
-    "state": "planned"
+    "state": "development"
   },
   {
     "id": "twindis",
@@ -117215,7 +117267,7 @@
     "id": "ulys",
     "name": "ULYS",
     "description": "Online service for managing Vinci Autoroutes toll subscriptions and account services.",
-    "version": "9",
+    "version": "10",
     "website": "https://ulys.com",
     "logo": "https://connect.ulys.com/img/Ulys.svg",
     "type": "web",
@@ -118170,56 +118222,30 @@
     "id": "urssaf_artisant_commercant",
     "name": "URSSAF (Artisan, commerçant)",
     "description": "URSSAF is the French social security collection agency.",
-    "version": "8",
+    "version": "9",
     "website": "https://urssaf.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/3/32/URSSAF_Logo.svg",
     "type": "web",
-    "params": {
-      "id": {
-        "type": "string",
-        "name": "Identifier",
-        "placeholder": "Email or Social Security number (13 characters)",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.urssaf.fr/accueil/se-connecter.html",
     "entryUrl": "https://webti.urssaf.fr/dashboard",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "development"
   },
   {
     "id": "urssaf_auto_entrepreneur",
     "name": "URSSAF (Auto-entrepreneur)",
     "description": "URSSAF is the French social security collection agency.",
-    "version": "6",
+    "version": "7",
     "website": "https://urssaf.fr",
     "logo": "https://upload.wikimedia.org/wikipedia/fr/3/32/URSSAF_Logo.svg",
     "type": "web",
-    "params": {
-      "id": {
-        "type": "string",
-        "name": "Identifier",
-        "placeholder": "Email or Social Security number (13 characters)",
-        "mandatory": true
-      },
-      "password": {
-        "type": "password",
-        "name": "Password",
-        "placeholder": "***********",
-        "mandatory": true
-      }
-    },
+    "params": {},
     "loginUrl": "https://www.autoentrepreneur.urssaf.fr/services/",
     "entryUrl": "https://www.autoentrepreneur.urssaf.fr/services/espace-personnel/mes-documents/historique-de-mes-declarations",
     "captcha": "none",
-    "authenticationMethod": "secretsOnly",
+    "authenticationMethod": "all",
     "state": "development"
   },
   {
