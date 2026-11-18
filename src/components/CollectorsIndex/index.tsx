@@ -46,7 +46,7 @@ function searchCollectorsWithScore(
   collectors: CollectorSummary[],
   searchTerm: string
 ): CollectorSummary[] {
-  if (!searchTerm || searchTerm.length < 1) return collectors.slice(0, 100);
+  if (!searchTerm || searchTerm.length < 1) return collectors.slice(0, 102);
 
   const computeCollectorScore = (collector: CollectorSummary, term: string) => {
     if (!term || term.length < 1) return 0;
