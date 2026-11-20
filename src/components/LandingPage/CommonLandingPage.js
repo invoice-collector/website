@@ -17,7 +17,7 @@ export default function CommonLandingPage() {
     
     return (
         <Layout
-            title={translate({id: 'commonLanding.page.title', message: 'Invoice Collector - AI-powered invoice collection'})}
+            title={translate({id: 'commonLanding.page.title', message: 'AI-powered invoice collection'})}
             description={translate({id: 'commonLanding.page.description', message: 'Automatically collect invoices for your business, your clients or your software users from supplier portals and inboxes.'})}>
             <main id="landingpage" className={clsx(styles.text_secondary, 'font-sans')}>
 
