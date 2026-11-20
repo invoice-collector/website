@@ -8,114 +8,168 @@ import TabItem from '@theme/TabItem';
 
 # Websocket Messages
 
-Websocket messages are received and sent during a collection process.
+Websocket messages are used to exchange data between the client and the server when a collect is in progress.
 
-#### Messages Received from API
+You can get the ws url with the endpoints:
+- [`POST /user`](/docs/api#tag/User/paths/~1user/post)
+- [`POST /user/{userId}/credential/{credentialId}/collect`](/docs/api#tag/Credential/paths/~1user~1{userId}~1credential~1{credentialId}~12fa/post)
 
-**State** message is received on connection and everytime the collection state changes. 
+Messages sent from the Server to the Client are called Requests.
+Messages sent from the Client to the Server are called Responses.
+
+## State Message
+
+**State Request** is sent on connection and everytime the collection state changes. 
 It is used to update the progress bar and be notified when the collect is finished.
 
 ```typescript
-type MessageState = {
-    type: 'state';
-    state: {
-        index: 1; // Number between -2 and 7
-        max: 7;
-        title = "State title";
-        message = "State message";
+{
+    "type": "state",        // Always "state"
+    "state": {
+        "index": 1,         // Number between -2 and 7
+        "max": 7,           // Maximum number of steps in the collect process
+        "title": "...",     // Title of the state
+        "message": "..."    // Message of the state
     }
 }
 ```
 
-**Screenshot** message is received when the user needs to login using the video stream.
-Screenshot messages are sent approximately every 50ms during interactive login (`state.index = 2`):
+No **State Response** is expected from the client.
+
+## 2FA Message
+
+**Twofa Request** is sent when the user needs to perform a 2FA challenge.
 
 ```typescript
-type MessageScreenshot = {
-    type: 'screenshot';
-    screenshot: string;  // Base64 encoded image
-    width: number;       // Screenshot width in pixels
-    height: number;      // Screenshot height in pixels
+{
+    type: "twofa",        // Always "twofa"
+    instructions: "...",  // Instructions for the 2FA challenge
+    push: false,          // Whether this challenge is a push notification and requires no input code
+    authLink: false,      // Whether this challenge requires an authentication link
 }
 ```
 
-**Oauth2** message is received when the user needs to authenticate using OAuth2.
+**Twofa Response** must be sent allong with the code/authLink requested by the server.
+Leave the fields empty if the challenge is push.
+
+```typescript
+{
+    type: "twofa";  // Always "twofa"
+    twofa: "...";   // The 2FA code or authentication link provided by the user
+}
+```
+
+## Oauth2 Message
+
+**Oauth2 Request** is sent when the user needs to authenticate using OAuth2.
 It contains the URL where the user should be redirected to complete the authentication:
 
 ```typescript
-type MessageOauth2 = {
-    type: 'oauth2';
-    url: string;      // The OAuth2 authentication URL
-    iframe: boolean;  // Indicates if the OAuth2 URL can be opened in an iframe
+{
+    type: "oauth2",   // Always "oauth2"
+    url: "...",       // The OAuth2 authentication URL
+    iframe: false,    // Indicates if the OAuth2 URL can be opened in an iframe
 }
 ```
 
-#### Messages Sent to API
+No **Oauth2 Response** is expected from the client.
 
-**Twofa** message must be sent when `state.index = 3`.
-This code must be asked in your frontend.
+## Interactive Message
+
+**Interactive Request** is sent to request the user to login using video stream, we call it "interactive login".
 
 ```typescript
-type MessageTwofa = {
-    type: 'twofa';
-    twofa: string;  // The 2FA code from the user
+{
+    type: "interactive";    // Always "interactive"
+    reason: "open";         // Always "open"
+    instructions: "...";    // Instructions for the user
 }
 ```
 
-**Click** message can be sent when `state.index = 2` and at least one screenshot has been received.
-It simulates a click on the screenshot:
+**Interactive Response** is sent to end the interactive login process
+- `close`: User has completed the interactive login process as expected
+- `cancel`: User cancelled the interactive login
+- `remove`: User cancelled the interactive login and the credential must be removed
+- `report`: User reported an issue with this collector
 
 ```typescript
-type MessageClick = {
-    type: 'click';
-    x: number;  // X coordinate as ratio (0-1) of screenshot width
-    y: number;  // Y coordinate as ratio (0-1) of screenshot height
+{
+    type: "interactive";                                // Always "interactive
+    reason: "close" | "cancel" | "remove" | "report";   // Reason why interative login is finished
 }
 ```
 
-**Keydown** message can be sent when `state.index = 2` and at least one screenshot has been received.
+## Screenshot Message
+
+**Screenshot Request** is sent during the interactive login.
+It contains a screenshot of the browser everytime the UI changes:
+
+```typescript
+{
+    type: "screenshot",  // Always "screenshot"
+    screenshot: "...",   // Base64 encoded image
+    width: 1920,         // Screenshot width in pixels
+    height: 1080,        // Screenshot height in pixels
+}
+```
+
+No **Screenshot Response** is expected from the client.
+
+## Resize Message
+
+No **Resize Request** is expected from the server.
+
+**Resize Response** can be sent during interactive login.
+It requests the server to resize the browser to the specified dimensions:
+
+```typescript
+{
+    type: "resize";             // Always "resize
+    width: 1920;                // New width of the client window in pixels
+    height: 1080;               // New height of the client window in pixels
+    deviceScaleFactor?: 1.2;    // Optional device scale factor (e.g., for high-DPI displays)
+}
+```
+
+## Click Message
+
+No **Click Request** is expected from the server.
+
+**Click Response** can be sent during interactive login.
+It simulate a click on the screenshot:
+
+```typescript
+{
+    type: "click";  // Always "click"
+    x: 0.4522;      // X coordinate in relative (0-1) or absolute pixels of screenshot width
+    y: 0.8657;      // Y coordinate in relative (0-1) or absolute pixels of screenshot height
+}
+```
+
+## Keydown Message
+
+No **Keydown Request** is expected from the server.
+
+**Keydown Response** can be sent during interactive login.
 It simulates a keydown event:
 
 ```typescript
-type MessageKeydown = {
-    type: 'keydown';
-    key: string;  // Key name (e.g., 'Enter', 'Backspace', 'A', 'b', '?')
+{
+    type: "keydown";    // Always "keydown"
+    key: "...";         // Key name (e.g., 'Enter', 'Backspace', 'A', 'b', '?')
 }
 ```
 
-**Text** message can be sent when `state.index = 2` and at least one screenshot has been received.
-It simulates a paste (Ctrl+V) event:
+## Text Message
+
+No **Text Request** is expected from the server.
+
+**Text Response** can be sent during interactive login.
+It simulates a paste (Ctrl+V) event with a given text:
 
 ```typescript
-type MessageText = {
-    type: 'text';
-    text: string;  // The text to input
-}
-```
-
-**Interactive** message can be sent when interactive login is in progress:
-
-```typescript
-type MessageInteractive = {
-    type: 'interactive';
-    reason: 'open' | 'close' | 'cancel' | 'remove' | 'report';
-    instructions: string;
-}
-```
-
-- `open` - User opened the interactive element
-- `close` - User closed the interactive element
-- `cancel` - User cancelled the process
-- `remove` - User removed the interactive element
-- `report` - User reported an issue
-
-**Resize** message can be sent when the client window is resized:
-
-```typescript
-type MessageResize = {
-    type: 'resize';
-    width: number;                  // New width of the client window in pixels
-    height: number;                 // New height of the client window in pixels
-    deviceScaleFactor?: number;     // Optional device scale factor (e.g., for high-DPI displays)
+{
+    type: "text";   // Always "text"
+    text: "...";    // The text to input
 }
 ```
